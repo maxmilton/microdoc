@@ -17,7 +17,8 @@
     "lint:ts": "tsc --noEmit",
     "postbuild": "tsc --emitDeclarationOnly",
     "prebuild": "rm -rf dist; mkdir -p dist/plugins",
-    "serve": "sirv . --port 5000 --dev --cors"
+    "serve": "sirv . --port 5000 --dev --cors",
+    "test": "echo 'TODO: Testing'; exit 0"
   },
   "files": [
     "dist",
