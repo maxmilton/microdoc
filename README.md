@@ -1,3 +1,6 @@
+# WIP
+
+<!--
 # microdoc
 
 Minimalist no-build project documentation web app runtime. For the times you want a better experience than just markdown files.
@@ -36,3 +39,4 @@ TODO: Documentation:
 ---
 
 © 2021 [Max Milton](https://maxmilton.com)
+-->
