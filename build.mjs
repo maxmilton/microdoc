@@ -1,14 +1,17 @@
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-console */
 
 import esbuild from 'esbuild';
-import { xcss } from 'esbuild-plugin-ekscss';
 import { minifyTemplates, writeFiles } from 'esbuild-minify-templates';
+import { xcss } from 'esbuild-plugin-ekscss';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
-
 const target = ['chrome78', 'firefox77', 'safari11', 'edge44'];
+
+/** @param {?Error} err */
+function handleErr(err) {
+  if (err) throw err;
+}
 
 // Main web app
 esbuild
@@ -26,19 +29,14 @@ esbuild
     sourcemap: true,
     watch: dev,
     write: dev,
-    logLevel: 'info',
+    logLevel: 'debug',
   })
   .then(minifyTemplates)
   .then(writeFiles)
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
+  .catch(handleErr);
 
 // Plugins
-const plugins = ['search'];
-
-plugins.forEach((pluginName) => {
+['search', 'preload'].forEach((pluginName) => {
   esbuild
     .build({
       entryPoints: [`src/plugins/${pluginName}.ts`],
@@ -48,18 +46,16 @@ plugins.forEach((pluginName) => {
         'process.env.NODE_ENV': JSON.stringify(mode),
       },
       plugins: [xcss()],
+      format: 'iife',
       banner: { js: '"use strict";' },
       bundle: true,
       minify: !dev,
       sourcemap: true,
       watch: dev,
       write: dev,
-      logLevel: 'info',
+      logLevel: 'debug',
     })
     .then(minifyTemplates)
     .then(writeFiles)
-    .catch((err) => {
-      console.error(err);
-      process.exit(1);
-    });
+    .catch(handleErr);
 });
