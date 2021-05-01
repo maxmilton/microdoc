@@ -25,7 +25,7 @@
     "src"
   ],
   "peerDependencies": {
-    "ekscss": "^0.0.1"
+    "ekscss": "^0.0.1 || ^0.0.3"
   },
   "dependencies": {
     "@ekscss/framework": "^0.0.2",
@@ -37,7 +37,7 @@
     "@types/node": "14.14.43",
     "@typescript-eslint/eslint-plugin": "4.22.0",
     "@typescript-eslint/parser": "4.22.0",
-    "ekscss": "0.0.1",
+    "ekscss": "0.0.3",
     "esbuild": "0.11.16",
     "esbuild-minify-templates": "0.0.3",
     "esbuild-plugin-ekscss": "0.0.1",
