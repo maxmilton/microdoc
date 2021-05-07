@@ -31,10 +31,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@ekscss/framework@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@ekscss/framework/-/framework-0.0.4.tgz#7956ead7365e50fd1c65b364a257d7ebe97e2bcb"
-  integrity sha512-ESzEsSXpU3FhuSQOwEgV1v5YQUweaZZsnK73+RXzXLACdrcDZ8lLXJFcKMi9gkUl6XVQC8qQsGnDBVlff0MOOg==
+"@ekscss/framework@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@ekscss/framework/-/framework-0.0.6.tgz#0b36e5e9b414bef9b125ca7b6d15c35ae368d5f1"
+  integrity sha512-/K1tJ6NY4fn0BLWJ96Ss4g730fNjTfR+7VblVAxmsqZaGZwUEyEsV2fce7z+ExrOE4Meqidqu00bqA9pORxSCw==
   dependencies:
     "@ekscss/plugin-apply" "^0.0.1"
     "@ekscss/plugin-import" "^0.0.1"
