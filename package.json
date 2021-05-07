@@ -28,7 +28,7 @@
     "ekscss": "^0.0.4"
   },
   "dependencies": {
-    "@ekscss/framework": "^0.0.4",
+    "@ekscss/framework": "^0.0.6",
     "marked": "^2.0.3",
     "stage0": "^0.0.25"
   },
