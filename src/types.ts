@@ -1,8 +1,8 @@
-import type h from 'stage0';
+import type { h } from 'stage1';
 
 declare global {
   interface HTMLElement {
-    /** stage0 synthetic click event handler. */
+    /** `stage1` synthetic click event handler. */
     __click(event: MouseEvent): void;
   }
 
@@ -34,7 +34,7 @@ export interface Microdoc {
    * @default ['README.md']
    */
   routes: Routes;
-  /** `stage0` tagged template literal function for plugin or advanced use. */
+  /** `stage1` tagged template literal function for plugin or advanced use. */
   h: typeof h;
 }
 

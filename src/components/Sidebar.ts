@@ -1,11 +1,12 @@
-import h, { HNode } from 'stage0';
-// import reuseNodes from 'stage0/reuseNodes';
-import { Link } from './Link';
+import { h, S1Node } from 'stage1';
+// import { reuseNodes } from 'stage1/dist/reconcile/reuse-nodes';
 import { routeMap } from '../router';
+import { append, create } from '../utils';
+import { Link } from './Link';
 
 type SectionComponent = HTMLHeadingElement;
 
-const sectionView = document.createElement('h2');
+const sectionView = create('h2');
 
 // TODO: Move somewhere better
 function Section(title: string): SectionComponent {
@@ -19,11 +20,11 @@ function Section(title: string): SectionComponent {
 
 // TODO: Currently active menu item should have extra CSS class
 
-type SidebarComponent = HNode<HTMLDivElement>;
+type SidebarComponent = S1Node & HTMLDivElement;
 
-interface RefNodes {
+type RefNodes = {
   list: HTMLDivElement;
-}
+};
 
 const view = h`
   <div class=docs-sidebar-wrapper>
@@ -34,8 +35,8 @@ const view = h`
 `;
 
 export function Sidebar(): SidebarComponent {
-  const root = view;
-  const { list } = view.collect(root) as RefNodes;
+  const root = view as SidebarComponent;
+  const { list } = view.collect<RefNodes>(root);
 
   for (const [path, route] of routeMap.entries()) {
     const menuitem = route.section
@@ -45,7 +46,7 @@ export function Sidebar(): SidebarComponent {
         href: path,
       });
 
-    list.appendChild(menuitem);
+    append(menuitem, list);
   }
 
   return root;

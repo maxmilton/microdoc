@@ -1,6 +1,4 @@
-// FIXME: stage0.h is getting bundled into this file... probably from utils.ts
-
-import type { HNode } from 'stage0';
+import type { S1Node } from 'stage1';
 import { debounce } from '../utils';
 
 function doSearch(text: string) {
@@ -12,11 +10,11 @@ function doSearch(text: string) {
 
 const debouncedSearch = debounce(doSearch);
 
-type SearchComponent = HNode<HTMLDivElement>;
+type SearchComponent = S1Node & HTMLDivElement;
 
-interface Refs {
+type RefNodes = {
   input: HTMLInputElement;
-}
+};
 
 const view = window.microdoc.h`
   <div class="docs-search-wrapper ml-auto mv-1">
@@ -26,7 +24,7 @@ const view = window.microdoc.h`
 
 function Search(): SearchComponent {
   const root = view.cloneNode(true) as SearchComponent;
-  const { input } = view.collect(root) as Refs;
+  const { input } = view.collect<RefNodes>(root);
 
   input.oninput = () => debouncedSearch(input.value);
 

@@ -24,7 +24,7 @@ module.exports = {
   rules: {
     'import/prefer-default-export': OFF,
     'no-restricted-syntax': OFF,
-    // stage0 uses underscores in synthetic event handler names
+    // stage1 uses underscores in synthetic event handler names
     'no-underscore-dangle': OFF,
   },
   overrides: [

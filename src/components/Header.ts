@@ -1,10 +1,10 @@
-import h, { HNode } from 'stage0';
+import { h, S1Node } from 'stage1';
 
-export type HeaderComponent = HNode<HTMLElement>;
+export type HeaderComponent = S1Node & HTMLElement;
 
-interface RefNodes {
+type RefNodes = {
   name: HTMLHeadingElement;
-}
+};
 
 const view = h`
   <header class="docs-header dfc pa2 bg-gold5">
@@ -16,7 +16,7 @@ const view = h`
 
 export function Header(): HeaderComponent {
   const root = view as HeaderComponent;
-  const { name } = view.collect(root) as RefNodes;
+  const { name } = view.collect<RefNodes>(root);
 
   name.textContent = window.microdoc.title;
 
