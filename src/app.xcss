@@ -28,6 +28,8 @@ body,
 
 .docs-menu-section {}
 
+.docs-footer {}
+
 .docs-main {}
 
 .docs-page {}

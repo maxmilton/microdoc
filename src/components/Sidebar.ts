@@ -1,7 +1,7 @@
 import { h, S1Node } from 'stage1';
-// import { reuseNodes } from 'stage1/dist/reconcile/reuse-nodes';
 import { routeMap } from '../router';
 import { append, create } from '../utils';
+import { Footer } from './Footer';
 import { Link } from './Link';
 
 type SectionComponent = HTMLHeadingElement;
@@ -48,6 +48,8 @@ export function Sidebar(): SidebarComponent {
 
     append(menuitem, list);
   }
+
+  append(Footer(), root);
 
   return root;
 }

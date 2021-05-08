@@ -1,4 +1,3 @@
-import { Footer } from './components/Footer';
 import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
 import { Router } from './router';
@@ -15,7 +14,6 @@ export function render(): void {
   append(Header(), document.body);
   append(Sidebar(), wrapper);
   append(Router(), main);
-  append(Footer(), main);
   append(main, wrapper);
   append(wrapper, document.body);
 }
