@@ -39,7 +39,7 @@
     "@typescript-eslint/parser": "4.22.1",
     "ekscss": "0.0.5",
     "esbuild": "0.11.20",
-    "esbuild-minify-templates": "0.2.0",
+    "esbuild-minify-templates": "0.3.0",
     "esbuild-plugin-ekscss": "0.0.1",
     "eslint": "7.26.0",
     "eslint-config-airbnb-typescript": "12.3.1",
