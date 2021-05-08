@@ -13,12 +13,14 @@ import {
   writeFiles,
 } from 'esbuild-minify-templates';
 import { xcss } from 'esbuild-plugin-ekscss';
+import fs from 'fs';
 import path from 'path';
 import { minify } from 'terser';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const dir = path.resolve(); // no __dirname in node ESM
+const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 const target = ['chrome78', 'firefox77', 'safari11', 'edge44'];
 
 /** @param {?Error} err */
@@ -83,7 +85,13 @@ esbuild
       'process.env.NODE_ENV': JSON.stringify(mode),
     },
     plugins: [xcss()],
-    banner: { js: '"use strict";' },
+    banner: {
+      js: `/*!
+* microdoc v${pkg.version} - https://github.com/MaxMilton/microdoc
+* (c) 2021 Max Milton
+* MIT Licensed - https://github.com/MaxMilton/microdoc/blob/main/LICENSE
+*/ "use strict";`,
+    },
     bundle: true,
     minify: !dev,
     sourcemap: true,
