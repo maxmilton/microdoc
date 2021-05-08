@@ -49,7 +49,6 @@ function findOutputFile(outputFiles, ext) {
  */
 async function minifyJs(buildResult) {
   if (buildResult.outputFiles) {
-    const distPath = path.join(dir, 'dist');
     const outputJsMap = findOutputFile(buildResult.outputFiles, '.js.map');
     const { file, index } = findOutputFile(buildResult.outputFiles, '.js');
 
@@ -62,8 +61,8 @@ async function minifyJs(buildResult) {
       },
       sourceMap: {
         content: decodeUTF8(outputJsMap.file.contents),
-        filename: path.relative(distPath, file.path),
-        url: path.relative(distPath, outputJsMap.file.path),
+        filename: path.basename(file.path),
+        url: path.basename(outputJsMap.file.path),
       },
     });
 
