@@ -1,7 +1,12 @@
-# WIP
+[![Build status](https://img.shields.io/github/workflow/status/MaxMilton/microdoc/ci)](https://github.com/MaxMilton/microdoc/actions)
+[![Coverage status](https://img.shields.io/codeclimate/coverage/MaxMilton/microdoc)](https://codeclimate.com/github/MaxMilton/microdoc)
+[![NPM version](https://img.shields.io/npm/v/microdoc.svg)](https://www.npmjs.com/package/microdoc)
+[![NPM bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/microdoc.svg)](https://bundlephobia.com/result?p=microdoc)
+[![Licence](https://img.shields.io/github/license/MaxMilton/microdoc.svg)](https://github.com/MaxMilton/microdoc/blob/master/LICENSE)
 
-<!--
-# microdoc
+# microdoc [WIP]
+
+> DANGER: `microdoc` is a work in progress and should not be used in production!
 
 Minimalist no-build project documentation web app runtime. For the times you want a better experience than just markdown files.
 
@@ -39,4 +44,3 @@ TODO: Documentation:
 ---
 
 © 2021 [Max Milton](https://maxmilton.com)
--->
