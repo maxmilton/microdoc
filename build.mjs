@@ -87,7 +87,7 @@ esbuild
     plugins: [xcss()],
     banner: {
       js: `/*!
-* microdoc v${pkg.version} - https://github.com/MaxMilton/microdoc
+* microdoc v${pkg.version} - https://maxmilton.github.io/microdoc
 * (c) 2021 Max Milton
 * MIT Licensed - https://github.com/MaxMilton/microdoc/blob/main/LICENSE
 */ "use strict";`,
