@@ -1,7 +1,7 @@
-import { setupSyntheticEvent } from 'stage0/syntheticEvents';
 import marked from 'marked';
+import { setupSyntheticEvent } from 'stage1';
 import type { Route, Routes } from './types';
-import { toName } from './utils';
+import { create, toName } from './utils';
 
 interface RouteEntry {
   name: string;
@@ -126,7 +126,7 @@ async function getContent(path: string): Promise<string> {
 
 type RouterComponent = HTMLDivElement;
 
-const view = document.createElement('div');
+const view = create('div');
 view.className = 'docs-page con';
 
 export function Router(): RouterComponent {

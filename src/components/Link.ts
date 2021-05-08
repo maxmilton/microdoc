@@ -1,13 +1,15 @@
-// import h from 'stage0';
+// import { h } from 'stage1';
+import { create } from '../utils';
 
 export interface LinkProps {
   title: string;
   href: string;
 }
 
+// export type LinkComponent = S1Node & HTMLAnchorElement;
 export type LinkComponent = HTMLAnchorElement;
 
-// interface RefNodes {
+// type RefNodes = {
 //   title: Text;
 // }
 
@@ -16,11 +18,11 @@ export type LinkComponent = HTMLAnchorElement;
 // const view = h`
 //   <a>#title</a>
 // `;
-const view = document.createElement('a');
+const view = create('a');
 
 export function Link(item: LinkProps): LinkComponent {
   const root = view.cloneNode(true) as LinkComponent;
-  // const { title } = view.collect(root) as RefNodes;
+  // const { title } = view.collect<RefNodes>(root);
 
   root.href = item.href;
   // root.title = item.title;
