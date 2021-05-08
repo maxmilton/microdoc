@@ -36,10 +36,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@ekscss/framework@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@ekscss/framework/-/framework-0.0.6.tgz#0b36e5e9b414bef9b125ca7b6d15c35ae368d5f1"
-  integrity sha512-/K1tJ6NY4fn0BLWJ96Ss4g730fNjTfR+7VblVAxmsqZaGZwUEyEsV2fce7z+ExrOE4Meqidqu00bqA9pORxSCw==
+"@ekscss/framework@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@ekscss/framework/-/framework-0.0.8.tgz#269603532e1904ddf3ba14bdcbb11ad18cb81406"
+  integrity sha512-Kc9MUpvUuDnXTtkLLD0KTb65qotqtckBY6N9O19FCbXAyRhn3nYW6L1/m4FPZE1cB5ugjpEIsHl1LhCZZYwtnw==
   dependencies:
     "@ekscss/plugin-apply" "^0.0.1"
     "@ekscss/plugin-import" "^0.0.1"
