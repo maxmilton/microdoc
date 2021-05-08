@@ -18,7 +18,7 @@
     "postbuild": "tsc --emitDeclarationOnly",
     "prebuild": "rm -rf dist; mkdir -p dist/plugins",
     "serve": "sirv . --port 5000 --dev --cors",
-    "test": "echo 'TODO: Testing'; exit 0"
+    "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r esbuild-register test '\\.test\\.ts$'"
   },
   "files": [
     "dist",
@@ -37,10 +37,12 @@
     "@types/node": "15.0.2",
     "@typescript-eslint/eslint-plugin": "4.22.1",
     "@typescript-eslint/parser": "4.22.1",
+    "c8": "7.7.2",
     "ekscss": "0.0.5",
     "esbuild": "0.11.20",
     "esbuild-minify-templates": "0.3.0",
     "esbuild-plugin-ekscss": "0.0.1",
+    "esbuild-register": "2.5.0",
     "eslint": "7.26.0",
     "eslint-config-airbnb-typescript": "12.3.1",
     "eslint-plugin-import": "2.22.1",
@@ -48,7 +50,8 @@
     "prettier-plugin-package2": "0.6.0",
     "sirv-cli": "1.0.11",
     "terser": "5.7.0",
-    "typescript": "4.2.4"
+    "typescript": "4.2.4",
+    "uvu": "0.5.1"
   },
   "prettier": {
     "arrowParens": "always",
