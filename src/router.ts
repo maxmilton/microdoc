@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import { Remarkable } from 'remarkable';
 import { setupSyntheticEvent } from 'stage1';
 import type { Route, Routes } from './types';
@@ -18,20 +19,20 @@ md.core.ruler.push(
   'x',
   (state) => {
     const blockTokens = state.tokens;
-    const blockLen = blockTokens.length;
-    let blockIndex = 0;
+    const len = blockTokens.length;
+    let index = 0;
     let route;
 
-    for (; blockIndex < blockLen; blockIndex++) {
-      const blockToken = blockTokens[blockIndex];
+    for (; index < len; index++) {
+      const blockToken = blockTokens[index] as Remarkable.BlockContentToken;
 
       if (blockToken.type === 'inline') {
-        const tokens = blockToken.children;
-        const len = tokens.length;
-        let index = 0;
+        const tokens = blockToken.children!;
+        const inlineLen = tokens.length;
+        let inlineIndex = 0;
 
-        for (; index < len; index++) {
-          const token = tokens[index];
+        for (; inlineIndex < inlineLen; inlineIndex++) {
+          const token = tokens[inlineIndex] as Remarkable.LinkOpenToken;
 
           if (token.type === 'link_open') {
             if (token.href[0] === '#' && token.href[1] !== '/') {
