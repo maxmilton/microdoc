@@ -12,6 +12,50 @@ const md = new Remarkable({
   html: true,
 });
 
+const fakeBaseUrl = 'http://x';
+
+md.core.ruler.push(
+  'x',
+  (state) => {
+    const blockTokens = state.tokens;
+    const blockLen = blockTokens.length;
+    let blockIndex = 0;
+    let route;
+
+    for (; blockIndex < blockLen; blockIndex++) {
+      const blockToken = blockTokens[blockIndex];
+
+      if (blockToken.type === 'inline') {
+        const tokens = blockToken.children;
+        const len = tokens.length;
+        let index = 0;
+
+        for (; index < len; index++) {
+          const token = tokens[index];
+
+          if (token.type === 'link_open') {
+            if (token.href[0] === '#' && token.href[1] !== '/') {
+              // generate href for in-page links (start with # and correspond to
+              // an element by id attribute)
+              route = route || new URL(window.location.href).hash.slice(1);
+              const cleanUrlPath = new URL(route, fakeBaseUrl).pathname;
+              token.href = `#${cleanUrlPath}${token.href}`;
+            } else {
+              // leverage URL() to handle relative links with a fake base URL...
+              token.href = new URL(token.href, fakeBaseUrl).href
+                // then convert fake base URL to hash based routing
+                .replace(/^http:\/\/x\/(?:#\/)?/, '#/');
+            }
+          }
+        }
+      }
+    }
+
+    return false;
+  },
+  {},
+);
+
 export const routeMap = new Map<string, RouteEntry>();
 
 export function routeTo(url: string): void {
@@ -157,7 +201,22 @@ export function Router(): RouterComponent {
 
       root.innerHTML = html;
       document.title = `${route.name} | ${window.microdoc.title}`;
-      // TODO: Handle in-page links to headings with ids
+
+      const hashPath = new URL(path, fakeBaseUrl).hash;
+
+      // scroll to an in-page link
+      if (hashPath) {
+        try {
+          const id = hashPath.slice(1);
+          const el = document.getElementById(id)!;
+          el.scrollIntoView();
+          return;
+        } catch (err) {
+          /* noop */
+        }
+      }
+
+      // scroll to top
       window.scrollTo(0, 0);
     });
   };
