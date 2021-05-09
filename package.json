@@ -29,12 +29,12 @@
   },
   "dependencies": {
     "@ekscss/framework": "^0.0.8",
-    "marked": "^2.0.3",
+    "remarkable": "^2.0.1",
     "stage1": "^0.0.6"
   },
   "devDependencies": {
-    "@types/marked": "2.0.2",
     "@types/node": "15.0.2",
+    "@types/remarkable": "2.0.1",
     "@typescript-eslint/eslint-plugin": "4.22.1",
     "@typescript-eslint/parser": "4.22.1",
     "c8": "7.7.2",

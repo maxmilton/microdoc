@@ -1,4 +1,4 @@
-import marked from 'marked';
+import { Remarkable } from 'remarkable';
 import { setupSyntheticEvent } from 'stage1';
 import type { Route, Routes } from './types';
 import { create, toName } from './utils';
@@ -7,6 +7,10 @@ interface RouteEntry {
   name: string;
   section?: true;
 }
+
+const md = new Remarkable({
+  html: true,
+});
 
 export const routeMap = new Map<string, RouteEntry>();
 
@@ -146,9 +150,7 @@ export function Router(): RouterComponent {
       let route = routeMap.get(`#${path}`);
 
       // TODO: Handle markdown rendering errors
-      const html = marked(code, {
-        baseUrl: '#/',
-      });
+      const html = md.render(code);
 
       // TODO: Handle missing route properly
       route ??= { name: '' };
