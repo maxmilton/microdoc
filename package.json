@@ -1,6 +1,6 @@
 {
   "name": "microdoc",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Minimalist no-build project documentation web app runtime",
   "license": "MIT",
   "repository": "MaxMilton/microdoc",
