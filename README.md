@@ -4,9 +4,9 @@
 [![NPM bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/microdoc.svg)](https://bundlephobia.com/result?p=microdoc)
 [![Licence](https://img.shields.io/github/license/MaxMilton/microdoc.svg)](https://github.com/MaxMilton/microdoc/blob/master/LICENSE)
 
-# microdoc [WIP]
+# microdoc
 
-> DANGER: `microdoc` is a work in progress and should not be used in production!
+> WARNING: `microdoc` is a work in progress and should not be used in production!
 
 Minimalist no-build project documentation web app runtime. For the times you want a better experience than just markdown files.
 
@@ -17,6 +17,12 @@ Minimalist no-build project documentation web app runtime. For the times you wan
 - Lightweight-ish — around 15kb g'zip'd, mostly the markdown parser
 - Works with any web server — uses hash based routing so no special server configuration required
 - Simple, functional, and friendly UX
+
+## Browser support
+
+Recent versions of evergreen browsers.
+
+It's expected users have up-to-date browsers so `microdoc` makes minimal effort to polyfill browser APIs. That said, if you run into any compatibility bugs please [open an issue](https://github.com/MaxMilton/microdoc/issues).
 
 ## Usage
 
@@ -36,6 +42,14 @@ TODO: Documentation:
 - Similar projects:
   - https://docusaurus.io/docs/
   - https://docsify.js.org/#/?id=docsify
+
+## Bugs
+
+Please report any bugs you encounter on the [GitHub issue tracker](https://github.com/MaxMilton/microdoc/issues).
+
+## Changelog
+
+See [releases on GitHub](https://github.com/MaxMilton/microdoc/releases).
 
 ## Licence
 
