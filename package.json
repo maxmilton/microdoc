@@ -17,7 +17,7 @@
     "lint:ts": "tsc --noEmit",
     "postbuild": "tsc --emitDeclarationOnly",
     "prebuild": "rm -rf dist; mkdir -p dist/plugins",
-    "serve": "sirv . --port 5000 --dev --cors",
+    "serve": "sirv . --dev --cors",
     "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r esbuild-register test '\\.test\\.ts$'"
   },
   "files": [
