@@ -193,7 +193,7 @@ export function Router(): RouterComponent {
     const route = routeMap.get(`#${path}`);
 
     if (!route) {
-      const err = new Error('Unknown route');
+      const err: CodedError = new Error('Unknown route');
       err.code = 404;
       root.innerHTML = loadingError(path, err);
       document.title = `404 Error | ${window.microdoc.title}`;
