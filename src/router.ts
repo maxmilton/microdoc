@@ -1,4 +1,5 @@
 /* eslint-disable no-plusplus */
+
 import { Remarkable } from 'remarkable';
 import { setupSyntheticEvent } from 'stage1';
 import type { Route, Routes } from './types';
@@ -142,6 +143,13 @@ interface CodedError extends Error {
   code?: number;
 }
 
+const loadingError = (path: string, err: CodedError) => `
+  <div class="alert alert-error">
+    <strong>ERROR:</strong> An error occured when loading ${path}
+    <br/>${err.code || '500'} ${err.message || 'Unknown error'}
+  </div>
+`;
+
 async function getContent(path: string): Promise<string> {
   let content;
 
@@ -159,15 +167,7 @@ async function getContent(path: string): Promise<string> {
     // eslint-disable-next-line no-console
     console.error(err);
 
-    /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-    /* eslint-disable @typescript-eslint/restrict-template-expressions */
-    content = `
-<div class="alert alert-error">
-  <strong>ERROR:</strong> An error occured when loading content file ${path}
-  <br/>${err.code || '500'} ${err.message || 'Unknown error'}
-</div>
-    `;
-    /* eslint-enable */
+    content = loadingError(path, err);
   }
 
   return content;
@@ -190,15 +190,19 @@ export function Router(): RouterComponent {
       return;
     }
 
+    const route = routeMap.get(`#${path}`);
+
+    if (!route) {
+      const err = new Error('Unknown route');
+      err.code = 404;
+      root.innerHTML = loadingError(path, err);
+      document.title = `404 Error | ${window.microdoc.title}`;
+      return;
+    }
+
     // eslint-disable-next-line no-void
     void getContent(window.microdoc.root + path).then((code) => {
-      let route = routeMap.get(`#${path}`);
-
-      // TODO: Handle markdown rendering errors
       const html = md.render(code);
-
-      // TODO: Handle missing route properly
-      route ??= { name: '' };
 
       root.innerHTML = html;
       document.title = `${route.name} | ${window.microdoc.title}`;
