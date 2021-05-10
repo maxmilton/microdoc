@@ -19,7 +19,6 @@ import { minify } from 'terser';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
-const dir = path.resolve(); // no __dirname in node ESM
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 const target = ['chrome78', 'firefox77', 'safari11', 'edge44'];
 

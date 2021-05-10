@@ -1,18 +1,14 @@
-'use strict'; // eslint-disable-line
-
 const OFF = 0;
 
-/** @type {import('eslint').Linter.Config} */
+// eslint-disable-next-line max-len
+/** @type {import('eslint').Linter.Config & { parserOptions: import('@typescript-eslint/types').ParserOptions }} */
 module.exports = {
   root: true,
   reportUnusedDisableDirectives: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
     extraFileExtensions: ['.mjs', '.cjs'],
-    project: ['./tsconfig.json', './test/tsconfig.json'],
-  },
-  env: {
-    node: true,
+    project: ['./test/tsconfig.json'],
   },
   extends: [
     'eslint:recommended',
@@ -27,12 +23,4 @@ module.exports = {
     // stage1 uses underscores in synthetic event handler names
     'no-underscore-dangle': OFF,
   },
-  overrides: [
-    {
-      files: ['.eslintrc.js', 'build.mjs', 'xcss.config.js'],
-      parserOptions: {
-        createDefaultProgram: true,
-      },
-    },
-  ],
 };

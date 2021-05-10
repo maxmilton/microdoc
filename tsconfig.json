@@ -1,10 +1,7 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-
     "target": "es2020",
-    "module": "es2020",
+    "module": "esnext",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -14,8 +11,7 @@
     "allowJs": true,
     "checkJs": true,
 
-    "declaration": true,
-    "declarationMap": true,
+    "noEmit": true, // prevents errors in VS Code and ESLint
     "sourceMap": true,
 
     "strict": true,
@@ -27,12 +23,5 @@
     "noUnusedParameters": true,
     "useDefineForClassFields": true
   },
-  "exclude": [
-    "coverage",
-    "dist",
-    "node_modules",
-    "test",
-    "build.mjs",
-    "xcss.config.js"
-  ]
+  "exclude": ["coverage", "dist", "node_modules", "test"]
 }
