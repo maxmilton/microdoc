@@ -30,7 +30,7 @@
   "dependencies": {
     "@ekscss/framework": "^0.0.8",
     "remarkable": "^2.0.1",
-    "stage1": "^0.0.6"
+    "stage1": "^0.0.7"
   },
   "devDependencies": {
     "@types/jsdom": "16.2.10",
