@@ -36,8 +36,8 @@ test('matches snapshot', () => {
   assert.fixture(
     rendered.container.innerHTML,
     `<footer class="docs-footer mt5 muted fss tc">
-    Powered by <a href="https://maxmilton.github.io/microdoc" class="muted" rel="noreferrer">microdoc</a>
-  </footer>`,
+Powered by <a href="https://maxmilton.github.io/microdoc" class="muted" rel="noreferrer">microdoc</a>
+</footer>`,
   );
 });
 
