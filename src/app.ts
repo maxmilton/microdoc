@@ -10,6 +10,7 @@ export function render(): void {
   const wrapper = create('div');
   const main = create('main');
 
+  app.id = 'app';
   wrapper.className = 'df h100';
   main.className = 'docs-main';
 

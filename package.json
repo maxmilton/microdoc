@@ -33,6 +33,7 @@
     "stage1": "^0.0.6"
   },
   "devDependencies": {
+    "@types/jsdom": "16.2.10",
     "@types/node": "15.0.2",
     "@types/remarkable": "2.0.1",
     "@typescript-eslint/eslint-plugin": "4.22.1",
@@ -46,6 +47,8 @@
     "eslint": "7.26.0",
     "eslint-config-airbnb-typescript": "12.3.1",
     "eslint-plugin-import": "2.22.1",
+    "jsdom": "16.5.3",
+    "pirates": "4.0.1",
     "prettier": "2.3.0",
     "prettier-plugin-package2": "0.6.0",
     "sirv-cli": "1.0.11",
