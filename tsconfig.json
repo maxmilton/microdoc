@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+
     "target": "es2020",
     "module": "esnext",
     "moduleResolution": "node",
@@ -11,7 +14,8 @@
     "allowJs": true,
     "checkJs": true,
 
-    "noEmit": true, // prevents errors in VS Code and ESLint
+    "declaration": true,
+    "declarationMap": true,
     "sourceMap": true,
 
     "strict": true,
@@ -23,5 +27,5 @@
     "noUnusedParameters": true,
     "useDefineForClassFields": true
   },
-  "exclude": ["coverage", "dist", "node_modules", "test"]
+  "exclude": ["coverage", "dist", "node_modules", "test", "xcss.config.js"]
 }
