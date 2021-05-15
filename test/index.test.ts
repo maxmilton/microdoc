@@ -6,7 +6,7 @@ test.before.each(setup);
 test.after.each(teardown);
 
 test('renders microdoc core app', () => {
-  // eslint-disable-next-line global-require
+  // eslint-disable-next-line import/extensions, global-require
   require('../dist/index.js');
 
   // TODO: Better assertions
