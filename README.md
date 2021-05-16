@@ -22,7 +22,7 @@ Minimalist project documentation web app runtime. Create interactive docs, gener
 
 Recent versions of evergreen browsers.
 
-The expected use case of `microdoc` is developer docs so end-users are technically minded with an up-to-date browser. Only minimal effort are made polyfill browser APIs. That said, if you run into any compatibility bugs please [open an issue](https://github.com/maxmilton/microdoc/issues).
+The expected use case of `microdoc` is developer docs so end-users are technically minded with an up-to-date browser. Only minimal efforts are made to polyfill browser APIs. That said, if you run into any compatibility bugs please [open an issue](https://github.com/maxmilton/microdoc/issues).
 
 TODO: Show how to use https://polyfill.io for wider cross-browser support
 
