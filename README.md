@@ -28,6 +28,8 @@ TODO: Show how to use https://polyfill.io for wider cross-browser support
 
 ## Usage
 
+See our docs: <https://microdoc.js.org>
+
 TODO: Write me; show/describe basic `index.html`; also link to our docs: `docs/index.html`
 
 TODO: Add a note about if they're OK with sending me error details, add a trackx script snippet to their html -- it would be much appreciated!
