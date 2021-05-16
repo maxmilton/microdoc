@@ -1,20 +1,20 @@
-[![Build status](https://img.shields.io/github/workflow/status/MaxMilton/microdoc/ci)](https://github.com/MaxMilton/microdoc/actions)
+[![Build status](https://img.shields.io/github/workflow/status/maxmilton/microdoc/ci)](https://github.com/maxmilton/microdoc/actions)
 [![Coverage status](https://img.shields.io/codeclimate/coverage/MaxMilton/microdoc)](https://codeclimate.com/github/MaxMilton/microdoc)
 [![NPM version](https://img.shields.io/npm/v/microdoc.svg)](https://www.npmjs.com/package/microdoc)
 [![NPM bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/microdoc.svg)](https://bundlephobia.com/result?p=microdoc)
-[![Licence](https://img.shields.io/github/license/MaxMilton/microdoc.svg)](https://github.com/MaxMilton/microdoc/blob/master/LICENSE)
+[![Licence](https://img.shields.io/github/license/maxmilton/microdoc.svg)](https://github.com/maxmilton/microdoc/blob/master/LICENSE)
 
 # microdoc
 
-> WARNING: `microdoc` is a work in progress and should not be used in production!
+> WARNING: This is a work in progress and should not be used in production!
 
-Minimalist no-build project documentation web app runtime. For the times you want a better experience than just markdown files.
+Minimalist project documentation web app runtime. Create interactive docs, generated on the fly, from markdown files.
 
 **Features:**
 
 - Zero config
-- No build step — only a simple entry `index.html` is required as HTML is generated on the fly from your markdown content
-- Lightweight-ish — around 15kb g'zip'd, mostly the markdown parser
+- Zero build — only a simple `index.html` required; content generated on the fly from your markdown files
+- Lightweight-ish — around 16kb gzip'd, mostly the markdown parser
 - Works with any web server — uses hash based routing so no special server configuration required
 - Simple, functional, and friendly UX
 
@@ -22,11 +22,13 @@ Minimalist no-build project documentation web app runtime. For the times you wan
 
 Recent versions of evergreen browsers.
 
-It's expected users have up-to-date browsers so `microdoc` makes minimal effort to polyfill browser APIs. That said, if you run into any compatibility bugs please [open an issue](https://github.com/MaxMilton/microdoc/issues).
+The expected use case of `microdoc` is developer docs so end-users are technically minded with an up-to-date browser. Only minimal effort are made polyfill browser APIs. That said, if you run into any compatibility bugs please [open an issue](https://github.com/maxmilton/microdoc/issues).
+
+TODO: Show how to use https://polyfill.io for wider cross-browser support
 
 ## Usage
 
-TODO: Write me; show/describe basic `index.html`
+TODO: Write me; show/describe basic `index.html`; also link to our docs: `docs/index.html`
 
 TODO: Add a note about if they're OK with sending me error details, add a trackx script snippet to their html -- it would be much appreciated!
 
@@ -45,15 +47,15 @@ TODO: Documentation:
 
 ## Bugs
 
-Please report any bugs you encounter on the [GitHub issue tracker](https://github.com/MaxMilton/microdoc/issues).
+Please report any bugs you encounter on the [GitHub issue tracker](https://github.com/maxmilton/microdoc/issues).
 
 ## Changelog
 
-See [releases on GitHub](https://github.com/MaxMilton/microdoc/releases).
+See [releases on GitHub](https://github.com/maxmilton/microdoc/releases).
 
 ## Licence
 
-`microdoc` is an MIT licensed open source project. See [LICENCE](https://github.com/MaxMilton/microdoc/blob/master/LICENCE).
+`microdoc` is an MIT licensed open source project. See [LICENCE](https://github.com/maxmilton/microdoc/blob/master/LICENCE).
 
 ---
 

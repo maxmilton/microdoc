@@ -1,7 +1,7 @@
 {
   "name": "microdoc",
   "version": "0.0.5",
-  "description": "Minimalist no-build project documentation web app runtime",
+  "description": "Minimalist zero-config zero-build project documentation web app runtime",
   "license": "MIT",
   "repository": "MaxMilton/microdoc",
   "author": "Max Milton <max@happycode.ltd>",
