@@ -2,12 +2,19 @@ import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 // import { Footer } from '../src/components/Footer';
 import {
-  cleanup, render, setup, teardown,
+  cleanup,
+  mocksSetup,
+  mocksTeardown,
+  render,
+  setup,
+  teardown,
 } from './utils';
 
 type FooterComponent = typeof import('../src/components/Footer');
 
 test.before(setup);
+test.before(mocksSetup);
+test.after(mocksTeardown);
 test.after(teardown);
 test.after.each(cleanup);
 

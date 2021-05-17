@@ -1,8 +1,12 @@
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
-import { setup, teardown } from './utils';
+import {
+  mocksSetup, mocksTeardown, setup, teardown,
+} from './utils';
 
 test.before.each(setup);
+test.before.each(mocksSetup);
+test.after.each(mocksTeardown);
 test.after.each(teardown);
 
 test('renders microdoc core app', () => {

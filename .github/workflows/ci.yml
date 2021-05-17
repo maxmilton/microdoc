@@ -19,6 +19,23 @@ jobs:
           ./cc-test-reporter upload-coverage
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      # TODO: Use playwright CLI instead when playwright@1.12.0 is released -- https://github.com/microsoft/playwright-github-action/pull/44
+      - uses: maxmilton/action-setup-playwright@v1
+        with:
+          browsers: chromium
+      - run: yarn install --frozen-lockfile
+      - run: yarn run build
+      - run: yarn install --cwd=test/e2e --frozen-lockfile
+      # - run: yarn --cwd=test/e2e playwright install-deps chromium
+      - run: yarn run --cwd=test/e2e test-e2e
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -27,4 +44,7 @@ jobs:
         with:
           node-version: 16
       - run: yarn install --frozen-lockfile
+      - run: yarn install --cwd=test/e2e --frozen-lockfile
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
       - run: yarn run lint
