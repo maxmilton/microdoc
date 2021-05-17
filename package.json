@@ -25,7 +25,7 @@
     "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r esbuild-register test '\\.test\\.ts$'"
   },
   "dependencies": {
-    "@ekscss/framework": "^0.0.9",
+    "@ekscss/framework": "^0.0.10",
     "remarkable": "^2.0.1",
     "stage1": "^0.0.7"
   },
