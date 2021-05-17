@@ -23,9 +23,7 @@ test('contains a link to the microdocs docs', () => {
   const { Footer } = require('../src/components/Footer') as FooterComponent;
   const rendered = render(Footer());
   assert.ok(
-    rendered.container.querySelector(
-      'a[href="https://maxmilton.github.io/microdoc"]',
-    ),
+    rendered.container.querySelector('a[href="https://microdoc.js.org"]'),
   );
 });
 
@@ -36,7 +34,7 @@ test('matches snapshot', () => {
   assert.fixture(
     rendered.container.innerHTML,
     `<footer class="docs-footer mt5 muted fss tc">
-Powered by <a href="https://maxmilton.github.io/microdoc" class="muted" rel="noreferrer">microdoc</a>
+Powered by <a href="https://microdoc.js.org" class="muted" rel="noreferrer">microdoc</a>
 </footer>`,
   );
 });

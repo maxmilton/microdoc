@@ -4,7 +4,7 @@ export type FooterComponent = S1Node & HTMLDivElement;
 
 const view = h`
   <footer class="docs-footer mt5 muted fss tc">
-    Powered by <a href=https://maxmilton.github.io/microdoc class=muted rel=noreferrer>microdoc</a>
+    Powered by <a href=https://microdoc.js.org class=muted rel=noreferrer>microdoc</a>
   </footer>
 `;
 
