@@ -1,4 +1,6 @@
-.github/
-.vscode/
-node_modules/
-test/
+/.github/
+/.vscode/
+/coverage/
+/docs/
+/node_modules/
+/test/
