@@ -40,7 +40,7 @@ test('matches snapshot', () => {
   const rendered = render(Footer());
   assert.fixture(
     rendered.container.innerHTML,
-    `<footer class="docs-footer mt5 muted fss tc">
+    `<footer class="udoc-footer mt5 muted fss tc">
 Powered by <a href="https://microdoc.js.org" class="muted" rel="noreferrer">microdoc</a>
 </footer>`,
   );

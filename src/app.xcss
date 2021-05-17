@@ -19,29 +19,29 @@ body,
 // reset image display (from remedy.css) so README badges etc. are inline
 img { display: initial; }
 
-.docs-header {
+.udoc-header {
   border-bottom: 1px solid ${x.color.gray5};
 }
 
-.docs-logo {}
+.udoc-logo {}
 
-.docs-sidebar-wrapper {
+.udoc-sidebar-wrapper {
   // height: 100%;
   border-right: 1px solid ${x.color.gray5};
 }
 
-.docs-sidebar {
+.udoc-sidebar {
   width: var(--sidebar-width, 14rem);
 }
 
-.docs-menu-section {}
+.udoc-menu-section {}
 
-.docs-footer {}
+.udoc-footer {}
 
-.docs-main {}
+.udoc-main {}
 
-.docs-page {}
+.udoc-page {}
 
 /* Search plugin */
 
-.docs-search-wrapper {}
+.udoc-search-wrapper {}

@@ -12,7 +12,7 @@ const sectionView = create('h2');
 function Section(title: string): SectionComponent {
   const root = sectionView.cloneNode(true) as SectionComponent;
 
-  root.className = 'docs-menu-section';
+  root.className = 'udoc-menu-section';
   root.textContent = title;
 
   return root;
@@ -27,8 +27,8 @@ type RefNodes = {
 };
 
 const view = h`
-  <div class=docs-sidebar-wrapper>
-    <nav class="docs-sidebar pos-s t0 pa2">
+  <div class=udoc-sidebar-wrapper>
+    <nav class="udoc-sidebar pos-s t0 pa2">
       <div class="df f-col" #list></div>
     </nav>
   </div>

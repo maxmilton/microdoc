@@ -5,7 +5,7 @@ function doSearch(text: string) {
   // TODO: Implement search and list filtering
   // TODO: Search results page -- add virtual route
   console.log('@@ SEARCH TEXT', text);
-  document.querySelector('.docs-route')!.innerHTML = text;
+  document.querySelector('.udoc-route')!.innerHTML = text;
 }
 
 const debouncedSearch = debounce(doSearch);
@@ -17,7 +17,7 @@ type RefNodes = {
 };
 
 const view = window.microdoc.h`
-  <div class="docs-search-wrapper ml-auto mv-1">
+  <div class="udoc-search-wrapper ml-auto mv-1">
     <input type=search class="input search" placeholder=Search... #input>
   </div>
 `;
@@ -31,4 +31,4 @@ function Search(): SearchComponent {
   return root;
 }
 
-document.querySelector('.docs-header')!.appendChild(Search());
+document.querySelector('.udoc-header')!.appendChild(Search());

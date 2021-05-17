@@ -176,7 +176,7 @@ async function getContent(path: string): Promise<string> {
 type RouterComponent = HTMLDivElement;
 
 const view = create('div');
-view.className = 'docs-page con';
+view.className = 'udoc-page con';
 
 export function Router(): RouterComponent {
   const root = view;

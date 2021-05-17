@@ -12,7 +12,7 @@ export function render(): void {
 
   app.id = 'app';
   wrapper.className = 'df h100';
-  main.className = 'docs-main';
+  main.className = 'udoc-main';
 
   // TODO: Remove temporary warning (and its assossiated styles)
   append(

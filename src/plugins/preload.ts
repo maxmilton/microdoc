@@ -1,6 +1,6 @@
 // Simple markdown content preloader -- standalone; doesn't use microdoc private internals
 
-[...document.querySelectorAll('.docs-sidebar a')].forEach((link) => {
+[...document.querySelectorAll('.udoc-sidebar a')].forEach((link) => {
   const href = link.getAttribute('href');
 
   if (href && href.endsWith('.md')) {
