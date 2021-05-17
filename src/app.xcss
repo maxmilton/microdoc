@@ -16,6 +16,9 @@ body,
   height: 100%;
 }
 
+// reset image display (from remedy.css) so README badges etc. are inline
+img { display: initial; }
+
 .docs-header {
   border-bottom: 1px solid ${x.color.gray5};
 }
