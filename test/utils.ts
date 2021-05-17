@@ -1,23 +1,20 @@
 import { JSDOM } from 'jsdom';
 import { addHook } from 'pirates';
 
-const mountedContainers = new Set<{ container: HTMLDivElement }>();
-let revertXcssHook: () => void;
+// increase limit from 10
+global.Error.stackTraceLimit = 100;
 
-function innerText(el: HTMLElement) {
-  // eslint-disable-next-line no-param-reassign
-  el = el.cloneNode(true) as HTMLElement;
-  el.querySelectorAll('script,style').forEach((s) => s.remove());
-  return el.textContent;
-}
+const mountedContainers = new Set<HTMLDivElement>();
 
 function mockInnerText() {
   Object.defineProperty(global.window.HTMLElement.prototype, 'innerText', {
-    get() {
-      return innerText(this);
+    get(this: HTMLElement) {
+      const el = this.cloneNode(true) as HTMLElement;
+      el.querySelectorAll('script,style').forEach((s) => s.remove());
+      return el.textContent;
     },
-    set(value: string) {
-      (this as HTMLElement).textContent = value;
+    set(this: HTMLElement, value: string) {
+      this.textContent = value;
     },
   });
 }
@@ -40,12 +37,6 @@ export function setup(): void {
 
   // JSDOM doesn't support innerText yet -- https://github.com/jsdom/jsdom/issues/1245
   mockInnerText();
-
-  // Force imported .xcss files to return nothing to prevent test errors (unit
-  // tests can't assert CSS properly anyway; better to use playwright!)
-  revertXcssHook = addHook(() => '', {
-    exts: ['.xcss'],
-  });
 }
 
 export function teardown(): void {
@@ -58,8 +49,6 @@ export function teardown(): void {
   // @ts-expect-error - cleaning up
   // eslint-disable-next-line no-multi-assign
   global.window = global.document = undefined;
-
-  revertXcssHook();
 }
 
 export interface RenderResult {
@@ -69,8 +58,10 @@ export interface RenderResult {
    * A helper to print the HTML structure of the mounted container. The HTML is
    * prettified and may not accurately represent your actual HTML. It's intended
    * for debugging tests only and should not be used in any assertions.
+   *
+   * @param el - An element to inspect. Default is the mounted container.
    */
-  debug(): void;
+  debug(el?: Element): void;
 }
 
 export function render(component: Node): RenderResult {
@@ -79,22 +70,50 @@ export function render(component: Node): RenderResult {
   container.appendChild(component);
   document.body.appendChild(container);
 
-  mountedContainers.add({ container });
+  mountedContainers.add(container);
 
   return {
     container,
-    debug() {
+    debug(el = container) {
       // TODO: Prettify HTML
       console.log('DEBUG:');
-      console.log(container.innerHTML);
+      console.log(el.innerHTML);
     },
+    // unmount() {
+    //   container.removeChild(component);
+    // },
   };
 }
 
 export function cleanup(): void {
-  mountedContainers.forEach(({ container }) => {
+  if (!mountedContainers || !mountedContainers.size) {
+    throw new Error(
+      'No mounted components exist, did you forget to call render()?',
+    );
+  }
+
+  mountedContainers.forEach((container) => {
     if (container.parentNode === document.body) {
       document.body.removeChild(container);
     }
+
+    mountedContainers.delete(container);
   });
+}
+
+let revertXcssHook: () => void;
+
+export function mocksSetup(): void {
+  // Make imported .xcss files return empty to prevent test errors (unit tests
+  // can't assert styles properly anyway; better to create e2e tests!)
+  revertXcssHook = addHook(() => '', {
+    exts: ['.xcss'],
+  });
+
+  // Stub only; create e2e tests for actual use cases
+  global.window.Element.prototype.scrollIntoView = () => {};
+}
+
+export function mocksTeardown(): void {
+  revertXcssHook();
 }
