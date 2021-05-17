@@ -1,17 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies, no-console */
 
-// TODO: Write tests to verify each feature of the app works:
-//  - source code in vs output
-//  - on-screen virtual console
-//  - "Auto compile on input"
-//  - "Compile" button
-//  - "Clear Output" button
-//  - editor has line numbers
-//  - editor works as expected
-//  - view looks correct on desktop screen size
-//  - view looks correct on mobile screen size
-//  - view looks correct on tablet screen size
-//  - headings are visible
+// TODO: Write tests to verify each feature of the app works
 
 import { suite } from 'uvu';
 import * as assert from 'uvu/assert';
