@@ -31,7 +31,6 @@ jobs:
       - uses: maxmilton/action-setup-playwright@v1
         with:
           browsers: chromium
-          headless: false
       - run: yarn install --frozen-lockfile
       - run: yarn run build
       - run: yarn install --cwd=test/e2e --frozen-lockfile
