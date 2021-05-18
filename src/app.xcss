@@ -1,4 +1,56 @@
 /*
+* Packages
+*/
+
+@import '@ekscss/framework/level1.xcss';
+@import '@ekscss/framework/level2/type.xcss';
+@import '@ekscss/framework/level2/form.xcss';
+// @import '@ekscss/framework/level2/button.xcss';
+// @import '@ekscss/framework/level2/color.xcss';
+// @import '@ekscss/framework/level2/flex.xcss'; XXXX
+// @import '@ekscss/framework/level2/grid.xcss'; XXXX
+// @import '@ekscss/framework/level2/spacing.xcss'; XXXX
+// @import '@ekscss/framework/level2/display.xcss'; XXXX
+// @import '@ekscss/framework/level2/postition.xcss'; XXXX
+// @import '@ekscss/framework/level2/z-index.xcss';
+// @import '@ekscss/framework/level2/utils.xcss'; XXXX
+@import '@ekscss/framework/level2/a11y.xcss';
+@import '@ekscss/framework/addon/type-hyphens.xcss';
+@import '@ekscss/framework/addon/pretty.xcss';
+// @import '@ekscss/framework/addon/button.xcss';
+// @import '@ekscss/framework/addon/tag.xcss';
+@import '@ekscss/framework/addon/alert.xcss';
+@import '@ekscss/framework/addon/code.xcss';
+// @import '@ekscss/framework/addon/card.xcss';
+// @import '@ekscss/framework/addon/app-footer.xcss';
+// @import '@ekscss/framework/addon/ux-larger-click-zone.xcss';
+@import '@ekscss/framework/addon/native.xcss';
+
+/*
+* Package extracts (too heavy to include the whole files)
+*/
+
+#app {
+  .con { #apply: .con; }
+  .df { #apply: .df; }
+  .dfc { #apply: .dfc; }
+  .dib { #apply: .dib; }
+  .f-col { #apply: .f-col; }
+  .fss { #apply: .fss; }
+  .ml-auto { #apply: .ml-auto; }
+  .mt5 { #apply: .mt5; }
+  .muted { #apply: .muted; }
+  .mv-1 { #apply: .mv-1; }
+  .mv0 { #apply: .mv0; }
+  .pa2 { #apply: .pa2; }
+  .pa2 { #apply: .pa2; }
+  .pos-s { #apply: .pos-s; }
+  .t0 { #apply: .t0; }
+  .tc { #apply: .tc; }
+  .text { #apply: .text; }
+}
+
+/*
 * Docs app styles
 */
 
