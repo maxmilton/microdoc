@@ -3,20 +3,11 @@
 <title>microdoc</title>
 <meta name=description content="Minimalist no-build project documentation web app runtime">
 <meta name=viewport content="width=device-width">
-<link href=favicon.ico rel="shortcut icon">
-<!--
-<link href=https://cdn.jsdelivr.net/npm/@ekscss/framework@1/dist/level2.css rel=stylesheet>
-<link href=https://cdn.jsdelivr.net/npm/@ekscss/framework@1/dist/addons/pretty.css rel=stylesheet>
-<link href=https://cdn.jsdelivr.net/npm/@ekscss/framework@1/dist/addons/alert.css rel=stylesheet>
--->
-<link href=https://cdn.jsdelivr.net/npm/@ekscss/framework/dist/level2.css rel=stylesheet>
-<link href=https://cdn.jsdelivr.net/npm/@ekscss/framework/dist/addons/pretty.css rel=stylesheet>
-<link href=https://cdn.jsdelivr.net/npm/@ekscss/framework/dist/addons/alert.css rel=stylesheet>
-<link href=/dist/index.css rel=stylesheet>
-<script src=/dist/index.js defer></script>
+<link href=favicon.svg rel=icon type=image/svg+xml sizes=any>
+<link href=/dist/microdoc.css rel=stylesheet>
+<script src=/dist/microdoc.js defer></script>
 <script src=/dist/plugins/search.js defer></script>
 <script src=/dist/plugins/preload.js defer></script>
-<style>.udoc-footer{display:none;}</style>
 <script>
   var microdoc = {
     // root: 'https://raw.githubusercontent.com/maxmilton/microdoc/master/docs',
@@ -52,7 +43,7 @@
 </script>
 
 <script>
-  function ready(a){"loading"!==document.readyState?a():document.addEventListener("DOMContentLoaded",a)};
+  function ready(fn){"loading"!==document.readyState?fn():document.addEventListener("DOMContentLoaded",fn)};
 
   ready(()=>{
     function headLinks() {
