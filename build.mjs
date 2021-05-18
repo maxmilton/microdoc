@@ -5,6 +5,7 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable import/no-extraneous-dependencies, no-param-reassign */
 
+import csso from 'csso';
 import esbuild from 'esbuild';
 import {
   decodeUTF8,
@@ -40,6 +41,23 @@ function findOutputFile(outputFiles, ext) {
     file: outputFiles[index],
     index,
   };
+}
+
+/**
+ * @param {esbuild.BuildResult} buildResult
+ * @returns {esbuild.BuildResult}
+ */
+function minifyCss(buildResult) {
+  if (buildResult.outputFiles) {
+    const { file, index } = findOutputFile(buildResult.outputFiles, '.css');
+
+    if (file) {
+      const { css } = csso.minify(decodeUTF8(file.contents));
+      buildResult.outputFiles[index].contents = encodeUTF8(css);
+    }
+  }
+
+  return buildResult;
 }
 
 /**
@@ -98,6 +116,7 @@ esbuild
     logLevel: 'debug',
   })
   .then(minifyTemplates)
+  .then(minifyCss)
   .then(minifyJs)
   .then(writeFiles)
   .catch(handleErr);
@@ -123,6 +142,7 @@ esbuild
       logLevel: 'debug',
     })
     .then(minifyTemplates)
+    .then(minifyCss)
     .then(minifyJs)
     .then(writeFiles)
     .catch(handleErr);
