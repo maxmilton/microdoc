@@ -18,7 +18,7 @@ type RefNodes = {
 
 const view = window.microdoc.h`
   <div class="udoc-search-wrapper ml-auto mv-1">
-    <input type=search class="input search" placeholder=Search... #input>
+    <input #input type=search class=search placeholder=Search...>
   </div>
 `;
 
