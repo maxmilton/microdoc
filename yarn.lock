@@ -36,10 +36,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@ekscss/framework@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@ekscss/framework/-/framework-0.0.11.tgz#e408e9ebb868bf52b29b772f15625664e1e49b6e"
-  integrity sha512-FqsXO2YPNhGeZVdu7xxgcNjw7HOKGXBvYk9h72K7kWK9gK5qZwiA5iML3VjnA54W/T4U0ELjOtcX6wde30vRWg==
+"@ekscss/framework@^0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@ekscss/framework/-/framework-0.0.15.tgz#52112559bfb7113e860c83192a8b1270a8ad8cc6"
+  integrity sha512-NS8ZkvJC34DU5ZO8wzFTUHzjtBhOukUdEb4kwcT+1avtXYjmMQvNOMKRcZWEKD5cz96vFhmOS7GJuvy7yzujBw==
   dependencies:
     "@ekscss/plugin-apply" "^0.0.2"
     "@ekscss/plugin-import" "^0.0.2"
@@ -839,7 +839,12 @@ esbuild-register@2.5.0:
     esbuild "^0.11.5"
     jsonc-parser "^3.0.0"
 
-esbuild@0.11.23, esbuild@^0.11.5:
+esbuild@0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.12.0.tgz#84f49105994f437c2fe307daa5b32e8885c3d10d"
+  integrity sha512-vUKQ6TiMWGCtI7jLSrMmBVY4aj4As9J6NsFnrS9insd2F5KKD3mr1jUe+SB4KsMACkQIGtTtkksPpRmmqgxDHw==
+
+esbuild@^0.11.5:
   version "0.11.23"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.11.23.tgz#c42534f632e165120671d64db67883634333b4b8"
   integrity sha512-iaiZZ9vUF5wJV8ob1tl+5aJTrwDczlvGP0JoMmnpC2B0ppiMCu8n8gmy5ZTGl5bcG081XBVn+U+jP+mPFm5T5Q==
