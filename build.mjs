@@ -95,7 +95,7 @@ async function minifyJs(buildResult) {
 esbuild
   .build({
     entryPoints: ['src/index.ts'],
-    outfile: 'dist/index.js',
+    outfile: 'dist/microdoc.js',
     target,
     define: {
       'process.env.NODE_ENV': JSON.stringify(mode),

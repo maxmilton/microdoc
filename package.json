@@ -6,7 +6,7 @@
   "homepage": "https://maxmilton.github.io/microdoc",
   "author": "Max Milton <max@happycode.ltd>",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/microdoc.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
