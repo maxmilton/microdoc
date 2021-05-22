@@ -36,28 +36,28 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@ekscss/framework@^0.0.15":
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/@ekscss/framework/-/framework-0.0.15.tgz#52112559bfb7113e860c83192a8b1270a8ad8cc6"
-  integrity sha512-NS8ZkvJC34DU5ZO8wzFTUHzjtBhOukUdEb4kwcT+1avtXYjmMQvNOMKRcZWEKD5cz96vFhmOS7GJuvy7yzujBw==
+"@ekscss/framework@^0.0.16":
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@ekscss/framework/-/framework-0.0.16.tgz#746da45509db722f60ca29af06fbe8cadf572b2f"
+  integrity sha512-jaRhaoR8kao8DrpDgl8aFiBKolLJLjvRogEu+2DPIDv+0h5APnEu2AQUzkhvaQ9iLulKwaub7irJCzQNRos6qA==
   dependencies:
-    "@ekscss/plugin-apply" "^0.0.2"
-    "@ekscss/plugin-import" "^0.0.2"
+    "@ekscss/plugin-apply" "^0.0.3"
+    "@ekscss/plugin-import" "^0.0.3"
     "@ekscss/plugin-prefix" "^0.0.2"
     color "^3.1.3"
-    cssremedy "^0.1.0-beta.2"
+    cssremedy "github:jensimmons/cssremedy#6590d9630bdd324469620636d85b7ea3753e9a7b"
 
-"@ekscss/plugin-apply@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@ekscss/plugin-apply/-/plugin-apply-0.0.2.tgz#65322957890a01ef95e2bfba013e72037c46c687"
-  integrity sha512-vKhEtL5K5x1XoZjiQwuWlmH7I8htUQZo/EYU/MASEUCcvMM+VwVSA8kX9GqQEAIF2mtLszZg6FAOLJb9L1PJyQ==
+"@ekscss/plugin-apply@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@ekscss/plugin-apply/-/plugin-apply-0.0.3.tgz#5f0a34f3f98f18dd9b3c922cb22ead0788419c8c"
+  integrity sha512-z6laVDuz98VceOg5G5m2wS+GatymYi5iR7Ha0rQuqLNvTZtdW4uyL6eKzFi4hLcOJwkY/paFrXM7BN6w80ogvg==
   dependencies:
     stylis "^4.0.10"
 
-"@ekscss/plugin-import@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@ekscss/plugin-import/-/plugin-import-0.0.2.tgz#b1e3f375d750aecae5eb0b76f7c5ec2e08c999de"
-  integrity sha512-nCZTmrd+/QzY0z/f2YuKuDMG/NAGqDkYAonm9BgAU7yd20H57ugW7yvrSiXtHISrwf41jasRuehvEggh/u8KEA==
+"@ekscss/plugin-import@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@ekscss/plugin-import/-/plugin-import-0.0.3.tgz#efe8bb3d44553f68e6b7283a50c9affa4b34221d"
+  integrity sha512-gQOJAYCmvz/vKwhFgXe5gXx2nqOxCKRLodykdaLyfos/gmh/RqXUNUOc71HZQHwemm0q4J/+pqyjwBquFbBxkQ==
   dependencies:
     stylis "^4.0.10"
 
@@ -630,10 +630,10 @@ cssom@~0.3.6:
   resolved "https://registry.yarnpkg.com/cssom/-/cssom-0.3.8.tgz#9f1276f5b2b463f2114d3f2c75250af8c1a36f4a"
   integrity sha512-b0tGHbfegbhPJpxpiBPU2sCkigAqtM9O121le6bbOlgyV+NyGyCmVfJ6QW9eRjz8CpNfWEOYBIMIGRYkLwsIYg==
 
-cssremedy@^0.1.0-beta.2:
+"cssremedy@github:jensimmons/cssremedy#6590d9630bdd324469620636d85b7ea3753e9a7b":
   version "0.1.0-beta.2"
-  resolved "https://registry.yarnpkg.com/cssremedy/-/cssremedy-0.1.0-beta.2.tgz#ad900aecee78b37a4a6354ad1b0ca831fd38ee13"
-  integrity sha512-6mpPQzoUQHY7fiAxWCQDgPz73j5ugz2LqU62BLohUsxYurYLdTHQc+ilPm4i52wU2SxzPTrcRMIdniE2zGfjOA==
+  uid "6590d9630bdd324469620636d85b7ea3753e9a7b"
+  resolved "https://codeload.github.com/jensimmons/cssremedy/tar.gz/6590d9630bdd324469620636d85b7ea3753e9a7b"
 
 cssstyle@^2.3.0:
   version "2.3.0"
