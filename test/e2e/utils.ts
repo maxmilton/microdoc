@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-/* eslint-disable import/no-extraneous-dependencies, no-console, no-multi-assign */
+/* eslint-disable no-console, no-multi-assign */
 
 import http, { Server } from 'http';
 import colors from 'kleur';
