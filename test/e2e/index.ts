@@ -1,16 +1,16 @@
-/* eslint-disable import/no-extraneous-dependencies, no-console */
+/* eslint-disable no-console */
 
 // TODO: Write tests to verify each feature of the app works
 
 import { suite } from 'uvu';
 import * as assert from 'uvu/assert';
 import {
-  setup,
-  teardown,
-  renderPage,
   cleanupPage,
-  TestContext,
+  renderPage,
+  setup,
   sleep,
+  teardown,
+  TestContext,
 } from './utils';
 
 const test = suite<TestContext>('e2e');
