@@ -13,16 +13,17 @@
     "src"
   ],
   "scripts": {
-    "build": "NODE_ENV=production yarn node build.mjs",
-    "dev": "NODE_ENV=development yarn node build.mjs",
-    "lint": "yarn lint:css && yarn lint:js && yarn lint:ts",
+    "build": "pnpm run prebuild && NODE_ENV=production node build.mjs && pnpm run postbuild",
+    "dev": "NODE_ENV=development node build.mjs",
+    "lint": "pnpm run lint:css && pnpm run lint:js && pnpm run lint:ts",
     "lint:css": "echo 'TODO: CSS linting'; exit 0",
     "lint:js": "eslint --ignore-path .gitignore --ext .ts,.js,.mjs,.cjs .",
     "lint:ts": "tsc --noEmit",
     "postbuild": "tsc --emitDeclarationOnly",
     "prebuild": "rm -rf dist; mkdir -p dist/plugins",
     "serve": "sirv . --dev --cors",
-    "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r esbuild-register test '\\.test\\.ts$'"
+    "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r esbuild-register test '\\.test\\.ts$'",
+    "test-e2e": "node -r esbuild-register test/e2e/index.ts"
   },
   "dependencies": {
     "@ekscss/framework": "^0.0.16",
@@ -47,10 +48,13 @@
     "eslint-config-airbnb-typescript": "12.3.1",
     "eslint-plugin-import": "2.23.3",
     "jsdom": "16.6.0",
+    "kleur": "4.1.4",
     "pirates": "4.0.1",
+    "playwright-chromium": "1.11.0",
     "prettier": "2.3.0",
     "prettier-plugin-pkg": "0.9.0",
     "prettier-plugin-sh": "0.6.1",
+    "sirv": "1.0.12",
     "sirv-cli": "1.0.11",
     "terser": "5.7.0",
     "typescript": "4.2.4",
@@ -60,6 +64,10 @@
     "arrowParens": "always",
     "endOfLine": "lf",
     "singleQuote": true,
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "plugins": [
+      "./node_modules/prettier-plugin-pkg",
+      "./node_modules/prettier-plugin-sh"
+    ]
   }
 }
