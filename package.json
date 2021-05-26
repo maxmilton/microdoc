@@ -57,7 +57,7 @@
     "sirv": "1.0.12",
     "sirv-cli": "1.0.12",
     "terser": "5.7.0",
-    "typescript": "4.2.4",
+    "typescript": "4.3.2",
     "uvu": "0.5.1"
   },
   "prettier": {
