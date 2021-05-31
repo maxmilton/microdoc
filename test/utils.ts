@@ -5,6 +5,7 @@ import { addHook } from 'pirates';
 global.Error.stackTraceLimit = 100;
 
 const mountedContainers = new Set<HTMLDivElement>();
+let unhookXcss: () => void;
 
 function mockInnerText() {
   Object.defineProperty(global.window.HTMLElement.prototype, 'innerText', {
@@ -25,6 +26,17 @@ export function setup(): void {
       'JSDOM globals already exist, did you forget to run teardown()?',
     );
   }
+  if (typeof unhookXcss === 'function') {
+    throw new Error(
+      '.xcss hook already exists, did you forget to run teardown()?',
+    );
+  }
+
+  // Make imported .xcss files return empty to prevent test errors (unit tests
+  // can't assert styles properly anyway; better to create e2e tests!)
+  unhookXcss = addHook(() => '', {
+    exts: ['.xcss'],
+  });
 
   const dom = new JSDOM('<!DOCTYPE html>', {
     pretendToBeVisual: true,
@@ -43,12 +55,19 @@ export function teardown(): void {
   if (!global.window) {
     throw new Error('No JSDOM globals exist, did you forget to run setup()?');
   }
+  if (typeof unhookXcss !== 'function') {
+    throw new Error(
+      '.xcss hook does not exist, did you forget to run setup()?',
+    );
+  }
 
   // https://github.com/jsdom/jsdom#closing-down-a-jsdom
   global.window.close();
   // @ts-expect-error - cleaning up
   // eslint-disable-next-line no-multi-assign
   global.window = global.document = undefined;
+
+  unhookXcss();
 }
 
 export interface RenderResult {
@@ -101,19 +120,9 @@ export function cleanup(): void {
   });
 }
 
-let revertXcssHook: () => void;
-
 export function mocksSetup(): void {
-  // Make imported .xcss files return empty to prevent test errors (unit tests
-  // can't assert styles properly anyway; better to create e2e tests!)
-  revertXcssHook = addHook(() => '', {
-    exts: ['.xcss'],
-  });
-
   // Stub only; create e2e tests for actual use cases
   global.window.Element.prototype.scrollIntoView = () => {};
 }
 
-export function mocksTeardown(): void {
-  revertXcssHook();
-}
+export function mocksTeardown(): void {}
