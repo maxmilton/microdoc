@@ -1,9 +1,9 @@
 import { h } from 'stage1';
+import './app.xcss';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { Router } from './router';
 import { append, create } from './utils';
-import './app.xcss';
 
 export function render(): void {
   const app = create('div');
