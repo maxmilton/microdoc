@@ -1,7 +1,7 @@
 {
   "css.validate": false,
   "editor.codeActionsOnSave": [
-    // "source.organizeImports",
+    "source.sortImports",
     "source.fixAll.format",
     "source.fixAll.eslint",
     "source.fixAll.stylelint"
@@ -12,7 +12,7 @@
     "*.xcss": "scss"
   },
   "js/ts.implicitProjectConfig.checkJs": true,
-  "scss.validate": false
-  // "stylelint.enable": true,
-  // "stylelint.reportNeedlessDisables": true
+  "scss.validate": false,
+  "stylelint.enable": true,
+  "stylelint.reportNeedlessDisables": true
 }
