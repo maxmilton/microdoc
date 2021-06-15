@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 // import { Footer } from '../src/components/Footer';
