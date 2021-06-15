@@ -98,7 +98,7 @@ export async function renderPage(context: TestContext): Promise<void> {
     const loc = msg.location();
     console.log(
       colors.dim(
-        `${loc.url}:${loc.lineNumber}:${loc.columnNumber} ${msg.type()} >>`,
+        `${loc.url}:${loc.lineNumber}:${loc.columnNumber} [${msg.type()}]`,
       ),
       msg.text(),
     );
