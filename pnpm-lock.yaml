@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@ekscss/framework': ^0.0.16
+  '@ekscss/framework': ^0.0.17
   '@types/csso': 3.5.1
   '@types/jsdom': 16.2.11
   '@types/node': 15.12.2
@@ -34,7 +34,7 @@ specifiers:
   uvu: 0.5.1
 
 dependencies:
-  '@ekscss/framework': 0.0.16_ekscss@0.0.7
+  '@ekscss/framework': 0.0.17_ekscss@0.0.7
   remarkable: 2.0.1
   stage1: 0.0.7
 
@@ -102,8 +102,8 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@ekscss/framework/0.0.16_ekscss@0.0.7:
-    resolution: {integrity: sha512-jaRhaoR8kao8DrpDgl8aFiBKolLJLjvRogEu+2DPIDv+0h5APnEu2AQUzkhvaQ9iLulKwaub7irJCzQNRos6qA==}
+  /@ekscss/framework/0.0.17_ekscss@0.0.7:
+    resolution: {integrity: sha512-Iq8zWGH8YpiLvi2TKgSgMvJXd8LrIJTmsqzpTQJpIxrQkYhrV97dUNmMsFgLIQC5faNfJLkvNBbWiUBJzAbreg==}
     peerDependencies:
       ekscss: ^0.0.7
     dependencies:
@@ -111,8 +111,9 @@ packages:
       '@ekscss/plugin-import': 0.0.3_ekscss@0.0.7
       '@ekscss/plugin-prefix': 0.0.2_ekscss@0.0.7
       color: 3.1.3
-      cssremedy: github.com/jensimmons/cssremedy/6590d9630bdd324469620636d85b7ea3753e9a7b
+      cssremedy: github.com/jensimmons/cssremedy/468e31a7eda599eea2003ed7983c190828ffb5fd
       ekscss: 0.0.7
+      stylis: 4.0.10
     dev: false
 
   /@ekscss/plugin-apply/0.0.3_ekscss@0.0.7:
@@ -2797,8 +2798,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  github.com/jensimmons/cssremedy/6590d9630bdd324469620636d85b7ea3753e9a7b:
-    resolution: {tarball: https://codeload.github.com/jensimmons/cssremedy/tar.gz/6590d9630bdd324469620636d85b7ea3753e9a7b}
+  github.com/jensimmons/cssremedy/468e31a7eda599eea2003ed7983c190828ffb5fd:
+    resolution: {tarball: https://codeload.github.com/jensimmons/cssremedy/tar.gz/468e31a7eda599eea2003ed7983c190828ffb5fd}
     name: cssremedy
     version: 0.1.0-beta.2
     dev: false
