@@ -122,11 +122,11 @@ esbuild
   .catch(handleErr);
 
 // Plugins
-['search', 'preload'].forEach((pluginName) => {
+for (const plugin of ['search', 'preload']) {
   esbuild
     .build({
-      entryPoints: [`src/plugins/${pluginName}.ts`],
-      outfile: `dist/plugins/${pluginName}.js`,
+      entryPoints: [`src/plugins/${plugin}.ts`],
+      outfile: `dist/plugins/${plugin}.js`,
       target,
       define: {
         'process.env.NODE_ENV': JSON.stringify(mode),
@@ -146,4 +146,4 @@ esbuild
     .then(minifyJs)
     .then(writeFiles)
     .catch(handleErr);
-});
+}

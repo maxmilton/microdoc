@@ -163,11 +163,11 @@ async function getContent(path: string): Promise<string> {
     }
 
     content = await res.text();
-  } catch (err) {
+  } catch (error) {
     // eslint-disable-next-line no-console
-    console.error(err);
+    console.error(error);
 
-    content = loadingError(path, err);
+    content = loadingError(path, error);
   }
 
   return content;
@@ -216,7 +216,7 @@ export function Router(): RouterComponent {
           const el = document.getElementById(id)!;
           el.scrollIntoView();
           return;
-        } catch (err) {
+        } catch (error) {
           /* noop */
         }
       }

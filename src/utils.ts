@@ -22,13 +22,12 @@ export function setDefaults(): void {
 export function toName(path: string): string {
   return (
     path
-      // remove preceding directory path
-      .substring(path.lastIndexOf('/') + 1)
+      .slice(Math.max(0, path.lastIndexOf('/') + 1))
       .toLowerCase()
       // remove file extension
       .replace(/\.md/, '')
       // replace separators with a space
-      .replace(/[-_]+/g, ' ')
+      .replace(/[_-]+/g, ' ')
       // capitalise
       // https://github.com/sindresorhus/titleize/blob/main/index.js
       .replace(/(?:^|\s|-)\S/g, (x) => x.toUpperCase())
@@ -38,15 +37,16 @@ export function toName(path: string): string {
 /**
  * Delay running a function until X ms have passed since its last call.
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function debounce<T extends (...args: any[]) => any>(
   fn: T,
   delay = 260): T {
   let timer: number;
 
   // @ts-expect-error - Transparent wraper will not change input function type
-  return function (this: any, ...args) {
-    // eslint-disable-next-line max-len
-    // eslint-disable-next-line @typescript-eslint/no-this-alias, @typescript-eslint/no-unsafe-assignment
+  // eslint-disable-next-line func-names
+  return function (this: unknown, ...args) {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias, unicorn/no-this-assignment
     const context = this;
 
     window.clearTimeout(timer);

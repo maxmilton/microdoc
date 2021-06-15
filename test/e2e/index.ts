@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+/* eslint-disable unicorn/no-process-exit */
 
 // TODO: Write tests to verify each feature of the app works
 
@@ -22,24 +23,24 @@ const test = suite<TestContext>('e2e');
 test.before(async (context) => {
   try {
     await setup(context);
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(error);
     process.exit(1);
   }
 });
 test.after(async (context) => {
   try {
     await teardown(context);
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(error);
     process.exit(1);
   }
 });
 test.after.each(async (context) => {
   try {
     await cleanupPage(context);
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(error);
     process.exit(1);
   }
 });
