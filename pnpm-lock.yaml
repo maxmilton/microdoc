@@ -23,7 +23,7 @@ specifiers:
   kleur: 4.1.4
   pirates: 4.0.1
   playwright-chromium: 1.12.2
-  prettier: 2.3.1
+  prettier: 2.3.2
   prettier-plugin-pkg: 0.9.0
   prettier-plugin-sh: 0.6.1
   remarkable: ^2.0.1
@@ -61,9 +61,9 @@ devDependencies:
   kleur: 4.1.4
   pirates: 4.0.1
   playwright-chromium: 1.12.2
-  prettier: 2.3.1
-  prettier-plugin-pkg: 0.9.0_prettier@2.3.1
-  prettier-plugin-sh: 0.6.1_prettier@2.3.1
+  prettier: 2.3.2
+  prettier-plugin-pkg: 0.9.0_prettier@2.3.2
+  prettier-plugin-sh: 0.6.1_prettier@2.3.2
   sirv: 1.0.12
   sirv-cli: 1.0.12
   terser: 5.7.0
@@ -2527,25 +2527,25 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-pkg/0.9.0_prettier@2.3.1:
+  /prettier-plugin-pkg/0.9.0_prettier@2.3.2:
     resolution: {integrity: sha512-Wpxe5KuNMGriJl96Zs5GookaDxs+byl3qcDq4+qMOabxeK8un0am5yGNpyuVsSEWdTTEQ96chC8fPRxl/n+euA==}
     peerDependencies:
       prettier: ^2.0.5
     dependencies:
-      prettier: 2.3.1
+      prettier: 2.3.2
     dev: true
 
-  /prettier-plugin-sh/0.6.1_prettier@2.3.1:
+  /prettier-plugin-sh/0.6.1_prettier@2.3.2:
     resolution: {integrity: sha512-Weelg53FBb1Z5Q1/GpQIb4s//BdhmPAABjJfe6VTQ3m8upQjM36sVVboNOUVvYn3K+LMwzW4vkxhqLQ+vvfBKQ==}
     peerDependencies:
       prettier: ^2.0.5
     dependencies:
       mvdan-sh: 0.5.0
-      prettier: 2.3.1
+      prettier: 2.3.2
     dev: true
 
-  /prettier/2.3.1:
-    resolution: {integrity: sha512-p+vNbgpLjif/+D+DwAZAbndtRrR0md0MwfmOVN9N+2RgyACMT+7tfaRnT+WDPkqnuVwleyuBIG2XBxKDme3hPA==}
+  /prettier/2.3.2:
+    resolution: {integrity: sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
