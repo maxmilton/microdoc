@@ -22,7 +22,7 @@ specifiers:
   jsdom: 16.6.0
   kleur: 4.1.4
   pirates: 4.0.1
-  playwright-chromium: 1.12.2
+  playwright-chromium: 1.12.3
   prettier: 2.3.2
   prettier-plugin-pkg: 0.10.0
   prettier-plugin-sh: 0.7.0
@@ -60,7 +60,7 @@ devDependencies:
   jsdom: 16.6.0
   kleur: 4.1.4
   pirates: 4.0.1
-  playwright-chromium: 1.12.2
+  playwright-chromium: 1.12.3
   prettier: 2.3.2
   prettier-plugin-pkg: 0.10.0_prettier@2.3.2
   prettier-plugin-sh: 0.7.0_prettier@2.3.2
@@ -2481,8 +2481,8 @@ packages:
       find-up: 2.1.0
     dev: true
 
-  /playwright-chromium/1.12.2:
-    resolution: {integrity: sha512-+N4M6F9+tBLrP4w6jfQAfucIaHdAl/o2FkBkPJtbbygHC88Ul5h5mOAQXRT4yeIrkd1+dyyq8J9GYN2a1RzUjg==}
+  /playwright-chromium/1.12.3:
+    resolution: {integrity: sha512-YshYiT/ikEUNGU76lZu4qcfJscERo1257bS1dU1VcBZvz3xNMD2fO25vVOiDEbuYYntLcnj9lW6Qy1UpWSC+VA==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
