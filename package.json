@@ -34,7 +34,7 @@
     "@types/csso": "3.5.2",
     "@types/jsdom": "16.2.13",
     "@types/node": "15.12.2",
-    "@types/remarkable": "2.0.2",
+    "@types/remarkable": "2.0.3",
     "@typescript-eslint/eslint-plugin": "4.28.2",
     "@typescript-eslint/parser": "4.28.2",
     "c8": "7.7.3",
