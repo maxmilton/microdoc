@@ -29,7 +29,7 @@ specifiers:
   remarkable: ^2.0.1
   sirv: 1.0.12
   sirv-cli: 1.0.12
-  stage1: ^0.0.7
+  stage1: ^0.0.8
   terser: 5.7.1
   typescript: 4.3.5
   uvu: 0.5.1
@@ -37,7 +37,7 @@ specifiers:
 dependencies:
   '@ekscss/framework': 0.0.18_ekscss@0.0.7
   remarkable: 2.0.1
-  stage1: 0.0.7
+  stage1: 0.0.8
 
 devDependencies:
   '@types/csso': 4.2.0
@@ -2869,8 +2869,8 @@ packages:
       escape-string-regexp: 2.0.0
     dev: true
 
-  /stage1/0.0.7:
-    resolution: {integrity: sha512-MWkihmOuFnBmrsCUrGYl2buU/irpOedpV1apCCRUL7FI6L1ozALD73CDGEkk9kR6wSbkKiB0bMRqxfFVho7e4g==}
+  /stage1/0.0.8:
+    resolution: {integrity: sha512-9t6Ci/Muh1K1nxShfwIGVINwSfD5/vFjFD0WknV9GmaJM7Vs601sWOOpEQcOM/peGxj+8BjKEe0DEGvsBa/hyQ==}
     dev: false
 
   /string-width/4.2.2:

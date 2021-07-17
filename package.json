@@ -28,7 +28,7 @@
   "dependencies": {
     "@ekscss/framework": "^0.0.18",
     "remarkable": "^2.0.1",
-    "stage1": "^0.0.7"
+    "stage1": "^0.0.8"
   },
   "devDependencies": {
     "@types/csso": "4.2.0",
