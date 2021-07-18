@@ -13,7 +13,7 @@ specifiers:
   ekscss: 0.0.8
   esbuild: 0.12.15
   esbuild-minify-templates: 0.5.0
-  esbuild-plugin-ekscss: 0.0.3
+  esbuild-plugin-ekscss: 0.0.4
   esbuild-register: 2.6.0
   eslint: 7.31.0
   eslint-config-airbnb-typescript: 12.3.1
@@ -51,7 +51,7 @@ devDependencies:
   ekscss: 0.0.8
   esbuild: 0.12.15
   esbuild-minify-templates: 0.5.0_esbuild@0.12.15
-  esbuild-plugin-ekscss: 0.0.3_ekscss@0.0.8+esbuild@0.12.15
+  esbuild-plugin-ekscss: 0.0.4_ekscss@0.0.8+esbuild@0.12.15
   esbuild-register: 2.6.0
   eslint: 7.31.0
   eslint-config-airbnb-typescript: 12.3.1_69e2b4a65637679213cfa105c95bcb04
@@ -1209,10 +1209,10 @@ packages:
       meriyah: 4.1.5
     dev: true
 
-  /esbuild-plugin-ekscss/0.0.3_ekscss@0.0.8+esbuild@0.12.15:
-    resolution: {integrity: sha512-JvJKdVXxOdyX7bvaIhDnRiET9T6ktDRkjvr7dbxFonvuSTKVuW1LvrQ4OC3ea+HtNHvkL9FNjqHqvzht7Nv6dQ==}
+  /esbuild-plugin-ekscss/0.0.4_ekscss@0.0.8+esbuild@0.12.15:
+    resolution: {integrity: sha512-3pjJe6dHZUd7sfUwAvhZmOwWp2YgLbDrhi3O3Ube3NmgwdBMHRLnOtqv+qQXS20aA/yhUqNhyhnHCqhcXv9bgQ==}
     peerDependencies:
-      ekscss: ^0.0.7
+      ekscss: ^0.0.8
       esbuild: ^0.12.0
     dependencies:
       ekscss: 0.0.8
