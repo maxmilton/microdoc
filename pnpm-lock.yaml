@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@ekscss/framework': ^0.0.18
+  '@ekscss/framework': ^0.0.19
   '@types/csso': 4.2.0
   '@types/jsdom': 16.2.13
   '@types/node': 15.12.2
@@ -35,7 +35,7 @@ specifiers:
   uvu: 0.5.1
 
 dependencies:
-  '@ekscss/framework': 0.0.18_ekscss@0.0.7
+  '@ekscss/framework': 0.0.19_ekscss@0.0.7
   remarkable: 2.0.1
   stage1: 0.0.8
 
@@ -317,42 +317,42 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@ekscss/framework/0.0.18_ekscss@0.0.7:
-    resolution: {integrity: sha512-dFevIQj73cMlE0bD3xZAdSc/OAgR5U4KuPBii1UdLyIx+tPLQB2VxBnpsxRtnVW9ljzwZlg8i2sLlbAE/7JdXw==}
+  /@ekscss/framework/0.0.19_ekscss@0.0.7:
+    resolution: {integrity: sha512-q/NyylrXWzXIF+zA5t+1NrxMQd6ZUkLg4AJJcvvYEELUmRHL6v3T4qhsv9OQpTyiSsZUeSaMVd22RjtFxJ22Lg==}
     peerDependencies:
-      ekscss: ^0.0.7
+      ekscss: ^0.0.8
     dependencies:
-      '@ekscss/plugin-apply': 0.0.3_ekscss@0.0.7
-      '@ekscss/plugin-import': 0.0.3_ekscss@0.0.7
-      '@ekscss/plugin-prefix': 0.0.2_ekscss@0.0.7
-      color: 3.1.3
+      '@ekscss/plugin-apply': 0.0.4_ekscss@0.0.7
+      '@ekscss/plugin-import': 0.0.4_ekscss@0.0.7
+      '@ekscss/plugin-prefix': 0.0.3_ekscss@0.0.7
+      color: 4.0.0
       cssremedy: github.com/jensimmons/cssremedy/468e31a7eda599eea2003ed7983c190828ffb5fd
       ekscss: 0.0.7
       stylis: 4.0.10
     dev: false
 
-  /@ekscss/plugin-apply/0.0.3_ekscss@0.0.7:
-    resolution: {integrity: sha512-z6laVDuz98VceOg5G5m2wS+GatymYi5iR7Ha0rQuqLNvTZtdW4uyL6eKzFi4hLcOJwkY/paFrXM7BN6w80ogvg==}
+  /@ekscss/plugin-apply/0.0.4_ekscss@0.0.7:
+    resolution: {integrity: sha512-uZCUIUDSQdDTVlGaZspUligFoDX0DP1njkbcp4liAaDuWUlqCVnUvpsMNutnWmtjqaue46jY4houACnKxB06Pw==}
     peerDependencies:
-      ekscss: ^0.0.7
+      ekscss: ^0.0.8
     dependencies:
       ekscss: 0.0.7
       stylis: 4.0.10
     dev: false
 
-  /@ekscss/plugin-import/0.0.3_ekscss@0.0.7:
-    resolution: {integrity: sha512-gQOJAYCmvz/vKwhFgXe5gXx2nqOxCKRLodykdaLyfos/gmh/RqXUNUOc71HZQHwemm0q4J/+pqyjwBquFbBxkQ==}
+  /@ekscss/plugin-import/0.0.4_ekscss@0.0.7:
+    resolution: {integrity: sha512-Ui69xrZl84taluq6I9rmUY6+TyDbdUJvyNav6rh1aJ+RSyZkpR3bs/ca+/KrklaJp85BZUXet+QFg3XeU/9//w==}
     peerDependencies:
-      ekscss: ^0.0.7
+      ekscss: ^0.0.8
     dependencies:
       ekscss: 0.0.7
       stylis: 4.0.10
     dev: false
 
-  /@ekscss/plugin-prefix/0.0.2_ekscss@0.0.7:
-    resolution: {integrity: sha512-lMx6f55nao/32lpx7NyufwlUpe1ZWkbydDBwSNBvhtMb1k7jF/r22mlAa/87yzN22KB3wfBX5mFU6taM/8ywmw==}
+  /@ekscss/plugin-prefix/0.0.3_ekscss@0.0.7:
+    resolution: {integrity: sha512-HmbX8x6MjLD7mT+mo7NC+EnYh3asHwFLWHBtfiy/xYG2vdX8xJ32SDuEBROQelIrNUe9IYzWbpJUlfhXBUQBJQ==}
     peerDependencies:
-      ekscss: ^0.0.7
+      ekscss: ^0.0.8
     dependencies:
       ekscss: 0.0.7
       stylis: 4.0.10
@@ -931,32 +931,33 @@ packages:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
     dependencies:
       color-name: 1.1.3
+    dev: true
 
   /color-convert/2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
     engines: {node: '>=7.0.0'}
     dependencies:
       color-name: 1.1.4
-    dev: true
 
   /color-name/1.1.3:
     resolution: {integrity: sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=}
+    dev: true
 
   /color-name/1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
-  /color-string/1.5.5:
-    resolution: {integrity: sha512-jgIoum0OfQfq9Whcfc2z/VhCNcmQjWbey6qBX0vqt7YICflUmBCh9E9CiQD5GSJ+Uehixm3NUwHVhqUAWRivZg==}
+  /color-string/1.6.0:
+    resolution: {integrity: sha512-c/hGS+kRWJutUBEngKKmk4iH3sD59MBkoxVapS/0wgpCz2u7XsNloxknyvBhzwEs1IbV36D9PwqLPJ2DTu3vMA==}
     dependencies:
       color-name: 1.1.4
       simple-swizzle: 0.2.2
     dev: false
 
-  /color/3.1.3:
-    resolution: {integrity: sha512-xgXAcTHa2HeFCGLE9Xs/R82hujGtu9Jd9x4NW3T34+OMs7VoPsjwzRczKHvTAHeJwWFwX5j15+MgAppE8ztObQ==}
+  /color/4.0.0:
+    resolution: {integrity: sha512-aVUOa5aYWJSimvei14J5rdxLeljG0EB/uXTovVaaSokW+D4MsAz3MrKsRNaKqPa2KL7Wfvh7PZyIIaaX4lYdzQ==}
     dependencies:
-      color-convert: 1.9.3
-      color-string: 1.5.5
+      color-convert: 2.0.1
+      color-string: 1.6.0
     dev: false
 
   /colorette/1.2.2:
