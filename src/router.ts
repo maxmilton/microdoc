@@ -226,12 +226,12 @@ export function Router(): RouterComponent {
     });
   };
 
-  const onChange = () => loadRoute(window.location.hash.slice(1));
+  const handleHashChange = () => loadRoute(window.location.hash.slice(1));
+
+  window.onhashchange = handleHashChange;
 
   // load initial route
-  onChange();
-
-  window.addEventListener('hashchange', onChange);
+  handleHashChange();
 
   return root;
 }
