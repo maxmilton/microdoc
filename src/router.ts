@@ -133,10 +133,10 @@ function normaliseRoutes(routes: Routes, parentPath = '') {
 }
 
 export function setupRouter(): void {
-  setupSyntheticEvent('click');
-  document.body.__click = handleClick;
-
   normaliseRoutes(window.microdoc.routes);
+
+  document.body.__click = handleClick;
+  setupSyntheticEvent('click');
 }
 
 interface CodedError extends Error {
@@ -207,18 +207,18 @@ export function Router(): RouterComponent {
       root.innerHTML = html;
       document.title = `${route.name} | ${window.microdoc.title}`;
 
-      const hashPath = new URL(path, fakeBaseUrl).hash;
-
       // scroll to an in-page link
-      if (hashPath) {
-        try {
+      try {
+        const hashPath = new URL(path, fakeBaseUrl).hash;
+
+        if (hashPath) {
           const id = hashPath.slice(1);
           const el = document.getElementById(id)!;
           el.scrollIntoView();
           return;
-        } catch (error) {
-          /* noop */
         }
+      } catch (error) {
+        /* noop */
       }
 
       // scroll to top
