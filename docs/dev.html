@@ -3,11 +3,11 @@
 <title>microdoc</title>
 <meta name=description content="Minimalist zero-config zero-build project documentation web apps.">
 <meta name=viewport content="width=device-width">
-<link href=favicon.svg rel=icon type=image/svg+xml sizes=any>
+<link href=../favicon.svg rel=icon type=image/svg+xml sizes=any>
 <link href=/dist/microdoc.css rel=stylesheet>
 <script src=/dist/microdoc.js defer></script>
-<script src=/dist/plugins/search.js defer></script>
-<script src=/dist/plugins/preload.js defer></script>
+<!-- <script src=/dist/plugins/search.js defer></script> -->
+<!-- <script src=/dist/plugins/preload.js defer></script> -->
 <script>
   var microdoc = {
     // root: 'https://raw.githubusercontent.com/maxmilton/microdoc/master/docs',
@@ -45,18 +45,53 @@
 <script>
   function ready(fn){"loading"!==document.readyState?fn():document.addEventListener("DOMContentLoaded",fn)};
 
+  function headerExtra() {
+    const root = document.createElement('div');
+    const link = document.createElement('a');
+    const btn = document.createElement('button');
+    root.classList = 'ml-auto';
+    link.href = 'https://github.com/maxmilton/ekscss';
+    link.textContent = 'github';
+    btn.textContent = 'Load File/Dir';
+    btn.__click = fileLoader;
+    root.append(link, btn);
+    return root;
+  }
+
   ready(()=>{
-    function headLinks() {
-      const root = document.createElement('div');
-      const link = document.createElement('a');
-      link.href = 'https://github.com/MaxMilton/ekscss';
-      link.textContent = 'github';
-      root.appendChild(link);
-      return root;
+    document.querySelector('.udoc-header').append(headerExtra());
+  })
+
+  // XXX: Only works in Chrome and Edge (but not Brave)
+  // https://web.dev/file-system-access/
+  // https://github.com/GoogleChromeLabs/text-editor/blob/main/src/inline-scripts/fs-helpers.js
+  // https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API
+  // https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker
+  async function fileLoader() {
+    const [handle] = await window.showOpenFilePicker({
+      types: [{
+        accept: { 'text/*': ['.md', '.html', '.txt'] },
+        description: 'Markdown, HTML, or plain text',
+      }],
+    });
+
+    if (!handle) {
+      // User cancelled, or otherwise failed to open a file
+      return;
     }
 
-    document.querySelector('.udoc-header').appendChild(headLinks());
-  })
+    if (handle.kind === 'directory') {
+      // TODO: Handle dirs; dynamically populate routes + load first
+      console.log('DIR NAME', handle.name);
+      return;
+    }
+
+    const file = await handle.getFile();
+    const contents = await file.text();
+
+    // TODO: Render etc.
+    console.log('FILE CONTENTS', contents);
+  }
 </script>
 
 <noscript>You need to enable JavaScript to run this app.</noscript>

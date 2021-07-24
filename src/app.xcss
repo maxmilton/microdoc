@@ -27,7 +27,7 @@
 @import '@ekscss/framework/addon/native.xcss';
 
 /*
-* Package extracts (too heavy to include the whole files)
+* Framework package extracts (too heavy to include the whole files)
 */
 
 #app {
