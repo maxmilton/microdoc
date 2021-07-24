@@ -18,7 +18,7 @@ export function render(): void {
   append(
     h`
       <div id=alert class="alert alert-warn tc">
-        <strong>Warning:</strong> These docs and microdoc itself are a <abbr title="Work In Progress">WIP</abbr>, please <a href=https://github.com/MaxMilton/microdoc/issues rel=noreferrer>report issues</a>!
+        <strong>Warning:</strong> These docs and microdoc itself are a <abbr title="Work In Progress">WIP</abbr>, please <a href=https://github.com/maxmilton/microdoc/issues rel=noreferrer>report issues</a>!
       </div>
     `,
     app,
