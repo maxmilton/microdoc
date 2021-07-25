@@ -10,8 +10,8 @@
 <!-- <script src=/dist/plugins/preload.js defer></script> -->
 <script>
   var microdoc = {
-    // root: 'https://raw.githubusercontent.com/maxmilton/microdoc/master/docs',
-    // root: 'http://localhost:3000/docs',
+    // root: "https://raw.githubusercontent.com/maxmilton/microdoc/master/docs",
+    // root: "http://localhost:3000/docs",
     routes: [
       // "overview.md",
       "temp-md-1.md",
@@ -46,20 +46,20 @@
   function ready(fn){"loading"!==document.readyState?fn():document.addEventListener("DOMContentLoaded",fn)};
 
   function headerExtra() {
-    const root = document.createElement('div');
-    const link = document.createElement('a');
-    const btn = document.createElement('button');
-    root.classList = 'ml-auto';
-    link.href = 'https://github.com/maxmilton/ekscss';
-    link.textContent = 'github';
-    btn.textContent = 'Load File/Dir';
+    const root = document.createElement("div");
+    const link = document.createElement("a");
+    const btn = document.createElement("button");
+    root.classList = "ml-auto";
+    link.href = "https://github.com/maxmilton/ekscss";
+    link.textContent = "github";
+    btn.textContent = "Load File/Dir";
     btn.__click = fileLoader;
     root.append(link, btn);
     return root;
   }
 
   ready(()=>{
-    document.querySelector('.udoc-header').append(headerExtra());
+    document.querySelector(".udoc-header").append(headerExtra());
   })
 
   // XXX: Only works in Chrome and Edge (but not Brave)
@@ -70,8 +70,8 @@
   async function fileLoader() {
     const [handle] = await window.showOpenFilePicker({
       types: [{
-        accept: { 'text/*': ['.md', '.html', '.txt'] },
-        description: 'Markdown, HTML, or plain text',
+        accept: { "text/*": [".md", ".html", ".txt"] },
+        description: "Markdown, HTML, or plain text",
       }],
     });
 
@@ -80,9 +80,9 @@
       return;
     }
 
-    if (handle.kind === 'directory') {
+    if (handle.kind === "directory") {
       // TODO: Handle dirs; dynamically populate routes + load first
-      console.log('DIR NAME', handle.name);
+      console.log("DIR NAME", handle.name);
       return;
     }
 
@@ -90,7 +90,7 @@
     const contents = await file.text();
 
     // TODO: Render etc.
-    console.log('FILE CONTENTS', contents);
+    console.log("FILE CONTENTS", contents);
   }
 </script>
 
