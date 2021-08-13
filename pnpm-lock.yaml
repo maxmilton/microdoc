@@ -11,7 +11,7 @@ specifiers:
   c8: 7.8.0
   csso: 4.2.0
   ekscss: 0.0.8
-  esbuild: 0.12.19
+  esbuild: 0.12.20
   esbuild-minify-templates: 0.5.0
   esbuild-plugin-ekscss: 0.0.4
   esbuild-register: 2.6.0
@@ -49,9 +49,9 @@ devDependencies:
   c8: 7.8.0
   csso: 4.2.0
   ekscss: 0.0.8
-  esbuild: 0.12.19
-  esbuild-minify-templates: 0.5.0_esbuild@0.12.19
-  esbuild-plugin-ekscss: 0.0.4_ekscss@0.0.8+esbuild@0.12.19
+  esbuild: 0.12.20
+  esbuild-minify-templates: 0.5.0_esbuild@0.12.20
+  esbuild-plugin-ekscss: 0.0.4_ekscss@0.0.8+esbuild@0.12.20
   esbuild-register: 2.6.0
   eslint: 7.32.0
   eslint-config-airbnb-typescript: 12.3.1_b78d56622185c270608ea85d5b4fefff
@@ -1131,7 +1131,7 @@ packages:
       is-symbol: 1.0.4
     dev: true
 
-  /esbuild-minify-templates/0.5.0_esbuild@0.12.19:
+  /esbuild-minify-templates/0.5.0_esbuild@0.12.20:
     resolution: {integrity: sha512-SRjej2ZIpf1Msp4NQ9Kx+DKhsV55oOtrSXokDyUUKa8zgnCLPSVK7aqNT69uHNBAUFhckn2zlYRznVRRz949oA==}
     engines: {node: '>= 12'}
     peerDependencies:
@@ -1139,19 +1139,19 @@ packages:
     dependencies:
       '@ampproject/remapping': 1.0.1
       astray: 1.1.1
-      esbuild: 0.12.19
+      esbuild: 0.12.20
       magic-string: 0.25.7
       meriyah: 4.2.0
     dev: true
 
-  /esbuild-plugin-ekscss/0.0.4_ekscss@0.0.8+esbuild@0.12.19:
+  /esbuild-plugin-ekscss/0.0.4_ekscss@0.0.8+esbuild@0.12.20:
     resolution: {integrity: sha512-3pjJe6dHZUd7sfUwAvhZmOwWp2YgLbDrhi3O3Ube3NmgwdBMHRLnOtqv+qQXS20aA/yhUqNhyhnHCqhcXv9bgQ==}
     peerDependencies:
       ekscss: ^0.0.8
       esbuild: ^0.12.0
     dependencies:
       ekscss: 0.0.8
-      esbuild: 0.12.19
+      esbuild: 0.12.20
       joycon: 3.0.1
     dev: true
 
@@ -1164,6 +1164,12 @@ packages:
 
   /esbuild/0.12.19:
     resolution: {integrity: sha512-5NuT1G6THW7l3fsSCDkcPepn24R0XtyPjKoqKHD8LfhqMXzCdz0mrS9HgO6hIhzVT7zt0T+JGbzCqF5AH8hS9w==}
+    hasBin: true
+    requiresBuild: true
+    dev: true
+
+  /esbuild/0.12.20:
+    resolution: {integrity: sha512-u7+0qTo9Z64MD9PhooEngCmzyEYJ6ovFhPp8PLNh3UasR5Ihjv6HWVXqm8uHmasdQlpsAf0IsY4U0YVUfCpt4Q==}
     hasBin: true
     requiresBuild: true
     dev: true
