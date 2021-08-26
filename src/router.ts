@@ -1,9 +1,9 @@
 /* eslint-disable no-plusplus */
 
 import { Remarkable } from 'remarkable';
-import { setupSyntheticEvent } from 'stage1';
+import { create, setupSyntheticEvent } from 'stage1';
 import type { Route, Routes } from './types';
-import { create, toName } from './utils';
+import { toName } from './utils';
 
 interface RouteEntry {
   name: string;

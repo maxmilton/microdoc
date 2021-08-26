@@ -3,12 +3,6 @@ import type { Microdoc } from './types';
 
 const oldTitle = document.title;
 
-// DOM
-export const create = <K extends keyof HTMLElementTagNameMap>(
-  tagName: K,
-): HTMLElementTagNameMap[K] => document.createElement(tagName);
-export const append = <T extends Node>(node: T, parent: Node): T => parent.appendChild(node);
-
 export function setDefaults(): void {
   window.microdoc = {
     root: '.',

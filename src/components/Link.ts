@@ -1,5 +1,4 @@
-// import { h } from 'stage1';
-import { create } from '../utils';
+import { create } from 'stage1';
 
 export interface LinkProps {
   title: string;

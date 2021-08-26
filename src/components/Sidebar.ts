@@ -1,6 +1,7 @@
-import { h, S1Node } from 'stage1';
+import {
+  append, create, h, S1Node,
+} from 'stage1';
 import { routeMap } from '../router';
-import { append, create } from '../utils';
 import { Footer } from './Footer';
 import { Link } from './Link';
 
