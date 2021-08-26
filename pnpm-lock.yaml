@@ -28,7 +28,7 @@ specifiers:
   prettier-plugin-pkg: 0.10.0
   prettier-plugin-sh: 0.7.1
   remarkable: ^2.0.1
-  sirv: 1.0.15
+  sirv: 1.0.16
   sirv-cli: 1.0.14
   stage1: ^0.0.9
   terser: 5.7.2
@@ -66,7 +66,7 @@ devDependencies:
   prettier: 2.3.2
   prettier-plugin-pkg: 0.10.0_prettier@2.3.2
   prettier-plugin-sh: 0.7.1_prettier@2.3.2
-  sirv: 1.0.15
+  sirv: 1.0.16
   sirv-cli: 1.0.14
   terser: 5.7.2
   typescript: 4.3.5
@@ -425,6 +425,10 @@ packages:
 
   /@polka/url/1.0.0-next.17:
     resolution: {integrity: sha512-0p1rCgM3LLbAdwBnc7gqgnvjHg9KpbhcSphergHShlkWz8EdPawoMJ3/VbezI0mGC5eKCDzMaPgF9Yca6cKvrg==}
+    dev: true
+
+  /@polka/url/1.0.0-next.19:
+    resolution: {integrity: sha512-kHR9OHwP9WLpyC0i/WCAQCgf5hXkR9C+/21qxmrn+YwRlDRnBlqrcrFpXxhJTA9LDHJWa/FjoO2LJ12q8iWlEQ==}
     dev: true
 
   /@tootallnate/once/1.1.2:
@@ -2739,6 +2743,15 @@ packages:
     engines: {node: '>= 10'}
     dependencies:
       '@polka/url': 1.0.0-next.17
+      mime: 2.5.2
+      totalist: 1.1.0
+    dev: true
+
+  /sirv/1.0.16:
+    resolution: {integrity: sha512-x56DISeIgSUGVJrQS3mwu+UvtnzHenKDFBQL+UlAswxwk9b2Cpc0KGVvftoIJZgweOOXbMZzyXFYgVElOuSI1Q==}
+    engines: {node: '>= 10'}
+    dependencies:
+      '@polka/url': 1.0.0-next.19
       mime: 2.5.2
       totalist: 1.1.0
     dev: true
