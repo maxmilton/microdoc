@@ -82,8 +82,8 @@ function handleClick(event: MouseEvent): void {
 
   if (
     !href
-    || link!.target
-    || link!.host !== window.location.host
+    || link.target
+    || link.host !== window.location.host
     || href[0] === '#'
   ) {
     return;
@@ -167,7 +167,7 @@ async function getContent(path: string): Promise<string> {
     // eslint-disable-next-line no-console
     console.error(error);
 
-    content = loadingError(path, error);
+    content = loadingError(path, error as Error);
   }
 
   return content;

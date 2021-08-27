@@ -15,4 +15,5 @@
   "scss.validate": false,
   "stylelint.enable": true,
   "stylelint.reportNeedlessDisables": true
+  // "typescript.tsdk": "node_modules/typescript/lib"
 }
