@@ -99,7 +99,7 @@ function joinPaths(parent: string, route: string): string {
 
 function normaliseRoutes(routes: Routes, parentPath = '') {
   for (const route of routes) {
-    const newRoute: Partial<RouteEntry> = {};
+    const newRoute: { name?: string | undefined; section?: true } = {};
     let path: string | undefined;
 
     if (typeof route === 'string') {
