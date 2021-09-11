@@ -9,7 +9,7 @@ export function setDefaults(): void {
     routes: ['README.md'],
     title: oldTitle,
     h,
-    ...((window.microdoc as Partial<Microdoc> | undefined) || {}),
+    ...(window.microdoc as Partial<Microdoc> | undefined),
   };
 }
 
