@@ -157,7 +157,7 @@ async function getContent(path: string): Promise<string> {
     const res = await fetch(path);
 
     if (!res.ok) {
-      const error: CodedError = new Error(res.statusText);
+      const error: CodedError = new Error(await res.text());
       error.code = res.status;
       throw error;
     }
