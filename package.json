@@ -58,7 +58,7 @@
     "prettier-plugin-sh": "0.7.1",
     "sirv": "1.0.17",
     "sirv-cli": "1.0.14",
-    "terser": "5.7.2",
+    "terser": "5.8.0",
     "typescript": "4.4.3",
     "uvu": "0.5.1"
   },
