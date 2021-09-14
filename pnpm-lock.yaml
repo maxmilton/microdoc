@@ -11,7 +11,7 @@ specifiers:
   c8: 7.9.0
   csso: 4.2.0
   ekscss: 0.0.8
-  esbuild: 0.12.27
+  esbuild: 0.12.28
   esbuild-minify-templates: 0.5.0
   esbuild-plugin-ekscss: 0.0.4
   esbuild-register: 3.0.0
@@ -50,10 +50,10 @@ devDependencies:
   c8: 7.9.0
   csso: 4.2.0
   ekscss: 0.0.8
-  esbuild: 0.12.27
-  esbuild-minify-templates: 0.5.0_esbuild@0.12.27
-  esbuild-plugin-ekscss: 0.0.4_ekscss@0.0.8+esbuild@0.12.27
-  esbuild-register: 3.0.0_esbuild@0.12.27
+  esbuild: 0.12.28
+  esbuild-minify-templates: 0.5.0_esbuild@0.12.28
+  esbuild-plugin-ekscss: 0.0.4_ekscss@0.0.8+esbuild@0.12.28
+  esbuild-register: 3.0.0_esbuild@0.12.28
   eslint: 7.32.0
   eslint-config-airbnb-base: 14.2.1_b7a4de75e7d0094cbe979e30a9a325ab
   eslint-config-airbnb-typescript: 14.0.0_1b67b048a8a5232996e726fbda39d03a
@@ -1140,7 +1140,7 @@ packages:
       is-symbol: 1.0.4
     dev: true
 
-  /esbuild-minify-templates/0.5.0_esbuild@0.12.27:
+  /esbuild-minify-templates/0.5.0_esbuild@0.12.28:
     resolution: {integrity: sha512-SRjej2ZIpf1Msp4NQ9Kx+DKhsV55oOtrSXokDyUUKa8zgnCLPSVK7aqNT69uHNBAUFhckn2zlYRznVRRz949oA==}
     engines: {node: '>= 12'}
     peerDependencies:
@@ -1148,33 +1148,33 @@ packages:
     dependencies:
       '@ampproject/remapping': 1.0.1
       astray: 1.1.1
-      esbuild: 0.12.27
+      esbuild: 0.12.28
       magic-string: 0.25.7
       meriyah: 4.2.0
     dev: true
 
-  /esbuild-plugin-ekscss/0.0.4_ekscss@0.0.8+esbuild@0.12.27:
+  /esbuild-plugin-ekscss/0.0.4_ekscss@0.0.8+esbuild@0.12.28:
     resolution: {integrity: sha512-3pjJe6dHZUd7sfUwAvhZmOwWp2YgLbDrhi3O3Ube3NmgwdBMHRLnOtqv+qQXS20aA/yhUqNhyhnHCqhcXv9bgQ==}
     peerDependencies:
       ekscss: ^0.0.8
       esbuild: ^0.12.0
     dependencies:
       ekscss: 0.0.8
-      esbuild: 0.12.27
+      esbuild: 0.12.28
       joycon: 3.0.1
     dev: true
 
-  /esbuild-register/3.0.0_esbuild@0.12.27:
+  /esbuild-register/3.0.0_esbuild@0.12.28:
     resolution: {integrity: sha512-No7U3ZUd6gPrrC6gqdb3XFcf2lNqzn8nvQXcgcyOl8szMVuN6YUvOplnmakxWyogI9d8SiJMl0uzBzJck+Aoxw==}
     peerDependencies:
       esbuild: '>=0.12 <1'
     dependencies:
-      esbuild: 0.12.27
+      esbuild: 0.12.28
       jsonc-parser: 3.0.0
     dev: true
 
-  /esbuild/0.12.27:
-    resolution: {integrity: sha512-G42siADcTdRU1qRBxhiIiVLG4gcEMyWV4CWfLBdSii+olCueZJHFRHc7EqQRnRvNkSQq88i0k1Oufw/YVueUWQ==}
+  /esbuild/0.12.28:
+    resolution: {integrity: sha512-pZ0FrWZXlvQOATlp14lRSk1N9GkeJ3vLIwOcUoo3ICQn9WNR4rWoNi81pbn6sC1iYUy7QPqNzI3+AEzokwyVcA==}
     hasBin: true
     requiresBuild: true
     dev: true
