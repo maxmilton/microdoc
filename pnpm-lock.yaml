@@ -31,7 +31,7 @@ specifiers:
   sirv: 1.0.17
   sirv-cli: 1.0.14
   stage1: ^0.0.10
-  terser: 5.8.0
+  terser: 5.9.0
   typescript: 4.4.3
   uvu: 0.5.1
 
@@ -68,7 +68,7 @@ devDependencies:
   prettier-plugin-sh: 0.7.1_prettier@2.4.1
   sirv: 1.0.17
   sirv-cli: 1.0.14
-  terser: 5.8.0
+  terser: 5.9.0
   typescript: 4.4.3
   uvu: 0.5.1
 
@@ -2901,8 +2901,8 @@ packages:
       strip-ansi: 6.0.0
     dev: true
 
-  /terser/5.8.0:
-    resolution: {integrity: sha512-f0JH+6yMpneYcRJN314lZrSwu9eKkUFEHLN/kNy8ceh8gaRiLgFPJqrB9HsXjhEGdv4e/ekjTOFxIlL6xlma8A==}
+  /terser/5.9.0:
+    resolution: {integrity: sha512-h5hxa23sCdpzcye/7b8YqbE5OwKca/ni0RQz1uRX3tGh8haaGHqcuSqbGRybuAKNdntZ0mDgFNXPJ48xQ2RXKQ==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
