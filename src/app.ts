@@ -16,7 +16,7 @@ export function render(): void {
   // TODO: Remove temporary warning (and its assossiated styles)
   append(
     h`
-      <div id=alert class="alert alert-warn tc">
+      <div id=alert class="alert alert-warning tc">
         <strong>Warning:</strong> These docs and microdoc itself are a <abbr title="Work In Progress">WIP</abbr>, please <a href=https://github.com/maxmilton/microdoc/issues rel=noreferrer>report issues</a>!
       </div>
     `,
