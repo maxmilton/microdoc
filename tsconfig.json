@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "dist",
+    "outDir": "types",
 
     "target": "es2020",
     "module": "esnext",
@@ -15,7 +15,7 @@
     "checkJs": true,
 
     "declaration": true,
-    "declarationMap": true,
+    // "declarationMap": true,
     "sourceMap": true,
 
     "strict": true,
@@ -29,5 +29,13 @@
     "noUnusedParameters": true,
     "useDefineForClassFields": true
   },
-  "exclude": ["coverage", "dist", "node_modules", "test", "xcss.config.js"]
+  "exclude": [
+    "coverage",
+    "node_modules",
+    "plugin",
+    "test",
+    "types",
+    "microdoc.*",
+    "xcss.config.js"
+  ]
 }

@@ -34,6 +34,8 @@ TODO: Write me; show/describe basic `index.html`; also link to our docs: `docs/i
 
 TODO: Add a note about if they're OK with sending me error details, add a trackx script snippet to their html -- it would be much appreciated!
 
+TODO: For developers and package maintainers, explain why build output is to the package root instead of a `dist/` dir -- for cleaner and simpler CDN URLs
+
 TODO: Documentation:
 
 - Routes - Menu item name is automatically inferred from path (capitalised + separators into space) -- if you want some other name, use object notation with "name" field

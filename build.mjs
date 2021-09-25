@@ -95,7 +95,7 @@ async function minifyJs(buildResult) {
 esbuild
   .build({
     entryPoints: ['src/index.ts'],
-    outfile: 'dist/microdoc.js',
+    outfile: 'microdoc.js',
     target,
     define: {
       'process.env.NODE_ENV': JSON.stringify(mode),
@@ -130,8 +130,8 @@ esbuild
 for (const plugin of ['search', 'preload']) {
   esbuild
     .build({
-      entryPoints: [`src/plugins/${plugin}.ts`],
-      outfile: `dist/plugins/${plugin}.js`,
+      entryPoints: [`src/plugin/${plugin}.ts`],
+      outfile: `plugin/${plugin}.js`,
       target,
       define: {
         'process.env.NODE_ENV': JSON.stringify(mode),

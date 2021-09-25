@@ -6,11 +6,13 @@
   "homepage": "https://maxmilton.github.io/microdoc",
   "author": "Max Milton <max@happycode.ltd>",
   "license": "MIT",
-  "main": "dist/microdoc.js",
-  "types": "dist/index.d.ts",
+  "main": "microdoc.js",
+  "types": "types/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "microdoc.*",
+    "plugin",
+    "src",
+    "types"
   ],
   "scripts": {
     "build": "pnpm run prebuild && NODE_ENV=production node build.mjs && pnpm run postbuild",
@@ -20,7 +22,7 @@
     "lint:js": "eslint --ignore-path .gitignore --ext .ts,.js,.mjs,.cjs .",
     "lint:ts": "tsc --project test --noEmit",
     "postbuild": "tsc --emitDeclarationOnly",
-    "prebuild": "rm -rf dist; mkdir -p dist/plugins",
+    "prebuild": "rm -rf ./plugin ./types ./microdoc.*; mkdir -p plugin",
     "serve": "sirv . --dev --cors",
     "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r esbuild-register test '\\.test\\.ts$'",
     "test-e2e": "node -r esbuild-register test/e2e/index.ts"
