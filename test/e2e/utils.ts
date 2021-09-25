@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-console, no-multi-assign */
 
+import getPort from 'get-port';
 import http, { Server } from 'http';
 import colors from 'kleur';
 import path from 'path';
@@ -24,8 +25,8 @@ export interface TestContext {
 // increase limit from 10
 global.Error.stackTraceLimit = 100;
 
-const PORT = process.env.PORT || 8080;
-const DIST_DIR = path.join(__dirname, '../../dist');
+const DIST_DIR = path.join(__dirname, '../..');
+let port: number;
 let server: Server;
 
 export function sleep(ms: number): Promise<void> {
@@ -58,7 +59,7 @@ export async function setup(context: TestContext): Promise<void> {
   server.on('error', (err) => {
     if (err) throw err;
   });
-  server.listen(Number(PORT));
+  server.listen((port = await getPort()));
   context.browser = await chromium.launch();
 }
 
@@ -104,7 +105,7 @@ export async function renderPage(context: TestContext): Promise<void> {
     );
     context.consoleMessages.push(msg);
   });
-  await page.goto(`http://localhost:${PORT}/`, {
+  await page.goto(`http://localhost:${port}/`, {
     // waitUntil: 'networkidle', // necessary due to CDN links... but makes tests slow
   });
 }
