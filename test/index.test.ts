@@ -11,7 +11,7 @@ test.after.each(teardown);
 
 test('renders microdoc core app', () => {
   // eslint-disable-next-line import/extensions, global-require
-  require('../dist/microdoc.js');
+  require('../microdoc.js');
 
   // TODO: Better assertions
   assert.is(document.body.innerHTML.length > 600, true, 'body has content');
