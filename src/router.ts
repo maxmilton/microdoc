@@ -144,7 +144,7 @@ interface CodedError extends Error {
 }
 
 const loadingError = (path: string, err: CodedError) => `
-  <div class="alert alert-error">
+  <div class="alert alert-danger">
     <strong>ERROR:</strong> An error occured when loading ${path}
     <br/>${err.code || '500'} ${err.message || 'Unknown error'}
   </div>

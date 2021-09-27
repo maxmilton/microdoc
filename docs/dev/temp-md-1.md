@@ -1,4 +1,4 @@
-<div class="alert alert-error">
+<div class="alert alert-danger">
   <strong>ERROR:</strong> Unable to load "${path}"
   <br/>Reason: ${err.code || ''} ${err.message || ''}
 </div>
