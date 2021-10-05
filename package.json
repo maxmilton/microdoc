@@ -35,7 +35,7 @@
   "devDependencies": {
     "@types/csso": "4.2.0",
     "@types/jsdom": "16.2.13",
-    "@types/node": "16.10.2",
+    "@types/node": "16.10.3",
     "@types/remarkable": "2.0.3",
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
@@ -55,7 +55,7 @@
     "jsdom": "17.0.0",
     "kleur": "4.1.4",
     "pirates": "4.0.1",
-    "playwright-chromium": "1.15.1",
+    "playwright-chromium": "1.15.2",
     "prettier": "2.4.1",
     "prettier-plugin-pkg": "0.10.0",
     "prettier-plugin-sh": "0.7.1",
