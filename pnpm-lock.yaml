@@ -12,7 +12,7 @@ specifiers:
   csso: 4.2.0
   ekscss: 0.0.8
   esbuild: 0.13.4
-  esbuild-minify-templates: 0.5.0
+  esbuild-minify-templates: 0.5.1
   esbuild-plugin-ekscss: 0.0.4
   esbuild-register: 3.0.0
   eslint: 7.32.0
@@ -52,7 +52,7 @@ devDependencies:
   csso: 4.2.0
   ekscss: 0.0.8
   esbuild: 0.13.4
-  esbuild-minify-templates: 0.5.0_esbuild@0.13.4
+  esbuild-minify-templates: 0.5.1_esbuild@0.13.4
   esbuild-plugin-ekscss: 0.0.4_ekscss@0.0.8+esbuild@0.13.4
   esbuild-register: 3.0.0_esbuild@0.13.4
   eslint: 7.32.0
@@ -1229,11 +1229,11 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-minify-templates/0.5.0_esbuild@0.13.4:
-    resolution: {integrity: sha512-SRjej2ZIpf1Msp4NQ9Kx+DKhsV55oOtrSXokDyUUKa8zgnCLPSVK7aqNT69uHNBAUFhckn2zlYRznVRRz949oA==}
+  /esbuild-minify-templates/0.5.1_esbuild@0.13.4:
+    resolution: {integrity: sha512-5dfS2OxO8ySp1MM5y2nLm36r5lgwB45GpMo3z7R5Te+R0ftsysz+PwZNNHbejZuc9hThFSXHjozp8JdCM00wdQ==}
     engines: {node: '>= 12'}
     peerDependencies:
-      esbuild: ^0.10.0 || ^0.11.0 || ^0.12.0
+      esbuild: ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0
     dependencies:
       '@ampproject/remapping': 1.0.1
       astray: 1.1.1
