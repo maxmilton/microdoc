@@ -1,4 +1,4 @@
-import { append, create, h } from 'stage1';
+import { append, create } from 'stage1';
 import './app.xcss';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
@@ -12,16 +12,6 @@ export function render(): void {
   app.id = 'app';
   wrapper.className = 'df h100';
   main.className = 'udoc-main';
-
-  // TODO: Remove temporary warning (and its assossiated styles)
-  append(
-    h`
-      <div id=alert class="alert alert-warning tc">
-        <strong>Warning:</strong> These docs and microdoc itself are a <abbr title="Work In Progress">WIP</abbr>, please <a href=https://github.com/maxmilton/microdoc/issues rel=noreferrer>report issues</a>!
-      </div>
-    `,
-    app,
-  );
 
   append(Header(), app);
   append(Sidebar(), wrapper);

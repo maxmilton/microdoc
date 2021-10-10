@@ -54,11 +54,6 @@
 * Docs app styles
 */
 
-// TODO: Remove this once we no longer need the "WIP alert"
-#alert {
-  margin: 0;
-}
-
 // TODO: Add more CSS vars for customising the theme
 //  ↳ Move colours and sizes into CSS vars (instead of framework built-in classes)
 
