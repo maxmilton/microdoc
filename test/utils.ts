@@ -7,7 +7,7 @@ import { addHook } from 'pirates';
 global.Error.stackTraceLimit = 100;
 
 const mountedContainers = new Set<HTMLDivElement>();
-let unhookXcss: () => void;
+let unhookXcss: (() => void) | undefined;
 
 function mockInnerText() {
   Object.defineProperty(global.window.HTMLElement.prototype, 'innerText', {
@@ -70,6 +70,7 @@ export function teardown(): void {
   global.window = global.document = undefined;
 
   unhookXcss();
+  unhookXcss = undefined;
 }
 
 export interface RenderResult {

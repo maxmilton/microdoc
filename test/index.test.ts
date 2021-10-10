@@ -1,28 +1,58 @@
+/* eslint-disable no-console, unicorn/no-process-exit */
+
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 import {
   mocksSetup, mocksTeardown, setup, teardown,
 } from './utils';
 
-test.before.each(setup);
-test.before.each(mocksSetup);
-test.after.each(mocksTeardown);
-test.after.each(teardown);
+// FIXME: Use hooks normally once issue is fixed -- https://github.com/lukeed/uvu/issues/80
+// test.before.each(setup);
+// test.before.each(mocksSetup);
+// test.after.each(mocksTeardown);
+// test.after.each(teardown);
+test.before.each(() => {
+  try {
+    setup();
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+});
+test.before.each(() => {
+  try {
+    mocksSetup();
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+});
+test.after.each(() => {
+  try {
+    mocksTeardown();
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+});
+test.after.each(() => {
+  try {
+    teardown();
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+});
 
 test('renders microdoc core app', () => {
   // eslint-disable-next-line import/extensions, global-require
   require('../microdoc.js');
 
   // TODO: Better assertions
-  assert.is(document.body.innerHTML.length > 600, true, 'body has content');
+  assert.is(document.body.innerHTML.length > 450, true, 'body has content');
   const firstNode = document.body.firstChild as HTMLDivElement;
-  assert.is(firstNode.id, 'app', 'first element has id=app');
-  // TODO: Remove assertion once we remove the WIP alert
-  assert.is(
-    (firstNode.firstChild as HTMLDivElement).id,
-    'alert',
-    'apps first element has id=alert',
-  );
+  assert.instance(firstNode, window.HTMLDivElement);
+  assert.is(firstNode.id, 'app', 'first element id=app');
 });
 
 // TODO: Test app renders with each plugin and with all plugins

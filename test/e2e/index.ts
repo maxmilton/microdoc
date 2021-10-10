@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-/* eslint-disable unicorn/no-process-exit */
+/* eslint-disable no-console, unicorn/no-process-exit */
 
 // TODO: Write tests to verify each feature of the app works
 
@@ -48,7 +47,6 @@ test.after.each(async (context) => {
 test('renders a basic microdoc app', async (context) => {
   context.fixture = 'docs1';
   await renderPage(context);
-  assert.ok(await context.page.$('#alert'), 'has #alert element');
   assert.ok(await context.page.$('.udoc-header'), 'has .udoc-header element');
   assert.ok(await context.page.$('.udoc-logo'), 'has .udoc-logo element');
   assert.ok(

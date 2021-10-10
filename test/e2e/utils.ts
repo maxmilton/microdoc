@@ -2,7 +2,7 @@
 /* eslint-disable no-console, no-multi-assign */
 
 import getPort from 'get-port';
-import http, { Server } from 'http';
+import http from 'http';
 import colors from 'kleur';
 import path from 'path';
 import {
@@ -25,9 +25,9 @@ export interface TestContext {
 // increase limit from 10
 global.Error.stackTraceLimit = 100;
 
-const DIST_DIR = path.join(__dirname, '../..');
+const DIST_DIR = path.join(__dirname, '..', '..');
 let port: number;
-let server: Server;
+let server: http.Server;
 
 export function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -44,7 +44,7 @@ export async function setup(context: TestContext): Promise<void> {
         if (req.url === '/favicon.ico') return;
 
         if (context.fixture) {
-          sirv(path.join(__dirname, '../fixtures', context.fixture), {
+          sirv(path.join(__dirname, '..', 'fixtures', context.fixture), {
             onNoMatch(req2) {
               throw new Error(`No file match for URL: ${req2.url!}`);
             },
