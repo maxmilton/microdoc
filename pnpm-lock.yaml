@@ -32,7 +32,7 @@ specifiers:
   sirv-cli: 1.0.14
   stage1: ^0.0.10
   terser: 5.9.0
-  tsm: 2.1.1
+  tsm: 2.1.2
   typescript: 4.4.3
   uvu: 0.5.2
 
@@ -70,7 +70,7 @@ devDependencies:
   sirv: 1.0.17
   sirv-cli: 1.0.14
   terser: 5.9.0
-  tsm: 2.1.1
+  tsm: 2.1.2
   typescript: 4.4.3
   uvu: 0.5.2
 
@@ -3131,8 +3131,8 @@ packages:
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
 
-  /tsm/2.1.1:
-    resolution: {integrity: sha512-RcQg8MzgfZ9GwPvdohrxFb02WFt1fvYa2yZyrPNFGJo2rITkw8aIuQo/+IkpytbzhELPXXUUMsqCMHS/ky+HoA==}
+  /tsm/2.1.2:
+    resolution: {integrity: sha512-1jF8LNTRcPsw15ajZK2ra3RA2PSCdVGvJzF/Q1TCsu1tH2dY59HgNWxhttN2s1mfJUFoattjf9QZ410u5bgtJQ==}
     engines: {node: '>=12'}
     hasBin: true
     dependencies:
