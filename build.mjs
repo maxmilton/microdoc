@@ -94,6 +94,18 @@ async function minifyJs(buildResult) {
   return buildResult;
 }
 
+/**
+ * @param {esbuild.BuildResult} buildResult
+ * @returns {Promise<esbuild.BuildResult>}
+ */
+async function analyzeMeta(buildResult) {
+  if (buildResult.metafile) {
+    console.log(await esbuild.analyzeMetafile(buildResult.metafile));
+  }
+
+  return buildResult;
+}
+
 // Main web app
 esbuild
   .build({
@@ -121,8 +133,10 @@ esbuild
     sourcemap: true,
     watch: dev,
     write: dev,
+    metafile: process.stdout.isTTY,
     logLevel: 'debug',
   })
+  .then(analyzeMeta)
   .then(minifyTemplates)
   .then(minifyCss)
   .then(minifyJs)
@@ -157,8 +171,10 @@ for (const plugin of ['search', 'preload']) {
       sourcemap: true,
       watch: dev,
       write: dev,
+      metafile: process.stdout.isTTY,
       logLevel: 'debug',
     })
+    .then(analyzeMeta)
     .then(minifyTemplates)
     .then(minifyCss)
     .then(minifyJs)
