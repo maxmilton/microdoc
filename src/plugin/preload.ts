@@ -1,17 +1,23 @@
-// Simple markdown content preloader -- standalone; doesn't use microdoc private internals
+/**
+ * Microdoc Preload Plugin
+ *
+ * @fileoverview Simple standalone route content preloader.
+ */
+
+const reTextFileExt = /\.(md|txt)$/;
 
 for (const link of document.querySelectorAll('.udoc-sidebar a')) {
   const href = link.getAttribute('href');
 
-  if (href && href.endsWith('.md')) {
+  if (href && reTextFileExt.test(href)) {
     try {
       // eslint-disable-next-line no-void
       void fetch(window.microdoc.root + href.slice(1));
     } catch (error) {
-      /* noop */
+      /* No op */
     }
   }
 }
 
-// mark file as module to keep TS happy
+// Keep TS happy
 export {};
