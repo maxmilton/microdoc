@@ -1,22 +1,15 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "types",
-
-    "target": "es2020",
+    "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "skipLibCheck": true,
     "allowJs": true,
     "checkJs": true,
-
-    "declaration": true,
-    // "declarationMap": true,
-    "sourceMap": true,
+    "noEmit": true,
 
     "strict": true,
     "allowUnreachableCode": false,
@@ -26,8 +19,7 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "useDefineForClassFields": true
+    "noUnusedParameters": true
   },
   "exclude": [
     "coverage",

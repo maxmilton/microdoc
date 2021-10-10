@@ -3,26 +3,22 @@
   "version": "0.0.13",
   "description": "Minimalist zero-config zero-build project documentation web apps.",
   "repository": "maxmilton/microdoc",
-  "homepage": "https://maxmilton.github.io/microdoc",
+  "homepage": "https://microdoc.js.org",
   "author": "Max Milton <max@happycode.ltd>",
   "license": "MIT",
   "main": "microdoc.js",
-  "types": "types/index.d.ts",
   "files": [
     "microdoc.*",
-    "plugin",
-    "src",
-    "types"
+    "plugin"
   ],
   "scripts": {
-    "build": "pnpm run prebuild && NODE_ENV=production node build.mjs && pnpm run postbuild",
+    "build": "pnpm run prebuild && NODE_ENV=production node build.mjs",
     "dev": "NODE_ENV=development node build.mjs",
     "lint": "pnpm run lint:css && pnpm run lint:js && pnpm run lint:ts",
     "lint:css": "echo 'TODO: CSS linting'; exit 0",
     "lint:js": "eslint --ignore-path .gitignore --ext .ts,.js,.mjs,.cjs .",
-    "lint:ts": "tsc --project test --noEmit",
-    "postbuild": "tsc --emitDeclarationOnly",
-    "prebuild": "rm -rf ./plugin ./types ./microdoc.*; mkdir -p plugin",
+    "lint:ts": "tsc --project test",
+    "prebuild": "rm -rf plugin microdoc.* || true; mkdir -p plugin",
     "serve": "sirv . --dev --cors",
     "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r tsm test '\\.test\\.ts$'",
     "test-e2e": "node -r tsm test/e2e/index.ts"
