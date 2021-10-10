@@ -15,8 +15,11 @@ import {
 } from 'esbuild-minify-templates';
 import { xcss } from 'esbuild-plugin-ekscss';
 import fs from 'fs';
+import { createRequire } from 'module';
 import path from 'path';
 import { minify } from 'terser';
+
+const require = createRequire(import.meta.url);
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -126,6 +129,16 @@ esbuild
   .then(writeFiles)
   .catch(handleErr);
 
+/** @type {esbuild.Plugin} */
+const fuseBasic = {
+  name: 'fuse-basic',
+  setup(build) {
+    build.onResolve({ filter: /^fuse\.js$/ }, () => ({
+      path: require.resolve('fuse.js/dist/fuse.basic.esm.js'),
+    }));
+  },
+};
+
 // Plugins
 for (const plugin of ['search', 'preload']) {
   esbuild
@@ -136,7 +149,7 @@ for (const plugin of ['search', 'preload']) {
       define: {
         'process.env.NODE_ENV': JSON.stringify(mode),
       },
-      plugins: [xcss()],
+      plugins: [xcss(), fuseBasic],
       format: 'iife',
       banner: { js: '"use strict";' },
       bundle: true,
