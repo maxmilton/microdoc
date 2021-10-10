@@ -1,54 +1,4 @@
-/*
-* Packages
-*/
-
-@import '@ekscss/framework/level1.xcss';
-@import '@ekscss/framework/level2/type.xcss';
-@import '@ekscss/framework/level2/form.xcss';
-// @import '@ekscss/framework/level2/button.xcss';
-// @import '@ekscss/framework/level2/color.xcss';
-// @import '@ekscss/framework/level2/flex.xcss'; XXXX
-// @import '@ekscss/framework/level2/grid.xcss'; XXXX
-// @import '@ekscss/framework/level2/spacing.xcss'; XXXX
-// @import '@ekscss/framework/level2/display.xcss'; XXXX
-// @import '@ekscss/framework/level2/postition.xcss'; XXXX
-// @import '@ekscss/framework/level2/z-index.xcss';
-// @import '@ekscss/framework/level2/utils.xcss'; XXXX
-@import '@ekscss/framework/level2/a11y.xcss';
-@import '@ekscss/framework/addon/type-hyphens.xcss';
-@import '@ekscss/framework/addon/pretty.xcss';
-// @import '@ekscss/framework/addon/button.xcss';
-// @import '@ekscss/framework/addon/tag.xcss';
-@import '@ekscss/framework/addon/alert.xcss';
-@import '@ekscss/framework/addon/code.xcss';
-// @import '@ekscss/framework/addon/card.xcss';
-// @import '@ekscss/framework/addon/app-footer.xcss';
-// @import '@ekscss/framework/addon/ux-larger-click-zone.xcss';
-@import '@ekscss/framework/addon/native.xcss';
-
-/*
-* Framework package extracts (too heavy to include the whole files)
-*/
-
-#app {
-  .con { #apply: .con; }
-  .df { #apply: .df; }
-  .dfc { #apply: .dfc; }
-  .dib { #apply: .dib; }
-  .f-col { #apply: .f-col; }
-  .fss { #apply: .fss; }
-  .ml-auto { #apply: .ml-auto; }
-  .mt5 { #apply: .mt5; }
-  .muted { #apply: .muted; }
-  .mv-1 { #apply: .mv-1; }
-  .mv0 { #apply: .mv0; }
-  .pa2 { #apply: .pa2; }
-  .pa2 { #apply: .pa2; }
-  .pos-s { #apply: .pos-s; }
-  .t0 { #apply: .t0; }
-  .tc { #apply: .tc; }
-  .text { #apply: .text; }
-}
+@import './css/index.xcss';
 
 /*
 * Docs app styles
@@ -59,6 +9,7 @@
 
 html,
 body,
+#app,
 .h100 {
   height: 100%;
 }
@@ -78,17 +29,60 @@ img { display: initial; }
 }
 
 .udoc-sidebar {
+  #apply: .pos-s, .t0, .pa2;
+
   width: var(--sidebar-width, 14rem);
 }
 
 .udoc-menu-section {}
 
-.udoc-footer {}
+.udoc-footer {
+  font-size: 16px;
+  text-align: center;
+}
 
-.udoc-main {}
+.udoc-main {
+  width: 100%;
+  margin: 0 auto;
+}
 
-.udoc-page {}
+.udoc-page {
+  width: 100%;
+}
+
+.udoc-icon {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 /* Search plugin */
 
-.udoc-search-wrapper {}
+.udoc-search-wrapper {
+  position: relative;
+}
+
+.udoc-search {
+  padding-left: 2rem;
+}
+
+.udoc-icon-search {
+  position: absolute;
+  top: 0.55rem;
+  left: 0.5rem;
+  color: ${x.color.gray2};
+}
+
+.udoc-search-results {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  padding: 0.5rem 1rem;
+  background: ${x.color.background};
+  border: 1px solid ${x.color.gray2};
+}

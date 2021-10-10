@@ -1,4 +1,4 @@
-import type { h } from 'stage1';
+import type { append, h } from 'stage1';
 
 declare global {
   interface HTMLElement {
@@ -36,6 +36,7 @@ export interface Microdoc {
   routes: Routes;
   /** `stage1` tagged template literal function for plugin or advanced use. */
   h: typeof h;
+  append: typeof append;
 }
 
 export interface Route {
