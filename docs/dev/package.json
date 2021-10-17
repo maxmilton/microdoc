@@ -4,6 +4,6 @@
   },
   "devDependencies": {
     "microdoc": "../..",
-    "sirv-cli": "^1.0.0"
+    "sirv-cli": "*"
   }
 }
