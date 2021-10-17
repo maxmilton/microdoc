@@ -139,15 +139,21 @@ export function setupRouter(): void {
   setupSyntheticEvent('click');
 }
 
-interface CodedError extends Error {
-  code?: number;
-}
-
-const loadingError = (path: string, err: CodedError) => `
+// const loadingError = (path: string, error: Error) => `
+//   <div class="alert alert-danger">
+//     <strong>Error:</strong> ${
+//   (error.message || error).toString() || 'Unknown error'
+// }
+//   </div>
+//
+//   <p>An error occured when loading ${path}</p>
+// `;
+const loadingError = (path: string, error: unknown) => `
   <div class="alert alert-danger">
-    <strong>ERROR:</strong> An error occured when loading ${path}
-    <br/>${err.code || '500'} ${err.message || 'Unknown error'}
+    <strong>Error:</strong> ${`${error as string}` || 'Unknown error'}
   </div>
+
+  <p>Unable to load ${path}</p>
 `;
 
 async function getContent(path: string): Promise<string> {
@@ -155,19 +161,16 @@ async function getContent(path: string): Promise<string> {
 
   try {
     const res = await fetch(path);
+    content = await res.text();
 
     if (!res.ok) {
-      const error: CodedError = new Error(await res.text());
-      error.code = res.status;
-      throw error;
+      throw new Error(content);
     }
-
-    content = await res.text();
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(error);
 
-    content = loadingError(path, error as Error);
+    content = loadingError(path, error);
   }
 
   return content;
@@ -185,18 +188,17 @@ export function Router(): RouterComponent {
     root.innerHTML = 'Loading...';
 
     if (!path || path === '/') {
-      // first route
-      routeTo(routeMap.keys().next().value);
+      const [[firstRoute]] = routeMap;
+      routeTo(firstRoute);
       return;
     }
 
     const route = routeMap.get(`#${path}`);
 
+    // TODO: Should we allow fetching a route even if it's not registered?
     if (!route) {
-      const err: CodedError = new Error('Unknown route');
-      err.code = 404;
-      root.innerHTML = loadingError(path, err);
-      document.title = `404 Error | ${window.microdoc.title}`;
+      root.innerHTML = loadingError(path, new Error('Invalid route'));
+      document.title = `Error | ${window.microdoc.title}`;
       return;
     }
 
