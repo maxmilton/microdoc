@@ -4,7 +4,7 @@ specifiers:
   '@ekscss/framework': ^0.0.26
   '@types/csso': 4.2.0
   '@types/jsdom': 16.2.13
-  '@types/node': 16.11.1
+  '@types/node': 16.11.0
   '@types/remarkable': 2.0.3
   '@typescript-eslint/eslint-plugin': 5.0.0
   '@typescript-eslint/parser': 5.0.0
@@ -46,7 +46,7 @@ dependencies:
 devDependencies:
   '@types/csso': 4.2.0
   '@types/jsdom': 16.2.13
-  '@types/node': 16.11.1
+  '@types/node': 16.11.0
   '@types/remarkable': 2.0.3
   '@typescript-eslint/eslint-plugin': 5.0.0_6ba17f843b80f9635cca52a4b13c685c
   '@typescript-eslint/parser': 5.0.0_eslint@7.32.0+typescript@4.4.4
@@ -474,6 +474,10 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=}
+    dev: true
+
+  /@types/node/16.11.0:
+    resolution: {integrity: sha512-8MLkBIYQMuhRBQzGN9875bYsOhPnf/0rgXGo66S2FemHkhbn9qtsz9ywV1iCG+vbjigE4WUNVvw37Dx+L0qsPg==}
     dev: true
 
   /@types/node/16.11.1:
