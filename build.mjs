@@ -1,9 +1,11 @@
+// TODO: Fix types and remove these lint exceptions once TS can handle mjs
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-/* eslint-disable import/no-extraneous-dependencies, no-param-reassign */
+/* eslint-disable import/no-extraneous-dependencies, no-param-reassign, no-console */
 
 import csso from 'csso';
 import esbuild from 'esbuild';
@@ -24,7 +26,7 @@ const require = createRequire(import.meta.url);
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
-const target = ['chrome78', 'firefox77', 'safari11', 'edge44'];
+const target = ['es2018', 'chrome78', 'firefox77', 'safari11', 'edge44'];
 
 /** @param {?Error} err */
 function handleErr(err) {
@@ -44,6 +46,18 @@ function findOutputFile(outputFiles, ext) {
     file: outputFiles[index],
     index,
   };
+}
+
+/**
+ * @param {esbuild.BuildResult} buildResult
+ * @returns {Promise<esbuild.BuildResult>}
+ */
+async function analyzeMeta(buildResult) {
+  if (buildResult.metafile) {
+    console.log(await esbuild.analyzeMetafile(buildResult.metafile));
+  }
+
+  return buildResult;
 }
 
 /**
@@ -89,18 +103,6 @@ async function minifyJs(buildResult) {
     // @ts-expect-error - map is string
     buildResult.outputFiles[outputJsMap.index].contents = encodeUTF8(map);
     buildResult.outputFiles[index].contents = encodeUTF8(code);
-  }
-
-  return buildResult;
-}
-
-/**
- * @param {esbuild.BuildResult} buildResult
- * @returns {Promise<esbuild.BuildResult>}
- */
-async function analyzeMeta(buildResult) {
-  if (buildResult.metafile) {
-    console.log(await esbuild.analyzeMetafile(buildResult.metafile));
   }
 
   return buildResult;

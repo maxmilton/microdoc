@@ -19,7 +19,7 @@
       "sourceMaps": true,
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/node_modules/.bin/uvu",
-      "args": ["-r", "esbuild-register", "./test", "\\.test\\.ts$"],
+      "args": ["-r", "tsm", "./test", "\\.test\\.ts$"],
       "console": "integratedTerminal",
       // "internalConsoleOptions": "neverOpen",
       "windows": {
@@ -32,7 +32,7 @@
       "request": "launch",
       "sourceMaps": true,
       "skipFiles": ["<node_internals>/**"],
-      "args": ["-r", "esbuild-register", "${relativeFile}"],
+      "args": ["-r", "tsm", "${relativeFile}"],
       "console": "integratedTerminal"
     }
   ]
