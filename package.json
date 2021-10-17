@@ -19,7 +19,6 @@
     "lint:js": "eslint --ignore-path .gitignore --ext .ts,.js,.mjs,.cjs .",
     "lint:ts": "tsc --project test",
     "prebuild": "rm -rf plugin microdoc.* || true; mkdir -p plugin",
-    "serve": "sirv . --dev --cors",
     "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r tsm test '\\.test\\.ts$'",
     "test-e2e": "node -r tsm test/e2e/index.ts"
   },

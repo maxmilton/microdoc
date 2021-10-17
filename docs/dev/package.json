@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "serve": "sirv .. --dev --cors"
+  },
+  "devDependencies": {
+    "microdoc": "../..",
+    "sirv-cli": "^1.0.0"
+  }
+}
