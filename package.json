@@ -15,10 +15,10 @@
     "build": "pnpm run prebuild && NODE_ENV=production node build.mjs",
     "dev": "NODE_ENV=development node build.mjs",
     "lint": "pnpm run lint:css && pnpm run lint:js && pnpm run lint:ts",
-    "lint:css": "echo 'TODO: CSS linting'; exit 0",
+    "lint:css": "echo 'TODO: CSS linting'",
     "lint:js": "eslint --ignore-path .gitignore --ext .ts,.js,.mjs,.cjs .",
     "lint:ts": "tsc --project test",
-    "prebuild": "rm -rf plugin microdoc.* || true; mkdir -p plugin",
+    "prebuild": "rm -rf plugin microdoc.* || true",
     "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r tsm test '\\.test\\.ts$'",
     "test-e2e": "node -r tsm test/e2e/index.ts"
   },
