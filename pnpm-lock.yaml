@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@ekscss/framework': ^0.0.26
+  '@ekscss/framework': ^0.0.27
   '@types/csso': 4.2.0
   '@types/jsdom': 16.2.13
   '@types/node': 16.11.1
@@ -11,10 +11,10 @@ specifiers:
   c8: 7.10.0
   csso: 4.2.0
   dset: 3.1.0
-  ekscss: 0.0.8
+  ekscss: 0.0.9
   esbuild: 0.13.8
-  esbuild-minify-templates: 0.5.1
-  esbuild-plugin-ekscss: 0.0.5
+  esbuild-minify-templates: 0.6.0
+  esbuild-plugin-ekscss: 0.0.6
   eslint: 7.32.0
   eslint-config-airbnb-base: 14.2.1
   eslint-config-airbnb-typescript: 14.0.0
@@ -38,7 +38,7 @@ specifiers:
   uvu: 0.5.2
 
 dependencies:
-  '@ekscss/framework': 0.0.26_ekscss@0.0.8
+  '@ekscss/framework': 0.0.27_ekscss@0.0.9
   fuse.js: 6.4.6
   remarkable: 2.0.1
   stage1: 0.0.10
@@ -53,10 +53,10 @@ devDependencies:
   c8: 7.10.0
   csso: 4.2.0
   dset: 3.1.0
-  ekscss: 0.0.8
+  ekscss: 0.0.9
   esbuild: 0.13.8
-  esbuild-minify-templates: 0.5.1_esbuild@0.13.8
-  esbuild-plugin-ekscss: 0.0.5_ekscss@0.0.8+esbuild@0.13.8
+  esbuild-minify-templates: 0.6.0_esbuild@0.13.8
+  esbuild-plugin-ekscss: 0.0.6_ekscss@0.0.9+esbuild@0.13.8
   eslint: 7.32.0
   eslint-config-airbnb-base: 14.2.1_560ef94424f7023f0ab025f67f79aa67
   eslint-config-airbnb-typescript: 14.0.0_581fbbaaf48060ddae82563a055b6700
@@ -323,44 +323,44 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@ekscss/framework/0.0.26_ekscss@0.0.8:
-    resolution: {integrity: sha512-OObOLeHYZA2HtEqn0tzCIJMuIKjpmae+27uix7cG4A2Ky7ED+dIx5zm4Yfv7V6NmU+YkG4F7PF+UbDbpNOBEDQ==}
+  /@ekscss/framework/0.0.27_ekscss@0.0.9:
+    resolution: {integrity: sha512-SwivJgqUn9C+V/SjipW+kqRDkpJpmgHMxghLskhAxBzfJw3SnQqvLSV9cX542Xm0lYPXqW8DmlDgTkIJVycuog==}
     peerDependencies:
-      ekscss: ^0.0.8
+      ekscss: ^0.0.9
     dependencies:
-      '@ekscss/plugin-apply': 0.0.4_ekscss@0.0.8
-      '@ekscss/plugin-import': 0.0.4_ekscss@0.0.8
-      '@ekscss/plugin-prefix': 0.0.3_ekscss@0.0.8
+      '@ekscss/plugin-apply': 0.0.5_ekscss@0.0.9
+      '@ekscss/plugin-import': 0.0.5_ekscss@0.0.9
+      '@ekscss/plugin-prefix': 0.0.4_ekscss@0.0.9
       color: 4.0.1
-      cssremedy: github.com/jensimmons/cssremedy/468e31a7eda599eea2003ed7983c190828ffb5fd
-      ekscss: 0.0.8
+      cssremedy: github.com/jensimmons/cssremedy/468e31a
+      ekscss: 0.0.9
       stylis: 4.0.10
     dev: false
 
-  /@ekscss/plugin-apply/0.0.4_ekscss@0.0.8:
-    resolution: {integrity: sha512-uZCUIUDSQdDTVlGaZspUligFoDX0DP1njkbcp4liAaDuWUlqCVnUvpsMNutnWmtjqaue46jY4houACnKxB06Pw==}
+  /@ekscss/plugin-apply/0.0.5_ekscss@0.0.9:
+    resolution: {integrity: sha512-+vP2EfJrR2QkX4yru56ZlmnC39VggTREUO3MfttWBgRJGzFzD8WpzAeSY7DKkTJSIdyAW/O8KzryqUrX0txwrA==}
     peerDependencies:
-      ekscss: ^0.0.8
+      ekscss: ^0.0.9
     dependencies:
-      ekscss: 0.0.8
+      ekscss: 0.0.9
       stylis: 4.0.10
     dev: false
 
-  /@ekscss/plugin-import/0.0.4_ekscss@0.0.8:
-    resolution: {integrity: sha512-Ui69xrZl84taluq6I9rmUY6+TyDbdUJvyNav6rh1aJ+RSyZkpR3bs/ca+/KrklaJp85BZUXet+QFg3XeU/9//w==}
+  /@ekscss/plugin-import/0.0.5_ekscss@0.0.9:
+    resolution: {integrity: sha512-EtHsatQVVxuxhJxRLoRyrxLYlreCUMMgKIVEYCGEo/W9BBORxLHMXw8T/y44S+tlYxGgZMSSebHStf3y0R29XA==}
     peerDependencies:
-      ekscss: ^0.0.8
+      ekscss: ^0.0.9
     dependencies:
-      ekscss: 0.0.8
+      ekscss: 0.0.9
       stylis: 4.0.10
     dev: false
 
-  /@ekscss/plugin-prefix/0.0.3_ekscss@0.0.8:
-    resolution: {integrity: sha512-HmbX8x6MjLD7mT+mo7NC+EnYh3asHwFLWHBtfiy/xYG2vdX8xJ32SDuEBROQelIrNUe9IYzWbpJUlfhXBUQBJQ==}
+  /@ekscss/plugin-prefix/0.0.4_ekscss@0.0.9:
+    resolution: {integrity: sha512-iieRRJqtd95/laU3nJP266AA0Hs9RONPvbYWLLhv5LFPwWHuXtQnVz6A3X0eb/jiNhhM0ZiDhUm3KWQaqWw6cg==}
     peerDependencies:
-      ekscss: ^0.0.8
+      ekscss: ^0.0.9
     dependencies:
-      ekscss: 0.0.8
+      ekscss: 0.0.9
       stylis: 4.0.10
     dev: false
 
@@ -495,8 +495,8 @@ packages:
       highlight.js: 9.18.5
     dev: true
 
-  /@types/stylis/4.0.1:
-    resolution: {integrity: sha512-tMMy2pb95ZvBrvrNhZDj6fsU1SpR97BYeoS798IRCzKLqWY0bh0rtg9G6knNtiUD6Pij1PoafHYjVCbspKenOA==}
+  /@types/stylis/4.0.2:
+    resolution: {integrity: sha512-wtckGuk1eXUlUz0Qb1eXHG37Z7HWT2GfMdqRf8F/ifddTwadSS9Jwsqi4qtXk7cP7MtoyGVIHPElFCLc6HItbg==}
     dev: true
 
   /@types/tough-cookie/4.0.1:
@@ -783,7 +783,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001267
+      caniuse-lite: 1.0.30001269
       electron-to-chromium: 1.3.871
       escalade: 3.1.1
       node-releases: 2.0.0
@@ -812,7 +812,7 @@ packages:
       '@istanbuljs/schema': 0.1.3
       find-up: 5.0.0
       foreground-child: 2.0.0
-      istanbul-lib-coverage: 3.0.2
+      istanbul-lib-coverage: 3.2.0
       istanbul-lib-report: 3.0.0
       istanbul-reports: 3.0.5
       rimraf: 3.0.2
@@ -834,8 +834,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite/1.0.30001267:
-    resolution: {integrity: sha512-r1mjTzAuJ9W8cPBGbbus8E0SKcUP7gn03R14Wk8FlAlqhH9hroy9nLqmpuXlfKEw/oILW+FGz47ipXV2O7x8lg==}
+  /caniuse-lite/1.0.30001269:
+    resolution: {integrity: sha512-UOy8okEVs48MyHYgV+RdW1Oiudl1H6KolybD6ZquD0VcrPSgj25omXO1S7rDydjpqaISCwA8Pyx+jUQKZwWO5w==}
     dev: true
 
   /chalk/2.4.2:
@@ -1072,11 +1072,10 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /ekscss/0.0.8:
-    resolution: {integrity: sha512-bs6fpeaSjen/SliU4aNoUrRvSgmI6G1U2UnUKHnW83DYdjkwNF+flgBxY1llAawFP3+YfE1qJZEmbua8ram6eQ==}
-    engines: {node: '>= 10'}
+  /ekscss/0.0.9:
+    resolution: {integrity: sha512-94/amKyQdygfH5IE8A20v5+pOfqP0Uu17uw/1cZTu/a5R6euxXrExfZdt0ImFiVMM1cOOD7FB3qR439Gv/5P0w==}
     dependencies:
-      '@types/stylis': 4.0.1
+      '@types/stylis': 4.0.2
       source-map: 0.7.3
       stylis: 4.0.10
     dev: true
@@ -1231,11 +1230,11 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-minify-templates/0.5.1_esbuild@0.13.8:
-    resolution: {integrity: sha512-5dfS2OxO8ySp1MM5y2nLm36r5lgwB45GpMo3z7R5Te+R0ftsysz+PwZNNHbejZuc9hThFSXHjozp8JdCM00wdQ==}
+  /esbuild-minify-templates/0.6.0_esbuild@0.13.8:
+    resolution: {integrity: sha512-EM4ucklplkTabGbAU+SsZmrUj7FlZJujiGyFyXx0WGXay4FDdB759Z7jFW00Az6Rt9DtzRUXcXr8SX7pC2RYUw==}
     engines: {node: '>= 12'}
     peerDependencies:
-      esbuild: ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0
+      esbuild: ^0.13.0
     dependencies:
       '@ampproject/remapping': 1.0.1
       astray: 1.1.1
@@ -1260,13 +1259,13 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-plugin-ekscss/0.0.5_ekscss@0.0.8+esbuild@0.13.8:
-    resolution: {integrity: sha512-ywYkpYvLlsdyRMFZvGZaJPJejsb2YCjA5mdUd620KpQvNXm8j7T50Zj67z28jg7tnMIo2ijpW8oL98yfH007fg==}
+  /esbuild-plugin-ekscss/0.0.6_ekscss@0.0.9+esbuild@0.13.8:
+    resolution: {integrity: sha512-ccz/Ne+DXY+jPQRu76AGMTtIs2gFl59SWmyQTz48tWHumtcoUZh0C9K7QWqz2V5kn3n0EY1mdCtT1cY2gg/DXg==}
     peerDependencies:
-      ekscss: ^0.0.8
-      esbuild: ^0.12.0 || ^0.13.0
+      ekscss: ^0.0.9
+      esbuild: ^0.13.0
     dependencies:
-      ekscss: 0.0.8
+      ekscss: 0.0.9
       esbuild: 0.13.8
       joycon: 3.0.1
     dev: true
@@ -2063,8 +2062,8 @@ packages:
     resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
     dev: true
 
-  /istanbul-lib-coverage/3.0.2:
-    resolution: {integrity: sha512-o5+eTUYzCJ11/+JhW5/FUCdfsdoYVdQ/8I/OveE2XsjehYn5DdeSnNQAbjYaO8gQ6hvGTN6GM6ddQqpTVG5j8g==}
+  /istanbul-lib-coverage/3.2.0:
+    resolution: {integrity: sha512-eOeJ5BHCmHYvQK7xt9GkdHuzuCGS1Y6g9Gvnx3Ym33fz/HpLRYxiS0wHNr+m/MBC8B647Xt608vCDEvhl9c6Mw==}
     engines: {node: '>=8'}
     dev: true
 
@@ -2072,7 +2071,7 @@ packages:
     resolution: {integrity: sha512-wcdi+uAKzfiGT2abPpKZ0hSU1rGQjUQnLvtY5MpQ7QCTahD3VODhcu4wcfY1YtkGaDD5yuydOLINXsfbus9ROw==}
     engines: {node: '>=8'}
     dependencies:
-      istanbul-lib-coverage: 3.0.2
+      istanbul-lib-coverage: 3.2.0
       make-dir: 3.1.0
       supports-color: 7.2.0
     dev: true
@@ -3332,8 +3331,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  github.com/jensimmons/cssremedy/468e31a7eda599eea2003ed7983c190828ffb5fd:
-    resolution: {tarball: https://codeload.github.com/jensimmons/cssremedy/tar.gz/468e31a7eda599eea2003ed7983c190828ffb5fd}
+  github.com/jensimmons/cssremedy/468e31a:
+    resolution: {tarball: https://codeload.github.com/jensimmons/cssremedy/tar.gz/468e31a}
     name: cssremedy
     version: 0.1.0-beta.2
     dev: false
