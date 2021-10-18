@@ -195,7 +195,10 @@ export function Router(): RouterComponent {
 
     const route = routeMap.get(`#${path}`);
 
-    // TODO: Should we allow fetching a route even if it's not registered?
+    // TODO: Should we allow or prevent fetching a route even if it's not
+    // registered?
+    //  ↳ When not registered, should we construct the route.name on the fly
+    //    from the file name?
     if (!route) {
       root.innerHTML = loadingError(path, new Error('Invalid route'));
       document.title = `Error | ${window.microdoc.title}`;

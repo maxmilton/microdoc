@@ -75,9 +75,11 @@ img { display: initial; }
   top: 0.55rem;
   left: 0.5rem;
   color: ${x.color.gray2};
+  pointer-events: none;
 }
 
 .udoc-search-results {
+  z-index: 1;
   position: absolute;
   top: 100%;
   right: 0;

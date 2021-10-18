@@ -6,6 +6,12 @@
  * content, and index it all into a fuse.js powered search engine.
  */
 
+// TODO: Dismiss on click outside the search results dropdown
+
+// TODO: Investigate using different client-side search engine for better search
+// result quality and performance characteristics
+//  ↳ https://github.com/nextapps-de/flexsearch
+
 import Fuse from 'fuse.js';
 import type { S1Node } from 'stage1';
 
@@ -165,13 +171,15 @@ append(Search(), document.querySelector('.udoc-header')!);
 loadContent()
   .then((content) => {
     fuse = new Fuse(content, {
+      ignoreLocation: true,
+      // includeScore: true, // useful for debugging
       includeMatches: true,
       keys: [
-        'body',
         {
-          name: 'title',
-          weight: 2,
+          name: 'body',
+          weight: 0.9,
         },
+        'title',
       ],
     });
   })
