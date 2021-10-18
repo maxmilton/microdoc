@@ -154,7 +154,11 @@ function Search(): SearchComponent {
       return;
     }
 
-    search();
+    if (input.value === '') {
+      popup?.update();
+    } else {
+      search();
+    }
   };
   input.onkeydown = (event) => {
     if (event.key === 'Escape') {
