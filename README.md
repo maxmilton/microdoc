@@ -62,9 +62,9 @@ Please report any bugs you encounter on the [GitHub issue tracker](https://githu
 
 See [releases on GitHub](https://github.com/maxmilton/microdoc/releases).
 
-## Licence
+## License
 
-`microdoc` is an MIT licensed open source project. See [LICENCE](https://github.com/maxmilton/microdoc/blob/master/LICENCE).
+`microdoc` is an MIT licensed open source project. See [LICENSE](https://github.com/maxmilton/microdoc/blob/master/LICENSE).
 
 ---
 
