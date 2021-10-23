@@ -39,7 +39,7 @@
     "csso": "4.2.0",
     "dset": "3.1.0",
     "ekscss": "0.0.9",
-    "esbuild": "0.13.8",
+    "esbuild": "0.13.9",
     "esbuild-minify-templates": "0.6.0",
     "esbuild-plugin-ekscss": "0.0.6",
     "eslint": "7.32.0",
