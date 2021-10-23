@@ -51,7 +51,7 @@
     "jsdom": "18.0.0",
     "kleur": "4.1.4",
     "pirates": "4.0.1",
-    "playwright-chromium": "1.16.0",
+    "playwright-chromium": "1.16.1",
     "prettier": "2.4.1",
     "prettier-plugin-pkg": "0.10.0",
     "prettier-plugin-sh": "0.7.1",
