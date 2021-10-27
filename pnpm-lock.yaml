@@ -10,7 +10,7 @@ specifiers:
   '@typescript-eslint/parser': 5.2.0
   c8: 7.10.0
   csso: 4.2.0
-  dset: 3.1.0
+  dset: 3.1.1
   ekscss: 0.0.9
   esbuild: 0.13.9
   esbuild-minify-templates: 0.6.0
@@ -52,7 +52,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.2.0_eslint@7.32.0+typescript@4.4.4
   c8: 7.10.0
   csso: 4.2.0
-  dset: 3.1.0
+  dset: 3.1.1
   ekscss: 0.0.9
   esbuild: 0.13.9
   esbuild-minify-templates: 0.6.0_esbuild@0.13.9
@@ -1067,8 +1067,8 @@ packages:
       webidl-conversions: 7.0.0
     dev: true
 
-  /dset/3.1.0:
-    resolution: {integrity: sha512-7xTQ5DzyE59Nn+7ZgXDXjKAGSGmXZHqttMVVz1r4QNfmGpyj+cm2YtI3II0c/+4zS4a9yq2mBhgdeq2QnpcYlw==}
+  /dset/3.1.1:
+    resolution: {integrity: sha512-hYf+jZNNqJBD2GiMYb+5mqOIX4R4RRHXU3qWMWYN+rqcR2/YpRL2bUHr8C8fU+5DNvqYjJ8YvMGSLuVPWU1cNg==}
     engines: {node: '>=4'}
     dev: true
 
