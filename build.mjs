@@ -135,7 +135,7 @@ esbuild
     sourcemap: true,
     watch: dev,
     write: dev,
-    metafile: process.stdout.isTTY,
+    metafile: !dev && process.stdout.isTTY,
     logLevel: 'debug',
   })
   .then(analyzeMeta)
@@ -173,7 +173,7 @@ for (const plugin of ['search', 'preload']) {
       sourcemap: true,
       watch: dev,
       write: dev,
-      metafile: process.stdout.isTTY,
+      metafile: !dev && process.stdout.isTTY,
       logLevel: 'debug',
     })
     .then(analyzeMeta)
