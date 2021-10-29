@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "serve": "sirv .. --dev --cors"
+    "serve": "sirv .. --port 3000 --dev --cors"
   },
   "devDependencies": {
     "microdoc": "../..",

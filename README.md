@@ -40,7 +40,7 @@ See [releases on GitHub](https://github.com/maxmilton/microdoc/releases).
 
 ## License
 
-`microdoc` is an MIT licensed open source project. See [LICENSE](https://github.com/maxmilton/microdoc/blob/master/LICENSE).
+MIT license. See [LICENSE](https://github.com/maxmilton/microdoc/blob/master/LICENSE).
 
 ---
 

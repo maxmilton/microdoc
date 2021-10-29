@@ -156,7 +156,7 @@ const fuseBasic = {
 };
 
 // Plugins
-for (const plugin of ['search', 'preload']) {
+for (const plugin of ['code', 'preload', 'prevnext', 'search']) {
   esbuild
     .build({
       entryPoints: [`src/plugin/${plugin}.ts`],

@@ -1,5 +1,6 @@
 import { append, create } from 'stage1';
 import './app.xcss';
+import { Debug } from './components/Debug';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { Router } from './router';
@@ -19,4 +20,8 @@ export function render(): void {
   append(main, wrapper);
   append(wrapper, app);
   append(app, document.body);
+
+  if (process.env.NODE_ENV === 'development') {
+    append(Debug(), document.body);
+  }
 }
