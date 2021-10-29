@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@ekscss/framework': ^0.0.28
+  '@ekscss/framework': ^0.0.29
   '@types/csso': 4.2.0
   '@types/jsdom': 16.2.13
   '@types/node': 16.11.6
@@ -38,7 +38,7 @@ specifiers:
   uvu: 0.5.2
 
 dependencies:
-  '@ekscss/framework': 0.0.28_ekscss@0.0.9
+  '@ekscss/framework': 0.0.29_ekscss@0.0.9
   fuse.js: 6.4.6
   remarkable: 2.0.1
   stage1: 0.0.11
@@ -323,42 +323,42 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@ekscss/framework/0.0.28_ekscss@0.0.9:
-    resolution: {integrity: sha512-+i/XqIz3YVv+wN5YjW9YFeSn0BviLInXympoCjOMAwytyA0buK7uSz53tWKjB+/z+AvvLaTnBT0zVeA2RhdfMw==}
+  /@ekscss/framework/0.0.29_ekscss@0.0.9:
+    resolution: {integrity: sha512-yLlU0KMI/Nau329nAyxVEIXdpRD88l9hz75WqOxizLEIXIsAsrCs41Zr/Ialr+IlRNn+ElAnFVd1/mwL3w64VA==}
     peerDependencies:
-      ekscss: ^0.0.9
+      ekscss: ^0.0.10
     dependencies:
-      '@ekscss/plugin-apply': 0.0.5_ekscss@0.0.9
-      '@ekscss/plugin-import': 0.0.5_ekscss@0.0.9
-      '@ekscss/plugin-prefix': 0.0.4_ekscss@0.0.9
+      '@ekscss/plugin-apply': 0.0.6_ekscss@0.0.9
+      '@ekscss/plugin-import': 0.0.6_ekscss@0.0.9
+      '@ekscss/plugin-prefix': 0.0.5_ekscss@0.0.9
       color: 4.0.1
       cssremedy: github.com/jensimmons/cssremedy/468e31a
       ekscss: 0.0.9
       stylis: 4.0.10
     dev: false
 
-  /@ekscss/plugin-apply/0.0.5_ekscss@0.0.9:
-    resolution: {integrity: sha512-+vP2EfJrR2QkX4yru56ZlmnC39VggTREUO3MfttWBgRJGzFzD8WpzAeSY7DKkTJSIdyAW/O8KzryqUrX0txwrA==}
+  /@ekscss/plugin-apply/0.0.6_ekscss@0.0.9:
+    resolution: {integrity: sha512-fWutv/cmJxlF0UjWTZ5aFBgkLewEXvYOZsr1vcIeJUdBdqlYqUE370KgfQQiOYKOQ5OCB2WZSPFmZnYgGXP4wQ==}
     peerDependencies:
-      ekscss: ^0.0.9
+      ekscss: ^0.0.10
     dependencies:
       ekscss: 0.0.9
       stylis: 4.0.10
     dev: false
 
-  /@ekscss/plugin-import/0.0.5_ekscss@0.0.9:
-    resolution: {integrity: sha512-EtHsatQVVxuxhJxRLoRyrxLYlreCUMMgKIVEYCGEo/W9BBORxLHMXw8T/y44S+tlYxGgZMSSebHStf3y0R29XA==}
+  /@ekscss/plugin-import/0.0.6_ekscss@0.0.9:
+    resolution: {integrity: sha512-sT3kTx1hI2t/6CjhnDYUtAhZQ0tuJqIszbnu8x8Uo2bzmZiq4geR4sJ/qiKWIUZHeBs3Pqb3Wc5lWoH4hy211Q==}
     peerDependencies:
-      ekscss: ^0.0.9
+      ekscss: ^0.0.10
     dependencies:
       ekscss: 0.0.9
       stylis: 4.0.10
     dev: false
 
-  /@ekscss/plugin-prefix/0.0.4_ekscss@0.0.9:
-    resolution: {integrity: sha512-iieRRJqtd95/laU3nJP266AA0Hs9RONPvbYWLLhv5LFPwWHuXtQnVz6A3X0eb/jiNhhM0ZiDhUm3KWQaqWw6cg==}
+  /@ekscss/plugin-prefix/0.0.5_ekscss@0.0.9:
+    resolution: {integrity: sha512-+2M5SYkzvg/1IxrFrMVSAvFM+MTQGj3OcsqOxbiYkY5A5wL2dYOa9uX0XHhcHsVyMnR+MVQ6sl03czRH62Je2w==}
     peerDependencies:
-      ekscss: ^0.0.9
+      ekscss: ^0.0.10
     dependencies:
       ekscss: 0.0.9
       stylis: 4.0.10
