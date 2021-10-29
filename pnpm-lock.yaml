@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@ekscss/framework': ^0.0.28
+  '@ekscss/framework': ^0.0.29
   '@types/csso': 4.2.0
   '@types/jsdom': 16.2.13
   '@types/node': 16.11.6
@@ -11,10 +11,10 @@ specifiers:
   c8: 7.10.0
   csso: 4.2.0
   dset: 3.1.1
-  ekscss: 0.0.9
+  ekscss: 0.0.10
   esbuild: 0.13.10
   esbuild-minify-templates: 0.6.0
-  esbuild-plugin-ekscss: 0.0.6
+  esbuild-plugin-ekscss: 0.0.7
   eslint: 7.32.0
   eslint-config-airbnb-base: 14.2.1
   eslint-config-airbnb-typescript: 14.0.0
@@ -38,7 +38,7 @@ specifiers:
   uvu: 0.5.2
 
 dependencies:
-  '@ekscss/framework': 0.0.28_ekscss@0.0.9
+  '@ekscss/framework': 0.0.29_ekscss@0.0.10
   fuse.js: 6.4.6
   remarkable: 2.0.1
   stage1: 0.0.11
@@ -53,10 +53,10 @@ devDependencies:
   c8: 7.10.0
   csso: 4.2.0
   dset: 3.1.1
-  ekscss: 0.0.9
+  ekscss: 0.0.10
   esbuild: 0.13.10
   esbuild-minify-templates: 0.6.0_esbuild@0.13.10
-  esbuild-plugin-ekscss: 0.0.6_ekscss@0.0.9+esbuild@0.13.10
+  esbuild-plugin-ekscss: 0.0.7_ekscss@0.0.10+esbuild@0.13.10
   eslint: 7.32.0
   eslint-config-airbnb-base: 14.2.1_560ef94424f7023f0ab025f67f79aa67
   eslint-config-airbnb-typescript: 14.0.0_0259290e89b4d86c681a05bdfb24a6cb
@@ -159,7 +159,7 @@ packages:
       '@babel/compat-data': 7.15.0
       '@babel/core': 7.15.8
       '@babel/helper-validator-option': 7.14.5
-      browserslist: 4.17.4
+      browserslist: 4.17.5
       semver: 6.3.0
     dev: true
 
@@ -323,44 +323,44 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@ekscss/framework/0.0.28_ekscss@0.0.9:
-    resolution: {integrity: sha512-+i/XqIz3YVv+wN5YjW9YFeSn0BviLInXympoCjOMAwytyA0buK7uSz53tWKjB+/z+AvvLaTnBT0zVeA2RhdfMw==}
+  /@ekscss/framework/0.0.29_ekscss@0.0.10:
+    resolution: {integrity: sha512-yLlU0KMI/Nau329nAyxVEIXdpRD88l9hz75WqOxizLEIXIsAsrCs41Zr/Ialr+IlRNn+ElAnFVd1/mwL3w64VA==}
     peerDependencies:
-      ekscss: ^0.0.9
+      ekscss: ^0.0.10
     dependencies:
-      '@ekscss/plugin-apply': 0.0.5_ekscss@0.0.9
-      '@ekscss/plugin-import': 0.0.5_ekscss@0.0.9
-      '@ekscss/plugin-prefix': 0.0.4_ekscss@0.0.9
+      '@ekscss/plugin-apply': 0.0.6_ekscss@0.0.10
+      '@ekscss/plugin-import': 0.0.6_ekscss@0.0.10
+      '@ekscss/plugin-prefix': 0.0.5_ekscss@0.0.10
       color: 4.0.1
       cssremedy: github.com/jensimmons/cssremedy/468e31a
-      ekscss: 0.0.9
+      ekscss: 0.0.10
       stylis: 4.0.10
     dev: false
 
-  /@ekscss/plugin-apply/0.0.5_ekscss@0.0.9:
-    resolution: {integrity: sha512-+vP2EfJrR2QkX4yru56ZlmnC39VggTREUO3MfttWBgRJGzFzD8WpzAeSY7DKkTJSIdyAW/O8KzryqUrX0txwrA==}
+  /@ekscss/plugin-apply/0.0.6_ekscss@0.0.10:
+    resolution: {integrity: sha512-fWutv/cmJxlF0UjWTZ5aFBgkLewEXvYOZsr1vcIeJUdBdqlYqUE370KgfQQiOYKOQ5OCB2WZSPFmZnYgGXP4wQ==}
     peerDependencies:
-      ekscss: ^0.0.9
+      ekscss: ^0.0.10
     dependencies:
-      ekscss: 0.0.9
+      ekscss: 0.0.10
       stylis: 4.0.10
     dev: false
 
-  /@ekscss/plugin-import/0.0.5_ekscss@0.0.9:
-    resolution: {integrity: sha512-EtHsatQVVxuxhJxRLoRyrxLYlreCUMMgKIVEYCGEo/W9BBORxLHMXw8T/y44S+tlYxGgZMSSebHStf3y0R29XA==}
+  /@ekscss/plugin-import/0.0.6_ekscss@0.0.10:
+    resolution: {integrity: sha512-sT3kTx1hI2t/6CjhnDYUtAhZQ0tuJqIszbnu8x8Uo2bzmZiq4geR4sJ/qiKWIUZHeBs3Pqb3Wc5lWoH4hy211Q==}
     peerDependencies:
-      ekscss: ^0.0.9
+      ekscss: ^0.0.10
     dependencies:
-      ekscss: 0.0.9
+      ekscss: 0.0.10
       stylis: 4.0.10
     dev: false
 
-  /@ekscss/plugin-prefix/0.0.4_ekscss@0.0.9:
-    resolution: {integrity: sha512-iieRRJqtd95/laU3nJP266AA0Hs9RONPvbYWLLhv5LFPwWHuXtQnVz6A3X0eb/jiNhhM0ZiDhUm3KWQaqWw6cg==}
+  /@ekscss/plugin-prefix/0.0.5_ekscss@0.0.10:
+    resolution: {integrity: sha512-+2M5SYkzvg/1IxrFrMVSAvFM+MTQGj3OcsqOxbiYkY5A5wL2dYOa9uX0XHhcHsVyMnR+MVQ6sl03czRH62Je2w==}
     peerDependencies:
-      ekscss: ^0.0.9
+      ekscss: ^0.0.10
     dependencies:
-      ekscss: 0.0.9
+      ekscss: 0.0.10
       stylis: 4.0.10
     dev: false
 
@@ -371,7 +371,7 @@ packages:
       ajv: 6.12.6
       debug: 4.3.2
       espree: 7.3.1
-      globals: 13.11.0
+      globals: 13.12.0
       ignore: 4.0.6
       import-fresh: 3.3.0
       js-yaml: 3.14.1
@@ -464,7 +464,7 @@ packages:
     resolution: {integrity: sha512-8JQCjdeAidptSsOcRWk2iTm9wCcwn9l+kRG6k5bzUacrnm1ezV4forq0kWjUih/tumAeoG+OspOvQEbbRucBTw==}
     dependencies:
       '@types/node': 16.11.6
-      '@types/parse5': 6.0.1
+      '@types/parse5': 6.0.2
       '@types/tough-cookie': 4.0.1
     dev: true
 
@@ -484,8 +484,8 @@ packages:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
 
-  /@types/parse5/6.0.1:
-    resolution: {integrity: sha512-ARATsLdrGPUnaBvxLhUlnltcMgn7pQG312S8ccdYlnyijabrX9RN/KN/iGj9Am96CoW8e/K9628BA7Bv4XHdrA==}
+  /@types/parse5/6.0.2:
+    resolution: {integrity: sha512-+hQX+WyJAOne7Fh3zF5CxPemILIbuhNcqHHodzK9caYOLnC8pD5efmPleRnw0z++LfKUC/sVNMwk0Gap+B0baA==}
     dev: true
 
   /@types/remarkable/2.0.3:
@@ -778,15 +778,15 @@ packages:
     resolution: {integrity: sha512-9o5UecI3GhkpM6DrXr69PblIuWxPKk9Y0jHBRhdocZ2y7YECBFCsHm79Pr3OyR2AvjhDkabFJaDJMYRazHgsow==}
     dev: true
 
-  /browserslist/4.17.4:
-    resolution: {integrity: sha512-Zg7RpbZpIJRW3am9Lyckue7PLytvVxxhJj1CaJVlCWENsGEAOlnlt8X0ZxGRPp7Bt9o8tIRM5SEXy4BCPMJjLQ==}
+  /browserslist/4.17.5:
+    resolution: {integrity: sha512-I3ekeB92mmpctWBoLXe0d5wPS2cBuRvvW0JyyJHMrk9/HmP2ZjrTboNAZ8iuGqaEIlKguljbQY32OkOJIRrgoA==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001269
-      electron-to-chromium: 1.3.871
+      caniuse-lite: 1.0.30001272
+      electron-to-chromium: 1.3.884
       escalade: 3.1.1
-      node-releases: 2.0.0
+      node-releases: 2.0.1
       picocolors: 1.0.0
     dev: true
 
@@ -834,8 +834,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite/1.0.30001269:
-    resolution: {integrity: sha512-UOy8okEVs48MyHYgV+RdW1Oiudl1H6KolybD6ZquD0VcrPSgj25omXO1S7rDydjpqaISCwA8Pyx+jUQKZwWO5w==}
+  /caniuse-lite/1.0.30001272:
+    resolution: {integrity: sha512-DV1j9Oot5dydyH1v28g25KoVm7l8MTxazwuiH3utWiAS6iL/9Nh//TGwqFEeqqN8nnWYQ8HHhUq+o4QPt9kvYw==}
     dev: true
 
   /chalk/2.4.2:
@@ -918,8 +918,8 @@ packages:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: true
 
-  /commander/8.2.0:
-    resolution: {integrity: sha512-LLKxDvHeL91/8MIyTAD5BFMNtoIwztGPMiM/7Bl8rIPmHCZXRxmSWr91h57dpOpnQ6jIUqEWdXE/uBYMfiVZDA==}
+  /commander/8.3.0:
+    resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
     engines: {node: '>= 12'}
     dev: true
 
@@ -1072,16 +1072,16 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /ekscss/0.0.9:
-    resolution: {integrity: sha512-94/amKyQdygfH5IE8A20v5+pOfqP0Uu17uw/1cZTu/a5R6euxXrExfZdt0ImFiVMM1cOOD7FB3qR439Gv/5P0w==}
+  /ekscss/0.0.10:
+    resolution: {integrity: sha512-Nrg8678ngjwtkPRckIBHTIRXlkClFuzbu1wp/rMzuOEn0HQ6As4GAr5PiC0zDYtGSeJ3/rUbxlryduUkJJlwvQ==}
     dependencies:
       '@types/stylis': 4.0.2
       source-map: 0.7.3
       stylis: 4.0.10
     dev: true
 
-  /electron-to-chromium/1.3.871:
-    resolution: {integrity: sha512-qcLvDUPf8DSIMWarHT2ptgcqrYg62n3vPA7vhrOF24d8UNzbUBaHu2CySiENR3nEDzYgaN60071t0F6KLYMQ7Q==}
+  /electron-to-chromium/1.3.884:
+    resolution: {integrity: sha512-kOaCAa+biA98PwH5BpCkeUeTL6mCeg8p3Q3OhqzPyqhu/5QUnWAN2wr/3IK8xMQxIV76kfoQpP+Bn/wij/jXrg==}
     dev: true
 
   /emoji-regex/8.0.0:
@@ -1259,13 +1259,13 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-plugin-ekscss/0.0.6_ekscss@0.0.9+esbuild@0.13.10:
-    resolution: {integrity: sha512-ccz/Ne+DXY+jPQRu76AGMTtIs2gFl59SWmyQTz48tWHumtcoUZh0C9K7QWqz2V5kn3n0EY1mdCtT1cY2gg/DXg==}
+  /esbuild-plugin-ekscss/0.0.7_ekscss@0.0.10+esbuild@0.13.10:
+    resolution: {integrity: sha512-PJoM8ejakONI7xGaGOC20gjwNZabTyitnAc/bosOny+DzJkrMtvQlnJsHwhovBsFuihYUjAWZpnPHS+9U6ks+Q==}
     peerDependencies:
-      ekscss: ^0.0.9
+      ekscss: ^0.0.10
       esbuild: ^0.13.0
     dependencies:
-      ekscss: 0.0.9
+      ekscss: 0.0.10
       esbuild: 0.13.10
       joycon: 3.0.1
     dev: true
@@ -1352,7 +1352,7 @@ packages:
     hasBin: true
     dependencies:
       esprima: 4.0.1
-      estraverse: 5.2.0
+      estraverse: 5.3.0
       esutils: 2.0.3
       optionator: 0.8.3
     optionalDependencies:
@@ -1527,7 +1527,7 @@ packages:
       file-entry-cache: 6.0.1
       functional-red-black-tree: 1.0.1
       glob-parent: 5.1.2
-      globals: 13.11.0
+      globals: 13.12.0
       ignore: 4.0.6
       import-fresh: 3.3.0
       imurmurhash: 0.1.4
@@ -1570,14 +1570,14 @@ packages:
     resolution: {integrity: sha512-cCDispWt5vHHtwMY2YrAQ4ibFkAL8RbH5YGBnZBc90MolvvfkkQcJro/aZiAQUlQ3qgrYS6D6v8Gc5G5CQsc9w==}
     engines: {node: '>=0.10'}
     dependencies:
-      estraverse: 5.2.0
+      estraverse: 5.3.0
     dev: true
 
   /esrecurse/4.3.0:
     resolution: {integrity: sha512-KmfKL3b6G+RXvP8N1vr3Tq1kL/oCFgn2NYXEtqP8/L3pKapUA4G8cFVaoF3SU323CD4XypR/ffioHmkti6/Tag==}
     engines: {node: '>=4.0'}
     dependencies:
-      estraverse: 5.2.0
+      estraverse: 5.3.0
     dev: true
 
   /estraverse/4.3.0:
@@ -1585,8 +1585,8 @@ packages:
     engines: {node: '>=4.0'}
     dev: true
 
-  /estraverse/5.2.0:
-    resolution: {integrity: sha512-BxbNGGNm0RyRYvUdHpIwv9IWzeM9XClbOxwoATuFdOE7ZE6wHL+HQ5T8hoPM+zHvmKzzsEqhgy0GrQ5X13afiQ==}
+  /estraverse/5.3.0:
+    resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
     engines: {node: '>=4.0'}
     dev: true
 
@@ -1788,8 +1788,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /globals/13.11.0:
-    resolution: {integrity: sha512-08/xrJ7wQjK9kkkRoI3OFUBbLx4f+6x3SGwcPvQ0QH6goFDrOU2oyAWrmh3dJezu65buo+HBMzAMQy6rovVC3g==}
+  /globals/13.12.0:
+    resolution: {integrity: sha512-uS8X6lSKN2JumVoXrbUz+uG4BYG+eiawqm3qFcT7ammfbUHeCBoJMlHcec/S3krSk73/AE/f0szYFmgAA3kYZg==}
     engines: {node: '>=8'}
     dependencies:
       type-fest: 0.20.2
@@ -2360,8 +2360,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /node-releases/2.0.0:
-    resolution: {integrity: sha512-aA87l0flFYMzCHpTM3DERFSYxc6lv/BltdbRTOMZuxZ0cwZCD3mejE5n9vLhSJCN++/eOqr77G1IO5uXxlQYWA==}
+  /node-releases/2.0.1:
+    resolution: {integrity: sha512-CqyzN6z7Q6aMeF/ktcMVTzhAHCEpf8SOarwpzpf8pNBY2k5/oM34UHldUwp8VKI7uxct2HxSRdJjBaZeESzcxA==}
     dev: true
 
   /normalize-package-data/2.5.0:
@@ -2591,7 +2591,7 @@ packages:
     engines: {node: '>=12'}
     hasBin: true
     dependencies:
-      commander: 8.2.0
+      commander: 8.3.0
       debug: 4.3.2
       extract-zip: 2.0.1
       https-proxy-agent: 5.0.0

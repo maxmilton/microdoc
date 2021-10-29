@@ -23,7 +23,7 @@
     "test-e2e": "node -r tsm test/e2e/index.ts"
   },
   "dependencies": {
-    "@ekscss/framework": "^0.0.28",
+    "@ekscss/framework": "^0.0.29",
     "fuse.js": "^6.4.6",
     "remarkable": "^2.0.1",
     "stage1": "^0.0.11"
@@ -38,10 +38,10 @@
     "c8": "7.10.0",
     "csso": "4.2.0",
     "dset": "3.1.1",
-    "ekscss": "0.0.9",
+    "ekscss": "0.0.10",
     "esbuild": "0.13.10",
     "esbuild-minify-templates": "0.6.0",
-    "esbuild-plugin-ekscss": "0.0.6",
+    "esbuild-plugin-ekscss": "0.0.7",
     "eslint": "7.32.0",
     "eslint-config-airbnb-base": "14.2.1",
     "eslint-config-airbnb-typescript": "14.0.0",
