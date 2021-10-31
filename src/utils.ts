@@ -20,7 +20,7 @@ export function toName(path: string): string {
       .slice(Math.max(0, path.lastIndexOf('/') + 1))
       .toLowerCase()
       // remove file extension
-      .replace(/\.md/, '')
+      .replace(/\.(md|txt)/, '')
       // replace separators with a space
       .replace(/[_-]+/g, ' ')
       // capitalise

@@ -1,5 +1,9 @@
 ${null}
 
+body {
+  overflow-x: hidden;
+}
+
 .icon {
   width: 1em;
   height: 1em;
