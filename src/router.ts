@@ -181,6 +181,12 @@ export function Router(): RouterComponent {
   const root = view;
 
   const loadRoute = (path: string) => {
+    if (!path || path === '/') {
+      const [[firstRoute]] = routeMap;
+      routeTo(firstRoute);
+      return;
+    }
+
     // Delay loading state to prevent flash even when loading from cache
     const timer = setTimeout(() => {
       root.innerHTML = `
@@ -189,12 +195,6 @@ export function Router(): RouterComponent {
         </div>
       `;
     }, LOADING_DELAY_MS);
-
-    if (!path || path === '/') {
-      const [[firstRoute]] = routeMap;
-      routeTo(firstRoute);
-      return;
-    }
 
     const route = routeMap.get(`#${path}`);
 
