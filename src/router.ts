@@ -5,11 +5,12 @@ import { create, setupSyntheticEvent } from 'stage1';
 import type { InternalRoute, Routes } from './types';
 import { toName } from './utils';
 
+const LOADING_DELAY_MS = 176;
+const FAKE_BASE_URL = 'http://x';
+
 const md = new Remarkable({
   html: true,
 });
-
-const fakeBaseUrl = 'http://x';
 
 md.core.ruler.push(
   'x',
@@ -35,11 +36,11 @@ md.core.ruler.push(
               // generate href for in-page links (start with # and correspond to
               // an element by id attribute)
               route = route || new URL(window.location.href).hash.slice(1);
-              const cleanUrlPath = new URL(route, fakeBaseUrl).pathname;
+              const cleanUrlPath = new URL(route, FAKE_BASE_URL).pathname;
               token.href = `#${cleanUrlPath}${token.href}`;
             } else {
               // leverage URL() to handle relative links with a fake base URL...
-              token.href = new URL(token.href, fakeBaseUrl).href
+              token.href = new URL(token.href, FAKE_BASE_URL).href
                 // then convert fake base URL to hash based routing
                 .replace(/^http:\/\/x\/(?:#\/)?/, '#/');
             }
@@ -180,9 +181,14 @@ export function Router(): RouterComponent {
   const root = view;
 
   const loadRoute = (path: string) => {
-    // FIXME: Delay showing loading state to prevent flashing "Loading..." on
-    // every page transition even when the content is cached
-    root.innerHTML = 'Loading...';
+    // Delay loading state to prevent flash even when loading from cache
+    const timer = setTimeout(() => {
+      root.innerHTML = `
+        <div class=spinner-wrapper>
+          <div class=spinner />
+        </div>
+      `;
+    }, LOADING_DELAY_MS);
 
     if (!path || path === '/') {
       const [[firstRoute]] = routeMap;
@@ -197,6 +203,7 @@ export function Router(): RouterComponent {
     //  ↳ When not registered, should we construct the route.name on the fly
     //    from the file name?
     if (!route) {
+      clearTimeout(timer);
       root.innerHTML = loadingError(path, new Error('Invalid route'));
       document.title = `Error | ${window.microdoc.title}`;
       return;
@@ -206,12 +213,13 @@ export function Router(): RouterComponent {
     void getContent(window.microdoc.root + path).then((code) => {
       const html = md.render(code);
 
+      clearTimeout(timer);
       root.innerHTML = html;
       document.title = `${route.name} | ${window.microdoc.title}`;
 
       // scroll to an in-page link
       try {
-        const hashPath = new URL(path, fakeBaseUrl).hash;
+        const hashPath = new URL(path, FAKE_BASE_URL).hash;
 
         if (hashPath) {
           const id = hashPath.slice(1);

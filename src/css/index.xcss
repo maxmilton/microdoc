@@ -19,6 +19,7 @@
 @import '@ekscss/framework/addon/alert.xcss';
 @import '@ekscss/framework/addon/code.xcss';
 // @import '@ekscss/framework/addon/card.xcss';
+@import '@ekscss/framework/addon/spinner.xcss';
 // @import '@ekscss/framework/addon/app-footer.xcss';
 // @import '@ekscss/framework/addon/ux-larger-click-zone.xcss';
 @import '@ekscss/framework/addon/native.xcss';

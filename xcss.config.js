@@ -16,5 +16,13 @@ onBeforeBuild(preloadApply);
 module.exports = merge(framework, {
   globals: {
     gutterCol: '1rem',
+
+    // FIXME: Remove after next @ekscss/framework release
+    spinner: {
+      size: '48px',
+      width: '5px',
+      animateSpeed: '496ms',
+      animateTiming: 'linear',
+    },
   },
 });
