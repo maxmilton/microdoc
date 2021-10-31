@@ -4,20 +4,18 @@
  * @fileoverview Simple standalone route content preloader.
  */
 
-const reTextFileExt = /\.(md|txt)$/;
+import type { InternalMicrodoc } from '..';
 
-for (const link of document.querySelectorAll('.microdoc-sidebar a')) {
-  const href = link.getAttribute('href');
+const { $routes, root } = window.microdoc as InternalMicrodoc;
 
-  if (href && reTextFileExt.test(href)) {
-    try {
-      // eslint-disable-next-line no-void
-      void fetch(window.microdoc.root + href.slice(1));
-    } catch (error) {
-      /* No op */
-    }
+$routes.forEach((route) => {
+  try {
+    // eslint-disable-next-line no-void
+    void fetch(root + route.path.slice(1));
+  } catch (error) {
+    /* No op */
   }
-}
+});
 
 // Keep TS happy
 export {};

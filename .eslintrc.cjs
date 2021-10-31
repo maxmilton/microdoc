@@ -27,6 +27,8 @@ module.exports = {
     'no-underscore-dangle': OFF,
     'unicorn/filename-case': OFF,
     'unicorn/no-abusive-eslint-disable': WARN,
+    // forEach has better perf in modern browsers
+    'unicorn/no-array-for-each': OFF,
     'unicorn/no-null': OFF,
     'unicorn/prefer-add-event-listener': OFF,
     'unicorn/prefer-dom-node-append': OFF,

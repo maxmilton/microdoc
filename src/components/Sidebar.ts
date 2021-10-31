@@ -59,7 +59,7 @@ export function Sidebar(): SidebarComponent {
   const attachRoutes = (routes: InternalRoute[], parent: HTMLElement) => {
     let item;
 
-    for (const route of routes) {
+    routes.forEach((route) => {
       if (route.children) {
         item = Section(route.name);
         attachRoutes(route.children, item);
@@ -69,8 +69,9 @@ export function Sidebar(): SidebarComponent {
           href: route.path!,
         });
       }
+      // eslint-disable-next-line no-param-reassign
       route.ref = append(item, parent);
-    }
+    });
   };
 
   attachRoutes(window.microdoc.routes as InternalRoute[], list);

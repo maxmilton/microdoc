@@ -54,9 +54,9 @@ md.core.ruler.push(
   {},
 );
 
-const routeMap = new Map<string, InternalRoute>();
-// // Expose internal route map for plugins (i.e., prevnext)
-// window.microdoc.$routes = routeMap;
+const $routes = new Map<string, InternalRoute>();
+// Expose internal route map for plugin consumers
+window.microdoc.$routes = $routes;
 
 export function routeTo(url: string): void {
   window.location.hash = url;
@@ -123,7 +123,7 @@ function normaliseRoutes(routes: Routes, parent?: InternalRoute) {
     if (route.children) {
       normaliseRoutes(route.children, route);
     } else {
-      routeMap.set(route.path!, route);
+      $routes.set(route.path!, route);
     }
   }
 }
@@ -182,7 +182,7 @@ export function Router(): RouterComponent {
 
   const loadRoute = (path: string) => {
     if (!path || path === '/') {
-      const [[firstRoute]] = routeMap;
+      const [[firstRoute]] = $routes;
       routeTo(firstRoute);
       return;
     }
@@ -196,7 +196,7 @@ export function Router(): RouterComponent {
       `;
     }, LOADING_DELAY_MS);
 
-    const route = routeMap.get(`#${path}`);
+    const route = $routes.get(`#${path}`);
 
     // TODO: Should we allow or prevent fetching a route even if it's not
     // registered?
@@ -235,8 +235,7 @@ export function Router(): RouterComponent {
       window.scrollTo(0, 0);
     });
 
-    // eslint-disable-next-line unicorn/no-array-for-each
-    routeMap.forEach((route2) => {
+    $routes.forEach((route2) => {
       route2.ref?.classList.remove('active');
     });
     route.ref?.classList.add('active');

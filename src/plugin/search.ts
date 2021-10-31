@@ -14,6 +14,7 @@
 
 import Fuse from 'fuse.js';
 import type { S1Node } from 'stage1';
+import type { InternalMicrodoc } from '../types';
 
 interface ContentData {
   body: string;
@@ -21,8 +22,12 @@ interface ContentData {
   url: string;
 }
 
-const { append, h, root: urlRoot } = window.microdoc;
-const reTextFileExt = /\.(md|txt)$/;
+const {
+  append,
+  h,
+  root: urlRoot,
+  $routes,
+} = window.microdoc as InternalMicrodoc;
 let popup: ResultListComponent;
 let fuse: Fuse<ContentData>;
 
@@ -30,14 +35,9 @@ async function loadContent() {
   const files: [fetchRes: Promise<Response>, title: string, url: string][] = [];
   const content = [];
 
-  for (const link of document.querySelectorAll('.microdoc-sidebar a')) {
-    const href = link.getAttribute('href');
-    const title = link.textContent;
-
-    if (href && reTextFileExt.test(href)) {
-      files.push([fetch(urlRoot + href.slice(1)), title!, href]);
-    }
-  }
+  $routes.forEach((route) => {
+    files.push([fetch(urlRoot + route.path.slice(1)), route.name, route.path]);
+  });
 
   for (const file of files) {
     try {
@@ -122,9 +122,7 @@ function ResultList(): ResultListComponent {
       return;
     }
 
-    for (const result of results) {
-      append(ResultItem(result), list);
-    }
+    results.forEach((result) => append(ResultItem(result), list));
 
     root.hidden = false;
   };
@@ -150,7 +148,7 @@ function Search(): SearchComponent {
     if (!fuse) {
       // TODO: If a user tries to search before all the content has been loaded and
       // parsed show some feedback in the UI
-      console.warn('Search results not ready yet');
+      console.warn('Search index not ready yet');
       return;
     }
 
