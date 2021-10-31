@@ -236,16 +236,15 @@ export function Router(): RouterComponent {
     });
 
     $routes.forEach((route2) => {
-      route2.ref?.classList.remove('active');
+      route2.ref!.classList.remove('active');
     });
-    route.ref?.classList.add('active');
+    route.ref!.classList.add('active');
 
-    let parent = route;
+    let parent: InternalRoute | undefined = route;
 
-    // @ts-expect-error - FIXME:!
     // eslint-disable-next-line no-cond-assign
     while ((parent = parent.parent)) {
-      parent.ref?.classList.add('expanded');
+      parent.ref!.classList.add('expanded');
     }
   };
 
