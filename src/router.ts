@@ -191,7 +191,7 @@ export function Router(): RouterComponent {
     const timer = setTimeout(() => {
       root.innerHTML = `
         <div class=spinner-wrapper>
-          <div class=spinner />
+          <div class=spinner></div>
         </div>
       `;
     }, LOADING_DELAY_MS);
