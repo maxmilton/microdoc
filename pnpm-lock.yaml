@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@ekscss/framework': ^0.0.29
+  '@ekscss/framework': ^0.0.30
   '@types/csso': 4.2.0
   '@types/jsdom': 16.2.13
   '@types/node': 16.11.6
@@ -38,7 +38,7 @@ specifiers:
   uvu: 0.5.2
 
 dependencies:
-  '@ekscss/framework': 0.0.29_ekscss@0.0.10
+  '@ekscss/framework': 0.0.30_ekscss@0.0.10
   fuse.js: 6.4.6
   remarkable: 2.0.1
   stage1: 0.0.11
@@ -323,8 +323,8 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@ekscss/framework/0.0.29_ekscss@0.0.10:
-    resolution: {integrity: sha512-yLlU0KMI/Nau329nAyxVEIXdpRD88l9hz75WqOxizLEIXIsAsrCs41Zr/Ialr+IlRNn+ElAnFVd1/mwL3w64VA==}
+  /@ekscss/framework/0.0.30_ekscss@0.0.10:
+    resolution: {integrity: sha512-5VGfB21O8t6ZRgwaE5cw1WEEXro2734iYUA2vFRPosSBJsi+D5V38mirFJdSiNPZW7e65SNcbfiHffe9jNO07w==}
     peerDependencies:
       ekscss: ^0.0.10
     dependencies:
