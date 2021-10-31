@@ -56,6 +56,7 @@ code {
   #apply: .code-inline;
 }
 
+pre > code,
 code[class^='language'] {
   #apply: .code-block;
 }
