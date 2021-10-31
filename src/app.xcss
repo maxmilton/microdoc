@@ -21,7 +21,12 @@ img { display: initial; }
   border-bottom: 1px solid ${x.color.gray5};
 }
 
-.microdoc-logo {}
+.microdoc-logo {
+  font-size: 1.5rem;
+  font-weight: ${x.textWeightMedium};
+  line-height: 1;
+  text-decoration: none;
+}
 
 .microdoc-sidebar-wrapper {
   // height: 100%;
@@ -56,6 +61,7 @@ img { display: initial; }
 }
 
 .microdoc-sidebar-item {
+  margin: 2px 0 !important;
   border: 0;
   border-radius: ${x.input.radius};
 
