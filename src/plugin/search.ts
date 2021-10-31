@@ -30,7 +30,7 @@ async function loadContent() {
   const files: [fetchRes: Promise<Response>, title: string, url: string][] = [];
   const content = [];
 
-  for (const link of document.querySelectorAll('.udoc-sidebar a')) {
+  for (const link of document.querySelectorAll('.microdoc-sidebar a')) {
     const href = link.getAttribute('href');
     const title = link.textContent;
 
@@ -78,7 +78,7 @@ const resultItemView = h`
   </li>
 `;
 const resultListView = h`
-  <div class=udoc-search-results hidden>
+  <div class=microdoc-search-results hidden>
     <h3 class=mt0>Search Results</h3>
 
     <ul #list class=pl3></ul>
@@ -86,9 +86,9 @@ const resultListView = h`
 `;
 // https://github.com/feathericons/feather/blob/master/icons/search.svg
 const searchView = h`
-  <div class="udoc-search-wrapper ml-auto mv-1">
-    <input #input type=search class=udoc-search placeholder="Search docs...">
-    <svg viewBox="0 0 24 24" class="udoc-icon udoc-icon-search">
+  <div class="microdoc-search-wrapper ml-auto mv-1">
+    <input #input type=search class=microdoc-search placeholder="Search docs...">
+    <svg viewBox="0 0 24 24" class="microdoc-icon microdoc-icon-search">
       <circle cx=11 cy=11 r=8 />
       <line x1=24 y1=24 x2=16.65 y2=16.65 />
     </svg>
@@ -170,7 +170,7 @@ function Search(): SearchComponent {
   return root;
 }
 
-append(Search(), document.querySelector('.udoc-header')!);
+append(Search(), document.querySelector('.microdoc-header')!);
 
 loadContent()
   .then((content) => {

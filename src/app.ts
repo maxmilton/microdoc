@@ -12,7 +12,7 @@ export function render(): void {
 
   app.id = 'app';
   wrapper.className = 'df h100';
-  main.className = 'udoc-main';
+  main.className = 'microdoc-main';
 
   append(Header(), app);
   append(Sidebar(), wrapper);

@@ -6,7 +6,7 @@
 
 const reTextFileExt = /\.(md|txt)$/;
 
-for (const link of document.querySelectorAll('.udoc-sidebar a')) {
+for (const link of document.querySelectorAll('.microdoc-sidebar a')) {
   const href = link.getAttribute('href');
 
   if (href && reTextFileExt.test(href)) {

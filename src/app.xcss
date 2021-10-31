@@ -17,18 +17,18 @@ body,
 // reset image display (from remedy.css) so README badges etc. are inline
 img { display: initial; }
 
-.udoc-header {
+.microdoc-header {
   border-bottom: 1px solid ${x.color.gray5};
 }
 
-.udoc-logo {}
+.microdoc-logo {}
 
-.udoc-sidebar-wrapper {
+.microdoc-sidebar-wrapper {
   // height: 100%;
   border-right: 1px solid ${x.color.gray5};
 }
 
-.udoc-sidebar {
+.microdoc-sidebar {
   #apply: .pos-s, .t0, .pa2;
 
   width: var(--sidebar-width, 14rem);
@@ -36,21 +36,22 @@ img { display: initial; }
 
 .udoc-menu-section {}
 
-.udoc-footer {
+.microdoc-footer {
   font-size: 16px;
   text-align: center;
 }
 
-.udoc-main {
+.microdoc-main {
   width: 100%;
   margin: 0 auto;
 }
 
-.udoc-page {
+.microdoc-page {
   width: 100%;
+  margin-bottom: 2rem;
 }
 
-.udoc-icon {
+.microdoc-icon {
   width: 24px;
   height: 24px;
   fill: none;
@@ -62,15 +63,15 @@ img { display: initial; }
 
 /* Search plugin */
 
-.udoc-search-wrapper {
+.microdoc-search-wrapper {
   position: relative;
 }
 
-.udoc-search {
+.microdoc-search {
   padding-left: 2rem;
 }
 
-.udoc-icon-search {
+.microdoc-icon-search {
   position: absolute;
   top: 0.55rem;
   left: 0.5rem;
@@ -78,7 +79,7 @@ img { display: initial; }
   pointer-events: none;
 }
 
-.udoc-search-results {
+.microdoc-search-results {
   z-index: 1;
   position: absolute;
   top: 100%;

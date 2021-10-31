@@ -14,7 +14,7 @@
 <script src=/dev/node_modules/microdoc/microdoc.js defer></script>
 <script src=/dev/node_modules/microdoc/plugin/search.js defer></script>
 <!-- <script src=/dev/node_modules/microdoc/plugin/preload.js defer></script> -->
-<!-- <style>.udoc-sidebar-wrapper{display:none}.udoc-main{width:100%}</style> -->
+<!-- <style>.microdoc-sidebar-wrapper{display:none}.microdoc-main{width:100%}</style> -->
 <script>
   var microdoc = {
     // root: ".",
@@ -48,7 +48,7 @@
 <script>
   function ready(fn){"loading"!==document.readyState?fn():document.addEventListener("DOMContentLoaded",fn)}
 
-  // document.addEventListener('udoc-loaded', () => Prism.highlightAll());
+  // document.addEventListener('microdoc-loaded', () => Prism.highlightAll());
 
   function headerExtra() {
     const root = document.createElement("div");
@@ -66,7 +66,7 @@
   }
 
   ready(() => {
-    window.microdoc.append(headerExtra(), document.querySelector(".udoc-header"));
+    window.microdoc.append(headerExtra(), document.querySelector(".microdoc-header"));
   })
 
   // XXX: Only works in Chrome and Edge (but not Brave)

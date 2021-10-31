@@ -7,8 +7,8 @@ type RefNodes = {
 };
 
 const view = h`
-  <header class="udoc-header dfc pa2">
-    <a href=/ class="udoc-logo dib text">
+  <header class="microdoc-header dfc pa2">
+    <a href=/ class="microdoc-logo dib text">
       <h2 #name class=mv0></h2>
     </a>
   </header>
