@@ -50,3 +50,10 @@ body {
 code[class^='language'] {
   #apply: .code-block;
 }
+
+blockquote>:first-child {
+  margin-top: 0;
+}
+blockquote>:last-child {
+  margin-bottom: 0;
+}
