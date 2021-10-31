@@ -34,14 +34,13 @@ export interface Microdoc {
    * @default ['README.md']
    */
   routes: Routes;
+  $routes: Map<string, InternalRoute>;
   /** `stage1` tagged template literal function for plugin or advanced use. */
   h: typeof h;
   append: typeof append;
 }
 
 export interface Route {
-  /** Creates a new menu section with a list of child routes. */
-  children?: Routes;
   /**
    * Name of the menu section or content item.
    *
@@ -58,6 +57,15 @@ export interface Route {
    * content item name instead of the default of inferring it from the path.
    */
   path?: string;
+  /** Creates a new menu section with a list of child routes. */
+  children?: Routes;
+}
+
+export interface InternalRoute extends Route {
+  name: string;
+  ref?: HTMLElement;
+  children?: InternalRoute[];
+  parent?: InternalRoute;
 }
 
 /**

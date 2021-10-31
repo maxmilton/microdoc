@@ -1,5 +1,15 @@
 ${null}
 
+.icon {
+  width: 1em;
+  height: 1em;
+  stroke: currentColor;
+  stroke-width: 2px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 // Framework package extracts (just the bits we need)
 
 #app {
@@ -21,6 +31,14 @@ ${null}
   .t0 { #apply: .t0; }
   .tc { #apply: .tc; }
   .text { #apply: .text; }
+  .link-button { #apply: .link-button; }
+}
+
+// button which looks exactly like an achor element
+.button-link {
+  #apply: .button-clear, a;
+
+  border: 0;
 }
 
 // Markdown enhancements

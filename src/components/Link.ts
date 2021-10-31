@@ -1,32 +1,28 @@
-import { create } from 'stage1';
+import { h, S1Node } from 'stage1';
 
 export interface LinkProps {
   title: string;
   href: string;
 }
 
-// export type LinkComponent = S1Node & HTMLAnchorElement;
-export type LinkComponent = HTMLAnchorElement;
+export type LinkComponent = S1Node & HTMLLIElement;
 
-// type RefNodes = {
-//   title: Text;
-// }
+type RefNodes = {
+  a: HTMLAnchorElement;
+};
 
-// TODO: If we never add more elements (e.g., for accordion menu items) use a
-// simple document.createElement
-// const view = h`
-//   <a>#title</a>
-// `;
-const view = create('a');
+const view = h`
+  <li>
+    <a #a class="microdoc-sidebar-item link-button w100"></a>
+  </li>
+`;
 
 export function Link(item: LinkProps): LinkComponent {
   const root = view.cloneNode(true) as LinkComponent;
-  // const { title } = view.collect<RefNodes>(root);
+  const { a } = view.collect<RefNodes>(root);
 
-  root.href = item.href;
-  // root.title = item.title;
-  // title.nodeValue = item.title;
-  root.textContent = item.title;
+  a.href = item.href;
+  a.textContent = item.title;
 
   return root;
 }

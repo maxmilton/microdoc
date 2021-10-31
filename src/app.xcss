@@ -34,7 +34,49 @@ img { display: initial; }
   width: var(--sidebar-width, 14rem);
 }
 
-.udoc-menu-section {}
+.microdoc-sidebar-section {
+  &.expanded {
+    & > .button-link > .icon {
+      transform: rotate(90deg);
+    }
+
+    & > li {
+      display: block;
+    }
+  }
+
+  & > li {
+    display: none;
+    margin-left: 1rem;
+
+    & > li {
+      margin-left: 2rem;
+    }
+  }
+}
+
+.microdoc-sidebar-item {
+  border: 0;
+  border-radius: ${x.input.radius};
+
+  // TODO: Fix outline on :focus-visible
+  // &:focus,
+  // &:active {
+  //   outline: initial !important;
+  // }
+
+  &:hover,
+  &:focus,
+  &:active,
+  .active > & {
+    background: ${x.color.light3};
+    box-shadow: none !important;
+  }
+
+  .active > & {
+    font-weight: ${x.textWeightMedium};
+  }
+}
 
 .microdoc-footer {
   font-size: 16px;

@@ -2,13 +2,8 @@
 
 import { Remarkable } from 'remarkable';
 import { create, setupSyntheticEvent } from 'stage1';
-import type { Route, Routes } from './types';
+import type { InternalRoute, Routes } from './types';
 import { toName } from './utils';
-
-interface RouteEntry {
-  name: string;
-  section?: true;
-}
 
 const md = new Remarkable({
   html: true,
@@ -58,7 +53,9 @@ md.core.ruler.push(
   {},
 );
 
-export const routeMap = new Map<string, RouteEntry>();
+const routeMap = new Map<string, InternalRoute>();
+// Expose internal route map for plugins (i.e., prevnext)
+window.microdoc.$routes = routeMap;
 
 export function routeTo(url: string): void {
   window.location.hash = url;
@@ -93,41 +90,39 @@ function handleClick(event: MouseEvent): void {
   routeTo(href);
 }
 
-function joinPaths(parent: string, route: string): string {
-  return `#/${parent ? `${parent}/` : ''}${route}`;
-}
-
-function normaliseRoutes(routes: Routes, parentPath = '') {
-  for (const route of routes) {
-    const newRoute: { name?: string | undefined; section?: true } = {};
-    let path: string | undefined;
-
-    if (typeof route === 'string') {
-      path = joinPaths(parentPath, route);
-    } else {
-      if (route.children) {
-        newRoute.section = true;
-      }
-      if (route.path) {
-        path = joinPaths(parentPath, route.path);
-      }
-      newRoute.name = route.name;
+function normaliseRoutes(routes: Routes, parent?: InternalRoute) {
+  for (let index = 0; index < routes.length; index++) {
+    if (typeof routes[index] === 'string') {
+      // eslint-disable-next-line no-param-reassign
+      routes[index] = {
+        path: routes[index] as string,
+      };
     }
-    if (!newRoute.name) {
-      if (path) {
-        newRoute.name = toName(path);
+
+    const route = routes[index] as InternalRoute;
+
+    if (parent) {
+      route.parent = parent;
+    }
+
+    if (route.path) {
+      route.path = `${parent?.path ? `${parent.path}/` : '#/'}${route.path}`;
+    }
+
+    if (!route.name) {
+      if (route.path) {
+        route.name = toName(route.path);
       } else {
         // eslint-disable-next-line no-console
-        console.error('Skipping route because no path:', route);
+        console.error('Invalid route:', route);
         break;
       }
     }
 
-    routeMap.set(path!, newRoute as RouteEntry);
-
-    // process children after adding parent section to routes
-    if (newRoute.section) {
-      normaliseRoutes((route as Route).children!, (route as Route).path);
+    if (route.children) {
+      normaliseRoutes(route.children, route);
+    } else {
+      routeMap.set(route.path!, route);
     }
   }
 }
@@ -231,6 +226,20 @@ export function Router(): RouterComponent {
       // scroll to top
       window.scrollTo(0, 0);
     });
+
+    // eslint-disable-next-line unicorn/no-array-for-each
+    routeMap.forEach((route2) => {
+      route2.ref?.classList.remove('active');
+    });
+    route.ref?.classList.add('active');
+
+    let parent = route;
+
+    // @ts-expect-error - FIXME:!
+    // eslint-disable-next-line no-cond-assign
+    while ((parent = parent.parent)) {
+      parent.ref?.classList.add('expanded');
+    }
   };
 
   const handleHashChange = () => loadRoute(window.location.hash.slice(1));
