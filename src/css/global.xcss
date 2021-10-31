@@ -34,6 +34,7 @@ body {
   // .pos-s { #apply: .pos-s; }
   // .t0 { #apply: .t0; }
   // .tc { #apply: .tc; }
+  .w100 { #apply: .w100; }
   .text { #apply: .text; }
   .link-button { #apply: .link-button; }
 }
