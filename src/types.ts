@@ -34,7 +34,8 @@ export interface Microdoc {
    * @default ['README.md']
    */
   routes: Routes;
-  $routes: Map<string, InternalRoute>;
+  // FIXME: Should internals be exposed in the types?
+  // $routes: Map<string, InternalRoute>;
   /** `stage1` tagged template literal function for plugin or advanced use. */
   h: typeof h;
   append: typeof append;

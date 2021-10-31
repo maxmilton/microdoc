@@ -54,8 +54,8 @@ md.core.ruler.push(
 );
 
 const routeMap = new Map<string, InternalRoute>();
-// Expose internal route map for plugins (i.e., prevnext)
-window.microdoc.$routes = routeMap;
+// // Expose internal route map for plugins (i.e., prevnext)
+// window.microdoc.$routes = routeMap;
 
 export function routeTo(url: string): void {
   window.location.hash = url;
