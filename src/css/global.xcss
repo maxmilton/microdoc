@@ -22,18 +22,18 @@ body {
   .dfc { #apply: .dfc; }
   .dib { #apply: .dib; }
   .f-col { #apply: .f-col; }
-  .fss { #apply: .fss; }
+  // .fss { #apply: .fss; }
   .ml-auto { #apply: .ml-auto; }
   .mt0 { #apply: .mt0; }
-  .mt5 { #apply: .mt5; }
+  // .mt5 { #apply: .mt5; }
   .muted { #apply: .muted; }
   .mv-1 { #apply: .mv-1; }
   .mv0 { #apply: .mv0; }
   .pa2 { #apply: .pa2; }
   .pl3 { #apply: .pl3; }
-  .pos-s { #apply: .pos-s; }
-  .t0 { #apply: .t0; }
-  .tc { #apply: .tc; }
+  // .pos-s { #apply: .pos-s; }
+  // .t0 { #apply: .t0; }
+  // .tc { #apply: .tc; }
   .text { #apply: .text; }
   .link-button { #apply: .link-button; }
 }
@@ -46,6 +46,10 @@ body {
 }
 
 // Markdown enhancements
+
+code {
+  #apply: .code-inline;
+}
 
 code[class^='language'] {
   #apply: .code-block;

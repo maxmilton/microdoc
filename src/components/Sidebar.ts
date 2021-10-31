@@ -47,7 +47,7 @@ type RefNodes = {
 const view = h`
   <div class=microdoc-sidebar-wrapper>
     <nav class=microdoc-sidebar>
-      <ul #list class="df f-col lsn"></ul>
+      <ul #list class="df f-col lsn mv0"></ul>
     </nav>
   </div>
 `;
