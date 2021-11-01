@@ -187,7 +187,7 @@ export function Router(): RouterComponent {
       return;
     }
 
-    // Delay loading state to prevent flash even when loading from cache
+    // Delay loading state to prevent flash even when loading from cache etc.
     const timer = setTimeout(() => {
       root.innerHTML = `
         <div class=spinner-wrapper>
@@ -196,21 +196,18 @@ export function Router(): RouterComponent {
       `;
     }, LOADING_DELAY_MS);
 
-    const route = $routes.get(`#${path}`);
+    const { hash, pathname } = new URL(path, FAKE_BASE_URL);
+    const route = $routes.get(`#${pathname}`);
 
-    // TODO: Should we allow or prevent fetching a route even if it's not
-    // registered?
-    //  ↳ When not registered, should we construct the route.name on the fly
-    //    from the file name?
     if (!route) {
       clearTimeout(timer);
-      root.innerHTML = loadingError(path, new Error('Invalid route'));
+      root.innerHTML = loadingError(pathname, new Error('Invalid route'));
       document.title = `Error | ${window.microdoc.title}`;
       return;
     }
 
     // eslint-disable-next-line no-void
-    void getContent(window.microdoc.root + path).then((code) => {
+    void getContent(window.microdoc.root + pathname).then((code) => {
       const html = md.render(code);
 
       clearTimeout(timer);
@@ -218,17 +215,15 @@ export function Router(): RouterComponent {
       document.title = `${route.name} | ${window.microdoc.title}`;
 
       // scroll to an in-page link
-      try {
-        const hashPath = new URL(path, FAKE_BASE_URL).hash;
-
-        if (hashPath) {
-          const id = hashPath.slice(1);
+      if (hash) {
+        try {
+          const id = hash.slice(1);
           const el = document.getElementById(id)!;
           el.scrollIntoView();
           return;
+        } catch (error) {
+          /* No op */
         }
-      } catch (error) {
-        /* noop */
       }
 
       // scroll to top
