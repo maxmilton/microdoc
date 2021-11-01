@@ -48,7 +48,7 @@
     "eslint-plugin-import": "2.25.2",
     "eslint-plugin-unicorn": "37.0.1",
     "get-port": "6.0.0",
-    "jsdom": "18.0.0",
+    "jsdom": "18.0.1",
     "kleur": "4.1.4",
     "pirates": "4.0.1",
     "playwright-chromium": "1.16.2",
