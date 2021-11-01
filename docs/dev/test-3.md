@@ -1,4 +1,4 @@
-<h1>HTML Ipsum Presents</h1>
+<h1>Test 3 — HTML Lorem Ipsum</h1>
 
 <p>
   <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et
@@ -28,6 +28,10 @@
     malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium
     ornare est.
   </p>
+</blockquote>
+
+<blockquote class="bold">
+  bold
 </blockquote>
 
 <p class="tr ns-tl">Quisque sit amet est et sapien ullamcorper pharetra.</p>

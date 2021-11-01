@@ -1,4 +1,4 @@
-# MD Ipsum Presents
+# Test 2 — Markdown Lorem Ipsum
 
 **Pellentesque habitant morbi tristique** senectus et netus et
 malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
@@ -36,20 +36,3 @@ facilisis. Ut felis.
     height: 80px;
   }
 ```
-
-<form class="mb4" action="#">
-  <div class="mb3">
-    <label class="label" for="name">Name</label>
-    <input id="name" type="text" class="input" placeholder="Name" />
-  </div>
-  <div class="mb3">
-    <label class="label" for="password">Password</label>
-    <input
-      id="password"
-      type="password"
-      class="input"
-      placeholder="Password"
-    />
-  </div>
-  <button class="button">Submit</button>
-</form>
