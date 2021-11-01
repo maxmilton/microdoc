@@ -256,7 +256,6 @@ export function Router(): RouterComponent {
   const handleHashChange = () => loadRoute(window.location.hash.slice(1));
 
   window.onhashchange = handleHashChange;
-
   // load initial route
   handleHashChange();
 

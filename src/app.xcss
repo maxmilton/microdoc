@@ -41,12 +41,8 @@ img { display: initial; }
 
 .microdoc-sidebar-parent {
   &.expanded {
-    & > .microdoc-sidebar-item {
-      font-weight: ${x.textWeightMedium};
-
-      & > .icon {
-        transform: rotate(90deg);
-      }
+    & > .microdoc-sidebar-item  > .icon {
+      transform: rotate(90deg);
     }
 
     & > .microdoc-sidebar-parent,
