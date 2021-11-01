@@ -45,11 +45,13 @@ img { display: initial; }
       transform: rotate(90deg);
     }
 
+    & > .microdoc-sidebar-section,
     & > li {
       display: block;
     }
   }
 
+  & > &,
   & > li {
     display: none;
     margin-left: 1rem;
