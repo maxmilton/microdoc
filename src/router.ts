@@ -64,8 +64,6 @@ md.renderer.rules.heading_open = (tokens, idx) => {
 };
 
 const $routes = new Map<string, InternalRoute>();
-// Expose internal route map for plugins
-window.microdoc.$routes = $routes;
 
 export function routeTo(url: string): void {
   window.location.hash = url;
@@ -138,6 +136,9 @@ function normaliseRoutes(routes: Routes, parent?: InternalRoute) {
 }
 
 export function setupRouter(): void {
+  // Expose internal route map for plugins
+  window.microdoc.$routes = $routes;
+
   normaliseRoutes(window.microdoc.routes);
 
   document.body.__click = handleClick;
