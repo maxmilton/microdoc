@@ -39,24 +39,28 @@ img { display: initial; }
   width: var(--sidebar-width, 14rem);
 }
 
-.microdoc-sidebar-section {
+.microdoc-sidebar-parent {
   &.expanded {
-    & > .button-link > .icon {
-      transform: rotate(90deg);
+    & > .microdoc-sidebar-item {
+      font-weight: ${x.textWeightMedium};
+
+      & > .icon {
+        transform: rotate(90deg);
+      }
     }
 
-    & > .microdoc-sidebar-section,
-    & > li {
+    & > .microdoc-sidebar-parent,
+    & > .microdoc-sidebar-link {
       display: block;
     }
   }
 
   & > &,
-  & > li {
+  & > .microdoc-sidebar-link {
     display: none;
     margin-left: 1rem;
 
-    & > li {
+    & > .microdoc-sidebar-link {
       margin-left: 2rem;
     }
   }
