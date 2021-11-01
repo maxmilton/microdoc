@@ -96,7 +96,7 @@ img { display: initial; }
 
 .microdoc-page {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .microdoc-icon {
@@ -110,6 +110,9 @@ img { display: initial; }
 }
 
 /* Search plugin */
+
+// TODO: Should plugin styles be in a separate file? Together means the version
+// is coupled
 
 .microdoc-search-wrapper {
   position: relative;
@@ -136,4 +139,19 @@ img { display: initial; }
   padding: 0.5rem 1rem;
   background: ${x.color.background};
   border: 1px solid ${x.color.gray2};
+}
+
+/* PrevNext plugin */
+
+.microdoc-prevnext {
+  margin: 3rem 0;
+  text-align: center;
+
+  & > button {
+    width: 8rem;
+
+    &:last-child {
+      margin-left: 1rem;
+    }
+  }
 }
