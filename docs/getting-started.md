@@ -1,8 +1,10 @@
 # Getting Started
 
-<https://github.com/maxmilton/microdoc/blob/master/docs/index.html>
+The only thing's needed to use microdoc is a HTML file which loads `microdoc.css` and `microdoc.js`, plus your markdown files. Everything else is optional.
 
-### Base minimal template
+## Starter template
+
+Although you're welcome to write your HTML however you like, here's a minimal template to get you started quickly. If you'd like to see a real world example, see [this docs index.html](https://github.com/maxmilton/microdoc/blob/master/docs/index.html).
 
 `index.html`:
 
@@ -22,6 +24,6 @@
 </script>
 ```
 
-Replace `PROJECT_NAME`, `PROJECT_DESCRIPTION`, `GITHUB_USERNAME`, and `GITHUB_REPO` with your relevant details.
+Replace `PROJECT_NAME`, `PROJECT_DESCRIPTION`, `GITHUB_USERNAME`, and `GITHUB_REPO` with your relevant details. If you're not using GitHub to host your markdown files, see xxxx.
 
-Place a `favicon.ico` in the web root (usually the same directory as the `index.html`).
+Optionally, place a `favicon.ico` in the web root (usually the same directory as the `index.html`).

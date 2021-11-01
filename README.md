@@ -14,7 +14,7 @@ Minimalist project documentation web app runtime. Create interactive docs, gener
 
 - Zero config
 - Zero build — only a simple `index.html` required; content generated on the fly from your markdown files
-- Lightweight-ish — gzip'd around 16kB of JS and 3kB of CSS, mostly the markdown parser
+- Lightweight-ish — gzip'd 18kB of JS and 4kB of CSS, mostly the markdown parser
 - Works with any web server — uses hash based routing so no special server configuration required
 - Simple, functional, and friendly UX
 
