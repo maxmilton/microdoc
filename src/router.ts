@@ -3,7 +3,7 @@
 import { Remarkable } from 'remarkable';
 import { create, setupSyntheticEvent } from 'stage1';
 import type { InternalRoute, Routes } from './types';
-import { toName } from './utils';
+import { toName, toSlug } from './utils';
 
 const LOADING_DELAY_MS = 176;
 const FAKE_BASE_URL = 'http://x';
@@ -13,7 +13,7 @@ const md = new Remarkable({
 });
 
 md.core.ruler.push(
-  'x',
+  '',
   (state) => {
     const blockTokens = state.tokens;
     const len = blockTokens.length;
@@ -35,7 +35,7 @@ md.core.ruler.push(
             if (token.href[0] === '#' && token.href[1] !== '/') {
               // generate href for in-page links (start with # and correspond to
               // an element by id attribute)
-              route = route || new URL(window.location.href).hash.slice(1);
+              route ||= new URL(window.location.href).hash.slice(1);
               const cleanUrlPath = new URL(route, FAKE_BASE_URL).pathname;
               token.href = `#${cleanUrlPath}${token.href}`;
             } else {
@@ -54,8 +54,17 @@ md.core.ruler.push(
   {},
 );
 
+// Add id attribute to headings
+// TODO: Prevent duplicate ids
+md.renderer.rules.heading_open = (tokens, idx) => {
+  const level = tokens[idx].hLevel;
+  const text = (tokens[idx + 1] as unknown as Remarkable.TextToken).content;
+
+  return `<h${level}${level > 1 && text ? ` id="${toSlug(text)}"` : ''}>`;
+};
+
 const $routes = new Map<string, InternalRoute>();
-// Expose internal route map for plugin consumers
+// Expose internal route map for plugins
 window.microdoc.$routes = $routes;
 
 export function routeTo(url: string): void {

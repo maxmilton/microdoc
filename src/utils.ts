@@ -14,7 +14,7 @@ export function setDefaults(): void {
   };
 }
 
-export function toName(path: string): string {
+export function toName(path: string) {
   return (
     path
       .slice(Math.max(0, path.lastIndexOf('/') + 1))
@@ -27,6 +27,16 @@ export function toName(path: string): string {
       // https://github.com/sindresorhus/titleize/blob/main/index.js
       .replace(/(?:^|\s|-)\S/g, (x) => x.toUpperCase())
   );
+}
+
+// TODO: Improve; this is overly simplistic and doesn't account for unicode
+// characters etc., but it's probably not worth using something full-blown
+// like https://github.com/sindresorhus/slugify
+export function toSlug(str: string) {
+  return str
+    .toLowerCase()
+    .replace(/[^\w ]+/g, '')
+    .replace(/ +/g, '-');
 }
 
 // /**
