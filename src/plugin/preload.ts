@@ -1,10 +1,11 @@
 /**
  * Microdoc Preload Plugin
  *
- * @fileoverview Simple standalone route content preloader.
+ * @see https://microdoc.js.org/#/plugins/preload.md
+ * docs/plugins/preload.md
  */
 
-import type { InternalMicrodoc } from '..';
+import type { InternalMicrodoc } from '../types';
 
 const { $routes, root } = window.microdoc as InternalMicrodoc;
 
@@ -16,6 +17,3 @@ $routes.forEach((route) => {
     /* No op */
   }
 });
-
-// Keep TS happy
-export {};

@@ -1,9 +1,8 @@
 /**
  * Microdoc Search Plugin
  *
- * @fileoverview Fully client-side documentation-wide fuzzy search without a
- * backend! Behind the scenes this plugin will fetch all your routes, read their
- * content, and index it all into a fuse.js powered search engine.
+ * @see https://microdoc.js.org/#/plugins/search.md
+ * docs/plugins/search.md
  */
 
 // TODO: Dismiss on click outside the search results dropdown

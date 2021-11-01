@@ -1,8 +1,8 @@
 /**
  * Microdoc Code Plugin
  *
- * @fileoverview Enhance source code related content. Currently:
- *  - Add a "copy" button to code blocks.
+ * @see https://microdoc.js.org/#/plugins/preload.md
+ * docs/plugins/preload.md
  */
 
 // TODO: What's the best approach?

@@ -1,8 +1,8 @@
 ${null}
 
-body {
-  overflow-x: hidden;
-}
+// body {
+//   overflow-x: hidden;
+// }
 
 .icon {
   width: 1em;
