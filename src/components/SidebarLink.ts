@@ -1,10 +1,5 @@
 import { h, S1Node } from 'stage1';
 
-export interface SidebarLinkProps {
-  title: string;
-  href: string;
-}
-
 export type SidebarLinkComponent = S1Node & HTMLLIElement;
 
 type RefNodes = {
@@ -17,12 +12,12 @@ const view = h`
   </li>
 `;
 
-export function SidebarLink(item: SidebarLinkProps): SidebarLinkComponent {
+export function SidebarLink(title: string, href: string): SidebarLinkComponent {
   const root = view.cloneNode(true) as SidebarLinkComponent;
   const { a } = view.collect<RefNodes>(root);
 
-  a.href = item.href;
-  a.textContent = item.title;
+  a.href = href;
+  a.textContent = title;
 
   return root;
 }

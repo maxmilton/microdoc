@@ -30,10 +30,7 @@ export function Sidebar(): SidebarComponent {
         item = SidebarParent(route.name);
         attachRoutes(route.children, item);
       } else {
-        item = SidebarLink({
-          title: route.name,
-          href: route.path!,
-        });
+        item = SidebarLink(route.name, route.path!);
       }
       // eslint-disable-next-line no-param-reassign
       route.ref = append(item, parent);
