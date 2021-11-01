@@ -61,6 +61,11 @@ pre > code {
   #apply: .code-block;
 }
 
+li > pre {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
 blockquote>:first-child {
   margin-top: 0;
 }
