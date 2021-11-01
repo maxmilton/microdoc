@@ -7,8 +7,8 @@
 // TODO: Add more CSS vars for customising the theme
 //  ↳ Move colours and sizes into CSS vars (instead of framework built-in classes)
 
-html,
-body,
+// html,
+// body,
 #app,
 .h100 {
   height: 100%;
