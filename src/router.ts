@@ -128,6 +128,12 @@ function normaliseRoutes(routes: Routes, parent?: InternalRoute) {
     }
 
     if (route.children) {
+      // Parent routes (with children) can be without a path if they're being
+      // used just for grouping together content into a logical section
+      if (!route.path) {
+        route.path = parent?.path || '';
+      }
+
       normaliseRoutes(route.children, route);
     } else {
       $routes.set(route.path!, route);

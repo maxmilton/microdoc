@@ -17,10 +17,11 @@ export function setDefaults(): void {
 export function toName(path: string) {
   return (
     path
-      .slice(Math.max(0, path.lastIndexOf('/') + 1))
+      // .slice(Math.max(0, path.lastIndexOf('/') + 1))
+      .slice(path.lastIndexOf('/') + 1)
       .toLowerCase()
       // remove file extension
-      .replace(/\.(md|txt)/, '')
+      .replace(/\.(md|txt|html)/, '')
       // replace separators with a space
       .replace(/[_-]+/g, ' ')
       // capitalise
