@@ -9,15 +9,18 @@
 <script>window.trackx&&(trackx.setup("https://api.trackx.app/v1/f89ca398622/event"),trackx.ping("https://api.trackx.app/v1/f89ca398622/ping"));</script>
 <script src=https://cdn.jsdelivr.net/npm/microdoc@0/microdoc.js defer></script>
 <script src=https://cdn.jsdelivr.net/npm/microdoc@0/plugin/search.js defer></script>
+<script src=https://cdn.jsdelivr.net/npm/microdoc@0/plugin/prevnext.js defer></script>
 <script>
   var microdoc = {
     root: "https://raw.githubusercontent.com/maxmilton/microdoc/master/docs",
     routes: [
       "introduction.md",
       "getting-started.md",
+      "configuration.md",
       { path: "plugins", children: [
-        "search.md",
-        "preload.md"
+        "preload.md",
+        { name: 'PrevNext', path: "prevnext.md" },
+        "search.md"
       ]},
       { path: "advanced", children: [
         "development.md"

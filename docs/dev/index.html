@@ -23,11 +23,12 @@
     routes: [
       "introduction.md",
       "getting-started.md",
+      "configuration.md",
       { path: "plugins", children: [
-        "search.md",
-        { name: 'PrevNext', path: "prevnext.md" },
         "code.md",
-        "preload.md"
+        "preload.md",
+        { name: 'PrevNext', path: "prevnext.md" },
+        "search.md"
       ]},
       { path: "advanced", children: [
         "development.md"
