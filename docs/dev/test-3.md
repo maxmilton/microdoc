@@ -1,4 +1,4 @@
-<h1>Test 3 — HTML Lorem Ipsum</h1>
+<h1>Test 3 — HTML in .md file Lorem Ipsum</h1>
 
 <p>
   <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et

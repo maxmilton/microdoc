@@ -4,7 +4,7 @@ The only thing's needed to use microdoc is a HTML file which loads `microdoc.css
 
 ## Starter template
 
-Although you're welcome to write your HTML however you like, here's a minimal template to get you started quickly. If you'd like to see a real world example, see [this docs index.html](https://github.com/maxmilton/microdoc/blob/master/docs/index.html).
+Although you're welcome to write your HTML however you like, here's a minimal template to get you started quickly. If you'd like to see a real world example, see [our actual index.html](https://github.com/maxmilton/microdoc/blob/master/docs/index.html).
 
 `index.html`:
 

@@ -13,12 +13,29 @@ Configuration options are set by defining a global `microdoc` object. If you're 
 Type: `string`  
 Default: `document.title` (the text in your `<title>` element)
 
-The name/title to use as your "logo" text. Also append to the document title when changing routes. Document titles will look like `Route.name | title`.
+Used as the name in your "logo" text. Also append to the document title when changing routes. Document titles will look like `Route.name | title`.
 
 ### `root`
 
 Type: `string`  
 Default: `'.'`
+
+The base URL to fetch route content from. `root` is prepended to route paths.
+
+For example, with a config like:
+
+```html
+<script>
+  var microdoc = {
+    root: 'http://my-site.com/docs',
+    routes: ['welcome.md'],
+  };
+</script>
+```
+
+The file we'll fetch will be `http://my-site.com/docs/welcome.md`.
+
+Or if you didn't set `root` and fall back to the default value, we would fetch `./welcome.md`.
 
 ### `routes`
 
@@ -34,3 +51,13 @@ interface Route {
   children?: Routes;
 }
 ```
+
+If you omit `root` and `routes`, the default file we'll fetch is `./README.md`.
+
+You have two options for specifying each route, either a string with the path or an object. Object routes can be either _content_ (a file to be read) or a _parent_ with children (a logical group).
+
+Object _content_ routes must have `path` defined. Object _parent_ routes must have `children` and either `name` or `path` defined. Invalid routes are ignored.
+
+When `name` is not defined it's automatically generated based on `path`.
+
+When an object _parent_ route has a `path`, its children will inherit it as their base path. Route paths look like: `root + parent.path + child.path`. There's no hard limit to nesting depth but in general not more than 3 levels deep is recommended.
