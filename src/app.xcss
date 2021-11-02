@@ -38,7 +38,13 @@
   padding: 0.5rem;
 }
 
+.microdoc-sidebar-list {
+  #apply: .df, .f-col, .lsn, .mv0;
+}
+
 .microdoc-sidebar-parent {
+  #apply: .lsn;
+
   &.expanded {
     & > .microdoc-sidebar-item  > .icon {
       transform: rotate(90deg);

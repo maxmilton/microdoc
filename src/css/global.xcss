@@ -20,14 +20,14 @@ img { display: initial; }
   .df { #apply: .df; }
   .dfc { #apply: .dfc; }
   .dib { #apply: .dib; }
-  .f-col { #apply: .f-col; }
+  // .f-col { #apply: .f-col; }
   // .fss { #apply: .fss; }
   .ml-auto { #apply: .ml-auto; }
   .mt0 { #apply: .mt0; }
   // .mt5 { #apply: .mt5; }
   .muted { #apply: .muted; }
   .mv-1 { #apply: .mv-1; }
-  .mv0 { #apply: .mv0; }
+  // .mv0 { #apply: .mv0; }
   .pa2 { #apply: .pa2; }
   .pl3 { #apply: .pl3; }
   // .pos-s { #apply: .pos-s; }

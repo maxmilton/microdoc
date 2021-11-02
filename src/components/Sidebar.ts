@@ -15,7 +15,7 @@ const view = h`
   <div class=microdoc-sidebar>
     <div class=microdoc-sidebar-stick>
       <nav #nav class=microdoc-sidebar-scroll>
-        <ul #ul class="df f-col lsn mv0"></ul>
+        <ul #ul class=microdoc-sidebar-list></ul>
       </nav>
     </div>
   </div>
