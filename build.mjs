@@ -1,4 +1,6 @@
-// TODO: Fix types and remove these lint exceptions once typescript-eslint can handle js/mjs
+// FIXME: Remove these lint exceptions once linting can handle mjs
+//  ↳ When TS 4.5 is released and typescript-eslint has support
+//  ↳ https://github.com/typescript-eslint/typescript-eslint/issues/3950
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
@@ -28,9 +30,10 @@ const dev = mode === 'development';
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 const target = ['es2018', 'chrome78', 'firefox77', 'safari11', 'edge44'];
 
-/** @param {?Error} err */
-function handleErr(err) {
-  if (err) throw err;
+/** @param {?Error} error */
+function handleErr(error) {
+  console.error(error);
+  process.exitCode = 1;
 }
 
 /**
@@ -41,72 +44,71 @@ function handleErr(err) {
  */
 function findOutputFile(outputFiles, ext) {
   const index = outputFiles.findIndex((outputFile) => outputFile.path.endsWith(ext));
-
-  return {
-    file: outputFiles[index],
-    index,
-  };
+  return { file: outputFiles[index], index };
 }
 
-/**
- * @param {esbuild.BuildResult} buildResult
- * @returns {Promise<esbuild.BuildResult>}
- */
-async function analyzeMeta(buildResult) {
-  if (buildResult.metafile) {
-    console.log(await esbuild.analyzeMetafile(buildResult.metafile));
-  }
+/** @type {esbuild.Plugin} */
+const analyzeMeta = {
+  name: 'analyze-meta',
+  setup(build) {
+    if (!build.initialOptions.metafile) return;
+    // @ts-expect-error - FIXME:!
+    build.onEnd((result) => esbuild.analyzeMetafile(result.metafile).then(console.log));
+  },
+};
 
-  return buildResult;
-}
+/** @type {esbuild.Plugin} */
+const minifyCss = {
+  name: 'minify-css',
+  setup(build) {
+    if (build.initialOptions.write !== false) return;
 
-/**
- * @param {esbuild.BuildResult} buildResult
- * @returns {esbuild.BuildResult}
- */
-function minifyCss(buildResult) {
-  if (buildResult.outputFiles) {
-    const { file, index } = findOutputFile(buildResult.outputFiles, '.css');
+    build.onEnd((result) => {
+      if (result.outputFiles) {
+        const { file, index } = findOutputFile(result.outputFiles, '.css');
 
-    if (file) {
-      const { css } = csso.minify(decodeUTF8(file.contents));
-      buildResult.outputFiles[index].contents = encodeUTF8(css);
-    }
-  }
-
-  return buildResult;
-}
-
-/**
- * @param {esbuild.BuildResult} buildResult
- * @returns {Promise<esbuild.BuildResult>}
- */
-async function minifyJs(buildResult) {
-  if (buildResult.outputFiles) {
-    const outputJsMap = findOutputFile(buildResult.outputFiles, '.js.map');
-    const { file, index } = findOutputFile(buildResult.outputFiles, '.js');
-
-    const { code, map } = await minify(decodeUTF8(file.contents), {
-      ecma: 2020,
-      compress: {
-        passes: 2,
-        unsafe_methods: true,
-        unsafe_proto: true,
-      },
-      sourceMap: {
-        content: decodeUTF8(outputJsMap.file.contents),
-        filename: path.basename(file.path),
-        url: path.basename(outputJsMap.file.path),
-      },
+        if (file) {
+          const { css } = csso.minify(decodeUTF8(file.contents));
+          result.outputFiles[index].contents = encodeUTF8(css);
+        }
+      }
     });
+  },
+};
 
-    // @ts-expect-error - map is string
-    buildResult.outputFiles[outputJsMap.index].contents = encodeUTF8(map);
-    buildResult.outputFiles[index].contents = encodeUTF8(code);
-  }
+/** @type {esbuild.Plugin} */
+const minifyJs = {
+  name: 'minify-js',
+  setup(build) {
+    if (build.initialOptions.write !== false) return;
 
-  return buildResult;
-}
+    build.onEnd(async (result) => {
+      if (result.outputFiles) {
+        const outputJsMap = findOutputFile(result.outputFiles, '.js.map');
+        const { file, index } = findOutputFile(result.outputFiles, '.js');
+
+        const { code, map } = await minify(decodeUTF8(file.contents), {
+          ecma: 2020,
+          compress: {
+            passes: 2,
+            unsafe_methods: true,
+            unsafe_proto: true,
+          },
+          sourceMap: {
+            content: decodeUTF8(outputJsMap.file.contents),
+            filename: path.basename(file.path),
+            url: path.basename(outputJsMap.file.path),
+          },
+        });
+
+        // @ts-expect-error - map is string
+        result.outputFiles[outputJsMap.index].contents = encodeUTF8(map);
+        // @ts-expect-error - FIXME: code is defined
+        result.outputFiles[index].contents = encodeUTF8(code);
+      }
+    });
+  },
+};
 
 // Main web app
 esbuild
@@ -117,7 +119,14 @@ esbuild
     define: {
       'process.env.NODE_ENV': JSON.stringify(mode),
     },
-    plugins: [xcss()],
+    plugins: [
+      xcss(),
+      analyzeMeta,
+      minifyTemplates(),
+      minifyCss,
+      minifyJs,
+      writeFiles(),
+    ],
     banner: {
       css: `/*!
 * microdoc v${pkg.version} - https://maxmilton.github.io/microdoc
@@ -138,11 +147,6 @@ esbuild
     metafile: !dev && process.stdout.isTTY,
     logLevel: 'debug',
   })
-  .then(analyzeMeta)
-  .then(minifyTemplates)
-  .then(minifyCss)
-  .then(minifyJs)
-  .then(writeFiles)
   .catch(handleErr);
 
 /** @type {esbuild.Plugin} */
@@ -165,7 +169,15 @@ for (const plugin of ['code', 'preload', 'prevnext', 'search']) {
       define: {
         'process.env.NODE_ENV': JSON.stringify(mode),
       },
-      plugins: [xcss(), fuseBasic],
+      plugins: [
+        xcss(),
+        fuseBasic,
+        analyzeMeta,
+        minifyTemplates(),
+        minifyCss,
+        minifyJs,
+        writeFiles(),
+      ],
       format: 'iife',
       banner: { js: '"use strict";' },
       bundle: true,
@@ -176,10 +188,5 @@ for (const plugin of ['code', 'preload', 'prevnext', 'search']) {
       metafile: !dev && process.stdout.isTTY,
       logLevel: 'debug',
     })
-    .then(analyzeMeta)
-    .then(minifyTemplates)
-    .then(minifyCss)
-    .then(minifyJs)
-    .then(writeFiles)
     .catch(handleErr);
 }
