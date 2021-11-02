@@ -1,3 +1,8 @@
+<div style="margin:3rem;text-align:center">
+  <img src="favicon.svg" style="width:290px">
+  <div style="margin-top:1rem;font-size:3.5rem;font-weight:300">microdoc</div>
+</div>
+
 # Introduction
 
 https://github.com/maxmilton/microdoc
