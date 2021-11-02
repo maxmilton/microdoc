@@ -51,7 +51,7 @@
     "jsdom": "18.0.1",
     "kleur": "4.1.4",
     "pirates": "4.0.1",
-    "playwright-chromium": "1.16.2",
+    "playwright-chromium": "1.16.3",
     "prettier": "2.4.1",
     "prettier-plugin-pkg": "0.10.0",
     "prettier-plugin-sh": "0.7.1",
@@ -69,6 +69,18 @@
     "plugins": [
       "./node_modules/prettier-plugin-pkg",
       "./node_modules/prettier-plugin-sh"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.html",
+          "*.md"
+        ],
+        "options": {
+          "singleQuote": false,
+          "trailingComma": "none"
+        }
+      }
     ]
   }
 }
