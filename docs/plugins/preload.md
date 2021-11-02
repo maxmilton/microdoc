@@ -1,6 +1,6 @@
 # Preload Plugin
 
-The preload plugin fetches the files defined in your configuration (`window.microdoc.routes`) so they are cached by the browser for fast page navigation.
+The preload plugin fetches the content files defined in your [routes configuration](configuration.md#routes) so they are cached by the browser for instant page navigation.
 
 > **Tip:** You don't need this if you're using the [search plugin](plugins/search.md)! The search plugin already fetches all routes in order to create its search index.
 

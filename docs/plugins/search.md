@@ -1,6 +1,6 @@
 # Search Plugin
 
-The search plugin creates a fully client-side, documentation-wide, fuzzy search without a backend! Behind the scenes this plugin will fetch your routes, read their content, and create a search index using a [fuse.js](https://github.com/krisk/Fuse) powered search engine.
+The search plugin creates a fully client-side, documentation-wide, fuzzy search without a backend! Behind the scenes this plugin will fetch your [configured content routes](configuration.md#routes), read their content, and create a search index using a [fuse.js](https://github.com/krisk/Fuse) powered search engine.
 
 Users can initiate a search via a search text input that's added to the top of your docs UI. You can see it in action in these very docs!
 

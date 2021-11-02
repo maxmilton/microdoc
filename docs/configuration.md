@@ -66,6 +66,8 @@ Only routes which are defined can be loaded (unless they're external). Even if y
 
 ## Example
 
+See a live demo example of this configuration at <https://microdoc.js.org/docs/examples/config1.html>.
+
 Given the following configuration:
 
 ```html

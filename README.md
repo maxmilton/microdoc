@@ -4,9 +4,7 @@
 [![NPM bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/microdoc.svg)](https://bundlephobia.com/result?p=microdoc)
 [![License](https://img.shields.io/github/license/maxmilton/microdoc.svg)](https://github.com/maxmilton/microdoc/blob/master/LICENSE)
 
-# microdoc
-
-> WARNING: This is a work in progress and should be evaluated as beta software!
+# microdoc <img src="./docs/favicon.svg" width="64">
 
 Minimalist project documentation web app runtime. Create interactive docs, generated on the fly, from markdown files.
 

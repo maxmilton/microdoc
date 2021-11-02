@@ -1,5 +1,7 @@
 # Development
 
+This page contains instructions for developing microdoc itself or your own microdoc plugins.
+
 > **Note:** We use `pnpm` for package management. It's similar to `npm` and `yarn` which you're likely already familiar with. For installation instructions see <https://pnpm.io/installation>.
 
 ## Installation
@@ -44,3 +46,9 @@ Run the build process:
 ```sh
 pnpm run build
 ```
+
+## Plugin development
+
+See the [source code of our official plugins](https://github.com/maxmilton/microdoc/tree/master/src/plugin) as a reference.
+
+We use `stage1` as our JavaScript framework for rendering components etc. Plugins also have access to some of the stage1 API which is exposed via the `window.microdoc` global. You may want to check out <https://github.com/maxmilton/stage1>.
