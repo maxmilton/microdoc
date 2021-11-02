@@ -10,10 +10,6 @@
 // TODO: Fix overscroll/height on vertically short pages (due to .microdoc-sidebar padding)
 
 .microdoc-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   background: ${x.color.background};
   border-bottom: 1px solid ${x.color.gray5};
 }
@@ -26,7 +22,6 @@
 }
 
 .microdoc-sidebar {
-  padding-top: 3rem;
   border-right: 1px solid ${x.color.gray5};
 }
 
@@ -98,7 +93,7 @@
 
 .microdoc-main {
   width: 100%;
-  margin: 3rem auto;
+  margin: 0 auto;
 }
 
 .microdoc-page {
