@@ -40,7 +40,7 @@
     "dset": "3.1.1",
     "ekscss": "0.0.10",
     "esbuild": "0.13.12",
-    "esbuild-minify-templates": "0.6.0",
+    "esbuild-minify-templates": "0.7.0",
     "esbuild-plugin-ekscss": "0.0.7",
     "eslint": "7.32.0",
     "eslint-config-airbnb-base": "14.2.1",
