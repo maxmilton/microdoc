@@ -11,9 +11,7 @@ import type { InternalMicrodoc } from '../types';
 
 const { $routes, h, append } = window.microdoc as InternalMicrodoc;
 
-function currentRouteIndex() {
-  return [...$routes.values()].findIndex((route) => route.ref!.classList.contains('active'));
-}
+const currentRouteIndex = () => [...$routes.values()].findIndex((route) => route.ref!.classList.contains('active'));
 
 type RefNodes = {
   p: HTMLButtonElement;
@@ -38,12 +36,10 @@ function PrevNext() {
   };
 
   p.__click = () => {
-    const currentIndex = currentRouteIndex();
-    window.location.hash = [...$routes.values()][currentIndex - 1].path;
+    window.location.hash = [...$routes.keys()][currentRouteIndex() - 1];
   };
   n.__click = () => {
-    const currentIndex = currentRouteIndex();
-    window.location.hash = [...$routes.values()][currentIndex + 1].path;
+    window.location.hash = [...$routes.keys()][currentRouteIndex() + 1];
   };
 
   window.addEventListener('hashchange', toggleDisable);
