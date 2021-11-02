@@ -39,20 +39,17 @@
         "test-3.md",
         "test-4.html",
         "test-5.txt",
-        { path: "sub1", children: [
-          { path: "sub2", children: [
-            { path: "sub3", children: [
+        { path: "path-sub-1", children: [
+          { path: "path-sub-2", children: [
+            { path: "path-sub-3", children: [
               "deep-nesting.md"
             ]},
           ]},
         ]},
-        { name: "s1", children: [
-          "test-1.md",
-          "te___sDFDF..t----1.md",
-          { name: "s2", children: [
-            "test-1.md",
-            { name: "s3", children: [
-              "test-1.md"
+        { name: "Inherit Sub 1", children: [
+          { name: "Inherit Sub 2", children: [
+            { name: "Inherit Sub 3", children: [
+              "not-deep-nesting.md"
             ]},
           ]},
         ]},

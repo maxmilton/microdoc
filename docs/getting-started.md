@@ -19,11 +19,11 @@ Although you're welcome to write your HTML however you like, here's a minimal te
 <script src=https://cdn.jsdelivr.net/npm/microdoc@0/plugin/search.js defer></script>
 <script>
   var microdoc = {
-    root: "https://raw.githubusercontent.com/GITHUB_USERNAME/GITHUB_REPO/master/docs",
+    root: "https://raw.githubusercontent.com/GITHUB_USERNAME/GITHUB_REPO/master/docs"
   }
 </script>
 ```
 
-Replace `PROJECT_NAME`, `PROJECT_DESCRIPTION`, `GITHUB_USERNAME`, and `GITHUB_REPO` with your relevant details. If you're not using GitHub to host your markdown files, see xxxx.
+Replace `PROJECT_NAME`, `PROJECT_DESCRIPTION`, `GITHUB_USERNAME`, and `GITHUB_REPO` with your relevant details. If you're not using GitHub to host your markdown files, replace root with your base URL path.
 
 Optionally, place a `favicon.ico` in the web root (usually the same directory as the `index.html`).
