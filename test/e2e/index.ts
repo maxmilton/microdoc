@@ -47,20 +47,38 @@ test.after.each(async (context) => {
 test('renders a basic microdoc app', async (context) => {
   context.fixture = 'docs1';
   await renderPage(context);
-  assert.ok(await context.page.$('.microdoc-header'), 'has .microdoc-header element');
-  assert.ok(await context.page.$('.microdoc-logo'), 'has .microdoc-logo element');
   assert.ok(
-    await context.page.$('.microdoc-sidebar-wrapper'),
-    'has .microdoc-sidebar-wrapper element',
+    await context.page.$('.microdoc-header'),
+    'has .microdoc-header element',
   );
   assert.ok(
-    await context.page.$('.microdoc-sidebar-wrapper'),
-    'has .microdoc-sidebar-wrapper element',
+    await context.page.$('.microdoc-logo'),
+    'has .microdoc-logo element',
   );
-  assert.ok(await context.page.$('.microdoc-sidebar'), 'has .microdoc-sidebar element');
-  assert.ok(await context.page.$('.microdoc-footer'), 'has .microdoc-footer element');
-  assert.ok(await context.page.$('.microdoc-main'), 'has .microdoc-main element');
-  assert.ok(await context.page.$('.microdoc-page'), 'has .microdoc-page element');
+  assert.ok(
+    await context.page.$('.microdoc-sidebar'),
+    'has .microdoc-sidebar element',
+  );
+  assert.ok(
+    await context.page.$('.microdoc-sidebar-stick'),
+    'has .microdoc-sidebar-stick element',
+  );
+  assert.ok(
+    await context.page.$('.microdoc-sidebar-scroll'),
+    'has .microdoc-sidebar-scroll element',
+  );
+  assert.ok(
+    await context.page.$('.microdoc-footer'),
+    'has .microdoc-footer element',
+  );
+  assert.ok(
+    await context.page.$('.microdoc-main'),
+    'has .microdoc-main element',
+  );
+  assert.ok(
+    await context.page.$('.microdoc-page'),
+    'has .microdoc-page element',
+  );
   assert.ok(
     await context.page.$('a[href="https://microdoc.js.org"]'),
     'has link to microdoc docs',
