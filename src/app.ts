@@ -10,7 +10,7 @@ export function render(): void {
   const main = create('main');
 
   app.id = 'app';
-  wrapper.className = 'df h100';
+  wrapper.className = 'df';
   main.className = 'microdoc-main';
 
   append(Header(), app);

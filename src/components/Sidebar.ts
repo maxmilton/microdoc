@@ -7,20 +7,23 @@ import { SidebarParent } from './SidebarParent';
 type SidebarComponent = S1Node & HTMLDivElement;
 
 type RefNodes = {
+  nav: HTMLElement;
   ul: HTMLUListElement;
 };
 
 const view = h`
-  <div class=microdoc-sidebar-wrapper>
-    <nav class=microdoc-sidebar>
-      <ul #ul class="df f-col lsn mv0"></ul>
-    </nav>
+  <div class=microdoc-sidebar>
+    <div class=microdoc-sidebar-stick>
+      <nav #nav class=microdoc-sidebar-scroll>
+        <ul #ul class="df f-col lsn mv0"></ul>
+      </nav>
+    </div>
   </div>
 `;
 
 export function Sidebar(): SidebarComponent {
   const root = view as SidebarComponent;
-  const { ul } = view.collect<RefNodes>(root);
+  const { nav, ul } = view.collect<RefNodes>(root);
 
   const attachRoutes = (routes: InternalRoute[], parent: HTMLElement) => {
     let item;
@@ -39,7 +42,7 @@ export function Sidebar(): SidebarComponent {
 
   attachRoutes(window.microdoc.routes as InternalRoute[], ul);
 
-  append(Footer(), root);
+  append(Footer(), nav);
 
   return root;
 }

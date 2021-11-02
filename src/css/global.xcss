@@ -1,8 +1,7 @@
 ${null}
 
-// body {
-//   overflow-x: hidden;
-// }
+// reset image display (from remedy.css) so README badges etc. are inline
+img { display: initial; }
 
 .icon {
   width: 1em;

@@ -7,17 +7,14 @@
 // TODO: Add more CSS vars for customising the theme
 //  ↳ Move colours and sizes into CSS vars (instead of framework built-in classes)
 
-// html,
-// body,
-#app,
-.h100 {
-  height: 100%;
-}
-
-// reset image display (from remedy.css) so README badges etc. are inline
-img { display: initial; }
+// TODO: Fix overscroll/height on vertically short pages (due to .microdoc-sidebar padding)
 
 .microdoc-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: ${x.color.background};
   border-bottom: 1px solid ${x.color.gray5};
 }
 
@@ -28,15 +25,22 @@ img { display: initial; }
   text-decoration: none;
 }
 
-.microdoc-sidebar-wrapper {
-  // height: 100%;
+.microdoc-sidebar {
+  padding-top: 3rem;
   border-right: 1px solid ${x.color.gray5};
 }
 
-.microdoc-sidebar {
-  #apply: .pos-s, .t0, .pa2;
+.microdoc-sidebar-stick {
+  position: sticky;
+  top: 0;
+  width: var(--sidebar-width, 15rem);
+  height: 100vh;
+}
 
-  width: var(--sidebar-width, 14rem);
+.microdoc-sidebar-scroll {
+  overflow-y: auto;
+  height: 100%;
+  padding: 0.5rem;
 }
 
 .microdoc-sidebar-parent {
@@ -87,13 +91,14 @@ img { display: initial; }
 }
 
 .microdoc-footer {
+  margin: 2rem 0 1rem;
   font-size: 16px;
   text-align: center;
 }
 
 .microdoc-main {
   width: 100%;
-  margin: 0 auto;
+  margin: 3rem auto;
 }
 
 .microdoc-page {
