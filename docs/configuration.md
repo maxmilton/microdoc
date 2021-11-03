@@ -10,6 +10,19 @@ To customise the visual look and feel of your docs see [theme customisation](#th
 
 ## Options
 
+### `afterRouteLoad`
+
+Type: `Function`  
+Default `undefined`
+
+```ts
+function afterRouteLoad(route: Route): void;
+```
+
+An optional callback function that's called after a route has finished rendering in the browser.
+
+We use it in these docs to trigger code syntax highlighting using [Prism.js](https://github.com/PrismJS/prism). See [our index.html](https://github.com/maxmilton/microdoc/blob/master/docs/index.html) (or view the source of this page!).
+
 ### `title`
 
 Type: `string`  
@@ -66,7 +79,7 @@ When `name` is not defined it's automatically generated based on `path`. If the 
 
 When an object _parent_ route has a `path`, its children will inherit it as their base path. Route paths look like: `root + parent.path + child.path`. There's no hard limit to nesting depth but in general not more than 3 levels deep is recommended.
 
-Only routes which are defined can be loaded (unless they're external). Even if you link to real files in your markdown, unless they're in `routes` configuration they will generate an error when attempting to load them. The reason behind this is twofold, firstly to prevent users accessing files they shouldn't, and secondly for discoverability e.g., routes are fetched by the [search plugin](plugins/search.md) to index their content.
+Only routes which are defined can be loaded. Even if you link to files in your markdown, unless they're in `routes` they will generate an error when attempting to load them. The reason behind this is twofold, firstly to prevent users accessing files they shouldn't, and secondly for discoverability e.g., routes are fetched by the [search plugin](plugins/search.md) to index their content.
 
 ## Example
 
@@ -141,7 +154,11 @@ It would evaluate into data that looks like:
 
 ## Theme Customisation
 
-Customise theme with [CSS custom properties (also known as CSS variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+<!-- Your docs theme can be customised in two ways,  -->
+
+Customise theme with
+The most common x
+are [CSS custom properties (also known as CSS variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
 
 <!--
 getComputedStyle(document.documentElement).getPropertyValue('--input-color-text')
@@ -169,11 +186,32 @@ getComputedStyle(document.documentElement).getPropertyValue('--input-color-text'
 
 ### Examples
 
+#### Custom Branding
+
+xx ([see live example](https://microdoc.js.org/examples/theme1.html)):
+
+```html
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+  :root {
+    --color-primary: #d97706;
+    --color-background: #fff;
+    --color-text: #111827;
+    --color-border: #e5e7eb;
+    --sidebar-color-active: #f3f4f6;
+
+    font-family: "Rubik", sans-serif;
+    font-size: 18px;
+  }
+</style>
+```
+
 #### Dark Theme
 
 > **Tip:** See the [dark mode plugin](plugins/dark-mode.md) for a way to toggle between themes.
 
-Simple dark theme ([see live example](https://microdoc.js.org/examples/theme1.html)):
+Simple dark theme ([see live example](https://microdoc.js.org/examples/theme2.html)):
 
 ```html
 <style>
@@ -195,7 +233,7 @@ Simple dark theme ([see live example](https://microdoc.js.org/examples/theme1.ht
 
 #### No Sidebar
 
-Hide the entire sidebar e.g., for a single page docs ([see live example](https://microdoc.js.org/examples/theme2.html)):
+Hide the entire sidebar e.g., for a single page docs ([see live example](https://microdoc.js.org/examples/theme3.html)):
 
 ```html
 <style>
@@ -207,7 +245,7 @@ Hide the entire sidebar e.g., for a single page docs ([see live example](https:/
 
 #### No Footer
 
-Hide the "Powered by microdoc" footer message ([see live example](https://microdoc.js.org/examples/theme3.html)):
+Hide the "Powered by microdoc" footer message ([see live example](https://microdoc.js.org/examples/theme4.html)):
 
 ```html
 <style>

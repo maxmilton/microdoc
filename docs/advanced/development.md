@@ -1,6 +1,6 @@
 # Development
 
-This page contains instructions for developing microdoc itself or your own microdoc plugins.
+This page contains instructions for working on microdoc itself or [developing your own microdoc plugins](#plugin-development).
 
 > **Note:** We use `pnpm` for package management. It's similar to `npm` and `yarn` which you're likely already familiar with. For installation instructions see <https://pnpm.io/installation>.
 
@@ -47,7 +47,7 @@ Run the build process:
 pnpm run build
 ```
 
-## Plugin development
+## Plugin Development
 
 See the [source code of our official plugins](https://github.com/maxmilton/microdoc/tree/master/src/plugin) as a reference.
 

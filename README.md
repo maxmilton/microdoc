@@ -11,7 +11,7 @@ Minimalist project documentation web app runtime. Create interactive docs, gener
 **Features:**
 
 - Zero config
-- Zero build — only a simple `index.html` required; content generated on the fly from your markdown files
+- Zero build — you only need a simple `index.html` and content is generated on the fly from your markdown files
 - Lightweight-ish — gzip'd 16kB of JS and 4kB of CSS, mostly the markdown parser
 - Works with any web server — uses hash based routing so no special server configuration required
 - Simple, functional, and friendly UX
@@ -27,6 +27,8 @@ Recent versions of evergreen browsers.
 The expected use case of `microdoc` is developer docs so end-users are technically minded with an up-to-date browser. Only minimal efforts are made to polyfill browser APIs. That said, if you run into any compatibility bugs please [open an issue](https://github.com/maxmilton/microdoc/issues).
 
 TODO: Show how to use <https://polyfill.io> for wider cross-browser support
+
+<https://microdoc.js.org/#/advanced/old-browser-support.md>
 
 ## Bugs
 
