@@ -68,10 +68,6 @@
   & > .microdoc-sidebar-link {
     display: none;
     margin-left: 1rem;
-
-    & > .microdoc-sidebar-link {
-      margin-left: 2rem;
-    }
   }
 }
 
