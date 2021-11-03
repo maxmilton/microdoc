@@ -5,7 +5,11 @@
  * docs/plugins/search.md
  */
 
-// TODO: Dismiss on click outside the search results dropdown
+// FIXME: Search input takes up too much space on narrow screens
+//  ↳ Docusaurus use a button on small screens to open a search UI (actually on
+//    large screens too but there it looks like a real search input)
+
+// FIXME: Dismiss on click outside the search results dropdown
 
 // TODO: Investigate using different client-side search engine for better search
 // result quality and performance characteristics
@@ -85,8 +89,8 @@ const resultListView = h`
 `;
 // https://github.com/feathericons/feather/blob/master/icons/search.svg
 const searchView = h`
-  <div class="microdoc-search-wrapper ml-auto mv-1">
-    <input #input type=search class=microdoc-search placeholder="Search docs...">
+  <div class="microdoc-search mv-1">
+    <input #input type=search class=microdoc-search-input placeholder="Search docs...">
     <svg viewBox="0 0 24 24" class="microdoc-icon microdoc-icon-search">
       <circle cx=11 cy=11 r=8 />
       <line x1=24 y1=24 x2=16.65 y2=16.65 />

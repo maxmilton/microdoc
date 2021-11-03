@@ -12,6 +12,14 @@
 .microdoc-header {
   background: ${x.color.background};
   border-bottom: 1px solid var(--color-border);
+
+  & > div:first-of-type {
+    margin-left: auto;
+  }
+
+  & > div + div {
+    margin-left: 1rem;
+  }
 }
 
 .microdoc-logo {
@@ -122,11 +130,11 @@
 // TODO: Should plugin styles be in a separate file? Together means the version
 // is coupled
 
-.microdoc-search-wrapper {
+.microdoc-search {
   position: relative;
 }
 
-.microdoc-search {
+.microdoc-search-input {
   padding-left: 2rem;
 }
 
