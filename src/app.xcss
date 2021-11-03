@@ -54,7 +54,7 @@
   #apply: .lsn;
 
   &.expanded {
-    & > .microdoc-sidebar-item  > .icon {
+    & > .microdoc-sidebar-item  > .microdoc-icon {
       transform: rotate(90deg);
     }
 
@@ -174,21 +174,21 @@
 
 /* Dark Mode plugin */
 
-.icon-moon,
-.icon-sun {
+.microdoc-icon-moon,
+.microdoc-icon-sun {
   width: 1.4em;
   height: 1.4em;
 }
 
-.icon-sun {
+.microdoc-icon-sun {
   vertical-align: -0.35rem;
 }
 
-.dark .icon-moon,
-.icon-sun {
+.dark .microdoc-icon-moon,
+.microdoc-icon-sun {
   display: none;
 }
 
-.dark .icon-sun {
+.dark .microdoc-icon-sun {
   display: initial;
 }

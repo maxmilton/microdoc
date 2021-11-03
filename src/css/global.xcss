@@ -1,9 +1,9 @@
 ${null}
 
-// reset image display (from remedy.css) so README badges etc. are inline
+// Reset image display (from remedy.css) so README badges etc. are inline
 img { display: initial; }
 
-.icon {
+.microdoc-icon {
   width: 1em;
   height: 1em;
   stroke: currentColor;
@@ -13,33 +13,27 @@ img { display: initial; }
   stroke-linejoin: round;
 }
 
-// Framework package extracts (just the bits we need)
+/* Framework package extracts (just the bits we need) */
 
+// XXX: Inside #app to ensure they don't conflict with user styles
 #app {
   .con { #apply: .con; }
-  .df { #apply: .df; }
   .dfc { #apply: .dfc; }
+  .df { #apply: .df; }
   .dib { #apply: .dib; }
-  // .f-col { #apply: .f-col; }
-  // .fss { #apply: .fss; }
   .ml-auto { #apply: .ml-auto; }
   .mt0 { #apply: .mt0; }
-  // .mt5 { #apply: .mt5; }
-  .muted { #apply: .muted; }
   .mv-1 { #apply: .mv-1; }
-  // .mv0 { #apply: .mv0; }
   .pa2 { #apply: .pa2; }
   .pl3 { #apply: .pl3; }
-  // .pos-s { #apply: .pos-s; }
-  // .t0 { #apply: .t0; }
-  // .tc { #apply: .tc; }
   .w100 { #apply: .w100; }
+  .muted { #apply: .muted; }
   .text { #apply: .text; }
-  .link-button { #apply: .link-button; }
   .button-clear { #apply: .button-clear; }
+  .link-button { #apply: .link-button; }
 }
 
-// button which looks exactly like an achor element
+// Button which looks exactly like an anchor element
 .button-link {
   #apply: .button-clear, a;
 
@@ -50,7 +44,7 @@ img { display: initial; }
   margin: 2rem 0;
 }
 
-// Markdown enhancements
+/* Markdown enhancements */
 
 code {
   #apply: .code-inline;
