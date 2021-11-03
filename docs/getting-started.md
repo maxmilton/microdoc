@@ -24,6 +24,6 @@ Although you're welcome to write your HTML however you like, here's a minimal te
 </script>
 ```
 
-Replace `PROJECT_NAME`, `PROJECT_DESCRIPTION`, `GITHUB_USERNAME`, and `GITHUB_REPO` with your relevant details. If you're not using GitHub to host your markdown files, replace root with your base URL path.
+Replace `PROJECT_NAME`, `PROJECT_DESCRIPTION`, `GITHUB_USERNAME`, and `GITHUB_REPO` with your relevant details. If you're not using GitHub to host your markdown files, set `root` to your base URL path or see [root configuration](configuration.md#root).
 
-Optionally, place a `favicon.ico` in the web root (usually the same directory as the `index.html`). You're welcome to use [our favicon.ico](https://github.com/maxmilton/microdoc/blob/master/docs/favicon.ico).
+Optionally, place a `favicon.ico` in the web root (usually the same directory as the `index.html`). You're welcome to reuse [our favicon.ico](https://github.com/maxmilton/microdoc/blob/master/docs/favicon.ico).

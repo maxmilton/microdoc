@@ -31,6 +31,8 @@ TODO: Documentation:
   - Use without GitHub e.g., locally
   - x
 
+- Uses hash based routing but still supports in-page hash anchor links!
+
 - Similar projects:
   - https://docusaurus.io/docs/
   - https://docsify.js.org/#/?id=docsify
