@@ -4,7 +4,7 @@
 // Packages
 @import '@ekscss/framework/level1.xcss';
 @import '@ekscss/framework/level2/type.xcss';
-@import '@ekscss/framework/level2/form.xcss';
+// @import '@ekscss/framework/level2/form.xcss';
 // @import '@ekscss/framework/level2/button.xcss';
 // @import '@ekscss/framework/level2/color.xcss';
 // @import '@ekscss/framework/level2/flex.xcss'; XXXX
