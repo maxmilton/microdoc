@@ -10,10 +10,5 @@ import type { InternalMicrodoc } from '../types';
 const { $routes, root } = window.microdoc as InternalMicrodoc;
 
 $routes.forEach((route) => {
-  try {
-    // eslint-disable-next-line no-void
-    void fetch(root + route.path.slice(1));
-  } catch (error) {
-    /* No op */
-  }
+  fetch(root + route.path.slice(1)).catch(() => {});
 });
