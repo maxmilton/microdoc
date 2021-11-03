@@ -176,7 +176,7 @@ async function getContent(path: string): Promise<string> {
     content = await res.text();
 
     if (!res.ok) {
-      throw new Error(content);
+      throw new Error(content || `${res.status}`);
     }
   } catch (error) {
     // eslint-disable-next-line no-console

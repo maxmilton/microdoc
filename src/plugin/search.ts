@@ -48,7 +48,7 @@ async function loadContent() {
       const res = await file[0];
       // eslint-disable-next-line no-await-in-loop
       const body = await res.text();
-      if (!res.ok) throw new Error(body);
+      if (!res.ok) throw new Error(body || `${res.status}`);
       content.push({ body, title: file[1], url: file[2] });
     } catch (error) {
       console.error(error);
