@@ -15,14 +15,23 @@ onBeforeBuild(preloadApply);
 /** @type {(import('esbuild-plugin-ekscss').XCSSConfig)} */
 module.exports = merge(framework, {
   globals: {
+    color: {
+      primary: 'var(--color-primary)',
+      muted: 'var(--color-muted)',
+      background: 'var(--color-background)',
+      text: 'var(--color-text)',
+      link: 'var(--color-link)',
+      linkHover: 'var(--color-link-hover)',
+    },
+
     gutterCol: '1rem',
 
-    // FIXME: Remove after next @ekscss/framework release
-    spinner: {
-      size: '48px',
-      width: '5px',
-      animateSpeed: '496ms',
-      animateTiming: 'linear',
+    input: {
+      textColor: 'var(--input-color-text)',
+      backgroundColor: 'var(--input-color-background)',
+      placeholderTextColor: 'var(--input-color-placeholder)',
+      border: '1px solid var(--input-color-border)',
+      hoverBorderColor: 'var(--input-color-border-hover)',
     },
   },
 });

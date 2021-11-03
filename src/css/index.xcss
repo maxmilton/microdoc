@@ -1,4 +1,7 @@
-// packages
+// Custom properties
+@import './vars.xcss';
+
+// Packages
 @import '@ekscss/framework/level1.xcss';
 @import '@ekscss/framework/level2/type.xcss';
 @import '@ekscss/framework/level2/form.xcss';
@@ -24,5 +27,5 @@
 // @import '@ekscss/framework/addon/ux-larger-click-zone.xcss';
 @import '@ekscss/framework/addon/native.xcss';
 
-// local
+// Local
 @import './global.xcss';

@@ -11,7 +11,7 @@
 
 .microdoc-header {
   background: ${x.color.background};
-  border-bottom: 1px solid ${x.color.gray5};
+  border-bottom: 1px solid var(--color-border);
 }
 
 .microdoc-logo {
@@ -22,13 +22,13 @@
 }
 
 .microdoc-sidebar {
-  border-right: 1px solid ${x.color.gray5};
+  border-right: 1px solid var(--color-border);
 }
 
 .microdoc-sidebar-stick {
   position: sticky;
   top: 0;
-  width: var(--sidebar-width, 15rem);
+  width: var(--sidebar-width);
   height: 100vh;
 }
 
@@ -82,7 +82,7 @@
   &:focus,
   &:active,
   .active > & {
-    background: ${x.color.light3};
+    background: var(--sidebar-color-active);
     box-shadow: none !important;
   }
 
@@ -162,4 +162,25 @@
       margin-left: 1rem;
     }
   }
+}
+
+/* Dark Mode plugin */
+
+.icon-moon,
+.icon-sun {
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.icon-sun {
+  vertical-align: -0.35rem;
+}
+
+.dark .icon-moon,
+.icon-sun {
+  display: none;
+}
+
+.dark .icon-sun {
+  display: initial;
 }

@@ -36,6 +36,7 @@ img { display: initial; }
   .w100 { #apply: .w100; }
   .text { #apply: .text; }
   .link-button { #apply: .link-button; }
+  .button-clear { #apply: .button-clear; }
 }
 
 // button which looks exactly like an achor element
