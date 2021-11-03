@@ -36,9 +36,7 @@ input::-webkit-inner-spin-button {
   .ml-auto { #apply: .ml-auto; }
   .mt0 { #apply: .mt0; }
   .mv-1 { #apply: .mv-1; }
-  .pa2 { #apply: .pa2; }
   .pl3 { #apply: .pl3; }
-  .w100 { #apply: .w100; }
   .muted { #apply: .muted; }
   .text { #apply: .text; }
   .button-clear { #apply: .button-clear; }

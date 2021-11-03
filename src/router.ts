@@ -1,5 +1,14 @@
 /* eslint-disable no-plusplus */
 
+// TODO: Remember scroll position when navigating and restore it when returning
+//  ↳ Could be tricky because the markdown takes a little time to render
+//    ↳ It might cause a visual jump when navigating -- although that could be
+//      reduced if we don't need to fetch the content file e.g., when the search
+//      or preload plugins are used
+//  ↳ https://github.com/sveltejs/kit/blob/master/packages/kit/src/runtime/client/router.js
+//  ↳ https://github.com/sveltejs/sapper/blob/master/runtime/src/app/router/index.ts#L201
+//  ↳ https://github.com/vuejs/vue-router/blob/dev/src/util/scroll.js
+
 import { Remarkable } from 'remarkable';
 import { create, setupSyntheticEvent } from 'stage1';
 import type { InternalRoute, Routes } from './types';
