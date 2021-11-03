@@ -15,7 +15,6 @@
 <!-- <script src=https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js data-manual defer></script> -->
 <script src=https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js data-manual defer></script>
 <script src=https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js defer></script>
-<!-- <style>.microdoc-sidebar-wrapper{display:none}.microdoc-main{width:100%}</style> -->
 <script>
   var microdoc = {
     // root: ".",
@@ -60,24 +59,18 @@
     darkMode: window.matchMedia('(prefers-color-scheme:dark)').matches
   }
 </script>
-<noscript>You need to enable JavaScript to run this app.</noscript>
-
 <style>
-  .dark pre > code,
-  pre > code {
+  /* TODO: Better fix for conflicting prism styles */
+  .dark pre > code, pre > code {
     padding: 0;
     background-color: unset;
     overflow: unset;
   }
 </style>
+<noscript>You need to enable JavaScript to run this app.</noscript>
 
-<!-- <style>
-  .ml3 { margin-left: 1rem; }
-</style> -->
 <script>
   function ready(fn){"loading"!==document.readyState?fn():document.addEventListener("DOMContentLoaded",fn)}
-
-  // document.addEventListener('microdoc-loaded', () => Prism.highlightAll());
 
   function headerExtra() {
     const root = document.createElement("div");

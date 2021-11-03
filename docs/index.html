@@ -36,4 +36,12 @@
     darkMode: window.matchMedia('(prefers-color-scheme:dark)').matches
   }
 </script>
+<style>
+  /* TODO: Better fix for conflicting prism styles */
+  .dark pre > code, pre > code {
+    padding: 0;
+    background-color: unset;
+    overflow: unset;
+  }
+</style>
 <noscript>You need to enable JavaScript to run this app.</noscript>
