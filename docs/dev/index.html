@@ -76,12 +76,10 @@
     const root = document.createElement("div");
     // const link = document.createElement("a");
     const btn = document.createElement("button");
-    // root.classList = "ml-auto";
-    // link.href = "https://github.com/maxmilton/ekscss";
+    root.classList = "microdoc-header-item";
+    // link.href = "https://github.com/maxmilton/microdoc";
     // link.textContent = "github";
     btn.textContent = "Load File/Dir";
-    // btn.classList = "ml3 mv-1"
-    btn.classList = "mv-1"
     btn.__click = fileLoader;
     // root.append(link, btn);
     root.append(btn);

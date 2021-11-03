@@ -6,7 +6,7 @@
 
 # microdoc <img src="./docs/favicon.svg" width="64">
 
-Minimalist project documentation web app runtime. Create interactive docs, generated on the fly, from markdown files.
+Minimalist project documentation web app runtime. Create interactive docs, generated on the fly from markdown files.
 
 **Features:**
 
