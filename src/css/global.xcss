@@ -3,16 +3,6 @@ ${null}
 // Reset image display (from remedy.css) so README badges etc. are inline
 img { display: initial; }
 
-.microdoc-icon {
-  width: 1em;
-  height: 1em;
-  stroke: currentColor;
-  stroke-width: 2px;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 /* Framework package extracts (just the bits we need) */
 
 // XXX: Inside #app to ensure they don't conflict with user styles

@@ -24,10 +24,10 @@ type RefNodes = {
 const view = h`
   <div class="microdoc-dark-mode mv-1">
     <button #button class=button-clear>
-      <svg viewBox="0 0 24 24" class="microdoc-icon microdoc-icon-moon">
+      <svg viewBox="0 0 24 24" class=microdoc-icon-moon>
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
       </svg>
-      <svg viewBox="0 0 24 24" class="microdoc-icon microdoc-icon-sun">
+      <svg viewBox="0 0 24 24" class=microdoc-icon-sun>
         <circle cx=12 cy=12 r="4"></circle>
         <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
       </svg>
