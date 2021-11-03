@@ -21,6 +21,8 @@ img { display: initial; }
   .text { #apply: .text; }
   .button-clear { #apply: .button-clear; }
   .link-button { #apply: .link-button; }
+  .alert { #apply: .alert; }
+  .alert-danger { #apply: .alert-danger; }
 }
 
 // Button which looks exactly like an anchor element
