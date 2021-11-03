@@ -129,14 +129,14 @@ esbuild
     ],
     banner: {
       css: `/*!
-* microdoc v${pkg.version} - https://maxmilton.github.io/microdoc
+* microdoc v${pkg.version} - https://microdoc.js.org
 * (c) 2021 Max Milton
-* MIT Licensed - https://github.com/MaxMilton/microdoc/blob/main/LICENSE
+* MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
 */`,
       js: `/*!
-* microdoc v${pkg.version} - https://maxmilton.github.io/microdoc
+* microdoc v${pkg.version} - https://microdoc.js.org
 * (c) 2021 Max Milton
-* MIT Licensed - https://github.com/MaxMilton/microdoc/blob/main/LICENSE
+* MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
 */ "use strict";`,
     },
     bundle: true,
@@ -179,7 +179,13 @@ for (const plugin of ['code', 'dark-mode', 'preload', 'prevnext', 'search']) {
         writeFiles(),
       ],
       format: 'iife',
-      banner: { js: '"use strict";' },
+      banner: {
+        js: `/*!
+* microdoc ${plugin} plugin v${pkg.version} - https://microdoc.js.org
+* (c) 2021 Max Milton
+* MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
+*/ "use strict";`,
+      },
       bundle: true,
       minify: !dev,
       sourcemap: true,
