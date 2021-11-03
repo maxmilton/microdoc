@@ -160,7 +160,7 @@ const fuseBasic = {
 };
 
 // Plugins
-for (const plugin of ['code', 'dark-mode', 'preload', 'prevnext', 'search']) {
+for (const plugin of ['dark-mode', 'preload', 'prevnext', 'search']) {
   esbuild
     .build({
       entryPoints: [`src/plugin/${plugin}.ts`],
