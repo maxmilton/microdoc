@@ -19,7 +19,7 @@ export interface Microdoc {
    * Optional callback function that's called after a route has finished
    * rendering in the browser.
    */
-  afterRouteLoad: (route: Route) => void;
+  afterRouteLoad?: (route: Route) => void;
   /**
    * Document title to append to page titles.
    *
