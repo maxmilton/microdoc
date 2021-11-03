@@ -35,7 +35,6 @@ input::-webkit-inner-spin-button {
   .dib { #apply: .dib; }
   .ml-auto { #apply: .ml-auto; }
   .mt0 { #apply: .mt0; }
-  .mv-1 { #apply: .mv-1; }
   .pl3 { #apply: .pl3; }
   .muted { #apply: .muted; }
   .text { #apply: .text; }

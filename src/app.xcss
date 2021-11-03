@@ -11,14 +11,6 @@
 
   background: ${x.color.background};
   border-bottom: 1px solid var(--color-border);
-
-  & > div:first-of-type {
-    margin-left: auto;
-  }
-
-  & > div + div {
-    margin-left: 1rem;
-  }
 }
 
 .microdoc-logo {
@@ -28,6 +20,18 @@
   font-weight: ${x.textWeightMedium};
   line-height: 1;
   text-decoration: none;
+}
+
+.microdoc-header-item {
+  #apply: .mv-1;
+
+  &:first-of-type {
+    margin-left: auto;
+  }
+
+  & + & {
+    margin-left: 1rem;
+  }
 }
 
 .microdoc-sidebar {
@@ -160,14 +164,15 @@
 .microdoc-prevnext {
   margin: 3rem 0;
   text-align: center;
+}
 
-  & > button {
-    width: 8rem;
+.microdoc-button-prev,
+.microdoc-button-next {
+  width: 8rem;
+}
 
-    &:last-child {
-      margin-left: 1rem;
-    }
-  }
+.microdoc-button-next {
+  margin-left: 1rem;
 }
 
 /* Dark Mode plugin */

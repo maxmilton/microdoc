@@ -89,7 +89,7 @@ const resultListView = h`
 `;
 // https://github.com/feathericons/feather/blob/master/icons/search.svg
 const searchView = h`
-  <div class="microdoc-search mv-1">
+  <div class="microdoc-search microdoc-header-item">
     <input #input type=search class=microdoc-search-input placeholder="Search docs...">
     <svg viewBox="0 0 24 24" class="microdoc-icon microdoc-icon-search">
       <circle cx=11 cy=11 r=8 />

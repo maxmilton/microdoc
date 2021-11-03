@@ -20,8 +20,8 @@ type RefNodes = {
 
 const view = h`
   <div class=microdoc-prevnext>
-    <button #p>Previous</button>
-    <button #n>Next</button>
+    <button #p class=microdoc-button-prev>Previous</button>
+    <button #n class=microdoc-button-next>Next</button>
   </div>
 `;
 
