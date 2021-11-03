@@ -21,7 +21,6 @@
 <!-- <style>.microdoc-sidebar-wrapper{display:none}.microdoc-main{width:100%}</style> -->
 <script>
   var microdoc = {
-    darkMode: window.matchMedia('(prefers-color-scheme:dark)').matches,
     // root: ".",
     routes: [
       "introduction.md",
@@ -59,7 +58,8 @@
         ]},
         "404.md"
       ]}
-    ]
+    ],
+    darkMode: window.matchMedia('(prefers-color-scheme:dark)').matches
   }
 </script>
 <noscript>You need to enable JavaScript to run this app.</noscript>
