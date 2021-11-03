@@ -55,4 +55,8 @@
   pre > code {
     color: ${x.color.light5};
   }
+
+  .spinner:before {
+    border-color: ${x.color.dark2};
+  }
 }
