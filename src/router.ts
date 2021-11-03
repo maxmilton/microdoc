@@ -239,6 +239,8 @@ export function Router(): RouterComponent {
       root.innerHTML = html;
       document.title = `${route.name} | ${window.microdoc.title}`;
 
+      window.microdoc.afterRouteLoad?.(route);
+
       // scroll to an in-page link
       if (hash) {
         try {
