@@ -62,9 +62,10 @@ code {
   #apply: .code-inline;
 }
 
-// code[class^='language'],
 pre > code {
   #apply: .code-block;
+
+  user-select: auto;
 }
 
 li > pre {
