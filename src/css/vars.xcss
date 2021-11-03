@@ -43,15 +43,6 @@
     opacity: 0.5;
   }
 
-  #app .alert,
-  blockquote {
-    background-color: ${x.color.dark2};
-  }
-
-  #app .alert-danger {
-    color: ${x.color.red5};
-  }
-
   code {
     color: ${x.color.rose5};
     background-color: ${x.color.dark1};
@@ -59,6 +50,15 @@
 
   pre > code {
     color: ${x.color.light5};
+  }
+
+  blockquote,
+  #app .alert {
+    background-color: ${x.color.dark2};
+  }
+
+  #app .alert-danger {
+    color: ${x.color.red5};
   }
 
   .spinner:before {

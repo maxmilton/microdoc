@@ -1,13 +1,10 @@
 @import './css/index.xcss';
 
+// TODO: Fix overscroll/height on vertically short pages (due to .microdoc-sidebar padding)
+
 /*
 * Docs app styles
 */
-
-// TODO: Add more CSS vars for customising the theme
-//  ↳ Move colours and sizes into CSS vars (instead of framework built-in classes)
-
-// TODO: Fix overscroll/height on vertically short pages (due to .microdoc-sidebar padding)
 
 .microdoc-header {
   background: ${x.color.background};

@@ -1,11 +1,13 @@
-${null}
-
 // Reset image display (from remedy.css) so README badges etc. are inline
-img { display: initial; }
+img {
+  display: initial;
+}
 
 /* Useful bits from @ekscss/framework/level2/form.xcss */
 
-* { accent-color: ${x.color.primary}; }
+* {
+  accent-color: ${x.color.primary};
+}
 
 // Hide the up/down buttons in <input type=number> as they're confusing, but
 // still allow use of the type=number; makes number input more usable on phones
