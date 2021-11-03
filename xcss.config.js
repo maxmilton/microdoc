@@ -10,7 +10,10 @@ const { preloadApply } = require('@ekscss/framework/utils');
 const { merge } = require('dset/merge');
 const { onBeforeBuild } = require('ekscss');
 
-onBeforeBuild(preloadApply);
+onBeforeBuild(() => preloadApply(`
+  @import '@ekscss/framework/level2.xcss';
+  @import '@ekscss/framework/addon/alert.xcss';
+`));
 
 /** @type {(import('esbuild-plugin-ekscss').XCSSConfig)} */
 module.exports = merge(framework, {

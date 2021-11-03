@@ -38,13 +38,18 @@
 
   color-scheme: dark;
 
-  & [disabled] {
+  [disabled] {
     background-color: transparent;
     opacity: 0.5;
   }
 
-  & blockquote {
+  #app .alert,
+  blockquote {
     background-color: ${x.color.dark2};
+  }
+
+  #app .alert-danger {
+    color: ${x.color.red5};
   }
 
   code {
