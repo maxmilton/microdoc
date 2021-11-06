@@ -180,10 +180,11 @@ loadContent()
       // includeScore: true, // useful for debugging
       includeMatches: true,
       keys: [
-        {
-          name: 'body',
-          weight: 0.9,
-        },
+        // {
+        //   name: 'body',
+        //   weight: 0.9,
+        // },
+        'body',
         'title',
       ],
     });
