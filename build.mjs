@@ -68,7 +68,30 @@ const minifyCss = {
         const { file, index } = findOutputFile(result.outputFiles, '.css');
 
         if (file) {
-          const { css } = csso.minify(decodeUTF8(file.contents));
+          const ast = csso.syntax.parse(decodeUTF8(file.contents));
+          const compressedAst = csso.syntax.compress(ast, {
+            restructure: true,
+            forceMediaMerge: true, // unsafe!
+            usage: {
+              blacklist: {
+                // Remove unnecessary classes
+                classes: [
+                  'blockquote',
+                  'break',
+                  'code-block',
+                  'code-inline',
+                  'code',
+                  'hyphenate',
+                  'table',
+                  'table-wrapper', // TODO: Keep?
+                  'table-zebra', // TODO: Keep?
+                ],
+                // tags: [],
+              },
+            },
+          }).ast;
+          const css = csso.syntax.generate(compressedAst);
+
           result.outputFiles[index].contents = encodeUTF8(css);
         }
       }
