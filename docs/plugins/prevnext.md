@@ -1,6 +1,8 @@
 # PrevNext Plugin
 
-The PrevNext plugin adds "previous" and "next" buttons to the bottom of pages to allow for faster navigation and a smoother continuous reading experience in a multi-page docs site. You can see it in action on the bottom of each page of these docs!
+The PrevNext plugin adds "previous" and "next" buttons to the bottom of pages to allow for faster navigation and a smoother continuous reading experience in a multi-page docs site. This is especially useful for users browsing your docs on mobile because the side navigation bar is hidden by behind a menu button.
+
+You can see it in action on the bottom of each page of these docs!
 
 ## Installation
 
