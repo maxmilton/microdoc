@@ -1,20 +1,17 @@
 <!doctype html>
 <meta charset=utf-8>
-<title>Example Plugin Dark Mode</title>
-<meta name=description content="Example microdoc plugin Dark Mode">
+<title>Dark Mode Plugin Example 3</title>
+<meta name=description content="Example 3 of microdoc Dark Mode plugin">
 <meta name=viewport content="width=device-width">
 <link href=https://cdn.jsdelivr.net/npm/microdoc@0/microdoc.css rel=stylesheet>
 <script src=https://cdn.jsdelivr.net/npm/microdoc@0/microdoc.js defer></script>
 <script src=https://cdn.jsdelivr.net/npm/microdoc@0/plugin/dark-mode.js defer></script>
-<script>
-  var microdoc = {
-    darkMode: true,
-    root: "https://raw.githubusercontent.com/maxmilton/microdoc/master"
-  };
-</script>
 <style>
+  :root {
+    --color-primary: #bf7326;
+  }
   .dark {
-    --color-primary: #f5498b;
+    --color-primary: #f29d49;
   }
 </style>
 <noscript>You need to enable JavaScript to run this app.</noscript>

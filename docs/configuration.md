@@ -2,9 +2,9 @@
 
 Although microdoc touts itself as "zero config" — meaning that things will work without configuration — you'll need to set some basic options for a full experience.
 
-Configuration options are set by defining a global `microdoc` object. If you're unfamiliar with JavaScript, that's the `var microdoc = {}` in the [starter template](getting-started.md#starter-template) and examples below.
+Configuration options are set by adding a `<script>` block containing a global `microdoc` object. If you're unfamiliar with JavaScript, that's the `var microdoc = {}` in the [starter template](getting-started.md#starter-template) and examples below.
 
-> **Tip:** When you're writing the config within inline `<script>` tags, keep in mind because the code is hand-written, you need to be mindful about cross-browser compatibility.
+> **Tip:** Code you hand-write within inline `<script>` and `<style>` tags needs to be written carefully with cross-browser compatibility in mind. It depends on which browsers you want to support but in general it's best to keep code short and simple.
 
 To customise the visual look and feel of your docs see [theme customisation](#theme-customisation) below.
 
@@ -85,6 +85,8 @@ Only routes which are defined can be loaded. Even if you link to files in your m
 
 Given the following configuration ([see live example](https://microdoc.js.org/examples/config4.html)):
 
+<!-- prettier-ignore-start -->
+
 ```html
 <script>
   var microdoc = {
@@ -93,18 +95,17 @@ Given the following configuration ([see live example](https://microdoc.js.org/ex
       "my-file-1.md",
       "MY_FILE_2.md",
       { name: "Custom Name", path: "my-file-3.md" },
-      {
-        path: "nested-path",
-        children: [
-          "my-file-4.md",
-          { path: "deeper", children: ["my-file-5.md"] }
-        ]
-      },
+      { path: "nested-path", children: [
+        "my-file-4.md",
+        { path: "deeper", children: ["my-file-5.md"] }
+      ]},
       { name: "nested-name", children: ["my-file-6.md"] }
     ]
   };
 </script>
 ```
+
+<!-- prettier-ignore-end -->
 
 It would evaluate into data that looks like:
 
@@ -154,28 +155,27 @@ It would evaluate into data that looks like:
 
 ## Theme Customisation
 
-<!-- Your docs theme can be customised in two ways,  -->
+Your microdoc theme can be customised by adding a `<style>` block with your CSS customisations. The most common things you may want to change are defined with [CSS custom properties (also known as CSS variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/--*).
 
-Customise theme with
-The most common x
-are [CSS custom properties (also known as CSS variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+To customise properties, add them to a `:root {}` CSS rule, see below for [examples](#examples). The build-in dark theme can also be customised by adding the properties to a `.dark {}` CSS rule.
 
-<!--
-getComputedStyle(document.documentElement).getPropertyValue('--input-color-text')
--->
+### CSS Custom Properties
 
 <!-- prettier-ignore-start -->
 
 | Property Name | Default | Description |
 | --- | --- | --- |
-| `--color-primary` | `#106ba3` | Main theme colour. Many styles use this property so it's easy to give your docs a unique feel by setting just this one value. |
+| `--color-primary` | `#106ba3` | Theme primary colour. Many styles inherit this colour so it's easy to give your docs a unique feel by setting this one value. |
 | `--color-background` | `#f5f8fa` | Page background colour. |
 | `--color-text` | `#202b33` | Text colour. |
 | `--color-muted` | `#5c7080` | Muted accent colour. Used for things which are less important e.g., footer message. |
 | `--color-link` | `var(--color-primary)` | Anchor link tag colour. |
 | `--color-link-hover` | `var(--color-link)` | Anchor link tag colour on hover and focus. |
+| `--color-border` | `#bfccd6` | Sidebar and header border colour. |
+| `--main-max-width` | `50rem` | Maximum width of the page main content area. |
 | `--sidebar-width` | `15rem` | Width of the sidebar. |
 | `--sidebar-color-active` | `#e1e8ed` | Background colour of the current active route in the sidebar. |
+| `--blockquote-color-border` | `var(--color-primary)` | Blockquote highlight border colour. |
 | `--input-color-text` | `inherit` | Input and button element text colour. |
 | `--input-color-placeholder` | `var(--color-muted)` | Input and button element placeholder text colour. |
 | `--input-color-background` | `#fff` | Input and button element background colour. |
@@ -188,7 +188,7 @@ getComputedStyle(document.documentElement).getPropertyValue('--input-color-text'
 
 #### Custom Branding
 
-xx ([see live example](https://microdoc.js.org/examples/theme1.html)):
+Modifying the theme to align with your branding is as easy as setting some properties and defining a custom font ([see live example](https://microdoc.js.org/examples/theme1.html)):
 
 ```html
 <style>
@@ -231,9 +231,26 @@ Simple dark theme ([see live example](https://microdoc.js.org/examples/theme2.ht
 </style>
 ```
 
+#### Link Underline On Hover
+
+By default links have an underline but you can hide it by default and show it only on hover ([see live example](https://microdoc.js.org/examples/theme3.html)):
+
+```html
+<style>
+  a {
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: underline;
+  }
+</style>
+```
+
 #### No Sidebar
 
-Hide the entire sidebar e.g., for a single page docs ([see live example](https://microdoc.js.org/examples/theme3.html)):
+Hide the entire sidebar e.g., for a single page docs ([see live example](https://microdoc.js.org/examples/theme4.html)):
 
 ```html
 <style>
@@ -245,7 +262,7 @@ Hide the entire sidebar e.g., for a single page docs ([see live example](https:/
 
 #### No Footer
 
-Hide the "Powered by microdoc" footer message ([see live example](https://microdoc.js.org/examples/theme4.html)):
+Hide the "Powered by microdoc" footer message ([see live example](https://microdoc.js.org/examples/theme5.html)):
 
 ```html
 <style>

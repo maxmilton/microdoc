@@ -32,8 +32,8 @@
         "development.md"
       ]}
     ],
-    afterRouteLoad: () => window.Prism.highlightAll(),
-    darkMode: window.matchMedia('(prefers-color-scheme:dark)').matches
+    afterRouteLoad: () => Prism.highlightAll(),
+    darkMode: matchMedia('(prefers-color-scheme:dark)').matches
   }
 </script>
 <style>

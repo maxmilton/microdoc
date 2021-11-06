@@ -21,7 +21,7 @@ export function Debug(): DebugComponent {
         const condition = (rule as CSSMediaRule).media.mediaText;
 
         if (!(condition in mediaRules)) {
-          mediaRules[condition] = window.matchMedia(condition);
+          mediaRules[condition] = matchMedia(condition);
         }
       }
     }
