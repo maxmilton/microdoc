@@ -10,8 +10,9 @@
 
   --main-max-width: 50rem; // 1000px @ 20px textSize
 
-  --sidebar-width: 15rem;
-  --sidebar-color-active: ${x.color.light3};
+  --sidenav-width: 15rem;
+  --sidenav-color-active: ${x.color.light3};
+  --sidenav-speed: 320ms;
 
   --blockquote-color-border: var(--color-primary);
 
@@ -32,7 +33,7 @@
   --color-muted: ${x.color.gray2};
   --color-border: ${x.color.dark4};
 
-  --sidebar-color-active: ${x.color.dark2};
+  --sidenav-color-active: ${x.color.dark2};
 
   --input-color-text: ${x.color.light2};
   --input-color-placeholder: ${x.color.gray4};

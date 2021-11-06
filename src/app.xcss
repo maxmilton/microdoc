@@ -1,6 +1,6 @@
 @import './css/index.xcss';
 
-// TODO: Fix overscroll/height on vertically short pages (due to .microdoc-sidebar padding)
+// TODO: Fix overscroll/height on vertically short pages (due to .microdoc-sidenav padding)
 
 /*
 * Docs app styles
@@ -34,49 +34,86 @@
   }
 }
 
-.microdoc-sidebar {
+.microdoc-sidenav {
   border-right: 1px solid var(--color-border);
 }
 
-.microdoc-sidebar-stick {
+.microdoc-button-menu {
+  display: none;
+  flex-shrink: 0;
+}
+
+@media (max-width: 60rem) {
+  .microdoc-button-menu {
+    display: block;
+    margin-right: 1rem;
+    padding: 0.5rem;
+  }
+
+  .microdoc-sidenav {
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 85%;
+    background: var(--color-background);
+    box-shadow: 5px 0 40px rgba(0,0,0,.45);
+
+    visibility: hidden;
+    transform: translateX(-110vw);
+    will-change: transform;
+    transition:
+      transform var(--sidenav-speed) ease-in-out,
+      visibility 0s linear var(--sidenav-speed);
+
+    &.open {
+      visibility: visible;
+      transform: translateX(0);
+      transition: transform var(--sidenav-speed) ease-in-out;
+    }
+  }
+}
+
+.microdoc-sidenav-stick {
   position: sticky;
   top: 0;
-  width: var(--sidebar-width);
+  width: var(--sidenav-width);
   height: 100vh;
 }
 
-.microdoc-sidebar-scroll {
+.microdoc-sidenav-scroll {
   overflow-y: auto;
   height: 100%;
   padding: 0.5rem;
 }
 
-.microdoc-sidebar-list {
+.microdoc-sidenav-list {
   #apply: .df, .f-col, .lsn, .mv0;
 }
 
-.microdoc-sidebar-parent {
+.microdoc-sidenav-parent {
   #apply: .lsn;
 
   &.expanded {
-    & > .microdoc-sidebar-item  > .microdoc-icon {
+    & > .microdoc-sidenav-item  > .microdoc-icon {
       transform: rotate(90deg);
     }
 
-    & > .microdoc-sidebar-parent,
-    & > .microdoc-sidebar-link {
+    & > .microdoc-sidenav-parent,
+    & > .microdoc-sidenav-link {
       display: block;
     }
   }
 
   & > &,
-  & > .microdoc-sidebar-link {
+  & > .microdoc-sidenav-link {
     display: none;
     margin-left: 1rem;
   }
 }
 
-.microdoc-sidebar-item {
+.microdoc-sidenav-item {
   width: 100%;
   margin: 2px 0 !important;
   border: 0;
@@ -92,7 +129,7 @@
   &:focus,
   &:active,
   .active > & {
-    background: var(--sidebar-color-active);
+    background: var(--sidenav-color-active);
     box-shadow: none !important;
   }
 

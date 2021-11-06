@@ -171,10 +171,11 @@ To customise properties, add them to a `:root {}` CSS rule, see below for [examp
 | `--color-muted` | `#5c7080` | Muted accent colour. Used for things which are less important e.g., footer message. |
 | `--color-link` | `var(--color-primary)` | Anchor link tag colour. |
 | `--color-link-hover` | `var(--color-link)` | Anchor link tag colour on hover and focus. |
-| `--color-border` | `#bfccd6` | Sidebar and header border colour. |
+| `--color-border` | `#bfccd6` | side navigation menu and header border colour. |
 | `--main-max-width` | `50rem` | Maximum width of the page main content area. |
-| `--sidebar-width` | `15rem` | Width of the sidebar. |
-| `--sidebar-color-active` | `#e1e8ed` | Background colour of the current active route in the sidebar. |
+| `--sidenav-width` | `15rem` | Width of the side navigation menu. |
+| `--sidenav-color-active` | `#e1e8ed` | Background colour of the current active route in the side navigation menu. |
+| `--sidenav-speed` | `320ms` | Animation duration of the side navigation menu open and close (on small screens). |
 | `--blockquote-color-border` | `var(--color-primary)` | Blockquote highlight border colour. |
 | `--input-color-text` | `inherit` | Input and button element text colour. |
 | `--input-color-placeholder` | `var(--color-muted)` | Input and button element placeholder text colour. |
@@ -199,7 +200,7 @@ Modifying the theme to align with your branding is as easy as setting some prope
     --color-background: #fff;
     --color-text: #111827;
     --color-border: #e5e7eb;
-    --sidebar-color-active: #f3f4f6;
+    --sidenav-color-active: #f3f4f6;
 
     font-family: "Rubik", sans-serif;
     font-size: 18px;
@@ -221,7 +222,7 @@ Simple dark theme ([see live example](https://microdoc.js.org/examples/theme2.ht
     --color-text: #ced9e0;
     --color-muted: #738694;
     --color-border: #30404d;
-    --sidebar-color-active: #202b33;
+    --sidenav-color-active: #202b33;
     --input-color-text: #d8e1e8;
     --input-color-placeholder: #a7b6c2;
     --input-color-background: #293742;
@@ -248,13 +249,13 @@ By default links have an underline but you can hide it by default and show it on
 </style>
 ```
 
-#### No Sidebar
+#### No Sidenav
 
-Hide the entire sidebar e.g., for a single page docs ([see live example](https://microdoc.js.org/examples/theme4.html)):
+Hide the entire sidenav e.g., for a single page docs ([see live example](https://microdoc.js.org/examples/theme4.html)):
 
 ```html
 <style>
-  .microdoc-sidebar {
+  .microdoc-sidenav {
     display: none;
   }
 </style>

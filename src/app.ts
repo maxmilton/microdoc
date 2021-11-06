@@ -1,7 +1,7 @@
 import { append, create } from 'stage1';
 import './app.xcss';
 import { Header } from './components/Header';
-import { Sidebar } from './components/Sidebar';
+import { Sidenav } from './components/Sidenav';
 import { Router } from './router';
 
 export function render(): void {
@@ -14,7 +14,7 @@ export function render(): void {
   main.className = 'microdoc-main';
 
   append(Header(), app);
-  append(Sidebar(), wrapper);
+  append(Sidenav(), wrapper);
   append(Router(), main);
   append(main, wrapper);
   append(wrapper, app);

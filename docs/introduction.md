@@ -21,7 +21,7 @@ TODO: Documentation:
 
 - Routes - Menu item name is automatically inferred from path (capitalised + separators into space) -- if you want some other name, use object notation with "name" field
 - Customise theme with CSS vars:
-  - `--sidebar-width`
+  - `--sidenav-width`
 - Uses fetch so you need to include a polyfill for old browser support (+ list others that might need polyfills)
 - No sanitation, directly render the resulting HTML from your markdown, open for XSS, don't accidentally pwn your reader
 - Why markdown; developers can choose to either read the raw .md or the HTML rendered version

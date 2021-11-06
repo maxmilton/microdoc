@@ -1,6 +1,6 @@
 import { h, S1Node } from 'stage1';
 
-type SidebarParentComponent = S1Node & HTMLUListElement;
+type SidenavParentComponent = S1Node & HTMLUListElement;
 
 type RefNodes = {
   button: HTMLButtonElement;
@@ -9,8 +9,8 @@ type RefNodes = {
 
 // https://github.com/tailwindlabs/heroicons/blob/master/src/outline/chevron-right.svg
 const view = h`
-  <ul class=microdoc-sidebar-parent>
-    <button #button class="microdoc-sidebar-item button-link dfc">
+  <ul class=microdoc-sidenav-parent>
+    <button #button class="microdoc-sidenav-item button-link dfc">
       #t
       <svg viewBox="0 0 24 24" class="microdoc-icon ml-auto">
         <path d="M9 5l7 7-7 7" />
@@ -19,8 +19,8 @@ const view = h`
   </ul>
 `;
 
-export function SidebarParent(title: string): SidebarParentComponent {
-  const root = view.cloneNode(true) as SidebarParentComponent;
+export function SidenavParent(title: string): SidenavParentComponent {
+  const root = view.cloneNode(true) as SidenavParentComponent;
   const { button, t } = view.collect<RefNodes>(root);
 
   t.textContent = title;

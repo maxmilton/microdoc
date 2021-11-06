@@ -56,16 +56,16 @@ test('renders a basic microdoc app', async (context) => {
     'has .microdoc-logo element',
   );
   assert.ok(
-    await context.page.$('.microdoc-sidebar'),
-    'has .microdoc-sidebar element',
+    await context.page.$('.microdoc-sidenav'),
+    'has .microdoc-sidenav element',
   );
   assert.ok(
-    await context.page.$('.microdoc-sidebar-stick'),
-    'has .microdoc-sidebar-stick element',
+    await context.page.$('.microdoc-sidenav-stick'),
+    'has .microdoc-sidenav-stick element',
   );
   assert.ok(
-    await context.page.$('.microdoc-sidebar-scroll'),
-    'has .microdoc-sidebar-scroll element',
+    await context.page.$('.microdoc-sidenav-scroll'),
+    'has .microdoc-sidenav-scroll element',
   );
   assert.ok(
     await context.page.$('.microdoc-footer'),
