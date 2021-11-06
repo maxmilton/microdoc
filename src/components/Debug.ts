@@ -16,12 +16,15 @@ export function Debug(): DebugComponent {
   const mediaRules: Record<string, MediaQueryList> = {};
 
   for (const sheet of document.styleSheets) {
-    for (const rule of sheet.cssRules) {
-      if (rule.type === CSSRule.MEDIA_RULE) {
-        const condition = (rule as CSSMediaRule).media.mediaText;
+    // Exclude cross-origin stylesheets
+    if (!sheet.href || sheet.href.startsWith(window.location.origin)) {
+      for (const rule of sheet.cssRules) {
+        if (rule.type === CSSRule.MEDIA_RULE) {
+          const condition = (rule as CSSMediaRule).media.mediaText;
 
-        if (!(condition in mediaRules)) {
-          mediaRules[condition] = matchMedia(condition);
+          if (!(condition in mediaRules)) {
+            mediaRules[condition] = matchMedia(condition);
+          }
         }
       }
     }
