@@ -32,12 +32,9 @@ input::-webkit-inner-spin-button {
   .con { #apply: .con; }
   .dfc { #apply: .dfc; }
   .df { #apply: .df; }
-  .dib { #apply: .dib; }
   .ml-auto { #apply: .ml-auto; }
   .mt0 { #apply: .mt0; }
-  .pl3 { #apply: .pl3; }
   .muted { #apply: .muted; }
-  .text { #apply: .text; }
   .button-clear { #apply: .button-clear; }
   .link-button { #apply: .link-button; }
   .alert { #apply: .alert; }
@@ -77,4 +74,8 @@ blockquote>:first-child {
 }
 blockquote>:last-child {
   margin-bottom: 0;
+}
+
+tr:nth-child(even) {
+  #apply: ".table-zebra tr:nth-child(even)";
 }

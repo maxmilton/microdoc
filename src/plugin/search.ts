@@ -84,7 +84,7 @@ const resultListView = h`
   <div class=microdoc-search-results hidden>
     <h3 class=mt0>Search Results</h3>
 
-    <ul #list class=pl3></ul>
+    <ul #list></ul>
   </div>
 `;
 // https://github.com/feathericons/feather/blob/master/icons/search.svg

@@ -8,8 +8,12 @@
   --color-link-hover: var(--color-link);
   --color-border: ${x.color.gray5};
 
+  --main-max-width: 50rem; // 1000px @ 20px textSize
+
   --sidebar-width: 15rem;
   --sidebar-color-active: ${x.color.light3};
+
+  --blockquote-color-border: var(--color-primary);
 
   --input-color-text: inherit;
   --input-color-placeholder: ${x.color.muted};
@@ -50,6 +54,7 @@
 
   pre > code {
     color: ${x.color.light5};
+    background-color: ${x.color.dark2};
   }
 
   blockquote,
@@ -63,5 +68,10 @@
 
   .spinner:before {
     border-color: ${x.color.dark2};
+    border-top-color: var(--color-primary);
+  }
+
+  tr:nth-child(even) {
+    background: ${x.fn.color(x.color.black).mix(x.fn.color(x.color.dark1), 0.4)};
   }
 }

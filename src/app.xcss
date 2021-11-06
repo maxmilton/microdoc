@@ -177,6 +177,10 @@
 
 /* Dark Mode plugin */
 
+.microdoc-dark-mode {
+  flex-shrink: 0;
+}
+
 .microdoc-icon-moon,
 .microdoc-icon-sun {
   width: 1.4em;

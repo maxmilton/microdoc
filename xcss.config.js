@@ -28,7 +28,13 @@ module.exports = merge(framework, {
       linkHover: 'var(--color-link-hover)',
     },
 
+    containerWidthMax: 'var(--main-max-width)',
     gutterCol: '1rem',
+
+    form: {
+      checkboxCheckedBackgroundColor: 'var(--color-primary)',
+      checkboxCheckedBorderColor: 'var(--color-primary)',
+    },
 
     input: {
       textColor: 'var(--input-color-text)',
@@ -36,6 +42,10 @@ module.exports = merge(framework, {
       placeholderTextColor: 'var(--input-color-placeholder)',
       border: '1px solid var(--input-color-border)',
       hoverBorderColor: 'var(--input-color-border-hover)',
+    },
+
+    alert: {
+      infoBorderColor: 'var(--blockquote-color-border)',
     },
   },
 });
