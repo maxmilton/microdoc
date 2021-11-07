@@ -54,6 +54,10 @@ input::-webkit-inner-spin-button {
 
 /* Markdown enhancements */
 
+pre + pre {
+  margin-top: 1rem;
+}
+
 code {
   #apply: .code-inline;
 }
@@ -69,10 +73,10 @@ li > pre {
   margin-bottom: 0.2rem;
 }
 
-blockquote>:first-child {
+blockquote > :first-child {
   margin-top: 0;
 }
-blockquote>:last-child {
+blockquote > :last-child {
   margin-bottom: 0;
 }
 

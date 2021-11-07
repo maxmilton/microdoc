@@ -12,7 +12,7 @@
 
   --sidenav-width: 15rem;
   --sidenav-color-active: ${x.color.light3};
-  --sidenav-speed: 320ms;
+  --sidenav-speed: 400ms;
 
   --blockquote-color-border: var(--color-primary);
 
@@ -54,7 +54,7 @@
   }
 
   pre > code {
-    color: ${x.color.light5};
+    color: ${x.color.light4};
     background-color: ${x.color.dark2};
   }
 

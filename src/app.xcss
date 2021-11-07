@@ -7,10 +7,15 @@
 */
 
 .microdoc-header {
-  #apply: .pa2;
-
+  display: flex;
+  padding: 0.25rem 0.5rem;
   background: ${x.color.background};
   border-bottom: 1px solid var(--color-border);
+
+  // FIXME: Probably not the right selector for this
+  .button-clear {
+    padding: ${x.button.paddingY} 0.5rem;
+  }
 }
 
 .microdoc-logo {
@@ -18,16 +23,11 @@
 
   font-size: 1.5rem;
   font-weight: ${x.textWeightMedium};
-  line-height: 1;
   text-decoration: none;
 }
 
 .microdoc-header-item {
-  #apply: .mv-1;
-
-  &:first-of-type {
-    margin-left: auto;
-  }
+  margin-left: auto;
 
   & + & {
     margin-left: 1rem;
@@ -41,13 +41,12 @@
 .microdoc-button-menu {
   display: none;
   flex-shrink: 0;
+  margin-right: 0.5rem;
 }
 
 @media (max-width: 60rem) {
   .microdoc-button-menu {
     display: block;
-    margin-right: 1rem;
-    padding: 0.5rem;
   }
 
   .microdoc-sidenav {
@@ -56,21 +55,21 @@
     top: 0;
     bottom: 0;
     left: 0;
-    max-width: 85%;
+    max-width: 85%; // ensure enough click area to dismiss the sidenav
     background: var(--color-background);
-    box-shadow: 5px 0 40px rgba(0,0,0,.45);
+    box-shadow: 5px 0 40px rgba(0, 0, 0, 0.45);
 
     visibility: hidden;
     transform: translateX(-110vw);
     will-change: transform;
     transition:
-      transform var(--sidenav-speed) ease-in-out,
+      transform var(--sidenav-speed) cubic-bezier(0.16, 1, 0.3, 1),
       visibility 0s linear var(--sidenav-speed);
 
     &.open {
       visibility: visible;
       transform: translateX(0);
-      transition: transform var(--sidenav-speed) ease-in-out;
+      transition: transform var(--sidenav-speed) cubic-bezier(0.16, 1, 0.3, 1);
     }
   }
 }
@@ -155,7 +154,7 @@
 }
 
 [class^='microdoc-icon'] {
-  width: 1.2rem;
+  width: 1.2rem; // 24px @ 1.2rem
   height: 1.2rem;
   fill: none;
   stroke: currentColor;
@@ -177,9 +176,14 @@
   padding-left: 2rem;
 }
 
+.microdoc-button-search {
+  display: none;
+  height: 100%;
+}
+
 .microdoc-icon-search {
   position: absolute;
-  top: 0.55rem;
+  top: 0.6rem;
   left: 0.5rem;
   color: ${x.color.gray2};
   pointer-events: none;
@@ -194,6 +198,58 @@
   padding: 0.5rem 1rem;
   background: ${x.color.background};
   border: 1px solid ${x.color.gray2};
+}
+
+.microdoc-icon-x {
+  visibility: hidden;
+}
+
+@media (max-width: 60rem) {
+  .microdoc-search.expanded {
+    z-index: 3;
+    position: absolute;
+    top: 0.25rem;
+    left: 2px;
+    right: 2px;
+    margin-left: 0; // TODO: Keep? It's because of .microdoc-header-item+.microdoc-header-item
+
+    .microdoc-icon-x {
+      visibility: visible;
+    }
+  }
+
+  .microdoc-search-input {
+    position: absolute;
+    display: none;
+    top: 0;
+    width: 100%;
+
+    .expanded > & {
+      display: block;
+    }
+  }
+
+  .microdoc-button-search {
+    display: block;
+
+    .expanded > & {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  .microdoc-icon-search {
+    color: inherit;
+
+    .expanded > & {
+      color: ${x.color.gray2};
+    }
+  }
+
+  .microdoc-search-results {
+    // FIXME: Shouldn't use a fixed size, but because of the pos:a parent the 100% isn't working
+    top: 2.4rem;
+  }
 }
 
 /* PrevNext plugin */
@@ -218,14 +274,9 @@
   flex-shrink: 0;
 }
 
-.microdoc-icon-moon,
 .microdoc-icon-sun {
-  width: 1.4em;
-  height: 1.4em;
-}
-
-.microdoc-icon-sun {
-  vertical-align: -0.35rem;
+  // TODO: Test cross-browser with various fonts
+  vertical-align: text-top;
 }
 
 .dark .microdoc-icon-moon,

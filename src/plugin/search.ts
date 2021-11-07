@@ -48,7 +48,10 @@ async function loadContent() {
       const res = await file[0];
       // eslint-disable-next-line no-await-in-loop
       const body = await res.text();
-      if (!res.ok) throw new Error(body || `${res.status}`);
+
+      if (!res.ok) {
+        throw new Error(body || `${res.status}`);
+      }
       content.push({ body, title: file[1], url: file[2] });
     } catch (error) {
       console.error(error);
@@ -72,6 +75,7 @@ type ResultItemRefNodes = {
   url: HTMLAnchorElement;
 };
 type SearchRefNodes = {
+  button: HTMLButtonElement;
   input: HTMLInputElement;
 };
 
@@ -87,13 +91,20 @@ const resultListView = h`
     <ul #list></ul>
   </div>
 `;
+// https://github.com/tabler/tabler-icons/blob/master/icons/x.svg
 // https://github.com/feathericons/feather/blob/master/icons/search.svg
 const searchView = h`
   <div class="microdoc-search microdoc-header-item">
+    <button #button class="microdoc-button-search button-clear">
+      <svg viewBox="0 0 24 24" class=microdoc-icon-x>
+        <line x1=18 y1=6 x2=6 y2=18 />
+        <line x1=6 y1=6 x2=18 y2=18 />
+      </svg>
+    </button>
     <input #input type=search class=microdoc-search-input placeholder="Search docs...">
-    <svg viewBox="0 0 24 24" class="microdoc-icon microdoc-icon-search">
+    <svg viewBox="0 0 24 24" class=microdoc-icon-search>
       <circle cx=11 cy=11 r=8 />
-      <line x1=24 y1=24 x2=16.65 y2=16.65 />
+      <line x1=21 y1=21 x2=16.65 y2=16.65 />
     </svg>
   </div>
 `;
@@ -108,7 +119,11 @@ function ResultItem(result: Fuse.FuseResult<ContentData>): ResultItemComponent {
   url.href = result.item.url;
   url.textContent = result.item.title;
 
-  url.__click = () => popup.update();
+  url.__click = () => {
+    popup.update();
+    // FIXME: Obviously need to do something better
+    document.querySelector('.microdoc-search')!.classList.remove('expanded');
+  };
 
   return root;
 }
@@ -135,11 +150,16 @@ function ResultList(): ResultListComponent {
 
 function Search(): SearchComponent {
   const root = searchView as SearchComponent;
-  const { input } = searchView.collect<SearchRefNodes>(root);
+  const { button, input } = searchView.collect<SearchRefNodes>(root);
 
   const search = () => {
     const results = fuse.search(input.value);
     (popup ??= append(ResultList(), root)).update(results);
+  };
+
+  button.__click = () => {
+    root.classList.toggle('expanded');
+    input.focus();
   };
 
   input.onfocus = () => {
@@ -165,6 +185,7 @@ function Search(): SearchComponent {
     if (event.key === 'Escape') {
       input.value = '';
       popup?.update();
+      root.classList.remove('expanded');
     }
   };
 
