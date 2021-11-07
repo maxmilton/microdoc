@@ -21,7 +21,7 @@ function afterRouteLoad(route: Route): void;
 
 An optional callback function that's called after a route has finished rendering in the browser.
 
-We use it in these docs to trigger code syntax highlighting using [Prism.js](https://github.com/PrismJS/prism). See [our index.html](https://github.com/maxmilton/microdoc/blob/master/docs/index.html) (or view the source of this page!).
+We use it in these docs to trigger code syntax highlighting using [Prism.js](https://github.com/PrismJS/prism) and our [Prism plugin](plugins/prism.md). See [our index.html](https://github.com/maxmilton/microdoc/blob/master/docs/index.html) (or view the source of this page!).
 
 ### `title`
 

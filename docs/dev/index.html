@@ -6,15 +6,15 @@
 <link href=favicon.svg rel=icon>
 <!-- <meta http-equiv=Content-Security-Policy content="default-src 'none';script-src https://cdn.jsdelivr.net 'sha256-wALJqSOXTeiKDJyDxBOcjS6ruHcw+NT5hIiAP7fjC0A=' 'sha256-ORWVHKcLReMcViMPQhekgaA3Yu1T0Nu2xyptyXknL2I=';style-src 'unsafe-inline' cdn.jsdelivr.net;img-src 'self' https://api.trackx.app;connect-src https://raw.githubusercontent.com https://api.trackx.app"> -->
 <link href=/dev/node_modules/microdoc/microdoc.css rel=stylesheet>
-<link href=https://cdn.jsdelivr.net/npm/prism-themes@1/themes/prism-one-dark.min.css rel=stylesheet>
+<link href=/dev/node_modules/microdoc/plugin/prism.css rel=stylesheet>
+<!-- <script src=https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js data-manual defer></script> -->
+<script src=https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js data-manual defer></script>
+<script src=https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js defer></script>
 <script src=/dev/node_modules/microdoc/microdoc.js defer></script>
 <script src=/dev/node_modules/microdoc/plugin/dark-mode.js defer></script>
 <script src=/dev/node_modules/microdoc/plugin/search.js defer></script>
 <!-- <script src=/dev/node_modules/microdoc/plugin/preload.js defer></script> -->
 <script src=/dev/node_modules/microdoc/plugin/prevnext.js defer></script>
-<!-- <script src=https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js data-manual defer></script> -->
-<script src=https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js data-manual defer></script>
-<script src=https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js defer></script>
 <script>
   var microdoc = {
     // root: ".",
@@ -26,6 +26,7 @@
         "dark-mode.md",
         "preload.md",
         { name: 'PrevNext', path: "prevnext.md" },
+        "prism.md",
         "search.md"
       ]},
       { path: "advanced", children: [
@@ -59,65 +60,11 @@
     darkMode: matchMedia('(prefers-color-scheme:dark)').matches
   }
 </script>
-<style>
-  /* TODO: Better fix for conflicting prism styles */
-  .dark pre > code, pre > code {
-    padding: 0;
-    background-color: unset;
-    overflow: unset;
-  }
-</style>
-<noscript>You need to enable JavaScript to run this app.</noscript>
-
 <script>
-  function ready(fn){"loading"!==document.readyState?fn():document.addEventListener("DOMContentLoaded",fn)}
+  // function ready(fn){"loading"!==document.readyState?fn():document.addEventListener("DOMContentLoaded",fn)}
 
-  function headerExtra() {
-    const root = document.createElement("div");
-    // const link = document.createElement("a");
-    const btn = document.createElement("button");
-    root.classList = "microdoc-header-item";
-    // link.href = "https://github.com/maxmilton/microdoc";
-    // link.textContent = "github";
-    btn.textContent = "Load File/Dir";
-    btn.__click = fileLoader;
-    // root.append(link, btn);
-    root.append(btn);
-    return root;
-  }
-
-  ready(() => {
-    window.microdoc.append(headerExtra(), document.querySelector(".microdoc-header"));
-  })
-
-  // XXX: Only works in Chrome and Edge (but not Brave)
-  // https://web.dev/file-system-access/
-  // https://github.com/GoogleChromeLabs/text-editor/blob/main/src/inline-scripts/fs-helpers.js
-  // https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API
-  // https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker
-  async function fileLoader() {
-    const [handle] = await window.showOpenFilePicker({
-      types: [{
-        accept: { "text/*": [".md", ".txt", ".html"] },
-        description: "Markdown, HTML, or plain text",
-      }],
-    });
-
-    if (!handle) {
-      // User cancelled, or otherwise failed to open a file
-      return;
-    }
-
-    if (handle.kind === "directory") {
-      // TODO: Handle dirs; dynamically populate routes + load first
-      console.log("DIR NAME", handle.name);
-      return;
-    }
-
-    const file = await handle.getFile();
-    const contents = await file.text();
-
-    // TODO: Render etc.
-    console.log("FILE CONTENTS", contents);
-  }
+  // ready(() => {
+  //   document.querySelector(".microdoc-header").append(microdoc.h`<a href=https://github.com/maxmilton/microdoc class="microdoc-header-item link-button" target=_blank>GitHub</a>`);
+  // });
 </script>
+<noscript>You need to enable JavaScript to run this app.</noscript>

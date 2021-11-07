@@ -11,8 +11,7 @@ Users can initiate a search via a search text input that's added to the top of y
 Add the plugin script to your `index.html`, after `microdoc.js`:
 
 ```html
-<script src=https://cdn.jsdelivr.net/npm/microdoc@0/microdoc.js defer></script>
-<script src="https://cdn.jsdelivr.net/npm/microdoc@0/plugin/search.js" defer></script>
+<script src=https://cdn.jsdelivr.net/npm/microdoc@0/plugin/search.js defer></script>
 ```
 
 ## Configuration

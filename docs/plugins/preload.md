@@ -9,8 +9,7 @@ The preload plugin fetches the content files defined in your [routes configurati
 Add the plugin script to your `index.html`, after `microdoc.js`:
 
 ```html
-<script src=https://cdn.jsdelivr.net/npm/microdoc@0/microdoc.js defer></script>
-<script src="https://cdn.jsdelivr.net/npm/microdoc@0/plugin/preload.js" defer></script>
+<script src=https://cdn.jsdelivr.net/npm/microdoc@0/plugin/preload.js defer></script>
 ```
 
 ## Configuration

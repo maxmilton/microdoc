@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Prism Plugin Example 1</title>
+<meta name=description content="Example 1 of microdoc Prism plugin">
+<meta name=viewport content="width=device-width">
+<link href=https://cdn.jsdelivr.net/npm/microdoc@0/microdoc.css rel=stylesheet>
+<link href=https://cdn.jsdelivr.net/npm/microdoc@0/plugin/prism.css rel=stylesheet>
+<script src=https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js data-manual defer></script>
+<script src=https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js defer></script>
+<script src=https://cdn.jsdelivr.net/npm/microdoc@0/microdoc.js defer></script>
+<script src=https://cdn.jsdelivr.net/npm/microdoc@0/plugin/dark-mode.js defer></script>
+<script>
+  var microdoc = {
+    routes: ['code-blocks.md'],
+    afterRouteLoad: () => Prism.highlightAll()
+  }
+</script>
+<noscript>You need to enable JavaScript to run this app.</noscript>

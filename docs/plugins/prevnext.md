@@ -9,8 +9,7 @@ You can see it in action on the bottom of each page of these docs!
 Add the plugin script to your `index.html`, after `microdoc.js`:
 
 ```html
-<script src=https://cdn.jsdelivr.net/npm/microdoc@0/microdoc.js defer></script>
-<script src="https://cdn.jsdelivr.net/npm/microdoc@0/plugin/prevnext.js" defer></script>
+<script src=https://cdn.jsdelivr.net/npm/microdoc@0/plugin/prevnext.js defer></script>
 ```
 
 ## Configuration

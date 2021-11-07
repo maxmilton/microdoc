@@ -55,6 +55,10 @@ Fenced code block
 
 <!-- prettier-ignore-end -->
 
+### Image
+
+![Image of a cat](https://placekitten.com/300/200)
+
 ### Form Elements
 
 <form onsubmit="return false">

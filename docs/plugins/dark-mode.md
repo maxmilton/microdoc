@@ -9,8 +9,7 @@ Adds a button to your docs header allowing users to toggle between a light and d
 Add the plugin script to your `index.html`, after `microdoc.js`:
 
 ```html
-<script src=https://cdn.jsdelivr.net/npm/microdoc@0/microdoc.js defer></script>
-<script src="https://cdn.jsdelivr.net/npm/microdoc@0/plugin/dark-mode.js" defer></script>
+<script src=https://cdn.jsdelivr.net/npm/microdoc@0/plugin/dark-mode.js defer></script>
 ```
 
 ## Configuration
