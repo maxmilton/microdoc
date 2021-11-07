@@ -217,3 +217,24 @@ for (const plugin of ['dark-mode', 'preload', 'prevnext', 'search']) {
     })
     .catch(handleErr);
 }
+
+// Custom PrismJS theme
+esbuild
+  .build({
+    entryPoints: ['src/plugin/prism.xcss'],
+    outfile: 'plugin/prism.css',
+    plugins: [xcss(), minifyCss, writeFiles()],
+    banner: {
+      css: `/*!
+* microdoc prism theme v${pkg.version} - https://microdoc.js.org
+* (c) 2021 Max Milton
+* MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
+*/`,
+    },
+    bundle: true,
+    minify: !dev,
+    watch: dev,
+    write: dev,
+    logLevel: 'debug',
+  })
+  .catch(handleErr);
