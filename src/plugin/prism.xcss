@@ -15,10 +15,9 @@
 */
 
 code[class*='language-'] {
-  // background: hsl(230, 1%, 98%);
-  background: transparent;
+  background: hsl(230, 1%, 98%);
   color: hsl(230, 8%, 24%);
-  border: 1px solid ${x.color.light1};
+  border: 1px solid ${x.color.light3};
 }
 
 .token.bold {
@@ -126,7 +125,10 @@ code[class*='language-'] {
   color: hsl(301, 63%, 40%);
 }
 
-.language-javascript .token.template-string > .token.interpolation > .token.interpolation-punctuation.punctuation {
+.language-javascript
+  .token.template-string
+  > .token.interpolation
+  > .token.interpolation-punctuation.punctuation {
   color: hsl(344, 84%, 43%);
 }
 
@@ -275,7 +277,10 @@ code[class*='language-'] {
     color: hsl(286, 60%, 67%);
   }
 
-  .language-javascript .token.template-string > .token.interpolation > .token.interpolation-punctuation.punctuation {
+  .language-javascript
+    .token.template-string
+    > .token.interpolation
+    > .token.interpolation-punctuation.punctuation {
     color: hsl(5, 48%, 51%);
   }
 
