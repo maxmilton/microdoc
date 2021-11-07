@@ -14,6 +14,7 @@ const { onBeforeBuild } = require('ekscss');
 onBeforeBuild(() => preloadApply(`
   @import '@ekscss/framework/level2.xcss';
   @import '@ekscss/framework/addon/alert.xcss';
+  @import '@ekscss/framework/addon/code.xcss';
 `));
 
 /** @type {(import('esbuild-plugin-ekscss').XCSSConfig)} */

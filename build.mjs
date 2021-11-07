@@ -78,8 +78,6 @@ const minifyCss = {
                 classes: [
                   'blockquote',
                   'break',
-                  'code-block',
-                  'code-inline',
                   'code',
                   'hyphenate',
                   'table',
