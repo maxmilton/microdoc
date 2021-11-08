@@ -26,7 +26,7 @@
     "@ekscss/framework": "^0.0.31",
     "fuse.js": "^6.4.6",
     "remarkable": "^2.0.1",
-    "stage1": "^0.0.11"
+    "stage1": "^0.0.12"
   },
   "devDependencies": {
     "@types/csso": "4.2.0",
