@@ -171,7 +171,7 @@ export function setupRouter(): void {
 // `;
 const loadingError = (path: string, error: unknown) => `
   <div class="alert alert-danger">
-    <strong>Error: </strong>${`${error as string}` || 'Unknown error'}
+    <strong>Error: </strong>${String(error) || 'Unknown error'}
   </div>
 
   <p>Unable to load ${path}</p>
