@@ -73,7 +73,7 @@ md.renderer.rules.heading_open = (tokens, idx) => {
 };
 
 md.renderer.rules.table_open = () => '<div class=table-wrapper><table>';
-md.renderer.rules.table_close = () => '</table><div>';
+md.renderer.rules.table_close = () => '</table></div>';
 
 const $routes = new Map<string, InternalRoute>();
 
