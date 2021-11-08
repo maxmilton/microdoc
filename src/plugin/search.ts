@@ -95,13 +95,13 @@ const resultListView = h`
 // https://github.com/feathericons/feather/blob/master/icons/search.svg
 const searchView = h`
   <div class="microdoc-search microdoc-header-item">
-    <button #button class="microdoc-button-search button-clear">
+    <button class="microdoc-button-search button-clear" #button>
       <svg viewBox="0 0 24 24" class=microdoc-icon-x>
         <line x1=18 y1=6 x2=6 y2=18 />
         <line x1=6 y1=6 x2=18 y2=18 />
       </svg>
     </button>
-    <input #input type=search class=microdoc-search-input placeholder="Search docs...">
+    <input type=search class=microdoc-search-input placeholder="Search docs..." #input>
     <svg viewBox="0 0 24 24" class=microdoc-icon-search>
       <circle cx=11 cy=11 r=8 />
       <line x1=21 y1=21 x2=16.65 y2=16.65 />

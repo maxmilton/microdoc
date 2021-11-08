@@ -14,8 +14,8 @@ type RefNodes = {
 const view = h`
   <aside class=microdoc-sidenav>
     <div class=microdoc-sidenav-stick>
-      <nav #nav class=microdoc-sidenav-scroll>
-        <ul #ul class=microdoc-sidenav-list></ul>
+      <nav class=microdoc-sidenav-scroll #nav>
+        <ul class=microdoc-sidenav-list #ul></ul>
       </nav>
     </div>
   </aside>

@@ -10,7 +10,7 @@ type RefNodes = {
 // https://github.com/tailwindlabs/heroicons/blob/master/src/outline/chevron-right.svg
 const view = h`
   <ul class=microdoc-sidenav-parent>
-    <button #button class="microdoc-sidenav-item button-link dfc">
+    <button class="microdoc-sidenav-item button-link dfc" #button>
       #t
       <svg viewBox="0 0 24 24" class="microdoc-icon ml-auto">
         <path d="M9 5l7 7-7 7" />
