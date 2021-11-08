@@ -5,7 +5,9 @@
  * docs/plugins/prevnext.md
  */
 
-// TODO: The way this currently works is somewhat inefficient and should be refactored
+// TODO: Show the prev/next Route.name in the buttons
+
+// TODO: The way this currently works is somewhat inefficient and could be refactored
 
 import type { InternalMicrodoc } from '../types';
 

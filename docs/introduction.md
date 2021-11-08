@@ -9,6 +9,8 @@ https://github.com/maxmilton/microdoc
 
 Minimalist zero-config zero-build project documentation web apps.
 
+> It's still early days for these docs so content might be a little rough around the edges. If you have any suggestions please [create an issue on GitHub](https://github.com/maxmilton/microdoc/issues). Contributors are welcome too!
+
 ---
 
 TODO: Write me; show/describe basic `index.html`; also link to our docs: `docs/index.html`
