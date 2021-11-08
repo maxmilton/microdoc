@@ -17,7 +17,6 @@
 <script src=/dev/node_modules/microdoc/plugin/prevnext.js defer></script>
 <script>
   var microdoc = {
-    // root: ".",
     routes: [
       "introduction.md",
       "getting-started.md",
@@ -61,10 +60,10 @@
   }
 </script>
 <script>
-  // function ready(fn){"loading"!==document.readyState?fn():document.addEventListener("DOMContentLoaded",fn)}
+  function ready(fn){"loading"!==document.readyState?fn():document.addEventListener("DOMContentLoaded",fn)}
 
-  // ready(() => {
-  //   document.querySelector(".microdoc-header").append(microdoc.h`<a href=https://github.com/maxmilton/microdoc class="microdoc-header-item link-button" target=_blank>GitHub</a>`);
-  // });
+  ready(() => {
+    document.querySelector(".microdoc-header").append(microdoc.h`<a href=https://github.com/maxmilton/microdoc class="microdoc-header-item link-button">GitHub</a>`);
+  });
 </script>
 <noscript>You need to enable JavaScript to run this app.</noscript>

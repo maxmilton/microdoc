@@ -1,5 +1,7 @@
 # Development
 
+<!-- TODO: Add a nice write up like https://github.com/bcoe/c8/blob/main/CONTRIBUTING.md -->
+
 This page contains instructions for working on microdoc itself or [developing your own microdoc plugins](#plugin-development).
 
 > **Note:** We use `pnpm` for package management. It's similar to `npm` and `yarn` which you're likely already familiar with. For installation instructions see <https://pnpm.io/installation>.

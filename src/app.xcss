@@ -274,7 +274,6 @@
   flex-shrink: 0;
 }
 
-.microdoc-icon-moon,
 .microdoc-icon-sun {
   // TODO: Test cross-browser with various fonts
   vertical-align: text-top;

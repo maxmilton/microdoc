@@ -4,9 +4,9 @@ Although microdoc touts itself as "zero config" — meaning that things will wor
 
 Configuration options are set by adding a `<script>` block containing a global `microdoc` object. If you're unfamiliar with JavaScript, that's the `var microdoc = {}` in the [starter template](getting-started.md#starter-template) and examples below.
 
-> **Tip:** Code you hand-write within inline `<script>` and `<style>` tags needs to be written carefully with cross-browser compatibility in mind. It depends on which browsers you want to support but in general it's best to keep code short and simple.
-
 To customise the visual look and feel of your docs see [theme customisation](#theme-customisation) below.
+
+> **Tip:** When you hand-write code within inline `<script>` and `<style>` tags please be mindful of cross-browser compatibility. For pointers, see the page on [old browser support](advanced/old-browser-support.md).
 
 ## Options
 
