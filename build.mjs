@@ -81,8 +81,7 @@ const minifyCss = {
                   'code',
                   'hyphenate',
                   'table',
-                  'table-wrapper', // TODO: Keep?
-                  'table-zebra', // TODO: Keep?
+                  'table-zebra',
                 ],
                 // tags: [],
               },
