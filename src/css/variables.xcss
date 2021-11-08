@@ -38,7 +38,9 @@
 
   color-scheme: dark;
 
-  [disabled] {
+  [disabled],
+  [disabled]:hover
+  [disabled]:focus {
     background-color: transparent;
     opacity: 0.5;
   }
