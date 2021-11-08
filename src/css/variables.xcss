@@ -1,4 +1,4 @@
-// Light theme (default)
+// Light theme
 :root {
   --color-primary: ${x.color.blue2};
   --color-muted: ${x.color.gray1};
@@ -7,15 +7,11 @@
   --color-link: var(--color-primary);
   --color-link-hover: var(--color-link);
   --color-border: ${x.color.gray5};
-
   --main-max-width: 50rem; // 1000px @ 20px textSize
-
   --sidenav-width: 15rem;
   --sidenav-color-active: ${x.color.light3};
   --sidenav-speed: 400ms;
-
   --blockquote-color-border: var(--color-primary);
-
   --input-color-text: inherit;
   --input-color-placeholder: ${x.color.muted};
   --input-color-background: ${x.color.white};
@@ -31,14 +27,13 @@
   --color-background: ${x.color.black};
   --color-text: ${x.color.light1};
   --color-muted: ${x.color.gray2};
-  --color-border: ${x.color.dark4};
-
+  --color-border: ${x.color.dark3};
   --sidenav-color-active: ${x.color.dark2};
-
+  // --blockquote-color-border: ${x.color.blue3}; // nice but would interfere with user custom --color-primary
   --input-color-text: ${x.color.light2};
-  --input-color-placeholder: ${x.color.gray4};
+  --input-color-placeholder: ${x.color.gray3};
   --input-color-background: ${x.color.dark3};
-  --input-color-border: ${x.color.gray1};
+  --input-color-border: ${x.color.dark5};
   --input-color-border-hover: ${x.color.gray4};
 
   color-scheme: dark;

@@ -186,7 +186,7 @@ code[class*='language-'] {
   code[class*='language-'] {
     background: hsl(220, 13%, 18%);
     color: hsl(220, 14%, 71%);
-    border: 0;
+    border-color: ${x.color.dark3};
   }
 
   .token.comment,

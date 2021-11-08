@@ -1,5 +1,5 @@
 // Custom properties
-@import './vars.xcss';
+@import './variables.xcss';
 
 // Packages
 @import '@ekscss/framework/level1.xcss';
