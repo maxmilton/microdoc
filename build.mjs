@@ -28,7 +28,7 @@ const require = createRequire(import.meta.url);
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
-const target = ['es2018', 'chrome78', 'firefox77', 'safari11', 'edge44'];
+const target = ['chrome60', 'edge79', 'firefox55', 'safari11.1'];
 
 /** @param {?Error} error */
 function handleErr(error) {
@@ -223,6 +223,7 @@ esbuild
   .build({
     entryPoints: ['src/plugin/prism.xcss'],
     outfile: 'plugin/prism.css',
+    target,
     plugins: [xcss(), minifyCss, writeFiles()],
     banner: {
       css: `/*!

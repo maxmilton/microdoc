@@ -22,13 +22,14 @@ Check out our docs, visit <https://microdoc.js.org>.
 
 ## Browser support
 
-Recent versions of evergreen browsers.
+Recent versions of evergreen browsers. Our build target is:
 
-The expected use case of `microdoc` is developer docs so end-users are technically minded with an up-to-date browser. Only minimal efforts are made to polyfill browser APIs. That said, if you run into any compatibility bugs please [open an issue](https://github.com/maxmilton/microdoc/issues).
+- Chrome 60
+- Edge 79
+- Firefox 55
+- Safari 11.1
 
-TODO: Show how to use <https://polyfill.io> for wider cross-browser support
-
-<https://microdoc.js.org/#/advanced/old-browser-support.md>
+See [old browser support in our docs](https://microdoc.js.org/#/advanced/old-browser-support.md).
 
 ## Bugs
 
