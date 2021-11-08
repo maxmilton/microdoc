@@ -15,6 +15,12 @@
 <script src=/dev/node_modules/microdoc/plugin/search.js defer></script>
 <!-- <script src=/dev/node_modules/microdoc/plugin/preload.js defer></script> -->
 <script src=/dev/node_modules/microdoc/plugin/prevnext.js defer></script>
+<style>
+  /* FIXME: Work a small text size into the out-of-the-box styles */
+  @media (max-width: 60rem) {
+    :root { font-size: 1.125rem; }
+  }
+</style>
 <script>
   var microdoc = {
     routes: [
