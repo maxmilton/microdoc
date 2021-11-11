@@ -30,7 +30,9 @@ let port: number;
 let server: http.Server;
 
 export function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
 }
 
 export async function setup(context: TestContext): Promise<void> {
