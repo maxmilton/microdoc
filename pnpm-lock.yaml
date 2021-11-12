@@ -31,7 +31,7 @@ specifiers:
   prettier-plugin-sh: 0.7.1
   remarkable: ^2.0.1
   sirv: 1.0.18
-  stage1: ^0.0.12
+  stage1: ^0.0.13
   terser: 5.9.0
   tsm: 2.1.4
   typescript: 4.4.4
@@ -41,7 +41,7 @@ dependencies:
   '@ekscss/framework': 0.0.31_ekscss@0.0.10
   fuse.js: 6.4.6
   remarkable: 2.0.1
-  stage1: 0.0.12
+  stage1: 0.0.13
 
 devDependencies:
   '@types/csso': 4.2.0
@@ -2936,8 +2936,8 @@ packages:
       escape-string-regexp: 2.0.0
     dev: true
 
-  /stage1/0.0.12:
-    resolution: {integrity: sha512-ScjR1Y8ffihCZxJ82F3K2WoypgCtIFjCzOGpyduKZsbIkQHG+FiZJwSNre9I2tEpegts25Errgv/W4cVHRlmNg==}
+  /stage1/0.0.13:
+    resolution: {integrity: sha512-qfscCEwmnri/WijLIRhtYsachL2Ldb4Huz7PNbB6Wo0KmEBdjIl0qFOZoIo2e5AZrr4SVa0XqnK/8up/ElnSbQ==}
     dev: false
 
   /string-width/4.2.3:
