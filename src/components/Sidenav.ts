@@ -11,7 +11,7 @@ type RefNodes = {
   ul: HTMLUListElement;
 };
 
-const view = h`
+const view = h(`
   <aside class=microdoc-sidenav>
     <div class=microdoc-sidenav-stick>
       <nav class=microdoc-sidenav-scroll #nav>
@@ -19,7 +19,7 @@ const view = h`
       </nav>
     </div>
   </aside>
-`;
+`);
 
 export function Sidenav(): SidenavComponent {
   const root = view as SidenavComponent;

@@ -8,7 +8,7 @@ type RefNodes = {
 };
 
 // https://github.com/tailwindlabs/heroicons/blob/master/src/outline/chevron-right.svg
-const view = h`
+const view = h(`
   <ul class=microdoc-sidenav-parent>
     <button class="microdoc-sidenav-item button-link dfc" #button>
       #t
@@ -17,7 +17,7 @@ const view = h`
       </svg>
     </button>
   </ul>
-`;
+`);
 
 export function SidenavParent(title: string): SidenavParentComponent {
   const root = view.cloneNode(true) as SidenavParentComponent;

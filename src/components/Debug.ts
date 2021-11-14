@@ -5,10 +5,10 @@ import './Debug.xcss';
 
 export type DebugComponent = S1Node & HTMLDivElement;
 
-const view = h`
+const view = h(`
   <div id=debug class=hide-on-hover>
   </div>
-`;
+`);
 
 export function Debug(): DebugComponent {
   const root = view as DebugComponent;

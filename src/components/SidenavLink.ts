@@ -6,11 +6,11 @@ type RefNodes = {
   a: HTMLAnchorElement;
 };
 
-const view = h`
+const view = h(`
   <li class=microdoc-sidenav-link>
     <a class="microdoc-sidenav-item link-button" #a></a>
   </li>
-`;
+`);
 
 export function SidenavLink(title: string, href: string): SidenavLinkComponent {
   const root = view.cloneNode(true) as SidenavLinkComponent;

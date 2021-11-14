@@ -8,7 +8,7 @@ type RefNodes = {
 };
 
 // https://github.com/tailwindlabs/heroicons/blob/master/optimized/outline/menu.svg
-const view = h`
+const view = h(`
   <header class=microdoc-header>
     <button class="microdoc-button-menu button-clear" #button>
       <svg viewBox="0 0 24 24" class=microdoc-icon>
@@ -18,7 +18,7 @@ const view = h`
 
     <a href=/ class=microdoc-logo #a></a>
   </header>
-`;
+`);
 
 export function Header(): HeaderComponent {
   const root = view as HeaderComponent;

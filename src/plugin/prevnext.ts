@@ -20,12 +20,12 @@ type RefNodes = {
   n: HTMLButtonElement;
 };
 
-const view = h`
+const view = h(`
   <div class=microdoc-prevnext>
     <button class=microdoc-button-prev #p>Previous</button>
     <button class=microdoc-button-next #n>Next</button>
   </div>
-`;
+`);
 
 function PrevNext() {
   const root = view;

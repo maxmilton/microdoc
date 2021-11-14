@@ -79,21 +79,21 @@ type SearchRefNodes = {
   input: HTMLInputElement;
 };
 
-const resultItemView = h`
+const resultItemView = h(`
   <li>
     <a #url></a>
   </li>
-`;
-const resultListView = h`
+`);
+const resultListView = h(`
   <div class=microdoc-search-results hidden>
     <h3 class=mt0>Search Results</h3>
 
     <ul #list></ul>
   </div>
-`;
+`);
 // https://github.com/tabler/tabler-icons/blob/master/icons/x.svg
 // https://github.com/feathericons/feather/blob/master/icons/search.svg
-const searchView = h`
+const searchView = h(`
   <div class="microdoc-search microdoc-header-item">
     <button class="microdoc-button-search button-clear" #button>
       <svg viewBox="0 0 24 24" class=microdoc-icon-x>
@@ -107,7 +107,7 @@ const searchView = h`
       <line x1=21 y1=21 x2=16.65 y2=16.65 />
     </svg>
   </div>
-`;
+`);
 
 function ResultItem(result: Fuse.FuseResult<ContentData>): ResultItemComponent {
   const root = resultItemView.cloneNode(true) as ResultItemComponent;
