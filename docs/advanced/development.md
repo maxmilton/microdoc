@@ -1,5 +1,22 @@
 # Development
 
+<!-- TODO: Rewrite this page for "development of your own docs", including local microdoc install for offline use + move this current kind of thing to a CONTRIBUTING.md file -->
+<!--
+`docs/dev/package.json`:
+
+```json
+{
+  "scripts": {
+    "serve": "sirv .. --port 3000 --dev --cors"
+  },
+  "devDependencies": {
+    "microdoc": "*",
+    "sirv-cli": "*"
+  }
+}
+```
+ -->
+
 <!-- TODO: Add a nice write up like https://github.com/bcoe/c8/blob/main/CONTRIBUTING.md -->
 
 This page contains instructions for working on microdoc itself or [developing your own microdoc plugins](#plugin-development).

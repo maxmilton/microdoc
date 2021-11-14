@@ -1,5 +1,5 @@
 <div style="margin:3rem;text-align:center">
-  <img src="favicon.svg" style="width:290px">
+  <img src="favicon.svg" style="width:14rem">
   <div style="margin-top:1rem;font-size:3.5rem;font-weight:300">microdoc</div>
 </div>
 
@@ -27,14 +27,12 @@ TODO: Documentation:
 - Uses fetch so you need to include a polyfill for old browser support (+ list others that might need polyfills)
 - No sanitation, directly render the resulting HTML from your markdown, open for XSS, don't accidentally pwn your reader
 - Why markdown; developers can choose to either read the raw .md or the HTML rendered version
-- Why use this over GitHub pages?
-
-  - No tracking of any kind unless you add it yourself
+- Why use microdoc vs. GitHub pages?
+  - No user tracking (unless you add it yourself)
   - Use without GitHub e.g., locally
-  - x
-
+- Why use microdoc vs. Docusaurus?
+- Lightweight-ish — even if you use every plugin and feature you're looking at around 40 kB of downloads + your markdown and assets
 - Uses hash based routing but still supports in-page hash anchor links!
-
 - Similar projects:
   - https://docusaurus.io/docs/
   - https://docsify.js.org/#/?id=docsify

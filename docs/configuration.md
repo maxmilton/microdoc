@@ -185,7 +185,7 @@ To customise properties, add them to a `:root {}` CSS rule, see below for [examp
 
 <!-- prettier-ignore-end -->
 
-### Examples
+### Theme Customisation Examples
 
 #### Custom Branding
 
@@ -249,7 +249,7 @@ By default links have an underline but you can hide it by default and show it on
 </style>
 ```
 
-#### No Sidenav
+#### Hide Sidenav
 
 Hide the entire sidenav e.g., for a single page docs ([see live example](https://microdoc.js.org/examples/theme4.html)):
 
@@ -261,7 +261,7 @@ Hide the entire sidenav e.g., for a single page docs ([see live example](https:/
 </style>
 ```
 
-#### No Footer
+#### Hide Footer
 
 Hide the "Powered by microdoc" footer message ([see live example](https://microdoc.js.org/examples/theme5.html)):
 
