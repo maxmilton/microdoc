@@ -1,6 +1,7 @@
 import { append, h } from 'stage1';
 import type { Microdoc } from './types';
 
+export const FAKE_BASE_URL = 'http://x';
 const oldTitle = document.title;
 
 export function setDefaults(): void {
@@ -38,4 +39,10 @@ export function toSlug(str: string) {
     .toLowerCase()
     .replace(/[^\w ]+/g, '')
     .replace(/ +/g, '-');
+}
+
+export function makeInPageLink(href: string) {
+  const route = window.location.hash.slice(1);
+  const cleanUrlPath = new URL(route, FAKE_BASE_URL).pathname;
+  return `#${cleanUrlPath}#${href}`;
 }

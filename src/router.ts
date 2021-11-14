@@ -12,10 +12,11 @@
 import { Remarkable } from 'remarkable';
 import { create, setupSyntheticEvent } from 'stage1';
 import type { InternalRoute, Routes } from './types';
-import { toName, toSlug } from './utils';
+import {
+  FAKE_BASE_URL, makeInPageLink, toName, toSlug,
+} from './utils';
 
 const LOADING_DELAY_MS = 176;
-const FAKE_BASE_URL = 'http://x';
 
 const md = new Remarkable({
   html: true,
@@ -25,34 +26,27 @@ md.core.ruler.push(
   '',
   (state) => {
     const blockTokens = state.tokens;
-    const len = blockTokens.length;
-    let index = 0;
-    let route;
+    const blockLen = blockTokens.length;
 
-    for (; index < len; index++) {
-      const blockToken = blockTokens[index] as Remarkable.BlockContentToken;
+    for (let blockIndex = 0; blockIndex < blockLen; blockIndex++) {
+      const blockToken: Remarkable.BlockContentToken = blockTokens[blockIndex];
 
       if (blockToken.type === 'inline') {
-        const tokens = blockToken.children!;
-        const inlineLen = tokens.length;
-        let inlineIndex = 0;
+        const inlineTokens = blockToken.children!;
+        const inlineLen = inlineTokens.length;
 
-        for (; inlineIndex < inlineLen; inlineIndex++) {
-          const token = tokens[inlineIndex] as Remarkable.LinkOpenToken;
+        for (let inlineIndex = 0; inlineIndex < inlineLen; inlineIndex++) {
+          const token = inlineTokens[inlineIndex] as Remarkable.LinkOpenToken;
 
           if (token.type === 'link_open') {
-            if (token.href[0] === '#' && token.href[1] !== '/') {
-              // generate href for in-page links (start with # and correspond to
-              // an element by id attribute)
-              route ||= new URL(window.location.href).hash.slice(1);
-              const cleanUrlPath = new URL(route, FAKE_BASE_URL).pathname;
-              token.href = `#${cleanUrlPath}${token.href}`;
-            } else {
-              // leverage URL() to handle relative links with a fake base URL...
-              token.href = new URL(token.href, FAKE_BASE_URL).href
-                // then convert fake base URL to hash based routing
-                .replace(/^http:\/\/x\/(?:#\/)?/, '#/');
-            }
+            // Modify in-page (start with #) and relative link href in a way
+            // that works with our hash based routing
+            token.href = token.href[0] === '#' && token.href[1] !== '/'
+              ? makeInPageLink(token.href.slice(1))
+              : new URL(token.href, FAKE_BASE_URL).href.replace(
+                /^http:\/\/x\/(?:#\/)?/,
+                '#/',
+              );
           }
         }
       }
@@ -63,13 +57,32 @@ md.core.ruler.push(
   {},
 );
 
+interface HeadingCloseToken extends Remarkable.HeadingToken {
+  slug: string | false | undefined;
+}
+
 // Add id attribute to headings
 // TODO: Prevent duplicate ids
 md.renderer.rules.heading_open = (tokens, idx) => {
   const level = tokens[idx].hLevel;
   const text = (tokens[idx + 1] as unknown as Remarkable.TextToken).content;
+  const slug = level > 1 && text && toSlug(text);
+  // eslint-disable-next-line no-param-reassign
+  (tokens[idx + 2] as HeadingCloseToken).slug = slug;
 
-  return `<h${level}${level > 1 && text ? ` id="${toSlug(text)}"` : ''}>`;
+  return `<h${level}${slug ? ` id="${slug}"` : ''}>`;
+};
+md.renderer.rules.heading_close = (tokens, idx) => {
+  // eslint-disable-next-line prefer-destructuring
+  const slug = (tokens[idx] as HeadingCloseToken).slug;
+
+  return `${
+    slug
+      ? `<a href="${makeInPageLink(
+        slug,
+      )}" class=microdoc-hash-link title="Direct link to heading">#</a>`
+      : ''
+  }</h${tokens[idx].hLevel}>\n`;
 };
 
 md.renderer.rules.table_open = () => '<div class=table-wrapper><table>';
