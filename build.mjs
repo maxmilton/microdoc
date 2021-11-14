@@ -77,7 +77,6 @@ const minifyCss = {
                 // Remove unnecessary classes
                 classes: [
                   'blockquote',
-                  'break',
                   'code',
                   'hyphenate',
                   'table',

@@ -176,21 +176,12 @@ export function setupRouter(): void {
   setupSyntheticEvent('click');
 }
 
-// const loadingError = (path: string, error: Error) => `
-//   <div class="alert alert-danger">
-//     <strong>Error:</strong> ${
-//   (error.message || error).toString() || 'Unknown error'
-// }
-//   </div>
-//
-//   <p>An error occured when loading ${path}</p>
-// `;
 const loadingError = (path: string, error: unknown) => `
   <div class="alert alert-danger">
     <strong>Error: </strong>${String(error) || 'Unknown error'}
   </div>
 
-  <p>Unable to load ${path}</p>
+  <p class=break>Unable to load ${path}</p>
 `;
 
 async function getContent(path: string): Promise<string> {
