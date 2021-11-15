@@ -41,7 +41,7 @@
   [disabled],
   [disabled]:hover
   [disabled]:focus {
-    background-color: transparent;
+    background-color: transparent !important;
     opacity: 0.5;
   }
 
