@@ -20,6 +20,18 @@
   @media (max-width: 60rem) {
     :root { font-size: 1.125rem; }
   }
+
+  .microdoc-logo { margin-right: 1rem; }
+  .header-link {
+    display: inline-block;
+    margin: 0;
+    padding: 0.4rem 0.5rem;
+  }
+
+  /* FIXME: If hidden, there's no way to access the links on small viewports */
+  @media (max-width: 40rem) {
+    .header-link { display: none; }
+  }
 </style>
 <script>
   var microdoc = {
@@ -68,8 +80,25 @@
 <script>
   function ready(fn){"loading"!==document.readyState?fn():document.addEventListener("DOMContentLoaded",fn)}
 
+
   ready(() => {
-    document.querySelector(".microdoc-header").append(microdoc.h('<a href=https://github.com/maxmilton/microdoc class="microdoc-header-item link-button">GitHub</a>'));
+    // FIXME: Need a better way add a hidden route (otherwise the router won't
+    // allow fetching the file)
+
+    // FIXME: Injecting at this point is too late, if loading the page directly
+    // the router will already have attempted to load the route and failed
+
+    // FIXME: The ref is a hack to avoid an error in router logic when it toggles .active class
+
+    microdoc.$routes.set("#/dev/showcase.html", { ref: document.createElement("div") });
+
+    // TODO: This seems like a common thing other people might want to do too...
+    const logo = document.querySelector(".microdoc-logo");
+    const add = (node) => logo.insertAdjacentElement('afterend', node);
+
+    add(microdoc.h('<a href=https://github.com/maxmilton/microdoc class=header-link>GitHub</a>'));
+    add(microdoc.h('<a href=#/dev/showcase.html class=header-link>Showcase</a>'));
+    add(microdoc.h('<a href=/ class=header-link>Docs</a>'));
   });
 </script>
 <noscript>You need to enable JavaScript to run this app.</noscript>
