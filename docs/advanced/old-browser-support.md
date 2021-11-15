@@ -6,22 +6,20 @@ The expected use case of `microdoc` is developer docs so end-users are technical
 
 - State the non-supported browsers
   - Internet Explorer
-  - Opera (no `String.raw()` support?)
-  - Browsers that don't support ECMAScript 2018 (ES9) — <https://caniuse.com/?search=ECMAScript>
   - How to handle end user with an unsupported browser?
     - They could just read the raw markdown
     - It's probably up to the developer to handle this case e.g., they could use a browser detection lib and show a message
 - State the minimum browser versions microdoc supports out-of-the-box
-  - Chrome 60
-  - Edge 79
-  - Firefox 55
-  - Safari 11.1
+  - Build target (any lower and the build fails or does not meet our min required version):
+    - Chrome 55
+    - Edge 18
+    - Firefox 53
+    - Safari 11
+  - Opera 42 (not build target but should be supported)
   - Make a list of all the newer APIs found the output bundles (`microdoc.js`, `microdoc.css`, and plugins), especially any non-polyfillable syntax
     - Syntax; can't polyfill 💀
       - String template literals
       - ~~async/await~~ (can transpile in build)
-      - Rest parameters
-      - Spread syntax
       - `<template>` element
       - CSS custom properties
       - CSS var()
@@ -52,3 +50,23 @@ The expected use case of `microdoc` is developer docs so end-users are technical
 ```
 
 <!-- prettier-ignore-end -->
+
+---
+
+TODO: Remove this chart
+
+| API/method                   | Chrome | Edge | Firefox | Safari/iOS  | IE  | Opera/mob |
+| ---------------------------- | ------ | ---- | ------- | ----------- | --- | --------- |
+| async/await                  | 55     | 15   | 52      | 10.1 / 10.3 | -   | 42        |
+| `<template>`                 | 26     | 13   | 22      | 8 / 8       | -   | 15        |
+| Destructuring assignment     | 49     | 14   | 41      | 8 / 8       | -   | 36        |
+| Spread syntax (in array)     | 46     | 12   | 16      | 8 / 8       | -   | 37 / 37   |
+| CSS custom properties; `--*` | 49     | 15   | 31      | 9.1 / 9.3   | -   | 36        |
+| CSS `var()`                  | 49     | 15   | 31      | 9.1 / 9.3   | -   | 36        |
+| CSS flexbox                  | 29     | 12   | 20      | 9 / 9       | 11  | 7 / 10.1  |
+| Element.closest()            | 41     | 15   | 35      | 6 / 9       | -   | 28 / 28   |
+| `new Map()` constructor      | 38     | 12   | 13      | 9 / 9       | 11  | 25 / 25   |
+| `fetch()`                    | 42     | 14   | 39      | 10.1 / 10.3 | -   | 29 / 29   |
+| `new URL()` constructor      | 19     | 12   | 26      | 6 / 6       | -   | 15 / 14   |
+| Object.keys                  | 5      | 12   | 4       | 5 / 5       | 9   | 12 / 12   |
+| Object.getOwnPropertySymbols | 38     | 12   | 36      | 9 / 9       | -   | 25 / 25   |

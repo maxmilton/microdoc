@@ -1,5 +1,5 @@
 // FIXME: Remove these lint exceptions once linting can handle mjs
-//  ↳ When TS 4.5 is released and typescript-eslint has support
+//  ↳ When TS 4.6+ is released and typescript-eslint has support
 //  ↳ https://github.com/typescript-eslint/typescript-eslint/issues/3950
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
@@ -28,7 +28,7 @@ const require = createRequire(import.meta.url);
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
-const target = ['chrome60', 'edge79', 'firefox55', 'safari11.1'];
+const target = ['chrome55', 'edge18', 'firefox53', 'safari11'];
 
 /** @param {?Error} error */
 function handleErr(error) {

@@ -24,10 +24,10 @@ Check out our docs, visit <https://microdoc.js.org>.
 
 Recent versions of evergreen browsers. Our build target is:
 
-- Chrome 60
-- Edge 79
-- Firefox 55
-- Safari 11.1
+- Chrome 55
+- Edge 18
+- Firefox 53
+- Safari 11
 
 See [old browser support in our docs](https://microdoc.js.org/#/advanced/old-browser-support.md).
 

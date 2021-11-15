@@ -1,5 +1,5 @@
 <div style="margin:3rem;text-align:center">
-  <img src="favicon.svg" style="width:14rem">
+  <img src="favicon.svg" style="width:12rem">
   <div style="margin-top:1rem;font-size:3.5rem;font-weight:300">microdoc</div>
 </div>
 
