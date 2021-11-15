@@ -282,11 +282,7 @@
 
 .microdoc-dark-mode {
   flex-shrink: 0;
-}
-
-.microdoc-icon-sun {
-  // TODO: Test cross-browser with various fonts
-  vertical-align: text-top;
+  line-height: 0; // fixes strange height difference between default/dark modes
 }
 
 .dark .microdoc-icon-moon,
