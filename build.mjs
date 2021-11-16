@@ -18,16 +18,17 @@ import {
   writeFiles,
 } from 'esbuild-minify-templates';
 import { xcss } from 'esbuild-plugin-ekscss';
-import fs from 'fs';
+import fs from 'fs/promises';
 import { createRequire } from 'module';
 import path from 'path';
-import { minify } from 'terser';
+import * as terser from 'terser';
 
 const require = createRequire(import.meta.url);
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
-const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+const dir = path.resolve(); // no __dirname in node ESM
+const pkg = JSON.parse(await fs.readFile('./package.json', 'utf8'));
 const target = ['chrome55', 'edge18', 'firefox53', 'safari11'];
 
 /** @param {?Error} error */
@@ -61,7 +62,7 @@ const analyzeMeta = {
 const minifyCss = {
   name: 'minify-css',
   setup(build) {
-    if (build.initialOptions.write !== false) return;
+    if (!build.initialOptions.minify) return;
 
     build.onEnd((result) => {
       if (result.outputFiles) {
@@ -99,14 +100,15 @@ const minifyCss = {
 const minifyJs = {
   name: 'minify-js',
   setup(build) {
-    if (build.initialOptions.write !== false) return;
+    if (!build.initialOptions.minify) return;
 
     build.onEnd(async (result) => {
       if (result.outputFiles) {
         const outputJsMap = findOutputFile(result.outputFiles, '.js.map');
         const { file, index } = findOutputFile(result.outputFiles, '.js');
 
-        const { code, map } = await minify(decodeUTF8(file.contents), {
+        /** @type {terser.MinifyOptions} */
+        const opts = {
           ecma: 2020,
           compress: {
             comparisons: false,
@@ -114,15 +116,23 @@ const minifyJs = {
             inline: 2,
             unsafe: true,
           },
-          sourceMap: {
+        };
+        if (outputJsMap.index !== -1) {
+          opts.sourceMap = {
             content: decodeUTF8(outputJsMap.file.contents),
             filename: path.basename(file.path),
             url: path.basename(outputJsMap.file.path),
-          },
-        });
+          };
+        }
+        const { code, map } = await terser.minify(
+          decodeUTF8(file.contents),
+          opts,
+        );
 
-        // @ts-expect-error - map is string
-        result.outputFiles[outputJsMap.index].contents = encodeUTF8(map);
+        if (outputJsMap.index !== -1) {
+          // @ts-expect-error - map is string
+          result.outputFiles[outputJsMap.index].contents = encodeUTF8(map);
+        }
         // @ts-expect-error - FIXME: code is defined
         result.outputFiles[index].contents = encodeUTF8(code);
       }
@@ -140,8 +150,8 @@ esbuild
       'process.env.NODE_ENV': JSON.stringify(mode),
     },
     plugins: [
-      xcss(),
       analyzeMeta,
+      xcss(),
       minifyTemplates(),
       minifyCss,
       minifyJs,
@@ -190,9 +200,9 @@ for (const plugin of ['dark-mode', 'preload', 'prevnext', 'search']) {
         'process.env.NODE_ENV': JSON.stringify(mode),
       },
       plugins: [
+        analyzeMeta,
         xcss(),
         fuseBasic,
-        analyzeMeta,
         minifyTemplates(),
         minifyCss,
         minifyJs,
@@ -235,6 +245,55 @@ esbuild
     minify: !dev,
     watch: dev,
     write: dev,
+    logLevel: 'debug',
+  })
+  .catch(handleErr);
+
+/** @type {esbuild.Plugin} */
+const buildHtml = {
+  name: 'build-html',
+  setup(build) {
+    build.onEnd(async (result) => {
+      if (result.outputFiles) {
+        const outputJs = findOutputFile(result.outputFiles, '.js').file;
+        const outputCss = findOutputFile(result.outputFiles, '.css').file;
+
+        // FIXME: The script loading hack is extremely dodgy
+        const html = `<div id="showcase"></div>
+<style>${decodeUTF8(outputCss.contents)}</style>
+<script>${decodeUTF8(outputJs.contents)}</script>
+<img hidden src="" onerror="var s=document.createElement('script');s.appendChild(new Text(this.previousElementSibling.textContent));document.body.appendChild(s);s.remove();">`;
+
+        await fs.writeFile(path.join(dir, 'docs/dev/showcase.html'), html);
+      }
+    });
+  },
+};
+
+// EXPERIMENTAL: Showcase web app
+esbuild
+  .build({
+    entryPoints: ['src/showcase/index.ts'],
+    outfile: 'docs/dev/showcase.js',
+    target,
+    define: {
+      'process.env.NODE_ENV': JSON.stringify(mode),
+    },
+    plugins: [
+      analyzeMeta,
+      xcss(),
+      minifyTemplates(),
+      minifyCss,
+      minifyJs,
+      buildHtml,
+    ],
+    banner: { js: '"use strict";' },
+    bundle: true,
+    minify: !dev,
+    sourcemap: dev && 'inline',
+    watch: dev,
+    write: false,
+    metafile: !dev && process.stdout.isTTY,
     logLevel: 'debug',
   })
   .catch(handleErr);

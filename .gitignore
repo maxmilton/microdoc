@@ -7,3 +7,5 @@ node_modules
 # build output (in root dir for cleaner CDN URLs)
 /microdoc.*
 /plugin/
+
+/docs/dev/showcase.html

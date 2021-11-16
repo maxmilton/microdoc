@@ -25,7 +25,7 @@ This page contains instructions for working on microdoc itself or [developing yo
 
 ## Installation
 
-1. Clone the [maxmilton/microdoc](https://github.com/maxmilton/microdoc) git repo.
+1. Fork/clone the [maxmilton/microdoc](https://github.com/maxmilton/microdoc) git repo.
 1. Install NPM dependencies:
    ```sh
    pnpm install
@@ -56,7 +56,7 @@ You'll need to open two terminal windows, one for JS/CSS bundling and another to
    ```sh
    pnpm run serve
    ```
-1. Open <http://localhost:3000/dev> in a browser
+1. Open <http://localhost:3000/dev> in your browser
 
 ## Production builds
 
