@@ -31,7 +31,6 @@ function handleErr(error) {
 }
 
 /**
- *
  * @param {esbuild.OutputFile[]} outputFiles
  * @param {string} ext - File extension to match.
  * @returns {{ file: esbuild.OutputFile; index: number; }}
@@ -46,8 +45,14 @@ const analyzeMeta = {
   name: 'analyze-meta',
   setup(build) {
     if (!build.initialOptions.metafile) return;
-    // @ts-expect-error - FIXME:!
-    build.onEnd((result) => esbuild.analyzeMetafile(result.metafile).then(console.log));
+    build.onEnd((result) => {
+      if (result.metafile) {
+        esbuild
+          .analyzeMetafile(result.metafile)
+          .then(console.log)
+          .catch(console.error);
+      }
+    });
   },
 };
 
@@ -97,8 +102,8 @@ const minifyJs = {
 
     build.onEnd(async (result) => {
       if (result.outputFiles) {
-        const outputJsMap = findOutputFile(result.outputFiles, '.js.map');
-        const { file, index } = findOutputFile(result.outputFiles, '.js');
+        const outMap = findOutputFile(result.outputFiles, '.js.map');
+        const outJS = findOutputFile(result.outputFiles, '.js');
 
         /** @type {terser.MinifyOptions} */
         const opts = {
@@ -110,24 +115,26 @@ const minifyJs = {
             unsafe: true,
           },
         };
-        if (outputJsMap.index !== -1) {
+
+        if (outMap.index !== -1) {
           opts.sourceMap = {
-            content: decodeUTF8(outputJsMap.file.contents),
-            filename: path.basename(file.path),
-            url: path.basename(outputJsMap.file.path),
+            content: decodeUTF8(outMap.file.contents),
+            filename: path.basename(outJS.file.path),
+            url: path.basename(outMap.file.path),
           };
         }
-        const { code, map } = await terser.minify(
-          decodeUTF8(file.contents),
+
+        const { code = '', map = '' } = await terser.minify(
+          decodeUTF8(outJS.file.contents),
           opts,
         );
 
-        if (outputJsMap.index !== -1) {
-          // @ts-expect-error - map is string
-          result.outputFiles[outputJsMap.index].contents = encodeUTF8(map);
+        if (outMap.index !== -1) {
+          result.outputFiles[outMap.index].contents = encodeUTF8(
+            map.toString(),
+          );
         }
-        // @ts-expect-error - FIXME: code is defined
-        result.outputFiles[index].contents = encodeUTF8(code);
+        result.outputFiles[outJS.index].contents = encodeUTF8(code);
       }
     });
   },
@@ -251,8 +258,9 @@ const buildHtml = {
         const outputJs = findOutputFile(result.outputFiles, '.js').file;
         const outputCss = findOutputFile(result.outputFiles, '.css').file;
 
-        // FIXME: The script loading hack is extremely dodgy
-        const html = `<div id="showcase"></div>
+        // FIXME: Script loading hack is extremely dodgy
+        const html = `<script>location.href="/dev#/dev/showcase.html"</script>
+<div id="showcase"></div>
 <style>${decodeUTF8(outputCss.contents)}</style>
 <script>${decodeUTF8(outputJs.contents)}</script>
 <img hidden src="" onerror="var s=document.createElement('script');s.appendChild(new Text(this.previousElementSibling.textContent));document.body.appendChild(s);s.remove();">`;
