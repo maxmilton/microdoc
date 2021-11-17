@@ -1,12 +1,3 @@
-// FIXME: Remove these lint exceptions once linting can handle mjs
-//  ↳ When TS 4.6+ is released and typescript-eslint has support
-//  ↳ https://github.com/typescript-eslint/typescript-eslint/issues/3950
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable import/no-extraneous-dependencies, no-param-reassign, no-console */
 
 import csso from 'csso';
@@ -28,6 +19,8 @@ const require = createRequire(import.meta.url);
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const dir = path.resolve(); // no __dirname in node ESM
+/** @type {import('./package.json')} */
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const pkg = JSON.parse(await fs.readFile('./package.json', 'utf8'));
 const target = ['chrome55', 'edge18', 'firefox53', 'safari11'];
 
