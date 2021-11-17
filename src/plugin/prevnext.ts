@@ -11,7 +11,7 @@
 
 import type { InternalMicrodoc } from '../types';
 
-const { $routes, h, append } = window.microdoc as InternalMicrodoc;
+const { $routes, h } = window.microdoc as InternalMicrodoc;
 
 const currentRouteIndex = () => [...$routes.values()].findIndex((route) => route.ref!.classList.contains('active'));
 
@@ -50,4 +50,4 @@ function PrevNext() {
   return root;
 }
 
-append(PrevNext(), document.querySelector('.microdoc-main')!);
+document.querySelector('.microdoc-main')!.append(PrevNext());

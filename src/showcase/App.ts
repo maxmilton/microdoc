@@ -1,9 +1,11 @@
-import { h } from 'stage1';
+import type { InternalMicrodoc } from '../types';
 import './App.xcss';
 
 // type RefNodes = {
 //   button: HTMLButtonElement;
 // };
+
+const { h } = window.microdoc as InternalMicrodoc;
 
 const view = h(`
   <div>

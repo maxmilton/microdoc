@@ -12,7 +12,7 @@
 import type { S1Node } from 'stage1';
 import type { InternalMicrodoc } from '../types';
 
-const { append, h, darkMode } = window.microdoc as InternalMicrodoc;
+const { h, darkMode } = window.microdoc as InternalMicrodoc;
 
 type DarkModeToggleComponent = S1Node & HTMLDivElement;
 
@@ -50,4 +50,4 @@ function DarkModeToggle(): DarkModeToggleComponent {
   return root;
 }
 
-append(DarkModeToggle(), document.querySelector('.microdoc-header')!);
+document.querySelector('.microdoc-header')!.append(DarkModeToggle());

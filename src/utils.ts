@@ -1,4 +1,4 @@
-import { append, h } from 'stage1';
+import { h } from 'stage1';
 import type { Microdoc } from './types';
 
 export const FAKE_BASE_URL = 'http://x';
@@ -10,7 +10,6 @@ export function setDefaults(): void {
     routes: ['README.md'],
     title: oldTitle,
     h,
-    append,
     ...(window.microdoc as Partial<Microdoc> | undefined),
   };
 }

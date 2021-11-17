@@ -25,12 +25,7 @@ interface ContentData {
   url: string;
 }
 
-const {
-  append,
-  h,
-  root: urlRoot,
-  $routes,
-} = window.microdoc as InternalMicrodoc;
+const { h, root: urlRoot, $routes } = window.microdoc as InternalMicrodoc;
 let popup: ResultListComponent;
 let fuse: Fuse<ContentData>;
 
@@ -140,7 +135,7 @@ function ResultList(): ResultListComponent {
       return;
     }
 
-    results.forEach((result) => append(ResultItem(result), list));
+    results.forEach((result) => list.append(ResultItem(result)));
 
     root.hidden = false;
   };
@@ -154,7 +149,7 @@ function Search(): SearchComponent {
 
   const search = () => {
     const results = fuse.search(input.value);
-    (popup ??= append(ResultList(), root)).update(results);
+    (popup ??= root.appendChild(ResultList())).update(results);
   };
 
   button.__click = () => {
@@ -192,7 +187,7 @@ function Search(): SearchComponent {
   return root;
 }
 
-append(Search(), document.querySelector('.microdoc-header')!);
+document.querySelector('.microdoc-header')!.append(Search());
 
 loadContent()
   .then((content) => {

@@ -1,4 +1,4 @@
-import type { append, h } from 'stage1';
+import type { h } from 'stage1';
 
 declare global {
   interface HTMLElement {
@@ -44,7 +44,6 @@ export interface Microdoc {
 export interface InternalMicrodoc extends Microdoc {
   $routes: Map<string, InternalRoute & { path: string }>;
   h: typeof h;
-  append: typeof append;
 }
 
 export interface Route {
