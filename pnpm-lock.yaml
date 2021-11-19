@@ -27,7 +27,7 @@ specifiers:
   pirates: 4.0.1
   playwright-chromium: 1.16.3
   prettier: 2.4.1
-  prettier-plugin-pkg: 0.10.0
+  prettier-plugin-pkg: 0.11.0
   prettier-plugin-sh: 0.7.1
   remarkable: ^2.0.1
   sirv: 1.0.18
@@ -68,7 +68,7 @@ devDependencies:
   pirates: 4.0.1
   playwright-chromium: 1.16.3
   prettier: 2.4.1
-  prettier-plugin-pkg: 0.10.0_prettier@2.4.1
+  prettier-plugin-pkg: 0.11.0_prettier@2.4.1
   prettier-plugin-sh: 0.7.1_prettier@2.4.1
   sirv: 1.0.18
   terser: 5.10.0
@@ -2611,10 +2611,10 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-pkg/0.10.0_prettier@2.4.1:
-    resolution: {integrity: sha512-NvqkGTfAdB9Bu7txMaePQTieVAo4mvBGkWsdtOego5WwJT3cu6mLlYDBe/FEQ9gcW6+vjYiBwkP0qs3lBIZbfw==}
+  /prettier-plugin-pkg/0.11.0_prettier@2.4.1:
+    resolution: {integrity: sha512-5I60/9EbeptM1TCBiQkiL6v5EGj3MaTHI2EmZ7whP7fyX1IHQjr+O3FZU72niveGs41dIVN2O4XQ+O29kGEDDA==}
     peerDependencies:
-      prettier: ^2.0.5
+      prettier: ^2.0.0
     dependencies:
       prettier: 2.4.1
     dev: true
