@@ -14,7 +14,7 @@ export function setDefaults(): void {
   };
 }
 
-export function toName(path: string) {
+export function toName(path: string): string {
   return (
     path
       // .slice(Math.max(0, path.lastIndexOf('/') + 1))
@@ -33,14 +33,14 @@ export function toName(path: string) {
 // TODO: Improve; this is overly simplistic and doesn't account for unicode
 // characters etc., but it's probably not worth using something full-blown
 // like https://github.com/sindresorhus/slugify
-export function toSlug(str: string) {
+export function toSlug(str: string): string {
   return str
     .toLowerCase()
     .replace(/[^\w ]+/g, '')
     .replace(/ +/g, '-');
 }
 
-export function makeInPageLink(href: string) {
+export function makeInPageLink(href: string): string {
   const route = window.location.hash.slice(1);
   const cleanUrlPath = new URL(route, FAKE_BASE_URL).pathname;
   return `#${cleanUrlPath}#${href}`;
