@@ -1,5 +1,5 @@
 const OFF = 0;
-const WARN = 0;
+const WARN = 1;
 
 // TODO: Types
 // eslint-disable-next-line max-len
@@ -24,6 +24,7 @@ module.exports = {
     'plugin:unicorn/recommended',
   ],
   rules: {
+    '@typescript-eslint/explicit-module-boundary-types': WARN,
     'import/prefer-default-export': OFF,
     'no-restricted-syntax': OFF,
     // stage1 uses underscores in synthetic event handler names
