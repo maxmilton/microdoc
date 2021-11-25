@@ -28,7 +28,7 @@ specifiers:
   playwright-chromium: 1.16.3
   prettier: 2.5.0
   prettier-plugin-pkg: 0.11.1
-  prettier-plugin-sh: 0.8.0
+  prettier-plugin-sh: 0.8.1
   remarkable: ^2.0.1
   sirv: 1.0.18
   stage1: ^0.1.0
@@ -69,7 +69,7 @@ devDependencies:
   playwright-chromium: 1.16.3
   prettier: 2.5.0
   prettier-plugin-pkg: 0.11.1_prettier@2.5.0
-  prettier-plugin-sh: 0.8.0_prettier@2.5.0
+  prettier-plugin-sh: 0.8.1_prettier@2.5.0
   sirv: 1.0.18
   terser: 5.10.0
   tsm: 2.1.4
@@ -2619,8 +2619,8 @@ packages:
       prettier: 2.5.0
     dev: true
 
-  /prettier-plugin-sh/0.8.0_prettier@2.5.0:
-    resolution: {integrity: sha512-ey/TkkvrGU4xR7bNTwBWEJwd3f71z93k9j/ITnTuabSBVNNVT7NUALlGoIXbDIa2/cq8XtARnX1MgH+xHgW+Aw==}
+  /prettier-plugin-sh/0.8.1_prettier@2.5.0:
+    resolution: {integrity: sha512-tz0g6y+ZaJF0PWaa1F7vhCv4nLgYYl2zYzYU4XJFD1McoY0oHI+l2osvXqv1s5yQdtjdlzKszN6VY7WTaw2Gqw==}
     peerDependencies:
       prettier: ^2.0.0
     dependencies:
