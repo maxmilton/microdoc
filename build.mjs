@@ -36,9 +36,7 @@ function handleErr(error) {
  * @returns {{ file: esbuild.OutputFile; index: number; }}
  */
 function findOutputFile(outputFiles, ext) {
-  const index = outputFiles.findIndex((outputFile) =>
-    outputFile.path.endsWith(ext),
-  );
+  const index = outputFiles.findIndex((outputFile) => outputFile.path.endsWith(ext));
   return { file: outputFiles[index], index };
 }
 
@@ -66,10 +64,10 @@ const minifyCss = {
 
     build.onEnd((result) => {
       if (result.outputFiles) {
-        const { file, index } = findOutputFile(result.outputFiles, '.css');
+        const outCSS = findOutputFile(result.outputFiles, '.css');
 
-        if (file) {
-          const ast = csso.syntax.parse(decodeUTF8(file.contents));
+        if (outCSS.file) {
+          const ast = csso.syntax.parse(decodeUTF8(outCSS.file.contents));
           const compressedAst = csso.syntax.compress(ast, {
             restructure: true,
             forceMediaMerge: true, // unsafe!
@@ -89,7 +87,7 @@ const minifyCss = {
           }).ast;
           const css = csso.syntax.generate(compressedAst);
 
-          result.outputFiles[index].contents = encodeUTF8(css);
+          result.outputFiles[outCSS.index].contents = encodeUTF8(css);
         }
       }
     });
@@ -104,8 +102,8 @@ const minifyJs = {
 
     build.onEnd(async (result) => {
       if (result.outputFiles) {
-        const outMap = findOutputFile(result.outputFiles, '.js.map');
         const outJS = findOutputFile(result.outputFiles, '.js');
+        const outMap = findOutputFile(result.outputFiles, '.js.map');
 
         /** @type {terser.MinifyOptions} */
         const opts = {
