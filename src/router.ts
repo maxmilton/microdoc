@@ -39,6 +39,8 @@ md.core.ruler.push(
           const token = inlineTokens[inlineIndex] as Remarkable.LinkOpenToken;
 
           if (token.type === 'link_open') {
+            // FIXME: Relative links; "./" and "../"
+
             // Modify in-page (start with #) and relative link href in a way
             // that works with our hash based routing
             token.href = token.href[0] === '#' && token.href[1] !== '/'

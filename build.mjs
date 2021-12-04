@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies, no-param-reassign, no-console */
 
-import csso from 'csso';
+import * as csso from 'csso';
 import esbuild from 'esbuild';
 import {
   decodeUTF8,
@@ -36,7 +36,9 @@ function handleErr(error) {
  * @returns {{ file: esbuild.OutputFile; index: number; }}
  */
 function findOutputFile(outputFiles, ext) {
-  const index = outputFiles.findIndex((outputFile) => outputFile.path.endsWith(ext));
+  const index = outputFiles.findIndex((outputFile) =>
+    outputFile.path.endsWith(ext),
+  );
   return { file: outputFiles[index], index };
 }
 
