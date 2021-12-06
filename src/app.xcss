@@ -20,7 +20,6 @@
 
 .microdoc-logo {
   #apply: .text;
-
   font-size: 1.5rem;
   font-weight: ${x.textWeightMedium};
   text-decoration: none;
@@ -50,26 +49,25 @@
   }
 
   .microdoc-sidenav {
-    z-index: 4;
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
+    z-index: 4;
     max-width: 85%; // ensure enough click area to dismiss the sidenav
     background: var(--color-background);
-    box-shadow: 5px 0 40px rgba(0, 0, 0, 0.45);
-
+    box-shadow: 5px 0 40px rgb(0 0 0 / 45%);
     visibility: hidden;
-    transform: translateX(-110vw);
-    will-change: transform;
     transition:
       transform var(--sidenav-speed) cubic-bezier(0.16, 1, 0.3, 1),
       visibility 0s linear var(--sidenav-speed);
+    transform: translateX(-110vw);
+    will-change: transform;
 
     &.open {
       visibility: visible;
-      transform: translateX(0);
       transition: transform var(--sidenav-speed) cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateX(0);
     }
   }
 }
@@ -82,9 +80,9 @@
 }
 
 .microdoc-sidenav-scroll {
-  overflow-y: auto;
   height: 100%;
   padding: 0.5rem;
+  overflow-y: auto;
 }
 
 .microdoc-sidenav-list {
@@ -94,8 +92,14 @@
 .microdoc-sidenav-parent {
   #apply: .lsn;
 
+  & > &,
+  & > .microdoc-sidenav-link {
+    display: none;
+    margin-left: 1rem;
+  }
+
   &.expanded {
-    & > .microdoc-sidenav-item  > .microdoc-icon {
+    & > .microdoc-sidenav-item > .microdoc-icon {
       transform: rotate(90deg);
     }
 
@@ -103,12 +107,6 @@
     & > .microdoc-sidenav-link {
       display: block;
     }
-  }
-
-  & > &,
-  & > .microdoc-sidenav-link {
-    display: none;
-    margin-left: 1rem;
   }
 }
 
@@ -168,9 +166,9 @@
   height: 1.2rem;
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
+  stroke-width: 2;
 }
 
 /* Search plugin */
@@ -200,11 +198,11 @@
 }
 
 .microdoc-search-results {
-  z-index: 1;
   position: absolute;
   top: 100%;
   right: 0;
   left: 0;
+  z-index: 1;
   padding: 0.5rem 1rem;
   background: ${x.color.background};
   border: 1px solid ${x.color.gray2};
@@ -216,11 +214,11 @@
 
 @media (max-width: 60rem) {
   .microdoc-search.expanded {
-    z-index: 3;
     position: absolute;
     top: 0.25rem;
-    left: 2px;
     right: 2px;
+    left: 2px;
+    z-index: 3;
     margin-left: 0; // TODO: Keep? It's because of .microdoc-header-item+.microdoc-header-item
 
     .microdoc-icon-x {
@@ -230,8 +228,8 @@
 
   .microdoc-search-input {
     position: absolute;
-    display: none;
     top: 0;
+    display: none;
     width: 100%;
 
     .expanded > & {

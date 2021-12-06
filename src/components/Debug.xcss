@@ -2,13 +2,13 @@
 @import '@ekscss/framework/level2/utils.xcss';
 
 #debug {
-  z-index: 99999;
-  contain: layout paint;
   position: fixed;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  z-index: 99999;
   padding: 3px;
   font-size: 14px !important;
   line-height: 1.2;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgb(0 0 0 / 60%);
+  contain: layout paint;
 }

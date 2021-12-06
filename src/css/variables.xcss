@@ -39,7 +39,7 @@
   color-scheme: dark;
 
   [disabled],
-  [disabled]:hover
+  [disabled]:hover,
   [disabled]:focus {
     background-color: transparent !important;
     opacity: 0.5;
@@ -64,7 +64,7 @@
     color: ${x.color.red5};
   }
 
-  .spinner:before {
+  .spinner::before {
     border-color: ${x.color.dark2};
     border-top-color: var(--color-primary);
   }

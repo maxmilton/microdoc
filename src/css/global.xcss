@@ -44,7 +44,6 @@ input::-webkit-inner-spin-button {
 // Button which looks exactly like an anchor element
 .button-link {
   #apply: .button-clear, a;
-
   border: 0;
 }
 
@@ -72,7 +71,6 @@ code {
 
 pre > code {
   #apply: .code-block;
-
   user-select: auto;
 }
 
@@ -84,10 +82,11 @@ li > pre {
 blockquote > :first-child {
   margin-top: 0;
 }
+
 blockquote > :last-child {
   margin-bottom: 0;
 }
 
 tr:nth-child(even) {
-  #apply: ".table-zebra tr:nth-child(even)";
+  #apply: '.table-zebra tr:nth-child(even)';
 }
