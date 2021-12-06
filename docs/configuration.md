@@ -107,7 +107,7 @@ Given the following configuration ([see live example](https://microdoc.js.org/ex
 
 <!-- prettier-ignore-end -->
 
-It would evaluate into data that looks like:
+It would evaluate into route data that looks like:
 
 ```json
 [
