@@ -17,9 +17,9 @@
 */
 
 code[class*='language-'] {
+  border: 1px solid ${x.color.light3};
   color: #383a42;
   background: #fafafa;
-  border: 1px solid ${x.color.light3};
 }
 
 .token.bold {
@@ -183,9 +183,9 @@ code[class*='language-'] {
 
 .dark {
   code[class*='language-'] {
+    border-color: ${x.color.dark3};
     color: #abb2bf;
     background: #282c34;
-    border-color: ${x.color.dark3};
   }
 
   .token.comment,

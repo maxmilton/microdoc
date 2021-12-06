@@ -3,9 +3,9 @@
 
 #debug {
   position: fixed;
+  z-index: 99999;
   right: 0;
   bottom: 0;
-  z-index: 99999;
   padding: 3px;
   font-size: 14px !important;
   line-height: 1.2;

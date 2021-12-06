@@ -9,8 +9,8 @@
 .microdoc-header {
   display: flex;
   padding: 0.25rem 0.5rem;
-  background: ${x.color.background};
   border-bottom: 1px solid var(--color-border);
+  background: ${x.color.background};
 
   // FIXME: Probably not the right selector for this
   .button-clear {
@@ -50,24 +50,24 @@
 
   .microdoc-sidenav {
     position: fixed;
+    z-index: 4;
     top: 0;
     bottom: 0;
     left: 0;
-    z-index: 4;
     max-width: 85%; // ensure enough click area to dismiss the sidenav
     background: var(--color-background);
     box-shadow: 5px 0 40px rgb(0 0 0 / 45%);
-    visibility: hidden;
+    transform: translateX(-110vw);
     transition:
       transform var(--sidenav-speed) cubic-bezier(0.16, 1, 0.3, 1),
       visibility 0s linear var(--sidenav-speed);
-    transform: translateX(-110vw);
+    visibility: hidden;
     will-change: transform;
 
     &.open {
-      visibility: visible;
-      transition: transform var(--sidenav-speed) cubic-bezier(0.16, 1, 0.3, 1);
       transform: translateX(0);
+      transition: transform var(--sidenav-speed) cubic-bezier(0.16, 1, 0.3, 1);
+      visibility: visible;
     }
   }
 }
@@ -80,9 +80,9 @@
 }
 
 .microdoc-sidenav-scroll {
+  overflow-y: auto;
   height: 100%;
   padding: 0.5rem;
-  overflow-y: auto;
 }
 
 .microdoc-sidenav-list {
@@ -199,13 +199,13 @@
 
 .microdoc-search-results {
   position: absolute;
+  z-index: 1;
   top: 100%;
   right: 0;
   left: 0;
-  z-index: 1;
   padding: 0.5rem 1rem;
-  background: ${x.color.background};
   border: 1px solid ${x.color.gray2};
+  background: ${x.color.background};
 }
 
 .microdoc-icon-x {
@@ -215,10 +215,10 @@
 @media (max-width: 60rem) {
   .microdoc-search.expanded {
     position: absolute;
+    z-index: 3;
     top: 0.25rem;
     right: 2px;
     left: 2px;
-    z-index: 3;
     margin-left: 0; // TODO: Keep? It's because of .microdoc-header-item+.microdoc-header-item
 
     .microdoc-icon-x {
