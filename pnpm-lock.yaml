@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@ekscss/framework': ^0.0.32
-  '@maxmilton/stylelint-config': 0.0.3
+  '@maxmilton/stylelint-config': 0.0.4
   '@types/csso': 4.2.0
   '@types/jsdom': 16.2.13
   '@types/node': 16.11.11
@@ -47,7 +47,7 @@ dependencies:
   stage1: 0.1.0
 
 devDependencies:
-  '@maxmilton/stylelint-config': 0.0.3_ekscss@0.0.10+stylelint@14.1.0
+  '@maxmilton/stylelint-config': 0.0.4_ekscss@0.0.10+stylelint@14.1.0
   '@types/csso': 4.2.0
   '@types/jsdom': 16.2.13
   '@types/node': 16.11.11
@@ -406,8 +406,8 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: true
 
-  /@maxmilton/stylelint-config/0.0.3_ekscss@0.0.10+stylelint@14.1.0:
-    resolution: {integrity: sha512-JDg+fjrJH8hCd1GDZq1pza1IWIT3Ts7WevP0YlPlAwLmSLCwtb5FQ9aCjVWm06EPagiEuA2ahhTMpHZmG4Jl/A==}
+  /@maxmilton/stylelint-config/0.0.4_ekscss@0.0.10+stylelint@14.1.0:
+    resolution: {integrity: sha512-rVEl6qIbRMM14EA8TdKzMiWH9Nkn8s718OstjYl4N6bRIGuvQRGpw2wP1V1017ZAnNMcQs7AQ54O/r8DkM5GQw==}
     peerDependencies:
       stylelint: ^14.0.0
     dependencies:
@@ -819,7 +819,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001285
-      electron-to-chromium: 1.4.11
+      electron-to-chromium: 1.4.12
       escalade: 3.1.1
       node-releases: 2.0.1
       picocolors: 1.0.0
@@ -1166,8 +1166,8 @@ packages:
       stylis: 4.0.10
     dev: true
 
-  /electron-to-chromium/1.4.11:
-    resolution: {integrity: sha512-2OhsaYgsWGhWjx2et8kaUcdktPbBGjKM2X0BReUCKcSCPttEY+hz2zie820JLbttU8jwL92+JJysWwkut3wZgA==}
+  /electron-to-chromium/1.4.12:
+    resolution: {integrity: sha512-zjfhG9Us/hIy8AlQ5OzfbR/C4aBv1Dg/ak4GX35CELYlJ4tDAtoEcQivXvyBdqdNQ+R6PhlgQqV8UNPJmhkJog==}
     dev: true
 
   /emoji-regex/8.0.0:
