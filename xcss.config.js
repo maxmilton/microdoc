@@ -1,14 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable @typescript-eslint/no-var-requires, import/no-extraneous-dependencies */
 
-// @ts-expect-error - no types yet
 const framework = require('@ekscss/framework/config');
-// @ts-expect-error - no types yet
-const { preloadApply } = require('@ekscss/framework/utils');
-const { merge } = require('dset/merge');
+const { extend, preloadApply } = require('@ekscss/framework/utils');
 const { onBeforeBuild } = require('ekscss');
 
 onBeforeBuild(() => preloadApply(`
@@ -17,8 +10,7 @@ onBeforeBuild(() => preloadApply(`
   @import '@ekscss/framework/addon/code.xcss';
 `));
 
-/** @type {(import('esbuild-plugin-ekscss').XCSSConfig)} */
-module.exports = merge(framework, {
+module.exports = extend(framework, {
   globals: {
     color: {
       primary: 'var(--color-primary)',
