@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@maxmilton/stylelint-config": "0.0.5",
-    "@types/csso": "4.2.0",
+    "@types/csso": "5.0.0",
     "@types/jsdom": "16.2.13",
     "@types/node": "16.11.12",
     "@types/remarkable": "2.0.3",
@@ -50,7 +50,7 @@
     "get-port": "6.0.0",
     "jsdom": "19.0.0",
     "kleur": "4.1.4",
-    "pirates": "4.0.1",
+    "pirates": "4.0.4",
     "playwright-chromium": "1.17.1",
     "prettier": "2.5.1",
     "prettier-plugin-pkg": "0.11.1",

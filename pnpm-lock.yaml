@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@ekscss/framework': ^0.0.35
   '@maxmilton/stylelint-config': 0.0.5
-  '@types/csso': 4.2.0
+  '@types/csso': 5.0.0
   '@types/jsdom': 16.2.13
   '@types/node': 16.11.12
   '@types/remarkable': 2.0.3
@@ -24,7 +24,7 @@ specifiers:
   get-port: 6.0.0
   jsdom: 19.0.0
   kleur: 4.1.4
-  pirates: 4.0.1
+  pirates: 4.0.4
   playwright-chromium: 1.17.1
   prettier: 2.5.1
   prettier-plugin-pkg: 0.11.1
@@ -47,7 +47,7 @@ dependencies:
 
 devDependencies:
   '@maxmilton/stylelint-config': 0.0.5_ekscss@0.0.10+stylelint@14.1.0
-  '@types/csso': 4.2.0
+  '@types/csso': 5.0.0
   '@types/jsdom': 16.2.13
   '@types/node': 16.11.12
   '@types/remarkable': 2.0.3
@@ -67,7 +67,7 @@ devDependencies:
   get-port: 6.0.0
   jsdom: 19.0.0
   kleur: 4.1.4
-  pirates: 4.0.1
+  pirates: 4.0.4
   playwright-chromium: 1.17.1
   prettier: 2.5.1
   prettier-plugin-pkg: 0.11.1_prettier@2.5.1
@@ -452,8 +452,8 @@ packages:
     resolution: {integrity: sha512-Pz+DfVODpQTAV6PwPBK6kzyy7+f6EyPbr1+mYkc1YolJfl2NAJ4wbg0TC/AJPBsqn9jWfyiO19A/sgpvFLfqnw==}
     dev: true
 
-  /@types/csso/4.2.0:
-    resolution: {integrity: sha512-tGMZcJGgeIA67qbbm/ZKUi7ZyiTETEL0X4opRpFzULbIE1Kyt6EfOVSctw4N/WrEJZwmKw0J+1i/OApm6/CAOQ==}
+  /@types/csso/5.0.0:
+    resolution: {integrity: sha512-EMrCTGpXRUsbFfZBzn2jcW6Sqg8kxWXkJcpvAGYSEzFqAJ2THDJSwiMeS2fPUw+0p6RQNT/n8F/skEc9hUBc0g==}
     dependencies:
       '@types/css-tree': 1.0.7
     dev: true
@@ -2583,11 +2583,6 @@ packages:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
     dev: true
 
-  /node-modules-regexp/1.0.0:
-    resolution: {integrity: sha1-jZ2+KJZKSsVxLpExZCEHxx6Q7EA=}
-    engines: {node: '>=0.10.0'}
-    dev: true
-
   /node-releases/2.0.1:
     resolution: {integrity: sha512-CqyzN6z7Q6aMeF/ktcMVTzhAHCEpf8SOarwpzpf8pNBY2k5/oM34UHldUwp8VKI7uxct2HxSRdJjBaZeESzcxA==}
     dev: true
@@ -2806,11 +2801,9 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /pirates/4.0.1:
-    resolution: {integrity: sha512-WuNqLTbMI3tmfef2TKxlQmAiLHKtFhlsCZnPIpuv2Ow0RDVO8lfy1Opf4NUzlMXLjPl+Men7AuVdX6TA+s+uGA==}
+  /pirates/4.0.4:
+    resolution: {integrity: sha512-ZIrVPH+A52Dw84R0L3/VS9Op04PuQ2SEoJL6bkshmiTic/HldyW9Tf7oH5mhJZBK7NmDx27vSMrYEXPXclpDKw==}
     engines: {node: '>= 6'}
-    dependencies:
-      node-modules-regexp: 1.0.0
     dev: true
 
   /pkg-dir/2.0.0:
