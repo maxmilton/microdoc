@@ -1,4 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires, import/no-extraneous-dependencies */
+/* eslint-disable @typescript-eslint/no-var-requires, import/no-extraneous-dependencies, strict */
+
+'use strict';
 
 const framework = require('@ekscss/framework/config');
 const { extend, preloadApply } = require('@ekscss/framework/utils');
