@@ -10,7 +10,7 @@ type RefNodes = {
 // https://github.com/tailwindlabs/heroicons/blob/master/optimized/outline/menu.svg
 const view = h(`
   <header class=microdoc-header>
-    <button class="microdoc-button-menu button-clear" #button>
+    <button class=microdoc-button-menu #button>
       <svg viewBox="0 0 24 24" class=microdoc-icon>
         <path d="M4 6h16M4 12h16M4 18h16" />
       </svg>

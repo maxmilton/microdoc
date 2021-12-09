@@ -23,7 +23,7 @@ type RefNodes = {
 // https://github.com/feathericons/feather/blob/master/icons/moon.svg
 // https://github.com/tabler/tabler-icons/blob/master/icons/sun.svg
 const view = h(`
-  <button class="microdoc-dark-mode microdoc-header-item button-clear" title="Toggle light/dark mode" #button>
+  <button class="microdoc-dark-mode microdoc-header-item" title="Toggle light/dark mode" #button>
     <svg viewBox="0 0 24 24" class=microdoc-icon-moon>
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>

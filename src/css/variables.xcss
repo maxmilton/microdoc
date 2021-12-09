@@ -56,20 +56,20 @@
   }
 
   blockquote,
-  #app .alert {
+  .microdoc-alert {
     background-color: ${x.color.dark2};
   }
 
-  #app .alert-danger {
+  tr:nth-child(even) {
+    background: ${x.fn.color(x.color.black).mix(x.fn.color(x.color.dark1), 0.4)};
+  }
+
+  .microdoc-alert {
     color: ${x.color.red5};
   }
 
   .spinner::before {
     border-color: ${x.color.dark2};
     border-top-color: var(--color-primary);
-  }
-
-  tr:nth-child(even) {
-    background: ${x.fn.color(x.color.black).mix(x.fn.color(x.color.dark1), 0.4)};
   }
 }

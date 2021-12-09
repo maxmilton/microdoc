@@ -9,7 +9,7 @@ export function render(): void {
   const wrapper = create('div');
   const main = create('main');
 
-  app.id = 'app';
+  app.id = 'microdoc';
   wrapper.className = 'df';
   main.className = 'microdoc-main';
 

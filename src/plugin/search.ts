@@ -81,7 +81,7 @@ const resultItemView = h(`
 `);
 const resultListView = h(`
   <div class=microdoc-search-results hidden>
-    <h3 class=mt0>Search Results</h3>
+    <h3>Search Results</h3>
 
     <ul #list></ul>
   </div>
@@ -90,7 +90,7 @@ const resultListView = h(`
 // https://github.com/feathericons/feather/blob/master/icons/search.svg
 const searchView = h(`
   <div class="microdoc-search microdoc-header-item">
-    <button class="microdoc-button-search button-clear" #button>
+    <button class=microdoc-button-search #button>
       <svg viewBox="0 0 24 24" class=microdoc-icon-x>
         <line x1=18 y1=6 x2=6 y2=18 />
         <line x1=6 y1=6 x2=18 y2=18 />

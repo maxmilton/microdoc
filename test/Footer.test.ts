@@ -84,8 +84,8 @@ test('matches snapshot', () => {
   const rendered = render(Footer());
   assert.fixture(
     rendered.container.innerHTML,
-    `<footer class="microdoc-footer muted">
-Powered by <a href="https://microdoc.js.org" class="muted" target="_blank" rel="noreferrer">microdoc</a>
+    `<footer class="microdoc-footer">
+Powered by <a href="https://microdoc.js.org" class="microdoc-footer-link" target="_blank" rel="noopener">microdoc</a>
 </footer>`,
   );
 });

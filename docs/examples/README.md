@@ -98,6 +98,6 @@ Fenced code block
 
 ### Error
 
-<div class="alert alert-danger">
+<div class=microdoc-alert>
   <strong>Error:</strong> Example error.
 </div>

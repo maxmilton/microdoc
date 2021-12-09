@@ -38,6 +38,7 @@
 }
 
 .microdoc-button-menu {
+  #apply: .button-clear;
   display: none;
   flex-shrink: 0;
   margin-right: 0.5rem;
@@ -89,6 +90,10 @@
   #apply: .df, .f-col, .lsn, .mv0;
 }
 
+.microdoc-icon-chevron {
+  #apply: .ml-auto;
+}
+
 .microdoc-sidenav-parent {
   #apply: .lsn;
 
@@ -99,7 +104,7 @@
   }
 
   &.expanded {
-    & > .microdoc-sidenav-item > .microdoc-icon {
+    & > .microdoc-sidenav-item > .microdoc-icon-chevron {
       transform: rotate(90deg);
     }
 
@@ -116,11 +121,10 @@
   border: 0;
   border-radius: ${x.input.radius};
 
-  // TODO: Fix outline on :focus-visible
-  // &:focus,
-  // &:active {
-  //   outline: initial !important;
-  // }
+  &:focus,
+  &:active {
+    outline: initial;
+  }
 
   &:hover,
   &:focus,
@@ -133,12 +137,28 @@
   .active > & {
     font-weight: ${x.textWeightMedium};
   }
+
+  // Give anchor same whitespace as button
+  a& {
+    #apply: .link-button;
+  }
+
+  // Make button look like an anchor element
+  button& {
+    #apply: .dfc, .button-clear, a;
+    border: 0;
+  }
 }
 
 .microdoc-footer {
+  #apply: .muted;
   margin: 2rem 0 1rem;
   font-size: 16px;
   text-align: center;
+}
+
+.microdoc-footer-link {
+  #apply: .muted;
 }
 
 .microdoc-main {
@@ -171,6 +191,14 @@
   stroke-width: 2;
 }
 
+.microdoc-alert {
+  #apply: .alert, .alert-danger;
+}
+
+.spinner-wrapper {
+  margin: 2rem 0;
+}
+
 /* Search plugin */
 
 // TODO: Should plugin styles be in a separate file? Together means the version
@@ -185,6 +213,7 @@
 }
 
 .microdoc-button-search {
+  #apply: .button-clear;
   display: none;
   height: 100%;
 }
@@ -206,6 +235,10 @@
   padding: 0.5rem 1rem;
   border: 1px solid ${x.color.gray2};
   background: ${x.color.background};
+
+  & > :first-child {
+    margin-top: 0;
+  }
 }
 
 .microdoc-icon-x {
@@ -279,6 +312,7 @@
 /* Dark Mode plugin */
 
 .microdoc-dark-mode {
+  #apply: .button-clear;
   flex-shrink: 0;
   line-height: 0; // fixes strange height difference between default/dark modes
 }

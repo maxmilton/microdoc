@@ -3,8 +3,8 @@ import { h, S1Node } from 'stage1';
 export type FooterComponent = S1Node & HTMLDivElement;
 
 const view = h(`
-  <footer class="microdoc-footer muted">
-    Powered by <a href=https://microdoc.js.org class=muted target=_blank rel=noreferrer>microdoc</a>
+  <footer class=microdoc-footer>
+    Powered by <a href=https://microdoc.js.org class=microdoc-footer-link target=_blank rel=noopener>microdoc</a>
   </footer>
 `);
 

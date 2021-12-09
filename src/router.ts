@@ -179,7 +179,7 @@ export function setupRouter(): void {
 }
 
 const loadingError = (path: string, error: unknown) => `
-  <div class="alert alert-danger">
+  <div class=microdoc-alert>
     <strong>Error: </strong>${String(error) || 'Unknown error'}
   </div>
 

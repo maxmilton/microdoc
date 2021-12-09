@@ -8,7 +8,7 @@ type RefNodes = {
 
 const view = h(`
   <li class=microdoc-sidenav-link>
-    <a class="microdoc-sidenav-item link-button" #a></a>
+    <a class=microdoc-sidenav-item #a></a>
   </li>
 `);
 
