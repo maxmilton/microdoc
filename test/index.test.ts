@@ -52,7 +52,7 @@ test('renders microdoc core app', () => {
   assert.is(document.body.innerHTML.length > 450, true, 'body has content');
   const firstNode = document.body.firstChild as HTMLDivElement;
   assert.instance(firstNode, window.HTMLDivElement);
-  assert.is(firstNode.id, 'app', 'first element id=app');
+  assert.is(firstNode.id, 'microdoc', 'first element id=microdoc');
 });
 
 // TODO: Test app renders with each plugin and with all plugins
