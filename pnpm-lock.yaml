@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@ekscss/framework': ^0.0.35
+  '@ekscss/framework': ^0.0.36
   '@maxmilton/stylelint-config': 0.0.7
   '@types/csso': 5.0.0
   '@types/jsdom': 16.2.13
@@ -11,10 +11,10 @@ specifiers:
   '@typescript-eslint/parser': 5.6.0
   c8: 7.10.0
   csso: 5.0.0
-  ekscss: 0.0.10
+  ekscss: 0.0.11
   esbuild: 0.14.2
   esbuild-minify-templates: 0.7.0
-  esbuild-plugin-ekscss: 0.0.8
+  esbuild-plugin-ekscss: 0.0.9
   eslint: 8.4.1
   eslint-config-airbnb-base: 15.0.0
   eslint-config-airbnb-typescript: 16.1.0
@@ -40,13 +40,13 @@ specifiers:
   uvu: 0.5.2
 
 dependencies:
-  '@ekscss/framework': 0.0.35_ekscss@0.0.10
+  '@ekscss/framework': 0.0.36_ekscss@0.0.11
   fuse.js: 6.4.6
   remarkable: 2.0.1
   stage1: 0.1.0
 
 devDependencies:
-  '@maxmilton/stylelint-config': 0.0.7_ekscss@0.0.10+stylelint@14.1.0
+  '@maxmilton/stylelint-config': 0.0.7_ekscss@0.0.11+stylelint@14.1.0
   '@types/csso': 5.0.0
   '@types/jsdom': 16.2.13
   '@types/node': 16.11.12
@@ -55,10 +55,10 @@ devDependencies:
   '@typescript-eslint/parser': 5.6.0_eslint@8.4.1+typescript@4.5.3
   c8: 7.10.0
   csso: 5.0.0
-  ekscss: 0.0.10
+  ekscss: 0.0.11
   esbuild: 0.14.2
   esbuild-minify-templates: 0.7.0_esbuild@0.14.2
-  esbuild-plugin-ekscss: 0.0.8_ekscss@0.0.10+esbuild@0.14.2
+  esbuild-plugin-ekscss: 0.0.9_ekscss@0.0.11+esbuild@0.14.2
   eslint: 8.4.1
   eslint-config-airbnb-base: 15.0.0_581d2b6245defd0595f2dd29dbf58da2
   eslint-config-airbnb-typescript: 16.1.0_682ed61dab780a6ddcc1ad1671d9865c
@@ -321,46 +321,46 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@ekscss/framework/0.0.35_ekscss@0.0.10:
-    resolution: {integrity: sha512-rG+AbvM18ubRipiFjqfWLZZR3reTsrAnLHxr35e/Nms6tPVUJekjXaBNlLkV8bEUTTn2+MS1yJ8pGa3/wHb0bw==}
+  /@ekscss/framework/0.0.36_ekscss@0.0.11:
+    resolution: {integrity: sha512-RhkUzmTLgcty5y0KXpU6C8EzQbPDex3jrxzNSphyN3MvzWLJar1VRN5FwZBuT1N24gXHV+bFFBQEZ7s+s6U9wA==}
     peerDependencies:
-      ekscss: ^0.0.10
+      ekscss: ^0.0.11
     dependencies:
-      '@ekscss/plugin-apply': 0.0.6_ekscss@0.0.10
-      '@ekscss/plugin-import': 0.0.6_ekscss@0.0.10
-      '@ekscss/plugin-prefix': 0.0.5_ekscss@0.0.10
+      '@ekscss/plugin-apply': 0.0.7_ekscss@0.0.11
+      '@ekscss/plugin-import': 0.0.7_ekscss@0.0.11
+      '@ekscss/plugin-prefix': 0.0.6_ekscss@0.0.11
       color: 4.1.0
       cssremedy: github.com/jensimmons/cssremedy/468e31a
       dset: 3.1.1
-      ekscss: 0.0.10
-      stylis: 4.0.10
+      ekscss: 0.0.11
+      stylis: 4.0.11
     dev: false
 
-  /@ekscss/plugin-apply/0.0.6_ekscss@0.0.10:
-    resolution: {integrity: sha512-fWutv/cmJxlF0UjWTZ5aFBgkLewEXvYOZsr1vcIeJUdBdqlYqUE370KgfQQiOYKOQ5OCB2WZSPFmZnYgGXP4wQ==}
+  /@ekscss/plugin-apply/0.0.7_ekscss@0.0.11:
+    resolution: {integrity: sha512-393yqLV0kcrkZceqXaGzAPW56QopcsV5qL2cSYABgDnftwPbO0GHnYO6KTjUIdK7t1AT+dvh8jMnUdtabETeTw==}
     peerDependencies:
-      ekscss: ^0.0.10
+      ekscss: ^0.0.11
     dependencies:
-      ekscss: 0.0.10
-      stylis: 4.0.10
+      ekscss: 0.0.11
+      stylis: 4.0.11
     dev: false
 
-  /@ekscss/plugin-import/0.0.6_ekscss@0.0.10:
-    resolution: {integrity: sha512-sT3kTx1hI2t/6CjhnDYUtAhZQ0tuJqIszbnu8x8Uo2bzmZiq4geR4sJ/qiKWIUZHeBs3Pqb3Wc5lWoH4hy211Q==}
+  /@ekscss/plugin-import/0.0.7_ekscss@0.0.11:
+    resolution: {integrity: sha512-hb+XabEhWXvDQ+tUWTwWlu1e10NhuwZlf2tvdW3P72WYk2U5V2LIlLiQdVzCWSBEQOR4wYkJBKis2q7qpQ2dXg==}
     peerDependencies:
-      ekscss: ^0.0.10
+      ekscss: ^0.0.11
     dependencies:
-      ekscss: 0.0.10
-      stylis: 4.0.10
+      ekscss: 0.0.11
+      stylis: 4.0.11
     dev: false
 
-  /@ekscss/plugin-prefix/0.0.5_ekscss@0.0.10:
-    resolution: {integrity: sha512-+2M5SYkzvg/1IxrFrMVSAvFM+MTQGj3OcsqOxbiYkY5A5wL2dYOa9uX0XHhcHsVyMnR+MVQ6sl03czRH62Je2w==}
+  /@ekscss/plugin-prefix/0.0.6_ekscss@0.0.11:
+    resolution: {integrity: sha512-A73aO8dS1ifKj/R2AP1I9waZsWUGawzRopgEO74/RnKMWpT438LpmG7fRUsSc3zwlOmfyHWjVvXJQyDXgQ8v2Q==}
     peerDependencies:
-      ekscss: ^0.0.10
+      ekscss: ^0.0.11
     dependencies:
-      ekscss: 0.0.10
-      stylis: 4.0.10
+      ekscss: 0.0.11
+      stylis: 4.0.11
     dev: false
 
   /@eslint/eslintrc/1.0.5:
@@ -405,12 +405,12 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: true
 
-  /@maxmilton/stylelint-config/0.0.7_ekscss@0.0.10+stylelint@14.1.0:
+  /@maxmilton/stylelint-config/0.0.7_ekscss@0.0.11+stylelint@14.1.0:
     resolution: {integrity: sha512-avRrQyc4NrFE5rZq55YsTaotC92OJjXFJLsIEdal4d/PldnS9Ho8ivT/LZ7+7xIivnElM03hI+XsTRv2WYA6ow==}
     peerDependencies:
       stylelint: ^14.0.0
     dependencies:
-      postcss-ekscss: 0.0.3_ekscss@0.0.10
+      postcss-ekscss: 0.0.3_ekscss@0.0.11
       stylelint: 14.1.0
       stylelint-order: 5.0.0_stylelint@14.1.0
     transitivePeerDependencies:
@@ -817,8 +817,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001285
-      electron-to-chromium: 1.4.12
+      caniuse-lite: 1.0.30001286
+      electron-to-chromium: 1.4.15
       escalade: 3.1.1
       node-releases: 2.0.1
       picocolors: 1.0.0
@@ -882,8 +882,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite/1.0.30001285:
-    resolution: {integrity: sha512-KAOkuUtcQ901MtmvxfKD+ODHH9YVDYnBt+TGYSz2KIfnq22CiArbUxXPN9067gNbgMlnNYRSwho8OPXZPALB9Q==}
+  /caniuse-lite/1.0.30001286:
+    resolution: {integrity: sha512-zaEMRH6xg8ESMi2eQ3R4eZ5qw/hJiVsO/HlLwniIwErij0JDr9P+8V4dtx1l+kLq6j3yy8l8W4fst1lBnat5wQ==}
     dev: true
 
   /chalk/2.4.2:
@@ -1157,16 +1157,16 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /ekscss/0.0.10:
-    resolution: {integrity: sha512-Nrg8678ngjwtkPRckIBHTIRXlkClFuzbu1wp/rMzuOEn0HQ6As4GAr5PiC0zDYtGSeJ3/rUbxlryduUkJJlwvQ==}
+  /ekscss/0.0.11:
+    resolution: {integrity: sha512-cYFo9n7XS8n3+cJply9rmyg9d4ShzdElrkFfc50XuXwoarvw2lQBZQe2uTI5jyoJsna57kBwvrwtBkxyMUB/2w==}
     dependencies:
       '@types/stylis': 4.0.2
       source-map: 0.7.3
-      stylis: 4.0.10
+      stylis: 4.0.11
     dev: true
 
-  /electron-to-chromium/1.4.12:
-    resolution: {integrity: sha512-zjfhG9Us/hIy8AlQ5OzfbR/C4aBv1Dg/ak4GX35CELYlJ4tDAtoEcQivXvyBdqdNQ+R6PhlgQqV8UNPJmhkJog==}
+  /electron-to-chromium/1.4.15:
+    resolution: {integrity: sha512-WDw2IUL3k4QpbzInV3JZK+Zd1NjWJPDZ28oUSchWb/kf6AVj7/niaAlgcJlvojFa1d7pJSyQ/KSZsEtq5W7aGQ==}
     dev: true
 
   /emoji-regex/8.0.0:
@@ -1344,13 +1344,13 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-plugin-ekscss/0.0.8_ekscss@0.0.10+esbuild@0.14.2:
-    resolution: {integrity: sha512-ngP0NkvfBAFdwiMF2P/Q/lO+njp3OWjZy943D82biDuPzSFhnmVByCTp7G5Cy642Isqq9rB5amh6WkFSB6Tnxg==}
+  /esbuild-plugin-ekscss/0.0.9_ekscss@0.0.11+esbuild@0.14.2:
+    resolution: {integrity: sha512-a1tgEyfKmT5TfQmM1RO9kqscTwNzeysnvpra90BaWJIhxKGK1DwsbbcSmK99X/JYeXGlimX5CJ7I5GRqhoEkiA==}
     peerDependencies:
-      ekscss: ^0.0.10
+      ekscss: ^0.0.11
       esbuild: ^0.13.0 || ^0.14.0
     dependencies:
-      ekscss: 0.0.10
+      ekscss: 0.0.11
       esbuild: 0.14.2
       joycon: 3.1.1
     dev: true
@@ -2863,13 +2863,13 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: true
 
-  /postcss-ekscss/0.0.3_ekscss@0.0.10:
+  /postcss-ekscss/0.0.3_ekscss@0.0.11:
     resolution: {integrity: sha512-U2VWNe7dleIWwFouFqXkjfslJUM2h6GvgKt1YBKpvDaE167gVNvJz2Ww/L1Iex+CJj0DZqERLzySf/jpiM4Sew==}
     peerDependencies:
       ekscss: ^0.0.11
       postcss: ^8.0.0
     dependencies:
-      ekscss: 0.0.10
+      ekscss: 0.0.11
     dev: true
 
   /postcss-media-query-parser/0.2.3:
@@ -2889,8 +2889,8 @@ packages:
       postcss: 8.4.4
     dev: true
 
-  /postcss-selector-parser/6.0.6:
-    resolution: {integrity: sha512-9LXrvaaX3+mcv5xkg5kFwqSzSH1JIObIx51PrndZwlmznwXRfxMddDvo9gve3gVR8ZTKgoFDdWkbRFmEhT4PMg==}
+  /postcss-selector-parser/6.0.7:
+    resolution: {integrity: sha512-U+b/Deoi4I/UmE6KOVPpnhS7I7AYdKbhGcat+qTQ27gycvaACvNEw11ba6RrkwVmDVRW7sigWgLj4/KbbJjeDA==}
     engines: {node: '>=4'}
     dependencies:
       cssesc: 3.0.0
@@ -3395,7 +3395,7 @@ packages:
       postcss-media-query-parser: 0.2.3
       postcss-resolve-nested-selector: 0.1.1
       postcss-safe-parser: 6.0.0_postcss@8.4.4
-      postcss-selector-parser: 6.0.6
+      postcss-selector-parser: 6.0.7
       postcss-value-parser: 4.2.0
       resolve-from: 5.0.0
       specificity: 0.4.1
@@ -3410,8 +3410,8 @@ packages:
       - supports-color
     dev: true
 
-  /stylis/4.0.10:
-    resolution: {integrity: sha512-m3k+dk7QeJw660eIKRRn3xPF6uuvHs/FFzjX3HQ5ove0qYsiygoAhwn5a3IYKaZPo5LrYD0rfVmtv1gNY1uYwg==}
+  /stylis/4.0.11:
+    resolution: {integrity: sha512-Q7gWFqMXrpDAnqhkFZdgBjXzybYc4WaJNtFdnQQSfww/cIiBUx/3sPGYMKFh3muXA47dhaWfYqc/HQkg8j7+ig==}
 
   /supports-color/5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
