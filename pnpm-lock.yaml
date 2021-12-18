@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@ekscss/framework': ^0.0.38
+  '@ekscss/framework': ^0.0.39
   '@maxmilton/stylelint-config': 0.0.9
   '@types/csso': 5.0.0
   '@types/jsdom': 16.2.13
@@ -40,7 +40,7 @@ specifiers:
   uvu: 0.5.2
 
 dependencies:
-  '@ekscss/framework': 0.0.38_ekscss@0.0.12
+  '@ekscss/framework': 0.0.39_ekscss@0.0.12
   fuse.js: 6.4.6
   remarkable: 2.0.1
   stage1: 0.3.0
@@ -303,10 +303,13 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@ekscss/framework/0.0.38_ekscss@0.0.12:
-    resolution: {integrity: sha512-ooiNGN91/f/gr1UN21EJbwrd6J+0S7T+8lvquWKn+42riMzU57Du2hr8wxHA/rm1IRSCyM8GcaJlQXGzmW/kJw==}
+  /@ekscss/framework/0.0.39_ekscss@0.0.12:
+    resolution: {integrity: sha512-Hlw1mdM4apVFhb2lGKKVfkegvB7Yo+hL+/+w/aZorBwFOfFwDGqxPo99hKiGkPPjSwSttS8s00G+Au6QDgjisw==}
     peerDependencies:
       ekscss: ^0.0.12
+    peerDependenciesMeta:
+      ekscss:
+        optional: true
     dependencies:
       '@ekscss/plugin-apply': 0.0.8_ekscss@0.0.12
       '@ekscss/plugin-import': 0.0.8_ekscss@0.0.12
@@ -798,7 +801,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001287
+      caniuse-lite: 1.0.30001291
       electron-to-chromium: 1.4.24
       escalade: 3.1.1
       node-releases: 2.0.1
@@ -863,8 +866,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite/1.0.30001287:
-    resolution: {integrity: sha512-4udbs9bc0hfNrcje++AxBuc6PfLNHwh3PO9kbwnfCQWyqtlzg3py0YgFu8jyRTTo85VAz4U+VLxSlID09vNtWA==}
+  /caniuse-lite/1.0.30001291:
+    resolution: {integrity: sha512-roMV5V0HNGgJ88s42eE70sstqGW/gwFndosYrikHthw98N5tLnOTxFqMLQjZVRxTWFlJ4rn+MsgXrR7MDPY4jA==}
     dev: true
 
   /chalk/2.4.2:
@@ -1191,7 +1194,7 @@ packages:
       is-shared-array-buffer: 1.0.1
       is-string: 1.0.7
       is-weakref: 1.0.2
-      object-inspect: 1.11.1
+      object-inspect: 1.12.0
       object-keys: 1.1.1
       object.assign: 4.1.2
       string.prototype.trimend: 1.0.4
@@ -2600,8 +2603,8 @@ packages:
     resolution: {integrity: sha512-h2AatdwYH+JHiZpv7pt/gSX1XoRGb7L/qSIeuqA6GwYoF9w1vP1cw42TO0aI2pNyshRK5893hNSl+1//vHK7hQ==}
     dev: true
 
-  /object-inspect/1.11.1:
-    resolution: {integrity: sha512-If7BjFlpkzzBeV1cqgT3OSWT3azyoxDGajR+iGnFBfVV2EWyDyWaZZW2ERDjUaY2QM8i5jI3Sj7mhsM4DDAqWA==}
+  /object-inspect/1.12.0:
+    resolution: {integrity: sha512-Ho2z80bVIvJloH+YzRmpZVQe87+qASmBUKZDWgx9cu+KDrX2ZDH/3tMy+gXbZETVGs2M8YdxObOh7XAtim9Y0g==}
     dev: true
 
   /object-keys/1.1.1:
@@ -3133,7 +3136,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       get-intrinsic: 1.1.1
-      object-inspect: 1.11.1
+      object-inspect: 1.12.0
     dev: true
 
   /signal-exit/3.0.6:
