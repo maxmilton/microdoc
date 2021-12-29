@@ -30,7 +30,7 @@ specifiers:
   prettier-plugin-pkg: 0.11.1
   prettier-plugin-sh: 0.8.1
   remarkable: ^2.0.1
-  sirv: 1.0.19
+  sirv: 2.0.0
   stage1: ^0.3.0
   stylelint: 14.2.0
   stylelint-config-standard: 24.0.0
@@ -72,7 +72,7 @@ devDependencies:
   prettier: 2.5.1
   prettier-plugin-pkg: 0.11.1_prettier@2.5.1
   prettier-plugin-sh: 0.8.1_prettier@2.5.1
-  sirv: 1.0.19
+  sirv: 2.0.0
   stylelint: 14.2.0
   stylelint-config-standard: 24.0.0_stylelint@14.2.0
   terser: 5.10.0
@@ -3162,13 +3162,13 @@ packages:
       is-arrayish: 0.3.2
     dev: false
 
-  /sirv/1.0.19:
-    resolution: {integrity: sha512-JuLThK3TnZG1TAKDwNIqNq6QA2afLOCcm+iE8D1Kj3GA40pSPsxQjjJl0J8X3tsR7T+CP1GavpzLwYkgVLWrZQ==}
+  /sirv/2.0.0:
+    resolution: {integrity: sha512-TT+4+zSM9LR8soWT5/4gOYHfB5a5XEOSV2LtmBRN5MUxi8kh7BSRGuoRYjeBaqhR4w+yx+k6t0OibDNgoLfF7w==}
     engines: {node: '>= 10'}
     dependencies:
       '@polka/url': 1.0.0-next.21
       mrmime: 1.0.0
-      totalist: 1.1.0
+      totalist: 2.0.0
     dev: true
 
   /slash/3.0.0:
@@ -3482,11 +3482,6 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
-    dev: true
-
-  /totalist/1.1.0:
-    resolution: {integrity: sha512-gduQwd1rOdDMGxFG1gEvhV88Oirdo2p+KjoYFU7k2g+i7n6AFFbDQ5kMPUsW0pNbfQsB/cwXvT1i4Bue0s9g5g==}
-    engines: {node: '>=6'}
     dev: true
 
   /totalist/2.0.0:
