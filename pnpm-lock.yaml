@@ -5,7 +5,7 @@ specifiers:
   '@maxmilton/stylelint-config': 0.0.9
   '@types/csso': 5.0.0
   '@types/jsdom': 16.2.14
-  '@types/node': 17.0.0
+  '@types/node': 17.0.5
   '@types/remarkable': 2.0.3
   '@typescript-eslint/eslint-plugin': 5.8.1
   '@typescript-eslint/parser': 5.8.1
@@ -20,7 +20,7 @@ specifiers:
   eslint-config-airbnb-typescript: 16.1.0
   eslint-plugin-import: 2.25.3
   eslint-plugin-unicorn: 39.0.0
-  fuse.js: ^6.4.6
+  fuse.js: ^6.5.3
   get-port: 6.0.0
   jsdom: 19.0.0
   kleur: 4.1.4
@@ -41,7 +41,7 @@ specifiers:
 
 dependencies:
   '@ekscss/framework': 0.0.39_ekscss@0.0.12
-  fuse.js: 6.4.6
+  fuse.js: 6.5.3
   remarkable: 2.0.1
   stage1: 0.3.0
 
@@ -49,7 +49,7 @@ devDependencies:
   '@maxmilton/stylelint-config': 0.0.9_stylelint@14.2.0
   '@types/csso': 5.0.0
   '@types/jsdom': 16.2.14
-  '@types/node': 17.0.0
+  '@types/node': 17.0.5
   '@types/remarkable': 2.0.3
   '@typescript-eslint/eslint-plugin': 5.8.1_3a47348159e115370aa4cba56aba33b6
   '@typescript-eslint/parser': 5.8.1_eslint@8.5.0+typescript@4.5.4
@@ -452,14 +452,14 @@ packages:
     resolution: {integrity: sha512-t2szdkwmg2JJyuCM20e8kR2X59WCE5Zkl4bzm1u1Oukjm79zpbiAv+QjnwLnuuV0WHEcX2NgUItu0pAMKuOPww==}
     dev: true
 
-  /@types/istanbul-lib-coverage/2.0.3:
-    resolution: {integrity: sha512-sz7iLqvVUg1gIedBOvlkxPlc8/uVzyS5OwGz1cKjXzkl3FpL3al0crU8YGU1WoHkxn0Wxbw5tyi6hvzJKNzFsw==}
+  /@types/istanbul-lib-coverage/2.0.4:
+    resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
     dev: true
 
   /@types/jsdom/16.2.14:
     resolution: {integrity: sha512-6BAy1xXEmMuHeAJ4Fv4yXKwBDTGTOseExKE3OaHiNycdHdZw59KfYzrt0DkDluvwmik1HRt6QS7bImxUmpSy+w==}
     dependencies:
-      '@types/node': 17.0.0
+      '@types/node': 17.0.5
       '@types/parse5': 6.0.3
       '@types/tough-cookie': 4.0.1
     dev: true
@@ -476,8 +476,8 @@ packages:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: true
 
-  /@types/node/17.0.0:
-    resolution: {integrity: sha512-eMhwJXc931Ihh4tkU+Y7GiLzT/y/DBNpNtr4yU9O2w3SYBsr9NaOPhQlLKRmoWtI54uNwuo0IOUFQjVOTZYRvw==}
+  /@types/node/17.0.5:
+    resolution: {integrity: sha512-w3mrvNXLeDYV1GKTZorGJQivK6XLCoGwpnyJFbJVK/aTBQUxOCaa/GlFAAN3OTDFcb7h5tiFG+YXCO2By+riZw==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -511,7 +511,7 @@ packages:
     resolution: {integrity: sha512-8uALY5LTvSuHgloDVUvWP3pIauILm+8/0pDMokuDYIoNsOkSwd5AiHBTSEJjKTDcZr5z8UpgOWZkxBF4iJftoA==}
     requiresBuild: true
     dependencies:
-      '@types/node': 17.0.0
+      '@types/node': 17.0.5
     dev: true
     optional: true
 
@@ -632,12 +632,12 @@ packages:
       acorn-walk: 7.2.0
     dev: true
 
-  /acorn-jsx/5.3.2_acorn@8.6.0:
+  /acorn-jsx/5.3.2_acorn@8.7.0:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      acorn: 8.6.0
+      acorn: 8.7.0
     dev: true
 
   /acorn-walk/7.2.0:
@@ -651,8 +651,8 @@ packages:
     hasBin: true
     dev: true
 
-  /acorn/8.6.0:
-    resolution: {integrity: sha512-U1riIR+lBSNi3IbxtaHOIKdH8sLFv3NYfNv8sg7ZsNhcfl4HF2++BfqqrNAxoCLQW1iiylOj76ecnaUxz+z9yw==}
+  /acorn/8.7.0:
+    resolution: {integrity: sha512-V/LGr1APy+PXIwKebEWrkZPwoeoF+w1jiOBUmuxuiUIaOHtob8Qc9BTrYo7VuI5fR8tqsy+buA2WFooR5olqvQ==}
     engines: {node: '>=0.4.0'}
     hasBin: true
     dev: true
@@ -801,8 +801,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001291
-      electron-to-chromium: 1.4.24
+      caniuse-lite: 1.0.30001294
+      electron-to-chromium: 1.4.30
       escalade: 3.1.1
       node-releases: 2.0.1
       picocolors: 1.0.0
@@ -832,7 +832,7 @@ packages:
       foreground-child: 2.0.0
       istanbul-lib-coverage: 3.2.0
       istanbul-lib-report: 3.0.0
-      istanbul-reports: 3.1.1
+      istanbul-reports: 3.1.2
       rimraf: 3.0.2
       test-exclude: 6.0.0
       v8-to-istanbul: 8.1.0
@@ -866,8 +866,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite/1.0.30001291:
-    resolution: {integrity: sha512-roMV5V0HNGgJ88s42eE70sstqGW/gwFndosYrikHthw98N5tLnOTxFqMLQjZVRxTWFlJ4rn+MsgXrR7MDPY4jA==}
+  /caniuse-lite/1.0.30001294:
+    resolution: {integrity: sha512-LiMlrs1nSKZ8qkNhpUf5KD0Al1KCBE3zaT7OLOwEkagXMEDij98SiOovn9wxVGQpklk9vVC/pUSqgYmkmKOS8g==}
     dev: true
 
   /chalk/2.4.2:
@@ -1153,8 +1153,8 @@ packages:
       stylis: 4.0.13
     dev: true
 
-  /electron-to-chromium/1.4.24:
-    resolution: {integrity: sha512-erwx5r69B/WFfFuF2jcNN0817BfDBdC4765kQ6WltOMuwsimlQo3JTEq0Cle+wpHralwdeX3OfAtw/mHxPK0Wg==}
+  /electron-to-chromium/1.4.30:
+    resolution: {integrity: sha512-609z9sIMxDHg+TcR/VB3MXwH+uwtrYyeAwWc/orhnr90ixs6WVGSrt85CDLGUdNnLqCA7liv426V20EecjvflQ==}
     dev: true
 
   /emoji-regex/8.0.0:
@@ -1636,8 +1636,8 @@ packages:
     resolution: {integrity: sha512-oP3utRkynpZWF/F2x/HZJ+AGtnIclaR7z1pYPxy7NYM2fSO6LgK/Rkny8anRSPK/VwEA1eqm2squui0T7ZMOBg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.6.0
-      acorn-jsx: 5.3.2_acorn@8.6.0
+      acorn: 8.7.0
+      acorn-jsx: 5.3.2_acorn@8.7.0
       eslint-visitor-keys: 3.1.0
     dev: true
 
@@ -1814,8 +1814,8 @@ packages:
     resolution: {integrity: sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=}
     dev: true
 
-  /fuse.js/6.4.6:
-    resolution: {integrity: sha512-/gYxR/0VpXmWSfZOIPS3rWwU8SHgsRTwWuXhyb2O6s7aRuVtHtxCkR33bNYu3wyLyNx/Wpv0vU7FZy8Vj53VNw==}
+  /fuse.js/6.5.3:
+    resolution: {integrity: sha512-sA5etGE7yD/pOqivZRBvUBd/NaL2sjAu6QuSaFoe1H2BrJSkH/T/UXAJ8CdXdw7DvY3Hs8CXKYkDWX7RiP5KOg==}
     engines: {node: '>=10'}
     dev: false
 
@@ -2249,8 +2249,8 @@ packages:
       supports-color: 7.2.0
     dev: true
 
-  /istanbul-reports/3.1.1:
-    resolution: {integrity: sha512-q1kvhAXWSsXfMjCdNHNPKZZv94OlspKnoGv+R9RGbnqOOQ0VbNfLFgQDVgi7hHenKsndGq3/o0OBdzDXthWcNw==}
+  /istanbul-reports/3.1.2:
+    resolution: {integrity: sha512-0gHxuT1NNC0aEIL1zbJ+MTgPbbHhU77eJPuU35WKA7TgXiSNlCAx4PENoMrH0Or6M2H80TaZcWKhM0IK6V8gRw==}
     engines: {node: '>=8'}
     dependencies:
       html-escaper: 2.0.2
@@ -2287,7 +2287,7 @@ packages:
         optional: true
     dependencies:
       abab: 2.0.5
-      acorn: 8.6.0
+      acorn: 8.7.0
       acorn-globals: 6.0.0
       cssom: 0.5.0
       cssstyle: 2.3.0
@@ -2311,7 +2311,7 @@ packages:
       whatwg-encoding: 2.0.0
       whatwg-mimetype: 3.0.0
       whatwg-url: 10.0.0
-      ws: 8.3.0
+      ws: 8.4.0
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -2886,8 +2886,8 @@ packages:
       postcss: 8.4.5
     dev: true
 
-  /postcss-selector-parser/6.0.7:
-    resolution: {integrity: sha512-U+b/Deoi4I/UmE6KOVPpnhS7I7AYdKbhGcat+qTQ27gycvaACvNEw11ba6RrkwVmDVRW7sigWgLj4/KbbJjeDA==}
+  /postcss-selector-parser/6.0.8:
+    resolution: {integrity: sha512-D5PG53d209Z1Uhcc0qAZ5U3t5HagH3cxu+WLZ22jt3gLUpXM4eXXfiO14jiDWST3NNooX/E8wISfOhZ9eIjGTQ==}
     engines: {node: '>=4'}
     dependencies:
       cssesc: 3.0.0
@@ -3393,7 +3393,7 @@ packages:
       postcss-media-query-parser: 0.2.3
       postcss-resolve-nested-selector: 0.1.1
       postcss-safe-parser: 6.0.0_postcss@8.4.5
-      postcss-selector-parser: 6.0.7
+      postcss-selector-parser: 6.0.8
       postcss-value-parser: 4.2.0
       resolve-from: 5.0.0
       specificity: 0.4.1
@@ -3630,7 +3630,7 @@ packages:
     resolution: {integrity: sha512-/PRhfd8aTNp9Ggr62HPzXg2XasNFGy5PBt0Rp04du7/8GNNSgxFL6WBTkgMKSL9bFjH+8kKEG3f37FmxiTqUUA==}
     engines: {node: '>=10.12.0'}
     dependencies:
-      '@types/istanbul-lib-coverage': 2.0.3
+      '@types/istanbul-lib-coverage': 2.0.4
       convert-source-map: 1.8.0
       source-map: 0.7.3
     dev: true
@@ -3745,8 +3745,8 @@ packages:
         optional: true
     dev: true
 
-  /ws/8.3.0:
-    resolution: {integrity: sha512-Gs5EZtpqZzLvmIM59w4igITU57lrtYVFneaa434VROv4thzJyV6UjIL3D42lslWlI+D4KzLYnxSwtfuiO79sNw==}
+  /ws/8.4.0:
+    resolution: {integrity: sha512-IHVsKe2pjajSUIl4KYMQOdlyliovpEPquKkqbwswulszzI7r0SfQrxnXdWAEqOlDCLrVSJzo+O1hAwdog2sKSQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
