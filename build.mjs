@@ -20,7 +20,8 @@ const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const dir = path.resolve(); // no __dirname in node ESM
 /** @type {import('./package.json')} */
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+// eslint-disable-next-line max-len
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, unicorn/prefer-json-parse-buffer
 const pkg = JSON.parse(await fs.readFile('./package.json', 'utf8'));
 const target = ['chrome55', 'edge18', 'firefox53', 'safari11'];
 
