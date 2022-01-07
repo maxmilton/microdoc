@@ -161,12 +161,12 @@ esbuild
     banner: {
       css: `/*!
 * microdoc v${pkg.version} - https://microdoc.js.org
-* (c) 2021 Max Milton
+* (c) 2022 Max Milton
 * MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
 */`,
       js: `/*!
 * microdoc v${pkg.version} - https://microdoc.js.org
-* (c) 2021 Max Milton
+* (c) 2022 Max Milton
 * MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
 */ "use strict";`,
     },
@@ -213,7 +213,7 @@ for (const plugin of ['dark-mode', 'preload', 'prevnext', 'search']) {
       banner: {
         js: `/*!
 * microdoc ${plugin} plugin v${pkg.version} - https://microdoc.js.org
-* (c) 2021 Max Milton
+* (c) 2022 Max Milton
 * MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
 */ "use strict";`,
       },
@@ -238,7 +238,7 @@ esbuild
     banner: {
       css: `/*!
 * microdoc prism theme v${pkg.version} - https://microdoc.js.org
-* (c) 2021 Max Milton
+* (c) 2022 Max Milton
 * MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
 */`,
     },

@@ -47,4 +47,4 @@ The [blue book icon](https://github.com/twitter/twemoji/blob/master/assets/svg/1
 
 ---
 
-© 2021 [Max Milton](https://maxmilton.com)
+© 2022 [Max Milton](https://maxmilton.com)
