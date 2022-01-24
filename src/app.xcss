@@ -185,7 +185,7 @@
   width: 1.2rem; // 24px @ 1.2rem
   height: 1.2rem;
   fill: none;
-  stroke: currentColor;
+  stroke: currentcolor;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 2;
