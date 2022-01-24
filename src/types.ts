@@ -3,7 +3,7 @@ import type { h } from 'stage1';
 declare global {
   interface HTMLElement {
     /** `stage1` synthetic click event handler. */
-    __click(event: MouseEvent): void;
+    __click?(event: MouseEvent): void;
   }
 
   interface Window {
