@@ -9,6 +9,8 @@
  * a `.dark` CSS class to `:root` (`<html>` element).
  */
 
+// FIXME: Persist dark mode state across reloads (probably with sessionStorage)
+
 import type { S1Node } from 'stage1';
 import type { InternalMicrodoc } from '../types';
 
