@@ -30,7 +30,7 @@ export function Sidenav(): SidenavComponent {
 
     routes.forEach((route) => {
       if (route.children) {
-        item = SidenavParent(route.name);
+        item = SidenavParent(route.name, route.expanded);
         attachRoutes(route.children, item);
       } else {
         item = SidenavLink(route.name, route.path!);
