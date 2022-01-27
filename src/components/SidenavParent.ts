@@ -19,11 +19,18 @@ const view = h(`
   </ul>
 `);
 
-export function SidenavParent(title: string): SidenavParentComponent {
+export function SidenavParent(
+  title: string,
+  expanded?: boolean,
+): SidenavParentComponent {
   const root = view.cloneNode(true) as SidenavParentComponent;
   const { button, t } = view.collect<RefNodes>(root);
 
   t.textContent = title;
+
+  if (expanded) {
+    root.classList.add('expanded');
+  }
 
   button.__click = () => {
     root.classList.toggle('expanded');

@@ -65,6 +65,7 @@ type Routes = Array<string | Route>;
 interface Route {
   name?: string;
   path?: string;
+  expanded?: boolean;
   children?: Routes;
 }
 ```
@@ -78,6 +79,8 @@ Object _content_ routes must have `path` defined. Object _parent_ routes must ha
 When `name` is not defined it's automatically generated based on `path`. If the auto-generated name is not exactly what you need, use an object route with a `name`.
 
 When an object _parent_ route has a `path`, its children will inherit it as their base path. Route paths look like: `root + parent.path + child.path`. There's no hard limit to nesting depth but in general not more than 3 levels deep is recommended.
+
+If a route has `expanded: true` and contains children, it will be expanded by default on initial page load.
 
 Only routes which are defined can be loaded. Even if you link to files in your markdown, unless they're in `routes` they will generate an error when attempting to load them. The reason behind this is twofold, firstly to prevent users accessing files they shouldn't, and secondly for discoverability e.g., routes are fetched by the [search plugin](plugins/search.md) to index their content.
 

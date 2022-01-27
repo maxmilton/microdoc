@@ -63,6 +63,12 @@ export interface Route {
    * content item name instead of the default of inferring it from the path.
    */
   path?: string;
+  /**
+   * Set the menu item default state on page load as expanded.
+   *
+   * Only valid for menu items with children.
+   */
+  expanded?: boolean;
   /** Creates a new menu section with a list of child routes. */
   children?: Routes;
 }
