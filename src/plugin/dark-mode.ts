@@ -35,15 +35,16 @@ function DarkModeToggle(): DarkModeToggleComponent {
   const storage = sessionStorage;
   const cl = document.documentElement.classList;
 
-  root.__click = () => {
+  const toggle = () => {
     cl.toggle('dark');
     storage.dark = cl.contains('dark') ? 1 : 0;
   };
 
+  root.__click = toggle;
+
   // eslint-disable-next-line eqeqeq
   if ((storage.dark && storage.dark == 1) ?? darkMode) {
-    // @ts-expect-error - no mouse event
-    root.__click();
+    toggle();
   }
 
   return root;
