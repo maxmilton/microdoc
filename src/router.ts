@@ -150,7 +150,8 @@ function normaliseRoutes(routes: Routes, parent?: InternalRoute) {
       } else {
         // eslint-disable-next-line no-console
         console.error('Invalid route:', route);
-        break;
+        // eslint-disable-next-line no-continue
+        continue;
       }
     }
 
