@@ -9,23 +9,17 @@
  * a `.dark` CSS class to `:root` (`<html>` element).
  */
 
-// FIXME: Persist dark mode state across reloads (probably with sessionStorage)
-
 import type { S1Node } from 'stage1';
 import type { InternalMicrodoc } from '../types';
 
 const { h, darkMode } = window.microdoc as InternalMicrodoc;
 
-type DarkModeToggleComponent = S1Node & HTMLDivElement;
-
-type RefNodes = {
-  button: HTMLButtonElement;
-};
+type DarkModeToggleComponent = S1Node & HTMLButtonElement;
 
 // https://github.com/feathericons/feather/blob/master/icons/moon.svg
 // https://github.com/tabler/tabler-icons/blob/master/icons/sun.svg
 const view = h(`
-  <button class="microdoc-dark-mode microdoc-header-item" title="Toggle light/dark mode" #button>
+  <button class="microdoc-dark-mode microdoc-header-item" title="Toggle light/dark mode">
     <svg viewBox="0 0 24 24" class=microdoc-icon-moon>
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>
@@ -38,15 +32,19 @@ const view = h(`
 
 function DarkModeToggle(): DarkModeToggleComponent {
   const root = view as DarkModeToggleComponent;
-  const { button } = view.collect<RefNodes>(root);
+  const storage = sessionStorage;
+  const cl = document.documentElement.classList;
 
-  button.__click = () => {
-    document.documentElement.classList.toggle('dark');
+  const toggle = () => {
+    cl.toggle('dark');
+    storage.dark = cl.contains('dark') ? 1 : 0;
   };
 
-  if (darkMode) {
-    // @ts-expect-error - no mouse event
-    button.__click();
+  root.__click = toggle;
+
+  // eslint-disable-next-line eqeqeq
+  if ((storage.dark && storage.dark == 1) ?? darkMode) {
+    toggle();
   }
 
   return root;
