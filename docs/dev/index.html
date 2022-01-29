@@ -32,6 +32,17 @@
   @media (max-width: 40rem) {
     .header-link { display: none; }
   }
+
+  /* FIXME: Remove; experiment to identify external links */
+  a:not([href*='#']):not([href='/']) {
+    /* outline: 5px solid rgb(190 0 255 / 60%); */
+
+    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M11 3a1 1 0 1 0 0 2h2.586l-6.293 6.293a1 1 0 1 0 1.414 1.414L15 6.414V9a1 1 0 1 0 2 0V4a1 1 0 0 0-1-1h-5z'/%3E%3Cpath d='M5 5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3a1 1 0 1 0-2 0v3H5V7h3a1 1 0 0 0 0-2H5z'/%3E%3C/svg%3E"); */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%235c7080'%3E%3Cpath d='M11 3a1 1 0 1 0 0 2h2.586l-6.293 6.293a1 1 0 1 0 1.414 1.414L15 6.414V9a1 1 0 1 0 2 0V4a1 1 0 0 0-1-1h-5z'/%3E%3Cpath d='M5 5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3a1 1 0 1 0-2 0v3H5V7h3a1 1 0 0 0 0-2H5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 1.1em;
+  }
 </style>
 <script>
   var microdoc = {
@@ -56,6 +67,7 @@
         "test-3.md",
         "test-4.html",
         "test-5.txt",
+        { name: "Broken" }, // intentionally invalid for testing
         { path: "path-sub-1", children: [
           { path: "path-sub-2", children: [
             { path: "path-sub-3", children: [
