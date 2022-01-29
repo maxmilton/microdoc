@@ -136,6 +136,15 @@ function normaliseRoutes(routes: Routes, parent?: InternalRoute) {
 
     const route = routes[index] as InternalRoute;
 
+    if (!route.path && !route.children) {
+      // eslint-disable-next-line no-console
+      console.error('Invalid route:', route);
+
+      // Remove broken route
+      routes.splice(index--, 1);
+      continue;
+    }
+
     if (parent) {
       route.parent = parent;
     }
@@ -144,15 +153,8 @@ function normaliseRoutes(routes: Routes, parent?: InternalRoute) {
       route.path = `${parent?.path ? `${parent.path}/` : '#/'}${route.path}`;
     }
 
-    if (!route.name) {
-      if (route.path) {
-        route.name = toName(route.path);
-      } else {
-        // eslint-disable-next-line no-console
-        console.error('Invalid route:', route);
-        // eslint-disable-next-line no-continue
-        continue;
-      }
+    if (!route.name && route.path) {
+      route.name = toName(route.path);
     }
 
     if (route.children) {

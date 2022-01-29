@@ -26,6 +26,8 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': WARN,
     'import/prefer-default-export': OFF,
+    // usually transpiled out
+    'no-continue': WARN,
     'no-restricted-syntax': OFF,
     // stage1 uses underscores in synthetic event handler names
     'no-underscore-dangle': OFF,
