@@ -95,6 +95,9 @@
     "ignoreFiles": [
       "**/dist/**",
       "**/node_modules/**"
-    ]
+    ],
+    "rules": {
+      "function-no-unknown": null
+    }
   }
 }
