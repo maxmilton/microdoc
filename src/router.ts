@@ -87,6 +87,7 @@ md.renderer.rules.heading_close = (tokens, idx) => {
   }</h${tokens[idx].hLevel}>\n`;
 };
 
+// Add wrapper div around tables
 md.renderer.rules.table_open = () => '<div class=table-wrapper><table>';
 md.renderer.rules.table_close = () => '</table></div>';
 

@@ -25,6 +25,16 @@ input::-webkit-inner-spin-button {
   }
 }
 
+/* Typography enhancements */
+
+@media (max-width: 60rem) {
+  :root {
+    // Reduced font size (down from 20px) for small screens — e.g., mobile and
+    // tablets — for better text flow and readability.
+    font-size: 1.125rem; // 18px; browser default 16px * 1.125
+  }
+}
+
 /* Markdown enhancements */
 
 h2,
