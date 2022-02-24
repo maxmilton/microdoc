@@ -16,11 +16,6 @@
 <!-- <script src=/dev/node_modules/microdoc/plugin/preload.js defer></script> -->
 <script src=/dev/node_modules/microdoc/plugin/prevnext.js defer></script>
 <style>
-  /* FIXME: Work a small text size into the out-of-the-box styles */
-  @media (max-width: 60rem) {
-    :root { font-size: 1.125rem; }
-  }
-
   .microdoc-logo { margin-right: 1rem; }
   .header-link {
     display: inline-block;
@@ -36,8 +31,6 @@
   /* FIXME: Remove; experiment to identify external links */
   a:not([href*='#']):not([href='/']) {
     /* outline: 5px solid rgb(190 0 255 / 60%); */
-
-    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M11 3a1 1 0 1 0 0 2h2.586l-6.293 6.293a1 1 0 1 0 1.414 1.414L15 6.414V9a1 1 0 1 0 2 0V4a1 1 0 0 0-1-1h-5z'/%3E%3Cpath d='M5 5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3a1 1 0 1 0-2 0v3H5V7h3a1 1 0 0 0 0-2H5z'/%3E%3C/svg%3E"); */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%235c7080'%3E%3Cpath d='M11 3a1 1 0 1 0 0 2h2.586l-6.293 6.293a1 1 0 1 0 1.414 1.414L15 6.414V9a1 1 0 1 0 2 0V4a1 1 0 0 0-1-1h-5z'/%3E%3Cpath d='M5 5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3a1 1 0 1 0-2 0v3H5V7h3a1 1 0 0 0 0-2H5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right;
@@ -92,7 +85,6 @@
 <script>
   function ready(fn){"loading"!==document.readyState?fn():document.addEventListener("DOMContentLoaded",fn)}
 
-
   ready(() => {
     // TODO: This seems like a common thing other people might want to do too...
     const logo = document.querySelector(".microdoc-logo");
@@ -101,13 +93,11 @@
     add(microdoc.h('<a href=https://github.com/maxmilton/microdoc class=header-link>GitHub</a>'));
     const a = add(microdoc.h('<a href=#/dev/showcase.html class=header-link>Showcase</a>'));
     add(microdoc.h('<a href=/ class=header-link>Docs</a>'));
-
-    // FIXME: Need a better way add a hidden route (otherwise the router won't
-    // allow fetching the file)
-
-    // FIXME: Injecting at this point is too late, if loading the page directly
-    // the router will already have attempted to load the route and failed
-    microdoc.$routes.set("#/dev/showcase.html", { name: "Showcase", ref: a });
+    const sc = microdoc.$routes.get("#/dev/showcase.html");
+    sc.ref.remove();
+    sc.ref = a;
   });
+
+  microdoc.routes.push("dev/showcase.html");
 </script>
 <noscript>You need to enable JavaScript to run this app.</noscript>
