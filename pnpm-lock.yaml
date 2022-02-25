@@ -21,7 +21,7 @@ specifiers:
   eslint-plugin-import: 2.25.4
   eslint-plugin-unicorn: 41.0.0
   fuse.js: ^6.5.3
-  get-port: 6.1.1
+  get-port: 6.1.2
   jsdom: 19.0.0
   kleur: 4.1.4
   pirates: 4.0.5
@@ -64,7 +64,7 @@ devDependencies:
   eslint-config-airbnb-typescript: 16.1.0_7f00b4115ebf82d6c4828f4a66c9d2eb
   eslint-plugin-import: 2.25.4_eslint@8.9.0
   eslint-plugin-unicorn: 41.0.0_eslint@8.9.0
-  get-port: 6.1.1
+  get-port: 6.1.2
   jsdom: 19.0.0
   kleur: 4.1.4
   pirates: 4.0.5
@@ -1655,8 +1655,8 @@ packages:
       has-symbols: 1.0.2
     dev: true
 
-  /get-port/6.1.1:
-    resolution: {integrity: sha512-RQOsDPSd2PcoLwakY1dwEtLiAbTR7IfmnxsKswfcHEfRKKbhWAG2R5Qo7C8ga6Ne4Mq4lFbogXfDGNfqFxwAaw==}
+  /get-port/6.1.2:
+    resolution: {integrity: sha512-BrGGraKm2uPqurfGVj/z97/zv8dPleC6x9JBNRTrDNtCkkRF4rPwrQXFgL7+I+q8QSdU4ntLQX2D7KIxSy8nGw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
 
