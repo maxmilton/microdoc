@@ -32,7 +32,7 @@
     "@maxmilton/stylelint-config": "0.0.10",
     "@types/csso": "5.0.0",
     "@types/jsdom": "16.2.14",
-    "@types/node": "17.0.21",
+    "@types/node": "17.0.23",
     "@types/remarkable": "2.0.3",
     "@typescript-eslint/eslint-plugin": "5.16.0",
     "@typescript-eslint/parser": "5.16.0",
