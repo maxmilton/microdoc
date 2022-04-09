@@ -52,7 +52,7 @@
     "kleur": "4.1.4",
     "pirates": "4.0.5",
     "playwright-chromium": "1.20.1",
-    "prettier": "2.6.0",
+    "prettier": "2.6.2",
     "prettier-plugin-pkg": "0.13.0",
     "prettier-plugin-sh": "0.10.1",
     "sirv": "2.0.2",
