@@ -1,6 +1,6 @@
 {
   "name": "microdoc",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Minimalist zero-config zero-build project documentation web apps.",
   "repository": "maxmilton/microdoc",
   "homepage": "https://microdoc.js.org",
