@@ -1,5 +1,8 @@
 lockfileVersion: 5.3
 
+overrides:
+  source-map: ~0.8.0-beta.0
+
 specifiers:
   '@ekscss/framework': ^0.0.40
   '@maxmilton/stylelint-config': 0.0.10
@@ -1335,7 +1338,7 @@ packages:
       esutils: 2.0.3
       optionator: 0.8.3
     optionalDependencies:
-      source-map: 0.6.1
+      source-map: 0.8.0-beta.0
     dev: true
 
   /eslint-config-airbnb-base/15.0.0_662e1b2e8ef3f6aa5d22c3f7cd670612:
@@ -3122,17 +3125,7 @@ packages:
     resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
     dependencies:
       buffer-from: 1.1.2
-      source-map: 0.6.1
-    dev: true
-
-  /source-map/0.6.1:
-    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
-    engines: {node: '>=0.10.0'}
-    dev: true
-
-  /source-map/0.7.3:
-    resolution: {integrity: sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==}
-    engines: {node: '>= 8'}
+      source-map: 0.8.0-beta.0
     dev: true
 
   /source-map/0.8.0-beta.0:
@@ -3380,7 +3373,7 @@ packages:
     dependencies:
       acorn: 8.7.0
       commander: 2.20.3
-      source-map: 0.7.3
+      source-map: 0.8.0-beta.0
       source-map-support: 0.5.21
     dev: true
 
