@@ -57,6 +57,7 @@ TODO: Remove this chart
 
 | API/method                   | Chrome | Edge | Firefox | Safari/iOS  | IE  | Opera/mob |
 | ---------------------------- | ------ | ---- | ------- | ----------- | --- | --------- |
+| String template literals     | 41     | 12   | 34      | 9 / 9       | -   | 28        |
 | async/await                  | 55     | 15   | 52      | 10.1 / 10.3 | -   | 42        |
 | `<template>`                 | 26     | 13   | 22      | 8 / 8       | -   | 15        |
 | Destructuring assignment     | 49     | 14   | 41      | 8 / 8       | -   | 36        |

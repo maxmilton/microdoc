@@ -2,13 +2,12 @@ import { h } from 'stage1';
 import type { Microdoc } from './types';
 
 export const FAKE_BASE_URL = 'http://x';
-const oldTitle = document.title;
 
 export function setDefaults(): void {
   window.microdoc = {
     root: '.',
     routes: ['README.md'],
-    title: oldTitle,
+    title: document.title,
     h,
     ...(window.microdoc as Partial<Microdoc> | undefined),
   };
