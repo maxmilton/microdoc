@@ -34,7 +34,7 @@ specifiers:
   prettier-plugin-sh: 0.11.0
   remarkable: ^2.0.1
   sirv: 2.0.2
-  stage1: ^0.3.0
+  stage1: ^0.4.0
   stylelint: 14.8.5
   stylelint-config-standard: 25.0.0
   terser: 5.14.0
@@ -46,7 +46,7 @@ dependencies:
   '@ekscss/framework': 0.0.40_ekscss@0.0.13
   fuse.js: 6.6.2
   remarkable: 2.0.1
-  stage1: 0.3.0
+  stage1: 0.4.0
 
 devDependencies:
   '@maxmilton/stylelint-config': 0.0.10_stylelint@14.8.5
@@ -3003,8 +3003,8 @@ packages:
     resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=}
     dev: false
 
-  /stage1/0.3.0:
-    resolution: {integrity: sha512-NLydm7UXpc9HWRwxNhBOPZS7rboFABfLc0aP2NaST/7cToU6QX3O+WwQlJYQQ2f0lLxmkVBPvO0mc5rqmxkdOQ==}
+  /stage1/0.4.0:
+    resolution: {integrity: sha512-AL4xCEMYCHdbfYZCkunmPhLtgnkN/r5oVtJkgWLnkOf0SFyJgxb8QfkIDY/WxGpUzZwsNOxVrTPxGrck1kAA5Q==}
     dev: false
 
   /string-width/4.2.3:
