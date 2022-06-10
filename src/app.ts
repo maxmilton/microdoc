@@ -1,5 +1,6 @@
-import { append, create } from 'stage1';
 import './app.xcss';
+
+import { append, create } from 'stage1';
 import { Header } from './components/Header';
 import { Sidenav } from './components/Sidenav';
 import { Router } from './router';

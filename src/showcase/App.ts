@@ -1,5 +1,6 @@
-import type { InternalMicrodoc } from '../types';
 import './App.xcss';
+
+import type { InternalMicrodoc } from '../types';
 
 // type RefNodes = {
 //   button: HTMLButtonElement;
