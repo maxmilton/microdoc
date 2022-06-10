@@ -6,7 +6,7 @@ Configuration options are set by adding a `<script>` block containing a global `
 
 To customise the visual look and feel of your docs see [theme customisation](#theme-customisation) below.
 
-> **Tip:** When you hand-write code within inline `<script>` and `<style>` tags please be mindful of cross-browser compatibility. For pointers, see the page on [old browser support](advanced/old-browser-support.md).
+> 💡 **Tip:** When you hand-write code within inline `<script>` and `<style>` tags please be mindful of cross-browser compatibility. For pointers, see the page on [old browser support](advanced/old-browser-support.md).
 
 ## Options
 
@@ -213,7 +213,7 @@ Modifying the theme to align with your branding is as easy as setting some prope
 
 #### Dark Theme
 
-> **Tip:** See the [dark mode plugin](plugins/dark-mode.md) for a way to toggle between themes.
+> 💡 **Tip:** See the [dark mode plugin](plugins/dark-mode.md) for a way to toggle between themes.
 
 Simple dark theme ([see live example](https://microdoc.js.org/examples/theme2.html)):
 

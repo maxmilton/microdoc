@@ -21,7 +21,7 @@
 
 This page contains instructions for working on microdoc itself or [developing your own microdoc plugins](#plugin-development).
 
-> **Note:** We use `pnpm` for package management. It's similar to `npm` and `yarn` which you're likely already familiar with. For installation instructions see <https://pnpm.io/installation>.
+> 💡 **Note:** We use `pnpm` for package management. It's similar to `npm` and `yarn` which you're likely already familiar with. For installation instructions see <https://pnpm.io/installation>.
 
 ## Installation
 

@@ -32,7 +32,7 @@ If you wish to extend Prism's functionality, head over to the [Prism plugins doc
 
 ## Usage
 
-> **Tip:** Prism supports [a lot of languages](https://github.com/PrismJS/prism/tree/master/components) out-of-the-box. When you include the [prismjs autoloader script](https://prismjs.com/plugins/autoloader/) (as in [installation](installation) above), it will automatically fetch required language syntax components for you.
+> 💡 **Tip:** Prism supports [a lot of languages](https://github.com/PrismJS/prism/tree/master/components) out-of-the-box. When you include the [prismjs autoloader script](https://prismjs.com/plugins/autoloader/) (as in [installation](installation) above), it will automatically fetch required language syntax components for you.
 
 In your markdown files use fenced code blocks such as the following ([see live example](https://microdoc.js.org/examples/plugin-prism1.html)):
 

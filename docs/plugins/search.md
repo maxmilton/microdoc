@@ -4,7 +4,7 @@ The search plugin creates a fully client-side, documentation-wide, fuzzy search 
 
 Users can initiate a search via a search text input that's added to the top of your docs UI. You can see it in action in these very docs!
 
-> **Tip:** Because this plugin fetches routes for indexing, they will be cached by the browser for fast navigation! Essentially the same benefits as the [preload plugin](plugins/preload.md).
+> 💡 **Tip:** Because this plugin fetches routes for indexing, they will be cached by the browser for fast navigation! Essentially the same benefits as the [preload plugin](plugins/preload.md).
 
 ## Installation
 

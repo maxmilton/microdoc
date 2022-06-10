@@ -2,7 +2,7 @@
 
 Adds a button to your docs header allowing users to toggle between a light and dark theme. You can see it in action at the top of these docs!
 
-> **Tip:** If you want _only_ a dark theme (without the ability to toggle between a light theme) you don't need this plugin! Simply add `<html class=dark>` at the top of your `index.html` after the DOCTYPE ([see live example](https://microdoc.js.org/examples/plugin-dark-mode1.html)).
+> 💡 **Tip:** If you want _only_ a dark theme (without the ability to toggle between a light theme) you don't need this plugin! Simply add `<html class=dark>` at the top of your `index.html` after the DOCTYPE ([see live example](https://microdoc.js.org/examples/plugin-dark-mode1.html)).
 
 ## Installation
 
