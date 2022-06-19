@@ -15,6 +15,8 @@
 // result quality and performance characteristics
 //  ↳ https://github.com/nextapps-de/flexsearch
 
+// TODO: Results should use the document title (not the menu item title)
+
 import Fuse from 'fuse.js';
 import type { S1Node } from 'stage1';
 import type { InternalMicrodoc } from '../types';
