@@ -31,7 +31,7 @@ specifiers:
   playwright-chromium: 1.22.2
   prettier: 2.7.1
   prettier-plugin-pkg: 0.14.1
-  prettier-plugin-sh: 0.11.0
+  prettier-plugin-sh: 0.12.4
   remarkable: ^2.0.1
   sirv: 2.0.2
   stage1: ^0.4.0
@@ -74,7 +74,7 @@ devDependencies:
   playwright-chromium: 1.22.2
   prettier: 2.7.1
   prettier-plugin-pkg: 0.14.1_prettier@2.7.1
-  prettier-plugin-sh: 0.11.0_prettier@2.7.1
+  prettier-plugin-sh: 0.12.4_prettier@2.7.1
   sirv: 2.0.2
   stylelint: 14.9.1
   stylelint-config-standard: 26.0.0_stylelint@14.9.1
@@ -2734,9 +2734,9 @@ packages:
       prettier: 2.7.1
     dev: true
 
-  /prettier-plugin-sh/0.11.0_prettier@2.7.1:
-    resolution: {integrity: sha512-YwuWGYuf6UiF80BZ3Lrby2yot0zRcktcBl+VD/xSLoPrmiH/yXcopz3RBtNMNcBeP13ALim9N/LtlTCmvUziVQ==}
-    engines: {node: '>=12.20'}
+  /prettier-plugin-sh/0.12.4_prettier@2.7.1:
+    resolution: {integrity: sha512-s0SK0hdng0Qv44Gs5yjUyk/j+LEmgoCpvEZ4LS0GglkeTyCR4gqgCrJ/ksbK+1ZuHB6UJ8e2ReOoln0Qfu2T9w==}
+    engines: {node: ^12.20 || ^14.18.0 || >=16.0.0}
     peerDependencies:
       prettier: ^2.0.0
     dependencies:
