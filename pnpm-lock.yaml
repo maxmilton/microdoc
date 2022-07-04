@@ -4,7 +4,7 @@ overrides:
   source-map: ~0.8.0-beta.0
 
 specifiers:
-  '@ekscss/framework': ^0.0.40
+  '@ekscss/framework': ^0.0.41
   '@maxmilton/stylelint-config': 0.0.10
   '@types/csso': 5.0.0
   '@types/jsdom': 16.2.14
@@ -43,7 +43,7 @@ specifiers:
   uvu: 0.5.4
 
 dependencies:
-  '@ekscss/framework': 0.0.40_ekscss@0.0.13
+  '@ekscss/framework': 0.0.41_ekscss@0.0.13
   fuse.js: 6.6.2
   remarkable: 2.0.1
   stage1: 0.4.0
@@ -129,8 +129,8 @@ packages:
       postcss-selector-parser: 6.0.10
     dev: true
 
-  /@ekscss/framework/0.0.40_ekscss@0.0.13:
-    resolution: {integrity: sha512-xQC0CZ2KG1sklQVmwdDNoiG1zWVBQJ/ozloPH2U7+JdM1vAHco3IO8YVg7EX5K68DBKfydQq6D/oNLh/HxFDcA==}
+  /@ekscss/framework/0.0.41_ekscss@0.0.13:
+    resolution: {integrity: sha512-uWdGyYp2S1WXdUfLVOosN7V4ZKxz5Cl3JZKUMoR9kMn2oeWLv/xhEy8Rf5qWvmgyOtvo/C/3z2ly3uGgoTmEhA==}
     peerDependencies:
       ekscss: ^0.0.13
     peerDependenciesMeta:

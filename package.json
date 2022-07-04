@@ -23,7 +23,7 @@
     "test-e2e": "node -r tsm test/e2e/index.ts"
   },
   "dependencies": {
-    "@ekscss/framework": "^0.0.40",
+    "@ekscss/framework": "^0.0.41",
     "fuse.js": "^6.6.2",
     "remarkable": "^2.0.1",
     "stage1": "^0.4.0"
