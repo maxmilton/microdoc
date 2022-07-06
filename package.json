@@ -54,7 +54,7 @@
     "playwright-chromium": "1.23.0",
     "prettier": "2.7.1",
     "prettier-plugin-pkg": "0.16.0",
-    "prettier-plugin-sh": "0.12.4",
+    "prettier-plugin-sh": "0.12.6",
     "sirv": "2.0.2",
     "stylelint": "14.9.1",
     "stylelint-config-standard": "26.0.0",
