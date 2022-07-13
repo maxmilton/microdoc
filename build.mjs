@@ -24,12 +24,6 @@ const dir = path.resolve(); // no __dirname in node ESM
 const pkg = JSON.parse(await fs.readFile('./package.json', 'utf8'));
 const target = ['chrome55', 'edge18', 'firefox53', 'safari11'];
 
-/** @param {?Error} error */
-function handleErr(error) {
-  console.error(error);
-  process.exitCode = 1;
-}
-
 /**
  * @param {esbuild.OutputFile[]} outputFiles
  * @param {string} ext - File extension to match.
@@ -141,43 +135,41 @@ const minifyJs = {
 };
 
 // Main web app
-esbuild
-  .build({
-    entryPoints: ['src/index.ts'],
-    outfile: 'microdoc.js',
-    target,
-    define: {
-      'process.env.NODE_ENV': JSON.stringify(mode),
-    },
-    plugins: [
-      analyzeMeta,
-      xcss(),
-      minifyTemplates(),
-      minifyCss,
-      minifyJs,
-      writeFiles(),
-    ],
-    banner: {
-      css: `/*!
+await esbuild.build({
+  entryPoints: ['src/index.ts'],
+  outfile: 'microdoc.js',
+  target,
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(mode),
+  },
+  plugins: [
+    analyzeMeta,
+    xcss(),
+    minifyTemplates(),
+    minifyCss,
+    minifyJs,
+    writeFiles(),
+  ],
+  banner: {
+    css: `/*!
 * microdoc v${pkg.version} - https://microdoc.js.org
 * (c) 2022 Max Milton
 * MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
 */`,
-      js: `/*!
+    js: `/*!
 * microdoc v${pkg.version} - https://microdoc.js.org
 * (c) 2022 Max Milton
 * MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
 */ "use strict";`,
-    },
-    bundle: true,
-    minify: !dev,
-    sourcemap: true,
-    watch: dev,
-    write: dev,
-    metafile: !dev && process.stdout.isTTY,
-    logLevel: 'debug',
-  })
-  .catch(handleErr);
+  },
+  bundle: true,
+  minify: !dev,
+  sourcemap: true,
+  watch: dev,
+  write: dev,
+  metafile: !dev && process.stdout.isTTY,
+  logLevel: 'debug',
+});
 
 /** @type {esbuild.Plugin} */
 const fuseBasic = {
@@ -191,63 +183,60 @@ const fuseBasic = {
 
 // Plugins
 for (const plugin of ['dark-mode', 'preload', 'prevnext', 'search']) {
-  esbuild
-    .build({
-      entryPoints: [`src/plugin/${plugin}.ts`],
-      outfile: `plugin/${plugin}.js`,
-      target,
-      define: {
-        'process.env.NODE_ENV': JSON.stringify(mode),
-      },
-      plugins: [
-        analyzeMeta,
-        xcss(),
-        fuseBasic,
-        minifyTemplates(),
-        minifyCss,
-        minifyJs,
-        writeFiles(),
-      ],
-      format: 'iife',
-      banner: {
-        js: `/*!
+  // eslint-disable-next-line no-await-in-loop
+  await esbuild.build({
+    entryPoints: [`src/plugin/${plugin}.ts`],
+    outfile: `plugin/${plugin}.js`,
+    target,
+    define: {
+      'process.env.NODE_ENV': JSON.stringify(mode),
+    },
+    plugins: [
+      analyzeMeta,
+      xcss(),
+      fuseBasic,
+      minifyTemplates(),
+      minifyCss,
+      minifyJs,
+      writeFiles(),
+    ],
+    format: 'iife',
+    banner: {
+      js: `/*!
 * microdoc ${plugin} plugin v${pkg.version} - https://microdoc.js.org
 * (c) 2022 Max Milton
 * MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
 */ "use strict";`,
-      },
-      bundle: true,
-      minify: !dev,
-      sourcemap: true,
-      watch: dev,
-      write: dev,
-      metafile: !dev && process.stdout.isTTY,
-      logLevel: 'debug',
-    })
-    .catch(handleErr);
+    },
+    bundle: true,
+    minify: !dev,
+    sourcemap: true,
+    watch: dev,
+    write: dev,
+    metafile: !dev && process.stdout.isTTY,
+    logLevel: 'debug',
+  });
 }
 
 // Custom PrismJS theme
-esbuild
-  .build({
-    entryPoints: ['src/plugin/prism.xcss'],
-    outfile: 'plugin/prism.css',
-    target,
-    plugins: [xcss(), minifyCss, writeFiles()],
-    banner: {
-      css: `/*!
+await esbuild.build({
+  entryPoints: ['src/plugin/prism.xcss'],
+  outfile: 'plugin/prism.css',
+  target,
+  plugins: [xcss(), minifyCss, writeFiles()],
+  banner: {
+    css: `/*!
 * microdoc prism theme v${pkg.version} - https://microdoc.js.org
 * (c) 2022 Max Milton
 * MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
 */`,
-    },
-    bundle: true,
-    minify: !dev,
-    watch: dev,
-    write: dev,
-    logLevel: 'debug',
-  })
-  .catch(handleErr);
+  },
+  bundle: true,
+  minify: !dev,
+  watch: dev,
+  write: dev,
+  logLevel: 'debug',
+});
 
 /** @type {esbuild.Plugin} */
 const buildHtml = {
@@ -272,29 +261,27 @@ const buildHtml = {
 };
 
 // EXPERIMENTAL: Showcase web app
-esbuild
-  .build({
-    entryPoints: ['src/showcase/index.ts'],
-    outfile: 'docs/dev/showcase.js',
-    target,
-    define: {
-      'process.env.NODE_ENV': JSON.stringify(mode),
-    },
-    plugins: [
-      analyzeMeta,
-      xcss(),
-      minifyTemplates(),
-      minifyCss,
-      minifyJs,
-      buildHtml,
-    ],
-    banner: { js: '"use strict";' },
-    bundle: true,
-    minify: !dev,
-    sourcemap: dev && 'inline',
-    watch: dev,
-    write: false,
-    metafile: !dev && process.stdout.isTTY,
-    logLevel: 'debug',
-  })
-  .catch(handleErr);
+await esbuild.build({
+  entryPoints: ['src/showcase/index.ts'],
+  outfile: 'docs/dev/showcase.js',
+  target,
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(mode),
+  },
+  plugins: [
+    analyzeMeta,
+    xcss(),
+    minifyTemplates(),
+    minifyCss,
+    minifyJs,
+    buildHtml,
+  ],
+  banner: { js: '"use strict";' },
+  bundle: true,
+  minify: !dev,
+  sourcemap: dev && 'inline',
+  watch: dev,
+  write: false,
+  metafile: !dev && process.stdout.isTTY,
+  logLevel: 'debug',
+});

@@ -41,6 +41,7 @@ module.exports = {
     // can't be polyfilled and browser support is still lacking
     'unicorn/prefer-optional-catch-binding': OFF,
     'unicorn/prefer-query-selector': OFF,
+    'unicorn/prefer-top-level-await': WARN,
     'unicorn/prevent-abbreviations': OFF,
   },
 };
