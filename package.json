@@ -31,7 +31,7 @@
   "devDependencies": {
     "@maxmilton/stylelint-config": "0.0.10",
     "@types/csso": "5.0.0",
-    "@types/jsdom": "16.2.14",
+    "@types/jsdom": "16.2.15",
     "@types/node": "18.0.3",
     "@types/remarkable": "2.0.3",
     "@typescript-eslint/eslint-plugin": "5.31.0",
