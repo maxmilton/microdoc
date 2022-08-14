@@ -2,9 +2,9 @@
 /* eslint-disable no-console, no-multi-assign */
 
 import getPort from 'get-port';
-import http from 'http';
 import colors from 'kleur';
-import path from 'path';
+import http from 'node:http';
+import path from 'node:path';
 import {
   Browser, chromium, ConsoleMessage, Page,
 } from 'playwright-chromium';
