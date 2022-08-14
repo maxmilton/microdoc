@@ -1,6 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies, no-param-reassign, no-console, no-bitwise */
+/* eslint-disable import/no-extraneous-dependencies, no-param-reassign, no-console */
 
-import * as pcss from '@parcel/css';
+import * as csso from 'csso';
 import esbuild from 'esbuild';
 import {
   decodeUTF8,
@@ -9,15 +9,19 @@ import {
   writeFiles,
 } from 'esbuild-minify-templates';
 import { xcss } from 'esbuild-plugin-ekscss';
-import fs from 'node:fs/promises';
-import { createRequire } from 'node:module';
-import path from 'node:path';
+import fs from 'fs/promises';
+import { createRequire } from 'module';
+import path from 'path';
 import * as terser from 'terser';
-import pkg from './package.json' assert { type: 'json' };
+
+const require = createRequire(import.meta.url);
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
-const dir = path.resolve(); // similar to __dirname
+const dir = path.resolve(); // no __dirname in node ESM
+/** @type {import('./package.json')} */
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+const pkg = JSON.parse(await fs.readFile('./package.json', 'utf8'));
 const target = ['chrome55', 'edge18', 'firefox53', 'safari11'];
 
 /**
@@ -57,33 +61,27 @@ const minifyCss = {
         const outCSS = findOutputFile(result.outputFiles, '.css');
 
         if (outCSS.file) {
-          // TODO: Remove unnecessary classes from final CSS:
-          // - blockquote
-          // - code
-          // - hyphenate
-          // - table
-          // - table-zebra
-
-          const minified = pcss.transform({
-            filename: outCSS.file.path,
-            code: Buffer.from(outCSS.file.contents),
-            minify: true,
-            sourceMap: dev,
-            targets: {
-              chrome: 55 << 16,
-              edge: 18 << 16,
-              firefox: 53 << 16,
-              safari: (11 << 16) | (1 << 8),
+          const ast = csso.syntax.parse(decodeUTF8(outCSS.file.contents));
+          const compressedAst = csso.syntax.compress(ast, {
+            restructure: true,
+            forceMediaMerge: true, // unsafe!
+            usage: {
+              blacklist: {
+                // Remove unnecessary classes
+                classes: [
+                  'blockquote',
+                  'code',
+                  'hyphenate',
+                  'table',
+                  'table-zebra',
+                ],
+                // tags: [],
+              },
             },
-          });
+          }).ast;
+          const css = csso.syntax.generate(compressedAst);
 
-          for (const warning of minified.warnings) {
-            console.error('CSS WARNING:', warning.message);
-          }
-
-          result.outputFiles[outCSS.index].contents = encodeUTF8(
-            minified.code.toString(),
-          );
+          result.outputFiles[outCSS.index].contents = encodeUTF8(css);
         }
       }
     });
@@ -178,8 +176,6 @@ await esbuild.build({
 const fuseBasic = {
   name: 'fuse-basic',
   setup(build) {
-    const require = createRequire(import.meta.url);
-
     build.onResolve({ filter: /^fuse\.js$/ }, () => ({
       path: require.resolve('fuse.js/dist/fuse.basic.esm.js'),
     }));

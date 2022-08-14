@@ -1,7 +1,9 @@
 const OFF = 0;
 const WARN = 1;
-const ERROR = 2;
 
+// TODO: Types
+// eslint-disable-next-line max-len
+// /** @type {import('eslint/lib/shared/types').ConfigData & { parserOptions: import('@typescript-eslint/types').ParserOptions }} */
 module.exports = {
   root: true,
   reportUnusedDisableDirectives: true,
@@ -20,7 +22,7 @@ module.exports = {
     'plugin:unicorn/recommended',
   ],
   rules: {
-    '@typescript-eslint/explicit-module-boundary-types': ERROR,
+    '@typescript-eslint/explicit-module-boundary-types': WARN,
     'import/prefer-default-export': OFF,
     // usually transpiled out
     'no-continue': WARN,
@@ -34,7 +36,8 @@ module.exports = {
     'unicorn/no-null': OFF,
     'unicorn/prefer-add-event-listener': OFF,
     'unicorn/prefer-dom-node-append': OFF,
-    'unicorn/prefer-module': WARN,
+    'unicorn/prefer-module': OFF,
+    'unicorn/prefer-node-protocol': OFF,
     // can't be polyfilled and browser support is still lacking
     'unicorn/prefer-optional-catch-binding': OFF,
     'unicorn/prefer-query-selector': OFF,

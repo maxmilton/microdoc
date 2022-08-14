@@ -5,7 +5,12 @@ import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 // import { Footer } from '../src/components/Footer';
 import {
-  cleanup, mocksSetup, mocksTeardown, render, setup, teardown,
+  cleanup,
+  mocksSetup,
+  mocksTeardown,
+  render,
+  setup,
+  teardown,
 } from './utils';
 
 type FooterComponent = typeof import('../src/components/Footer');
@@ -68,7 +73,9 @@ test('contains a link to the microdocs docs', () => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
   const { Footer } = require('../src/components/Footer') as FooterComponent;
   const rendered = render(Footer());
-  assert.ok(rendered.container.querySelector('a[href="https://microdoc.js.org"]'));
+  assert.ok(
+    rendered.container.querySelector('a[href="https://microdoc.js.org"]'),
+  );
 });
 
 test('matches snapshot', () => {

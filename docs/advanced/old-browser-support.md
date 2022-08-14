@@ -53,23 +53,21 @@ The expected use case of `microdoc` is developer docs so end-users are technical
 
 ---
 
-## Newer Browser APIs Used
-
 TODO: Remove this chart
 
 | API/method                   | Chrome | Edge | Firefox | Safari/iOS  | IE  | Opera/mob |
 | ---------------------------- | ------ | ---- | ------- | ----------- | --- | --------- |
+| String template literals     | 41     | 12   | 34      | 9 / 9       | -   | 28        |
 | async/await                  | 55     | 15   | 52      | 10.1 / 10.3 | -   | 42        |
-| CSS custom properties; `--*` | 49     | 15   | 31      | 9.1 / 9.3   | -   | 36        |
-| CSS `var()`                  | 49     | 15   | 31      | 9.1 / 9.3   | -   | 36        |
+| `<template>`                 | 26     | 13   | 22      | 8 / 8       | -   | 15        |
 | Destructuring assignment     | 49     | 14   | 41      | 8 / 8       | -   | 36        |
 | Spread syntax (in array)     | 46     | 12   | 16      | 8 / 8       | -   | 37 / 37   |
-| `fetch()`                    | 42     | 14   | 39      | 10.1 / 10.3 | -   | 29 / 29   |
-| Element.closest()            | 41     | 15   | 35      | 6 / 9       | -   | 28 / 28   |
-| String template literals     | 41     | 12   | 34      | 9 / 9       | -   | 28        |
-| `new Map()` constructor      | 38     | 12   | 13      | 9 / 9       | 11  | 25 / 25   |
-| Object.getOwnPropertySymbols | 38     | 12   | 36      | 9 / 9       | -   | 25 / 25   |
+| CSS custom properties; `--*` | 49     | 15   | 31      | 9.1 / 9.3   | -   | 36        |
+| CSS `var()`                  | 49     | 15   | 31      | 9.1 / 9.3   | -   | 36        |
 | CSS flexbox                  | 29     | 12   | 20      | 9 / 9       | 11  | 7 / 10.1  |
-| `<template>`                 | 26     | 13   | 22      | 8 / 8       | -   | 15        |
+| Element.closest()            | 41     | 15   | 35      | 6 / 9       | -   | 28 / 28   |
+| `new Map()` constructor      | 38     | 12   | 13      | 9 / 9       | 11  | 25 / 25   |
+| `fetch()`                    | 42     | 14   | 39      | 10.1 / 10.3 | -   | 29 / 29   |
 | `new URL()` constructor      | 19     | 12   | 26      | 6 / 6       | -   | 15 / 14   |
 | Object.keys                  | 5      | 12   | 4       | 5 / 5       | 9   | 12 / 12   |
+| Object.getOwnPropertySymbols | 38     | 12   | 36      | 9 / 9       | -   | 25 / 25   |
