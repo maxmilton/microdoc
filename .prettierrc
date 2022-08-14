@@ -1,0 +1,22 @@
+{
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "singleQuote": true,
+  "trailingComma": "all",
+  "pluginSearchDirs": ["."],
+  "overrides": [
+    {
+      "files": ["*.html", "*.md"],
+      "options": {
+        "singleQuote": false,
+        "trailingComma": "none"
+      }
+    },
+    {
+      "files": ["*.test.ts"],
+      "options": {
+        "printWidth": 100
+      }
+    }
+  ]
+}

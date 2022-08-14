@@ -62,42 +62,5 @@
     "tsm": "2.2.2",
     "typescript": "4.7.4",
     "uvu": "0.5.6"
-  },
-  "prettier": {
-    "arrowParens": "always",
-    "endOfLine": "lf",
-    "singleQuote": true,
-    "trailingComma": "all",
-    "plugins": [
-      "./node_modules/prettier-plugin-pkg",
-      "./node_modules/prettier-plugin-sh"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "*.html",
-          "*.md"
-        ],
-        "options": {
-          "singleQuote": false,
-          "trailingComma": "none"
-        }
-      }
-    ]
-  },
-  "stylelint": {
-    "reportInvalidScopeDisables": true,
-    "reportNeedlessDisables": true,
-    "extends": [
-      "stylelint-config-standard",
-      "@maxmilton/stylelint-config"
-    ],
-    "ignoreFiles": [
-      "**/dist/**",
-      "**/node_modules/**"
-    ],
-    "rules": {
-      "function-no-unknown": null
-    }
   }
 }
