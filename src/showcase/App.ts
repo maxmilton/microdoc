@@ -1,5 +1,6 @@
 import './App.xcss';
 
+import type { S1Node } from 'stage1';
 import type { InternalMicrodoc } from '../types';
 
 // type RefNodes = {
@@ -16,7 +17,7 @@ const view = h(`
   </div>
 `);
 
-export const App = () => {
+export const App = (): S1Node => {
   const root = view;
   // const { button } = view.collect<RefNodes>(root);
 
