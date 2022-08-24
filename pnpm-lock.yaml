@@ -33,7 +33,7 @@ specifiers:
   stage1: ^0.4.1
   stylelint: 14.11.0
   stylelint-config-standard: 27.0.0
-  terser: 5.14.2
+  terser: 5.15.0
   tsm: 2.2.2
   typescript: 4.7.4
   uvu: 0.5.6
@@ -73,7 +73,7 @@ devDependencies:
   sirv: 2.0.2
   stylelint: 14.11.0
   stylelint-config-standard: 27.0.0_stylelint@14.11.0
-  terser: 5.14.2
+  terser: 5.15.0
   tsm: 2.2.2
   typescript: 4.7.4
   uvu: 0.5.6
@@ -3502,8 +3502,8 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
-  /terser/5.14.2:
-    resolution: {integrity: sha512-oL0rGeM/WFQCUd0y2QrWxYnq7tfSuKBiqTjRPWrRgB46WD/kiwHwF8T23z78H6Q6kGCuuHcPB+KULHRdxvVGQA==}
+  /terser/5.15.0:
+    resolution: {integrity: sha512-L1BJiXVmheAQQy+as0oF3Pwtlo4s3Wi1X2zNZ2NxOB4wx9bdS9Vk67XQENLFdLYGCK/Z2di53mTj/hBafR+dTA==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
