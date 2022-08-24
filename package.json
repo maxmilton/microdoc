@@ -55,7 +55,7 @@
     "prettier-plugin-pkg": "0.17.0",
     "prettier-plugin-sh": "0.12.8",
     "sirv": "2.0.2",
-    "stylelint": "14.10.0",
+    "stylelint": "14.11.0",
     "stylelint-config-standard": "27.0.0",
     "terser": "5.14.2",
     "tsm": "2.2.2",
