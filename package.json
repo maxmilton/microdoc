@@ -52,7 +52,7 @@
     "pirates": "4.0.5",
     "playwright-chromium": "1.25.0",
     "prettier": "2.7.1",
-    "prettier-plugin-pkg": "0.16.1",
+    "prettier-plugin-pkg": "0.17.0",
     "prettier-plugin-sh": "0.12.8",
     "sirv": "2.0.2",
     "stylelint": "14.10.0",
