@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@maxmilton/stylelint-config": "0.0.10",
-    "@parcel/css": "1.13.0",
+    "@parcel/css": "1.13.1",
     "@types/jsdom": "20.0.0",
     "@types/node": "18.7.3",
     "@types/remarkable": "2.0.3",
