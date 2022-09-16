@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies, no-param-reassign, no-console, no-bitwise */
 
-import * as pcss from '@parcel/css';
 import esbuild from 'esbuild';
 import {
   decodeUTF8,
@@ -9,6 +8,7 @@ import {
   writeFiles,
 } from 'esbuild-minify-templates';
 import { xcss } from 'esbuild-plugin-ekscss';
+import * as lightningcss from 'lightningcss';
 import fs from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import path from 'node:path';
@@ -55,6 +55,7 @@ const minifyCss = {
     build.onEnd((result) => {
       if (result.outputFiles) {
         const outCSS = findOutputFile(result.outputFiles, '.css');
+        const outCSSMap = findOutputFile(result.outputFiles, '.css.map');
 
         if (outCSS.file) {
           // TODO: Remove unnecessary classes from final CSS:
@@ -64,11 +65,11 @@ const minifyCss = {
           // - table
           // - table-zebra
 
-          const minified = pcss.transform({
+          const minified = lightningcss.transform({
             filename: outCSS.file.path,
             code: Buffer.from(outCSS.file.contents),
             minify: true,
-            sourceMap: dev,
+            sourceMap: outCSSMap.index !== -1,
             targets: {
               chrome: 55 << 16,
               edge: 18 << 16,
@@ -81,6 +82,11 @@ const minifyCss = {
             console.error('CSS WARNING:', warning.message);
           }
 
+          if (outCSSMap.index !== -1 && minified.map) {
+            result.outputFiles[outCSSMap.index].contents = encodeUTF8(
+              minified.map.toString(),
+            );
+          }
           result.outputFiles[outCSS.index].contents = encodeUTF8(
             minified.code.toString(),
           );
@@ -125,7 +131,7 @@ const minifyJs = {
           opts,
         );
 
-        if (outMap.index !== -1) {
+        if (outMap.index !== -1 && map) {
           result.outputFiles[outMap.index].contents = encodeUTF8(
             map.toString(),
           );

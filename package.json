@@ -30,9 +30,8 @@
   },
   "devDependencies": {
     "@maxmilton/stylelint-config": "0.0.10",
-    "@parcel/css": "1.13.1",
     "@types/jsdom": "20.0.0",
-    "@types/node": "18.7.3",
+    "@types/node": "18.7.18",
     "@types/remarkable": "2.0.3",
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.37.0",
@@ -49,6 +48,7 @@
     "get-port": "6.1.2",
     "jsdom": "20.0.0",
     "kleur": "4.1.5",
+    "lightningcss": "1.15.1",
     "pirates": "4.0.5",
     "playwright-chromium": "1.25.2",
     "prettier": "2.7.1",
