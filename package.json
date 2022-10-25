@@ -56,7 +56,7 @@
     "prettier-plugin-sh": "0.12.8",
     "sirv": "2.0.2",
     "stylelint": "14.14.0",
-    "stylelint-config-standard": "28.0.0",
+    "stylelint-config-standard": "29.0.0",
     "terser": "5.15.1",
     "tsm": "2.2.2",
     "typescript": "4.8.4",
