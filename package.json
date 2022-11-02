@@ -26,7 +26,7 @@
     "@ekscss/framework": "^0.0.43",
     "fuse.js": "^6.6.2",
     "remarkable": "^2.0.1",
-    "stage1": "^0.4.1"
+    "stage1": "^0.6.2"
   },
   "devDependencies": {
     "@maxmilton/stylelint-config": "0.0.10",
