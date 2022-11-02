@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@ekscss/framework': ^0.0.42
+  '@ekscss/framework': ^0.0.43
   '@maxmilton/stylelint-config': 0.0.10
   '@types/jsdom': 20.0.0
   '@types/node': 18.11.9
@@ -39,7 +39,7 @@ specifiers:
   uvu: 0.5.6
 
 dependencies:
-  '@ekscss/framework': 0.0.42_ekscss@0.0.13
+  '@ekscss/framework': 0.0.43_ekscss@0.0.13
   fuse.js: 6.6.2
   remarkable: 2.0.1
   stage1: 0.4.1
@@ -124,8 +124,8 @@ packages:
       postcss-selector-parser: 6.0.10
     dev: true
 
-  /@ekscss/framework/0.0.42_ekscss@0.0.13:
-    resolution: {integrity: sha512-8kh+rmckDHzNNauBpCHj/sE+vyBt0eOmFi77qFl+FDQMODyk3b28t0AhmjTRSivpkOVQyfj0MqezkM/eCVtY4w==}
+  /@ekscss/framework/0.0.43_ekscss@0.0.13:
+    resolution: {integrity: sha512-CUN0M9CtlzNjMfW+qbJbYSkkpIFzxlg+oUVSez7sreAb4poW42ArqjW3/D3WiVxSYqr4rrFLF7066Ei0z/hOVQ==}
     peerDependencies:
       ekscss: ^0.0.13
     peerDependenciesMeta:
