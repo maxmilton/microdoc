@@ -20,7 +20,7 @@ specifiers:
   eslint-plugin-unicorn: 44.0.2
   fuse.js: ^6.6.2
   get-port: 6.1.2
-  jsdom: 20.0.1
+  jsdom: 20.0.2
   kleur: 4.1.5
   lightningcss: 1.16.0
   pirates: 4.0.5
@@ -62,7 +62,7 @@ devDependencies:
   eslint-plugin-import: 2.26.0_5aea5dp4n23mfv4y2mmjxole3e
   eslint-plugin-unicorn: 44.0.2_eslint@8.26.0
   get-port: 6.1.2
-  jsdom: 20.0.1
+  jsdom: 20.0.2
   kleur: 4.1.5
   lightningcss: 1.16.0
   pirates: 4.0.5
@@ -2379,8 +2379,8 @@ packages:
       argparse: 2.0.1
     dev: true
 
-  /jsdom/20.0.1:
-    resolution: {integrity: sha512-pksjj7Rqoa+wdpkKcLzQRHhJCEE42qQhl/xLMUKHgoSejaKOdaXEAnqs6uDNwMl/fciHTzKeR8Wm8cw7N+g98A==}
+  /jsdom/20.0.2:
+    resolution: {integrity: sha512-AHWa+QO/cgRg4N+DsmHg1Y7xnz+8KU3EflM0LVDTdmrYOc1WWTSkOjtpUveQH+1Bqd5rtcVnb/DuxV/UjDO4rA==}
     engines: {node: '>=14'}
     peerDependencies:
       canvas: ^2.5.0
