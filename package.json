@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@maxmilton/stylelint-config": "0.0.10",
-    "@types/jsdom": "20.0.0",
+    "@types/jsdom": "20.0.1",
     "@types/node": "18.11.9",
     "@types/remarkable": "2.0.3",
     "@typescript-eslint/eslint-plugin": "5.42.1",
