@@ -12,7 +12,7 @@ specifiers:
   ekscss: 0.0.13
   esbuild: 0.16.9
   esbuild-minify-templates: 0.9.3
-  esbuild-plugin-ekscss: 0.0.12
+  esbuild-plugin-ekscss: 0.0.13
   eslint: 8.29.0
   eslint-config-airbnb-base: 15.0.0
   eslint-config-airbnb-typescript: 17.0.0
@@ -55,7 +55,7 @@ devDependencies:
   ekscss: 0.0.13
   esbuild: 0.16.9
   esbuild-minify-templates: 0.9.3_esbuild@0.16.9
-  esbuild-plugin-ekscss: 0.0.12_xwnumvuqhrtxqtesaskdwyvdry
+  esbuild-plugin-ekscss: 0.0.13_xwnumvuqhrtxqtesaskdwyvdry
   eslint: 8.29.0
   eslint-config-airbnb-base: 15.0.0_lt3hqehuojhfcbzgzqfngbtmrq
   eslint-config-airbnb-typescript: 17.0.0_hysxkowscoc2l6lrru7zxytwqi
@@ -1443,11 +1443,11 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-plugin-ekscss/0.0.12_xwnumvuqhrtxqtesaskdwyvdry:
-    resolution: {integrity: sha512-mCJs50/o1vKIeGGWnSrz4/s7ZSVnoX1hB+Mxke8pkFeNo0N9Ci8uYDDFwOPU0jhJv/eVyw2q5qDrOwt0FtnJ4w==}
+  /esbuild-plugin-ekscss/0.0.13_xwnumvuqhrtxqtesaskdwyvdry:
+    resolution: {integrity: sha512-qG+EACWpTEBtlmjB63mjEnMwNZktDD/Dc1PaCNhDED7Out5h9YMK+wE/aNPmVd0NfK0mtKeZ2ay6r/aBN7zgbA==}
     peerDependencies:
       ekscss: ^0.0.13
-      esbuild: ^0.13.0 || ^0.14.0 || ^0.15.0
+      esbuild: ^0.13.0 || ^0.14.0 || ^0.15.0 || ^0.16.0
     dependencies:
       ekscss: 0.0.13
       esbuild: 0.16.9
