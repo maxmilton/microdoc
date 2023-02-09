@@ -1,4 +1,4 @@
-[![Build status](https://img.shields.io/github/workflow/status/maxmilton/microdoc/ci)](https://github.com/maxmilton/microdoc/actions)
+[![Build status](https://img.shields.io/github/actions/workflow/status/maxmilton/microdoc/ci.yml?branch=master)](https://github.com/maxmilton/microdoc/actions)
 [![Coverage status](https://img.shields.io/codeclimate/coverage/MaxMilton/microdoc)](https://codeclimate.com/github/MaxMilton/microdoc)
 [![NPM version](https://img.shields.io/npm/v/microdoc.svg)](https://www.npmjs.com/package/microdoc)
 [![NPM bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/microdoc.svg)](https://bundlephobia.com/result?p=microdoc)
