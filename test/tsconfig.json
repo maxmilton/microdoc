@@ -6,6 +6,7 @@
   "include": ["../**/*", "../.*.cjs", "../*.mjs"],
   "exclude": [
     "../coverage",
+    "../docs/dev/showcase.*",
     "../node_modules",
     "../plugin",
     "../types",
