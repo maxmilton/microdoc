@@ -8,4 +8,4 @@ node_modules
 /microdoc.*
 /plugin/
 
-/docs/dev/showcase.html
+/docs/dev/showcase.*

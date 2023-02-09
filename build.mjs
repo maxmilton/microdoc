@@ -5,6 +5,7 @@ import {
   decodeUTF8,
   encodeUTF8,
   minifyTemplates,
+  stripWhitespace,
   writeFiles,
 } from 'esbuild-minify-templates';
 import { xcss } from 'esbuild-plugin-ekscss';
@@ -19,6 +20,12 @@ const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const dir = path.resolve(); // similar to __dirname
 const target = ['chrome55', 'edge18', 'firefox53', 'safari11'];
+
+// Keep mangled names consistent between all JS bundles
+const mangleCache = {
+  _refs: 'r',
+  collect: 'c',
+};
 
 /**
  * @param {esbuild.OutputFile[]} outputFiles
@@ -47,7 +54,7 @@ const analyzeMeta = {
 };
 
 /** @type {esbuild.Plugin} */
-const minifyCss = {
+const minifyCSS = {
   name: 'minify-css',
   setup(build) {
     if (!build.initialOptions.minify) return;
@@ -97,7 +104,7 @@ const minifyCss = {
 };
 
 /** @type {esbuild.Plugin} */
-const minifyJs = {
+const minifyJS = {
   name: 'minify-js',
   setup(build) {
     if (!build.initialOptions.minify) return;
@@ -154,8 +161,8 @@ await esbuild.build({
     analyzeMeta,
     xcss(),
     minifyTemplates(),
-    minifyCss,
-    minifyJs,
+    minifyCSS,
+    minifyJS,
     writeFiles(),
   ],
   banner: {
@@ -173,6 +180,7 @@ await esbuild.build({
   bundle: true,
   minify: !dev,
   mangleProps: /_refs|collect/,
+  mangleCache,
   sourcemap: true,
   watch: dev,
   write: dev,
@@ -207,8 +215,8 @@ for (const plugin of ['dark-mode', 'preload', 'prevnext', 'search']) {
       xcss(),
       fuseBasic,
       minifyTemplates(),
-      minifyCss,
-      minifyJs,
+      minifyCSS,
+      minifyJS,
       writeFiles(),
     ],
     format: 'iife',
@@ -222,6 +230,7 @@ for (const plugin of ['dark-mode', 'preload', 'prevnext', 'search']) {
     bundle: true,
     minify: !dev,
     mangleProps: /_refs|collect/,
+    mangleCache,
     sourcemap: true,
     watch: dev,
     write: dev,
@@ -235,7 +244,7 @@ await esbuild.build({
   entryPoints: ['src/plugin/prism.xcss'],
   outfile: 'plugin/prism.css',
   target,
-  plugins: [xcss(), minifyCss, writeFiles()],
+  plugins: [xcss(), minifyCSS, writeFiles()],
   banner: {
     css: `/*!
 * microdoc prism theme v${pkg.version} - https://microdoc.js.org
@@ -251,22 +260,32 @@ await esbuild.build({
 });
 
 /** @type {esbuild.Plugin} */
-const buildHtml = {
+const buildHTML = {
   name: 'build-html',
   setup(build) {
     build.onEnd(async (result) => {
       if (result.outputFiles) {
-        const outputJs = findOutputFile(result.outputFiles, '.js').file;
-        const outputCss = findOutputFile(result.outputFiles, '.css').file;
+        const outCSS = findOutputFile(result.outputFiles, '.css');
 
-        // FIXME: Script loading hack is extremely dodgy
-        const html = `<script>location.href="/dev#/dev/showcase.html"</script>
-<div id="showcase"></div>
-<style>${decodeUTF8(outputCss.contents)}</style>
-<script>${decodeUTF8(outputJs.contents)}</script>
-<img hidden src="" onerror="var s=document.createElement('script');s.appendChild(new Text(this.previousElementSibling.textContent));document.body.appendChild(s);s.remove();">`;
+        const html = `
+          <script>location.href="/dev#/dev/showcase.html"</script>
+          <div id=showcase></div>
+          <style>${decodeUTF8(outCSS.file.contents)}</style>
+        `;
 
-        await fs.writeFile(path.join(dir, 'docs/dev/showcase.html'), html);
+        await fs.writeFile(
+          path.join(dir, 'docs/dev/showcase.html'),
+          dev
+            ? html
+              .trim()
+            // fixes for markdown parser to recognise HTML
+              .replace(/\n\s+</g, '\n<')
+              .replace('\n\n', '\n')
+            : stripWhitespace(html),
+        );
+
+        // Remove CSS file from output
+        result.outputFiles.splice(outCSS.index, 1);
       }
     });
   },
@@ -284,17 +303,19 @@ await esbuild.build({
     analyzeMeta,
     xcss(),
     minifyTemplates(),
-    minifyCss,
-    minifyJs,
-    buildHtml,
+    minifyCSS,
+    minifyJS,
+    buildHTML,
+    writeFiles(),
   ],
   banner: { js: '"use strict";' },
   bundle: true,
   minify: !dev,
   mangleProps: /_refs|collect/,
+  mangleCache,
   sourcemap: dev && 'inline',
   watch: dev,
-  write: false,
+  write: false, // never save js to disk (use buildHTML plugin instead)
   metafile: !dev && process.stdout.isTTY,
   logLevel: 'debug',
 });
