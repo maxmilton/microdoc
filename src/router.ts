@@ -210,6 +210,16 @@ async function getContent(path: string): Promise<string> {
   return content;
 }
 
+function setHTML(node: Element, html: string): void {
+  if ('setHTML' in node) {
+    // @ts-expect-error - Experimental browser API -- https://developer.mozilla.org/en-US/docs/Web/API/Element/setHTML
+    node.setHTML(html);
+  } else {
+    // eslint-disable-next-line no-param-reassign
+    node.innerHTML = html;
+  }
+}
+
 type RouterComponent = HTMLDivElement;
 
 const view = create('div');
@@ -239,7 +249,7 @@ export function Router(): RouterComponent {
 
     if (!route) {
       clearTimeout(timer);
-      root.innerHTML = loadingError(pathname, new Error('Invalid route'));
+      setHTML(root, loadingError(pathname, new Error('Invalid route')));
       document.title = `Error | ${window.microdoc.title}`;
       return;
     }
@@ -249,7 +259,7 @@ export function Router(): RouterComponent {
       const html = md.render(code);
 
       clearTimeout(timer);
-      root.innerHTML = html;
+      setHTML(root, html);
       document.title = `${route.name} | ${window.microdoc.title}`;
 
       window.microdoc.afterRouteLoad?.(route);
