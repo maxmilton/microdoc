@@ -78,7 +78,16 @@
         "404.md"
       ]}
     ],
-    afterRouteLoad: () => Prism.highlightAll(),
+    afterRouteLoad(route) {
+      if (route.path === '#/dev/showcase.html') {
+        const s = document.createElement('script');
+        s.src = '/dev/showcase.js';
+        document.body.appendChild(s);
+        s.remove();
+      } else {
+        Prism.highlightAll();
+      }
+    },
     darkMode: matchMedia('(prefers-color-scheme:dark)').matches
   }
 </script>
@@ -91,11 +100,10 @@
     const add = (node) => logo.insertAdjacentElement('afterend', node);
 
     add(microdoc.h('<a href=https://github.com/maxmilton/microdoc class=header-link>GitHub</a>'));
-    const a = add(microdoc.h('<a href=#/dev/showcase.html class=header-link>Showcase</a>'));
-    add(microdoc.h('<a href=/ class=header-link>Docs</a>'));
     const sc = microdoc.$routes.get("#/dev/showcase.html");
     sc.ref.remove();
-    sc.ref = a;
+    sc.ref = add(microdoc.h('<a href=#/dev/showcase.html class=header-link>Showcase</a>'));
+    add(microdoc.h('<a href=/ class=header-link>Docs</a>'));
   });
 
   microdoc.routes.push("dev/showcase.html");
