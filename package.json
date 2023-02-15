@@ -48,7 +48,7 @@
     "get-port": "6.1.2",
     "jsdom": "21.1.0",
     "kleur": "4.1.5",
-    "lightningcss": "1.18.0",
+    "lightningcss": "1.19.0",
     "pirates": "4.0.5",
     "playwright-chromium": "1.30.0",
     "prettier": "2.8.4",
