@@ -72,6 +72,7 @@ const minifyCSS = {
           // - table
           // - table-zebra
 
+          // FIXME: Don't remove /*! comments
           const minified = lightningcss.transform({
             filename: outCSS.file.path,
             code: Buffer.from(outCSS.file.contents),
@@ -149,116 +150,6 @@ const minifyJS = {
   },
 };
 
-// Main web app
-await esbuild.build({
-  entryPoints: ['src/index.ts'],
-  outfile: 'microdoc.js',
-  target,
-  define: {
-    'process.env.NODE_ENV': JSON.stringify(mode),
-  },
-  plugins: [
-    analyzeMeta,
-    xcss(),
-    minifyTemplates(),
-    minifyCSS,
-    minifyJS,
-    writeFiles(),
-  ],
-  banner: {
-    css: `/*!
-* microdoc v${pkg.version} - https://microdoc.js.org
-* (c) 2022 Max Milton
-* MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
-*/`,
-    js: `/*!
-* microdoc v${pkg.version} - https://microdoc.js.org
-* (c) 2022 Max Milton
-* MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
-*/ "use strict";`,
-  },
-  bundle: true,
-  minify: !dev,
-  mangleProps: /_refs|collect/,
-  mangleCache,
-  sourcemap: true,
-  watch: dev,
-  write: dev,
-  metafile: !dev && process.stdout.isTTY,
-  logLevel: 'debug',
-});
-
-/** @type {esbuild.Plugin} */
-const fuseBasic = {
-  name: 'fuse-basic',
-  setup(build) {
-    const require = createRequire(import.meta.url);
-
-    build.onResolve({ filter: /^fuse\.js$/ }, () => ({
-      path: require.resolve('fuse.js/dist/fuse.basic.esm.js'),
-    }));
-  },
-};
-
-// Plugins
-for (const plugin of ['dark-mode', 'preload', 'prevnext', 'search']) {
-  // eslint-disable-next-line no-await-in-loop
-  await esbuild.build({
-    entryPoints: [`src/plugin/${plugin}.ts`],
-    outfile: `plugin/${plugin}.js`,
-    target,
-    define: {
-      'process.env.NODE_ENV': JSON.stringify(mode),
-    },
-    plugins: [
-      analyzeMeta,
-      xcss(),
-      fuseBasic,
-      minifyTemplates(),
-      minifyCSS,
-      minifyJS,
-      writeFiles(),
-    ],
-    format: 'iife',
-    banner: {
-      js: `/*!
-* microdoc ${plugin} plugin v${pkg.version} - https://microdoc.js.org
-* (c) 2022 Max Milton
-* MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
-*/ "use strict";`,
-    },
-    bundle: true,
-    minify: !dev,
-    mangleProps: /_refs|collect/,
-    mangleCache,
-    sourcemap: true,
-    watch: dev,
-    write: dev,
-    metafile: !dev && process.stdout.isTTY,
-    logLevel: 'debug',
-  });
-}
-
-// Custom PrismJS theme
-await esbuild.build({
-  entryPoints: ['src/plugin/prism.xcss'],
-  outfile: 'plugin/prism.css',
-  target,
-  plugins: [xcss(), minifyCSS, writeFiles()],
-  banner: {
-    css: `/*!
-* microdoc prism theme v${pkg.version} - https://microdoc.js.org
-* (c) 2022 Max Milton
-* MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
-*/`,
-  },
-  bundle: true,
-  minify: !dev,
-  watch: dev,
-  write: dev,
-  logLevel: 'debug',
-});
-
 /** @type {esbuild.Plugin} */
 const buildHTML = {
   name: 'build-html',
@@ -291,8 +182,60 @@ const buildHTML = {
   },
 };
 
+// Main web app
+/** @type {esbuild.BuildOptions} */
+const esbuildConfig1 = {
+  entryPoints: ['src/index.ts'],
+  outfile: 'microdoc.js',
+  target,
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(mode),
+  },
+  plugins: [
+    analyzeMeta,
+    xcss(),
+    minifyTemplates(),
+    minifyCSS,
+    minifyJS,
+    writeFiles(),
+  ],
+  banner: {
+    css: `/*!
+* microdoc v${pkg.version} - https://microdoc.js.org
+* (c) 2022 Max Milton
+* MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
+*/`,
+    js: `/*!
+* microdoc v${pkg.version} - https://microdoc.js.org
+* (c) 2022 Max Milton
+* MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
+*/ "use strict";`,
+  },
+  bundle: true,
+  minify: !dev,
+  mangleProps: /_refs|collect/,
+  mangleCache,
+  sourcemap: true,
+  write: dev,
+  metafile: !dev && process.stdout.isTTY,
+  logLevel: 'debug',
+};
+
+/** @type {esbuild.Plugin} */
+const fuseBasic = {
+  name: 'fuse-basic',
+  setup(build) {
+    const require = createRequire(import.meta.url);
+
+    build.onResolve({ filter: /^fuse\.js$/ }, () => ({
+      path: require.resolve('fuse.js/dist/fuse.basic.esm.js'),
+    }));
+  },
+};
+
 // EXPERIMENTAL: Showcase web app
-await esbuild.build({
+/** @type {esbuild.BuildOptions} */
+const esbuildConfig2 = {
   entryPoints: ['src/showcase/index.ts'],
   outfile: 'docs/dev/showcase.js',
   target,
@@ -314,8 +257,86 @@ await esbuild.build({
   mangleProps: /_refs|collect/,
   mangleCache,
   sourcemap: dev && 'inline',
-  watch: dev,
   write: false, // never save js to disk (use buildHTML plugin instead)
   metafile: !dev && process.stdout.isTTY,
   logLevel: 'debug',
-});
+};
+
+// Custom PrismJS theme
+/** @type {esbuild.BuildOptions} */
+const esbuildConfig3 = {
+  entryPoints: ['src/plugin/prism.xcss'],
+  outfile: 'plugin/prism.css',
+  target,
+  plugins: [xcss(), minifyCSS, writeFiles()],
+  banner: {
+    css: `/*!
+* microdoc prism theme v${pkg.version} - https://microdoc.js.org
+* (c) 2022 Max Milton
+* MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
+*/`,
+  },
+  bundle: true,
+  minify: !dev,
+  write: dev,
+  logLevel: 'debug',
+};
+
+// Plugins
+/** @type {esbuild.BuildOptions[]} */
+const pluginEsbuildConfigs = [];
+
+for (const plugin of ['dark-mode', 'preload', 'prevnext', 'search']) {
+  pluginEsbuildConfigs.push({
+    entryPoints: [`src/plugin/${plugin}.ts`],
+    outfile: `plugin/${plugin}.js`,
+    target,
+    define: {
+      'process.env.NODE_ENV': JSON.stringify(mode),
+    },
+    plugins: [
+      analyzeMeta,
+      xcss(),
+      fuseBasic,
+      minifyTemplates(),
+      minifyCSS,
+      minifyJS,
+      writeFiles(),
+    ],
+    format: 'iife',
+    banner: {
+      js: `/*!
+* microdoc ${plugin} plugin v${pkg.version} - https://microdoc.js.org
+* (c) 2022 Max Milton
+* MIT Licensed - https://github.com/maxmilton/microdoc/blob/main/LICENSE
+*/ "use strict";`,
+    },
+    bundle: true,
+    minify: !dev,
+    mangleProps: /_refs|collect/,
+    mangleCache,
+    sourcemap: true,
+    write: dev,
+    metafile: !dev && process.stdout.isTTY,
+    logLevel: 'debug',
+  });
+}
+
+if (dev) {
+  await Promise.all([
+    esbuild.context(esbuildConfig1),
+    esbuild.context(esbuildConfig2),
+    esbuild.context(esbuildConfig3),
+    ...pluginEsbuildConfigs.map((config) => esbuild.context(config)),
+  ])
+    .then((contexts) => contexts.map((context) => context.watch()));
+} else {
+  await esbuild.build(esbuildConfig1);
+  await esbuild.build(esbuildConfig2);
+  await esbuild.build(esbuildConfig3);
+
+  for (const config of pluginEsbuildConfigs) {
+    // eslint-disable-next-line no-await-in-loop
+    await esbuild.build(config);
+  }
+}
