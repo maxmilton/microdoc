@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@ekscss/framework': ^0.0.43
-  '@maxmilton/stylelint-config': 0.0.11
+  '@maxmilton/stylelint-config': 0.0.12
   '@types/jsdom': 21.1.0
   '@types/node': 18.15.6
   '@types/remarkable': 2.0.3
@@ -45,7 +45,7 @@ dependencies:
   stage1: 0.6.2
 
 devDependencies:
-  '@maxmilton/stylelint-config': 0.0.11_stylelint@15.2.0
+  '@maxmilton/stylelint-config': 0.0.12_stylelint@15.2.0
   '@types/jsdom': 21.1.0
   '@types/node': 18.15.6
   '@types/remarkable': 2.0.3
@@ -517,8 +517,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@maxmilton/stylelint-config/0.0.11_stylelint@15.2.0:
-    resolution: {integrity: sha512-pTo5DAkxMJAcLGbJJVn/7n3IOGkBTimF9Bmh7S4GAEcro7lsJEDOU3uK0LHlxZ63IGwKiBhTt4ZEHIPRqNp51w==}
+  /@maxmilton/stylelint-config/0.0.12_stylelint@15.2.0:
+    resolution: {integrity: sha512-XYFRy7rP/+oDWdS70bhMZvx3f4S5oD62hH8GC9icWQpUtDUzGtuwUl+NVie1h7H7uTe25DAbsYwfIgCiBYp6Iw==}
     peerDependencies:
       stylelint: ^15.0.0
     dependencies:

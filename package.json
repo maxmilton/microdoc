@@ -29,7 +29,7 @@
     "stage1": "^0.6.2"
   },
   "devDependencies": {
-    "@maxmilton/stylelint-config": "0.0.11",
+    "@maxmilton/stylelint-config": "0.0.12",
     "@types/jsdom": "21.1.0",
     "@types/node": "18.15.6",
     "@types/remarkable": "2.0.3",
