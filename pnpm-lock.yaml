@@ -19,8 +19,8 @@ devDependencies:
     specifier: 0.0.12
     version: 0.0.12(postcss@8.4.21)(stylelint@15.3.0)
   '@types/jsdom':
-    specifier: 21.1.0
-    version: 21.1.0
+    specifier: 21.1.1
+    version: 21.1.1
   '@types/node':
     specifier: 18.15.11
     version: 18.15.11
@@ -619,8 +619,8 @@ packages:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
     dev: true
 
-  /@types/jsdom@21.1.0:
-    resolution: {integrity: sha512-leWreJOdnuIxq9Y70tBVm/bvTuh31DSlF/r4l7Cfi4uhVQqLHD0Q4v301GMisEMwwbMgF7ZKxuZ+Jbd4NcdmRw==}
+  /@types/jsdom@21.1.1:
+    resolution: {integrity: sha512-cZFuoVLtzKP3gmq9eNosUL1R50U+USkbLtUQ1bYVgl/lKp0FZM7Cq4aIHAL8oIvQ17uSHi7jXPtfDOdjPwBE7A==}
     dependencies:
       '@types/node': 18.15.11
       '@types/tough-cookie': 4.0.2
