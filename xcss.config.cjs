@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-var-requires, import/no-extraneous-dependencies, strict */
 
 'use strict';
@@ -6,11 +7,13 @@ const framework = require('@ekscss/framework/config');
 const { extend, preloadApply } = require('@ekscss/framework/utils');
 const { onBeforeBuild } = require('ekscss');
 
-onBeforeBuild(() => preloadApply(`
+onBeforeBuild(() =>
+  preloadApply(`
   @import '@ekscss/framework/level2.xcss';
   @import '@ekscss/framework/addon/alert.xcss';
   @import '@ekscss/framework/addon/code.xcss';
-`));
+`),
+);
 
 module.exports = extend(framework, {
   globals: {

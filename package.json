@@ -19,8 +19,8 @@
     "lint:js": "eslint --ignore-path .gitignore --ext .ts,.js,.mjs,.cjs .",
     "lint:ts": "tsc --project test",
     "prebuild": "rm -rf plugin microdoc.* || true",
-    "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r tsm test '\\.test\\.ts$'",
-    "test-e2e": "node -r tsm test/e2e/index.ts"
+    "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r tsm -r \"$PWD\"/test/setup.ts test '\\.test\\.ts$'",
+    "test:e2e": "node -r tsm test/e2e/index.ts"
   },
   "dependencies": {
     "@ekscss/framework": "^0.0.43",
@@ -30,7 +30,6 @@
   },
   "devDependencies": {
     "@maxmilton/stylelint-config": "0.0.12",
-    "@types/jsdom": "21.1.1",
     "@types/node": "18.15.11",
     "@types/remarkable": "2.0.3",
     "@typescript-eslint/eslint-plugin": "5.57.1",
@@ -43,23 +42,25 @@
     "eslint": "8.37.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-unicorn": "46.0.0",
     "get-port": "6.1.2",
-    "jsdom": "21.1.1",
+    "happy-dom": "9.1.7",
     "kleur": "4.1.5",
     "lightningcss": "1.19.0",
+    "nanospy": "0.5.0",
     "pirates": "4.0.5",
     "playwright-chromium": "1.32.2",
     "prettier": "2.8.7",
     "prettier-plugin-pkg": "0.17.1",
-    "prettier-plugin-sh": "0.12.8",
     "sirv": "2.0.2",
     "stylelint": "15.4.0",
-    "stylelint-config-standard": "31.0.0",
+    "stylelint-config-standard": "32.0.0",
     "terser": "5.16.8",
     "tsm": "2.3.0",
-    "typescript": "4.9.5",
+    "typescript": "5.0.3",
     "uvu": "0.5.6"
   }
 }

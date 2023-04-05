@@ -12,9 +12,7 @@
 import { Remarkable } from 'remarkable';
 import { create, setupSyntheticEvent } from 'stage1';
 import type { InternalRoute, Routes } from './types';
-import {
-  FAKE_BASE_URL, makeInPageLink, toName, toSlug,
-} from './utils';
+import { FAKE_BASE_URL, makeInPageLink, toName, toSlug } from './utils';
 
 const LOADING_DELAY_MS = 176;
 
@@ -26,16 +24,16 @@ md.core.ruler.push(
   '',
   (state) => {
     const blockTokens = state.tokens;
-    const blockLen = blockTokens.length;
+    const blockLength = blockTokens.length;
 
-    for (let blockIndex = 0; blockIndex < blockLen; blockIndex++) {
+    for (let blockIndex = 0; blockIndex < blockLength; blockIndex++) {
       const blockToken: Remarkable.BlockContentToken = blockTokens[blockIndex];
 
       if (blockToken.type === 'inline') {
         const inlineTokens = blockToken.children!;
-        const inlineLen = inlineTokens.length;
+        const inlineLength = inlineTokens.length;
 
-        for (let inlineIndex = 0; inlineIndex < inlineLen; inlineIndex++) {
+        for (let inlineIndex = 0; inlineIndex < inlineLength; inlineIndex++) {
           const token = inlineTokens[inlineIndex] as Remarkable.LinkOpenToken;
 
           if (token.type === 'link_open') {
@@ -43,12 +41,13 @@ md.core.ruler.push(
 
             // Modify in-page (start with #) and relative link href in a way
             // that works with our hash based routing
-            token.href = token.href[0] === '#' && token.href[1] !== '/'
-              ? makeInPageLink(token.href.slice(1))
-              : new URL(token.href, FAKE_BASE_URL).href.replace(
-                /^http:\/\/x\/(?:#\/)?/,
-                '#/',
-              );
+            token.href =
+              token.href[0] === '#' && token.href[1] !== '/'
+                ? makeInPageLink(token.href.slice(1))
+                : new URL(token.href, FAKE_BASE_URL).href.replace(
+                    /^http:\/\/x\/(?:#\/)?/,
+                    '#/',
+                  );
           }
         }
       }
@@ -81,8 +80,8 @@ md.renderer.rules.heading_close = (tokens, idx) => {
   return `${
     slug
       ? `<a href="${makeInPageLink(
-        slug,
-      )}" class=microdoc-hash-link title="Direct link to heading">#</a>`
+          slug,
+        )}" class=microdoc-hash-link title="Direct link to heading">#</a>`
       : ''
   }</h${tokens[idx].hLevel}>\n`;
 };
@@ -100,12 +99,12 @@ export function routeTo(url: string): void {
 // https://github.com/lukeed/navaid/blob/master/src/index.js#L52
 function handleClick(event: MouseEvent): void {
   if (
-    event.ctrlKey
-    || event.metaKey
-    || event.altKey
-    || event.shiftKey
-    || event.button
-    || event.defaultPrevented
+    event.ctrlKey ||
+    event.metaKey ||
+    event.altKey ||
+    event.shiftKey ||
+    event.button ||
+    event.defaultPrevented
   ) {
     return;
   }
@@ -114,10 +113,10 @@ function handleClick(event: MouseEvent): void {
   const href = link && link.getAttribute('href');
 
   if (
-    !href
-    || link.target
-    || link.host !== window.location.host
-    || href[0] === '#'
+    !href ||
+    link.target ||
+    link.host !== window.location.host ||
+    href[0] === '#'
   ) {
     return;
   }
@@ -194,11 +193,11 @@ async function getContent(path: string): Promise<string> {
   let content;
 
   try {
-    const res = await fetch(path);
-    content = await res.text();
+    const response = await fetch(path);
+    content = await response.text();
 
-    if (!res.ok) {
-      throw new Error(content || `${res.status}`);
+    if (!response.ok) {
+      throw new Error(content || `${response.status}`);
     }
   } catch (error) {
     // eslint-disable-next-line no-console

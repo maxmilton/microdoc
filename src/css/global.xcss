@@ -27,7 +27,7 @@ input::-webkit-inner-spin-button {
 
 /* Typography enhancements */
 
-@media (max-width: 60rem) {
+@media (width <= 60rem) {
   :root {
     // Reduced font size (down from 20px) for small screens — e.g., mobile and
     // tablets — for better text flow and readability.

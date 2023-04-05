@@ -10,7 +10,7 @@ import {
   setup,
   sleep,
   teardown,
-  TestContext,
+  type TestContext,
 } from './utils';
 
 const test = suite<TestContext>('e2e');

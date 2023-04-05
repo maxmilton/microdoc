@@ -1,4 +1,4 @@
-import { append, h, S1Node } from 'stage1';
+import { append, h, type S1Node } from 'stage1';
 import type { InternalRoute } from '../types';
 import { Footer } from './Footer';
 import { SidenavLink } from './SidenavLink';

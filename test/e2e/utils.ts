@@ -6,7 +6,10 @@ import colors from 'kleur';
 import http from 'node:http';
 import path from 'node:path';
 import {
-  Browser, chromium, ConsoleMessage, Page,
+  chromium,
+  type Browser,
+  type ConsoleMessage,
+  type Page,
 } from 'playwright-chromium';
 import sirv from 'sirv';
 
@@ -121,5 +124,6 @@ export async function cleanupPage(context: TestContext): Promise<void> {
 
   await context.page.close();
   // @ts-expect-error - reset for next renderPage
+  // prettier-ignore
   context.unhandledErrors = context.consoleMessages = context.page = context.fixture = undefined;
 }
