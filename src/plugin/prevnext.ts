@@ -13,7 +13,10 @@ import type { InternalMicrodoc } from '../types';
 
 const { $routes, h } = window.microdoc as InternalMicrodoc;
 
-const currentRouteIndex = () => [...$routes.values()].findIndex((route) => route.ref!.classList.contains('active'));
+const currentRouteIndex = () =>
+  [...$routes.values()].findIndex((route) =>
+    route.ref!.classList.contains('active'),
+  );
 
 type RefNodes = {
   p: HTMLButtonElement;

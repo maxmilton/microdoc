@@ -59,9 +59,9 @@ async function loadContent() {
 }
 
 type ResultListComponent = S1Node &
-HTMLDivElement & {
-  update: (results?: Fuse.FuseResult<ContentData>[]) => void;
-};
+  HTMLDivElement & {
+    update: (results?: Fuse.FuseResult<ContentData>[]) => void;
+  };
 type ResultItemComponent = S1Node & HTMLDivElement;
 type SearchComponent = S1Node & HTMLDivElement;
 

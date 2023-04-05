@@ -1,8 +1,6 @@
 import './Debug.xcss';
 
-import {
-  append, create, h, S1Node,
-} from 'stage1';
+import { append, create, h, type S1Node } from 'stage1';
 
 export type DebugComponent = S1Node & HTMLDivElement;
 

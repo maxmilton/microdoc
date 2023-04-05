@@ -1,4 +1,4 @@
-import { h, S1Node } from 'stage1';
+import { h, type S1Node } from 'stage1';
 
 export type HeaderComponent = S1Node & HTMLElement;
 

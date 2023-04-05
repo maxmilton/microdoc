@@ -33,7 +33,9 @@ const mangleCache = {
  * @returns {{ file: esbuild.OutputFile; index: number; }}
  */
 function findOutputFile(outputFiles, ext) {
-  const index = outputFiles.findIndex((outputFile) => outputFile.path.endsWith(ext));
+  const index = outputFiles.findIndex((outputFile) =>
+    outputFile.path.endsWith(ext),
+  );
   return { file: outputFiles[index], index };
 }
 
@@ -168,10 +170,10 @@ const buildHTML = {
           path.join(dir, 'docs/dev/showcase.html'),
           dev
             ? html
-              .trim()
-            // fixes for markdown parser to recognise HTML
-              .replace(/\n\s+</g, '\n<')
-              .replace('\n\n', '\n')
+                .trim()
+                // fixes for markdown parser to recognise HTML
+                .replace(/\n\s+</g, '\n<')
+                .replace('\n\n', '\n')
             : stripWhitespace(html),
         );
 
@@ -328,8 +330,7 @@ if (dev) {
     esbuild.context(esbuildConfig2),
     esbuild.context(esbuildConfig3),
     ...pluginEsbuildConfigs.map((config) => esbuild.context(config)),
-  ])
-    .then((contexts) => contexts.map((context) => context.watch()));
+  ]).then((contexts) => contexts.map((context) => context.watch()));
 } else {
   await esbuild.build(esbuildConfig1);
   await esbuild.build(esbuildConfig2);

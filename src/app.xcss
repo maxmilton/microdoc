@@ -44,7 +44,7 @@
   margin-right: 0.5rem;
 }
 
-@media (max-width: 60rem) {
+@media (width <= 60rem) {
   .microdoc-button-menu {
     display: block;
   }
@@ -245,7 +245,7 @@
   visibility: hidden;
 }
 
-@media (max-width: 60rem) {
+@media (width <= 60rem) {
   .microdoc-search.expanded {
     position: absolute;
     z-index: 3;

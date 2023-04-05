@@ -24,6 +24,7 @@ export function render(): void {
   if (process.env.NODE_ENV === 'development') {
     import('./components/Debug')
       .then(({ Debug }) => append(Debug(), document.body))
+      // eslint-disable-next-line no-console
       .catch(console.error);
   }
 }
