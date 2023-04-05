@@ -18,7 +18,9 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:unicorn/recommended',
+    'prettier',
   ],
+  plugins: ['prettier'],
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': ERROR,
     'import/prefer-default-export': OFF,
@@ -27,6 +29,7 @@ module.exports = {
     'no-restricted-syntax': OFF,
     // stage1 uses underscores in synthetic event handler names
     'no-underscore-dangle': OFF,
+    'prettier/prettier': WARN,
     'unicorn/filename-case': OFF,
     'unicorn/no-abusive-eslint-disable': WARN,
     // forEach has better perf in modern browsers
