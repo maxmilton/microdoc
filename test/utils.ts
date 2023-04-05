@@ -1,76 +1,15 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { spyOn } from 'nanospy';
+import { suite, type Context, type Test } from 'uvu';
+import type * as _assert from 'uvu/assert';
 
-import { JSDOM } from 'jsdom';
-import { addHook } from 'pirates';
-
-// increase limit from 10
-global.Error.stackTraceLimit = 100;
-
-const mountedContainers = new Set<HTMLDivElement>();
-let unhookXcss: (() => void) | undefined;
-
-function mockInnerText() {
-  Object.defineProperty(global.window.HTMLElement.prototype, 'innerText', {
-    get(this: HTMLElement) {
-      const el = this.cloneNode(true) as HTMLElement;
-      for (const s of el.querySelectorAll('script,style')) s.remove();
-      return el.textContent;
-    },
-    set(this: HTMLElement, value: string) {
-      this.textContent = value;
-    },
-  });
-}
-
-export function setup(): void {
-  if (global.window) {
-    throw new Error(
-      'JSDOM globals already exist, did you forget to run teardown()?',
-    );
-  }
-  if (typeof unhookXcss === 'function') {
-    throw new TypeError(
-      '.xcss hook already exists, did you forget to run teardown()?',
-    );
-  }
-
-  // Make imported .xcss files return empty to prevent test errors (unit tests
-  // can't assert styles properly anyway; better to create e2e tests!)
-  unhookXcss = addHook(() => '', {
-    exts: ['.xcss'],
-  });
-
-  const dom = new JSDOM('<!DOCTYPE html>', {
-    pretendToBeVisual: true,
-    runScripts: 'dangerously',
-    url: 'http://localhost/',
-  });
-
-  global.window = dom.window.document.defaultView!;
-  global.document = global.window.document;
-
-  // JSDOM doesn't support innerText yet -- https://github.com/jsdom/jsdom/issues/1245
-  mockInnerText();
-}
-
-export function teardown(): void {
-  if (!global.window) {
-    throw new Error('No JSDOM globals exist, did you forget to run setup()?');
-  }
-  if (typeof unhookXcss !== 'function') {
-    throw new TypeError(
-      '.xcss hook does not exist, did you forget to run setup()?',
-    );
-  }
-
-  // https://github.com/jsdom/jsdom#closing-down-a-jsdom
-  global.window.close();
-  // @ts-expect-error - cleaning up
-  // eslint-disable-next-line no-multi-assign
-  global.window = global.document = undefined;
-
-  unhookXcss();
-  unhookXcss = undefined;
+// https://github.com/lukeed/uvu/issues/43#issuecomment-740817223
+export function describe<T = Context>(
+  name: string,
+  fn: (test: Test<T>) => void,
+): void {
+  const test = suite<T>(name);
+  fn(test);
+  test.run();
 }
 
 export interface RenderResult {
@@ -84,7 +23,10 @@ export interface RenderResult {
    * @param el - An element to inspect. Default is the mounted container.
    */
   debug(el?: Element): void;
+  unmount(): void;
 }
+
+const mountedContainers = new Set<HTMLDivElement>();
 
 export function render(component: Node): RenderResult {
   const container = document.createElement('div');
@@ -97,13 +39,13 @@ export function render(component: Node): RenderResult {
   return {
     container,
     debug(el = container) {
-      // TODO: Prettify HTML
-      console.log('DEBUG:');
-      console.log(el.innerHTML);
+      /* prettier-ignore */ // eslint-disable-next-line
+      console.log('DEBUG:\n' + require('prettier').format(el.innerHTML, { parser: 'html' }));
     },
-    // unmount() {
-    //   container.removeChild(component);
-    // },
+    unmount() {
+      // eslint-disable-next-line unicorn/prefer-dom-node-remove
+      container.removeChild(component);
+    },
   };
 }
 
@@ -114,18 +56,38 @@ export function cleanup(): void {
     );
   }
 
-  for (const container of mountedContainers) {
+  mountedContainers.forEach((container) => {
     if (container.parentNode === document.body) {
       container.remove();
     }
 
     mountedContainers.delete(container);
-  }
+  });
 }
 
-export function mocksSetup(): void {
-  // Stub only; create e2e tests for actual use cases
-  global.window.Element.prototype.scrollIntoView = () => {};
-}
+export function consoleSpy(): (assert: typeof _assert) => void {
+  const errorSpy = spyOn(window.console, 'error');
+  const warnSpy = spyOn(window.console, 'warn');
+  const infoSpy = spyOn(window.console, 'info');
+  const logSpy = spyOn(window.console, 'log');
+  const debugSpy = spyOn(window.console, 'debug');
+  const traceSpy = spyOn(window.console, 'trace');
+  const dirSpy = spyOn(window.console, 'dir');
 
-export function mocksTeardown(): void {}
+  return (assert) => {
+    assert.is(errorSpy.callCount, 0, 'calls to console.error');
+    assert.is(warnSpy.callCount, 0, 'calls to console.warn');
+    assert.is(infoSpy.callCount, 0, 'calls to console.info');
+    assert.is(logSpy.callCount, 0, 'calls to console.log');
+    assert.is(debugSpy.callCount, 0, 'calls to console.debug');
+    assert.is(traceSpy.callCount, 0, 'calls to console.trace');
+    assert.is(dirSpy.callCount, 0, 'calls to console.dir');
+    errorSpy.restore();
+    warnSpy.restore();
+    infoSpy.restore();
+    logSpy.restore();
+    debugSpy.restore();
+    traceSpy.restore();
+    dirSpy.restore();
+  };
+}
