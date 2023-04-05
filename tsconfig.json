@@ -2,10 +2,9 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "skipLibCheck": true,
     "allowJs": true,
     "checkJs": true,
@@ -15,13 +14,16 @@
     "allowUnreachableCode": false,
     "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
-    "importsNotUsedAsValues": "error",
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "verbatimModuleSyntax": true,
 
-    "alwaysStrict": false // prefer "use strict" via esbuild banner option
+    "alwaysStrict": false, // prefer injecting "use strict" manually
+
+    // TODO: Remove when lightningcss fix their package.json#exports
+    "resolvePackageJsonExports": false
   },
   "exclude": [
     "coverage",
@@ -30,6 +32,6 @@
     "test",
     "types",
     "microdoc.*",
-    "xcss.config.js"
+    "xcss.config.cjs"
   ]
 }
