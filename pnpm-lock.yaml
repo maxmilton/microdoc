@@ -23,8 +23,8 @@ devDependencies:
     specifier: 0.0.12
     version: 0.0.12(postcss@8.4.23)(stylelint@15.6.0)
   '@types/node':
-    specifier: 18.16.3
-    version: 18.16.3
+    specifier: 18.16.16
+    version: 18.16.16
   '@types/remarkable':
     specifier: 2.0.3
     version: 2.0.3
@@ -615,8 +615,8 @@ packages:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: true
 
-  /@types/node@18.16.3:
-    resolution: {integrity: sha512-OPs5WnnT1xkCBiuQrZA4+YAV4HEJejmHneyraIaxsbev5yCEr6KMwINNFP9wQeFIw8FWcoTqF3vQsa5CDaI+8Q==}
+  /@types/node@18.16.16:
+    resolution: {integrity: sha512-NpaM49IGQQAUlBhHMF82QH80J08os4ZmyF9MkpCzWAGuOHqE4gTEbhzd7L3l5LmWuZ6E0OiC1FweQ4tsiW35+g==}
     dev: true
 
   /@types/normalize-package-data@2.4.1:
