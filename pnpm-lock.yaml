@@ -107,8 +107,8 @@ devDependencies:
     specifier: 33.0.0
     version: 33.0.0(stylelint@15.6.3)
   terser:
-    specifier: 5.17.1
-    version: 5.17.1
+    specifier: 5.17.7
+    version: 5.17.7
   tsm:
     specifier: 2.3.0
     version: 2.3.0
@@ -3440,8 +3440,8 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
-  /terser@5.17.1:
-    resolution: {integrity: sha512-hVl35zClmpisy6oaoKALOpS0rDYLxRFLHhRuDlEGTKey9qHjS1w9GMORjuwIMt70Wan4lwsLYyWDVnWgF+KUEw==}
+  /terser@5.17.7:
+    resolution: {integrity: sha512-/bi0Zm2C6VAexlGgLlVxA0P2lru/sdLyfCVaRMfKVo9nWxbmz7f/sD8VPybPeSUJaJcwmCJis9pBIhcVcG1QcQ==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
