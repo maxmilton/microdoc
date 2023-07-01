@@ -71,8 +71,8 @@ devDependencies:
     specifier: 46.0.1
     version: 46.0.1(eslint@8.44.0)
   get-port:
-    specifier: 6.1.2
-    version: 6.1.2
+    specifier: 7.0.0
+    version: 7.0.0
   happy-dom:
     specifier: 9.10.1
     version: 9.10.1
@@ -1963,9 +1963,9 @@ packages:
       has-symbols: 1.0.3
     dev: true
 
-  /get-port@6.1.2:
-    resolution: {integrity: sha512-BrGGraKm2uPqurfGVj/z97/zv8dPleC6x9JBNRTrDNtCkkRF4rPwrQXFgL7+I+q8QSdU4ntLQX2D7KIxSy8nGw==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+  /get-port@7.0.0:
+    resolution: {integrity: sha512-mDHFgApoQd+azgMdwylJrv2DX47ywGq1i5VFJE7fZ0dttNq3iQMfsU4IvEgBHojA3KqEudyu7Vq+oN8kNaNkWw==}
+    engines: {node: '>=16'}
     dev: true
 
   /get-symbol-description@1.0.0:
