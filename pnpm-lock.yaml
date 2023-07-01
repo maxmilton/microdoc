@@ -83,8 +83,8 @@ devDependencies:
     specifier: 1.20.0
     version: 1.20.0
   nanospy:
-    specifier: 0.5.0
-    version: 0.5.0
+    specifier: 1.0.0
+    version: 1.0.0
   pirates:
     specifier: 4.0.5
     version: 4.0.5
@@ -2702,9 +2702,9 @@ packages:
     hasBin: true
     dev: true
 
-  /nanospy@0.5.0:
-    resolution: {integrity: sha512-QxH93ntkjRiSP+gJrBLcgOO3neU6pGhUKjPAJ7rAFag/+tJ+/0lw6dXic+iXUQ/3Cxk4Dp/FwLnf57xnQsjecQ==}
-    engines: {node: ^8.0.0 || ^10.0.0 || ^12.0.0 || ^14.0.0 || >=16.0.0}
+  /nanospy@1.0.0:
+    resolution: {integrity: sha512-wvmmALNstRRhLhy7RV11NCRY2k1zxstImiju4VyyKNNRIKDVjyBtmEd/Q4G82/3dN4VSTe+0PRR3DUAASSbEEQ==}
+    engines: {node: ^8.0.0 || ^10.0.0 || ^12.0.0 || ^14.0.0 || ^16.0.0 || ^18.0.0 || >=20.0.0}
     dev: true
 
   /natural-compare-lite@1.4.0:
