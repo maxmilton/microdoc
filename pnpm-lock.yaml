@@ -26,8 +26,8 @@ devDependencies:
     specifier: 18.16.19
     version: 18.16.19
   '@types/remarkable':
-    specifier: 2.0.3
-    version: 2.0.3
+    specifier: 2.0.4
+    version: 2.0.4
   '@typescript-eslint/eslint-plugin':
     specifier: 5.59.8
     version: 5.59.8(@typescript-eslint/parser@5.59.8)(eslint@8.44.0)(typescript@5.0.4)
@@ -628,8 +628,8 @@ packages:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
 
-  /@types/remarkable@2.0.3:
-    resolution: {integrity: sha512-QQUBeYApuHCNl9Br6ZoI3PlKmwZ69JHrlJktJXnjxobia9liZgsI70fm8PnCqVFAcefYK+9PGzR5L/hzCslNYQ==}
+  /@types/remarkable@2.0.4:
+    resolution: {integrity: sha512-enyIahDSUuzOpnAuBtgzMRt60GoWS3fPAd2NOsn8yAX9MWqid8Z7bel1tELLSZXR6q0vyH2L7Vg24xYEKWjpMg==}
     dependencies:
       '@types/highlight.js': 9.12.4
       highlight.js: 9.18.5
