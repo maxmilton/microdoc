@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@ekscss/framework": "^0.0.45",
-    "fuse.js": "^6.6.2",
+    "fuse.js": "^7.0.0",
     "remarkable": "^2.0.1",
     "stage1": "^0.7.0"
   },
