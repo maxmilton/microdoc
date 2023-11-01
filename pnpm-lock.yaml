@@ -26,8 +26,8 @@ devDependencies:
     specifier: 18.16.19
     version: 18.16.19
   '@types/remarkable':
-    specifier: 2.0.3
-    version: 2.0.3
+    specifier: 2.0.7
+    version: 2.0.7
   '@typescript-eslint/eslint-plugin':
     specifier: 5.59.8
     version: 5.59.8(@typescript-eslint/parser@5.59.8)(eslint@8.44.0)(typescript@5.0.4)
@@ -600,10 +600,6 @@ packages:
     dev: true
     optional: true
 
-  /@types/highlight.js@9.12.4:
-    resolution: {integrity: sha512-t2szdkwmg2JJyuCM20e8kR2X59WCE5Zkl4bzm1u1Oukjm79zpbiAv+QjnwLnuuV0WHEcX2NgUItu0pAMKuOPww==}
-    dev: true
-
   /@types/istanbul-lib-coverage@2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
     dev: true
@@ -628,11 +624,8 @@ packages:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
 
-  /@types/remarkable@2.0.3:
-    resolution: {integrity: sha512-QQUBeYApuHCNl9Br6ZoI3PlKmwZ69JHrlJktJXnjxobia9liZgsI70fm8PnCqVFAcefYK+9PGzR5L/hzCslNYQ==}
-    dependencies:
-      '@types/highlight.js': 9.12.4
-      highlight.js: 9.18.5
+  /@types/remarkable@2.0.7:
+    resolution: {integrity: sha512-yjt139N0JY5sDbRq2iXVbu+IM3BGHis7YtPOqETJZrbV6VYeQPNaHuTYIAqxTRdwul6eDBCNlh1Txiu5c4fj6w==}
     dev: true
 
   /@types/semver@7.3.13:
@@ -2124,12 +2117,6 @@ packages:
   /he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
-    dev: true
-
-  /highlight.js@9.18.5:
-    resolution: {integrity: sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA==}
-    deprecated: Support has ended for 9.x series. Upgrade to @latest
-    requiresBuild: true
     dev: true
 
   /hosted-git-info@2.8.9:
