@@ -16,7 +16,7 @@ dependencies:
     version: 2.0.1
   stage1:
     specifier: ^0.7.0
-    version: 0.7.0
+    version: 0.7.2
 
 devDependencies:
   '@maxmilton/stylelint-config':
@@ -3262,8 +3262,8 @@ packages:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
     dev: false
 
-  /stage1@0.7.0:
-    resolution: {integrity: sha512-wjc0nW4rkZAz9L6IBEOsBZuP5/fv/+7+zKNOjur5vIGAZQ/MkunrDdFDu2e2tBwxcstJhCEOEO3BH8xH+HHcJw==}
+  /stage1@0.7.2:
+    resolution: {integrity: sha512-0IwVSQIpGnKd74GDwvt4+xhVNGL7NxeGypB95G9RjhjLO8chttl/0M5x1qdm/z09HhX2aDdGWtiaxaHxsZoPqw==}
     dev: false
 
   /string-width@4.2.3:
